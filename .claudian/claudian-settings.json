@@ -34,7 +34,7 @@
       "cliPath": "",
       "cliPathsByHost": {},
       "loadUserSettings": true,
-      "enableChrome": false,
+      "enableChrome": true,
       "enableBangBash": false,
       "enableOpus1M": false,
       "enableSonnet1M": false,
