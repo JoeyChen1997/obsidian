@@ -98,7 +98,7 @@ rank(((1 - rank((stddev(returns, 2) / stddev(returns, 5)))) + (1 - rank(delta(cl
 (Ts_Rank(volume, 32) * (1 - Ts_Rank(((close + high) - low), 16))) *
 (1 - Ts_Rank(returns, 32))
 ```
-**逻辑**：成交量 32 日时序排名 × (1 - 价格区间 16 日时序排名) × (1 - 收益 32 日时序排名)。
+**逻辑**：成交量 32 日时序排名 $\times$ (1 - 价格区间 16 日时序排名) $\times$ (1 - 收益 32 日时序排名)。
 **类型**：量价组合
 
 ---
@@ -129,7 +129,7 @@ rank(correlation(delay((open - close), 1), close, 200)) + rank((open - close))
 ```
 (-1 * rank(Ts_Rank(close, 10))) * rank((close / open))
 ```
-**逻辑**：收盘价 10 日时序排名（取负）× 收盘/开盘比排名。
+**逻辑**：收盘价 10 日时序排名（取负）$\times$ 收盘/开盘比排名。
 **类型**：均值回归 + 日内动量
 
 ---
@@ -139,7 +139,7 @@ rank(correlation(delay((open - close), 1), close, 200)) + rank((open - close))
 (-1 * rank((delta(close, 7) * (1 - rank(decay_linear((volume / adv20), 9)))))) *
 (1 + rank(sum(returns, 250)))
 ```
-**逻辑**：7 日价格变化 × (1 - 相对成交量线性衰减排名)，取负，再乘以 250 日累计收益排名的放大因子。
+**逻辑**：7 日价格变化 $\times$ (1 - 相对成交量线性衰减排名)，取负，再乘以 250 日累计收益排名的放大因子。
 **类型**：动量 + 成交量调整
 
 ---
@@ -148,7 +148,7 @@ rank(correlation(delay((open - close), 1), close, 200)) + rank((open - close))
 ```
 (-1 * rank(stddev(high, 10))) * correlation(high, volume, 10)
 ```
-**逻辑**：最高价 10 日波动率排名（取负）× 最高价与成交量的 10 日相关性。
+**逻辑**：最高价 10 日波动率排名（取负）$\times$ 最高价与成交量的 10 日相关性。
 **类型**：波动率 + 量价
 
 ---
@@ -175,7 +175,7 @@ rank((vwap - close)) / rank((vwap + close))
 ```
 ts_rank((volume / adv20), 20) * ts_rank((-1 * delta(close, 7)), 8)
 ```
-**逻辑**：相对成交量 20 日时序排名 × 7 日价格变化取负的 8 日时序排名。
+**逻辑**：相对成交量 20 日时序排名 $\times$ 7 日价格变化取负的 8 日时序排名。
 **类型**：量价组合（均值回归）
 
 ---
@@ -194,7 +194,7 @@ ts_rank((volume / adv20), 20) * ts_rank((-1 * delta(close, 7)), 8)
 -1 * ((rank((sum(delay(close, 5), 20) / 20)) * correlation(close, volume, 2)) *
 rank(correlation(sum(close, 5), sum(close, 20), 2)))
 ```
-**逻辑**：5 日前收盘价 20 日均值排名 × 收盘价与成交量 2 日相关性 × 短期/长期收盘价相关性排名，取负。
+**逻辑**：5 日前收盘价 20 日均值排名 $\times$ 收盘价与成交量 2 日相关性 $\times$ 短期/长期收盘价相关性排名，取负。
 **类型**：多因子组合
 
 ---
@@ -220,7 +220,7 @@ rank(correlation(sum(close, 5), sum(close, 20), 2)))
 ((((rank((1 / close)) * volume) / adv20) * ((high * rank((high - close))) / (sum(high, 5) / 5)))
 - rank((vwap - delay(vwap, 5))))
 ```
-**逻辑**：价格倒数排名 × 相对成交量 × 最高价偏离 5 日均值的加权，减去 VWAP 5 日变化排名。
+**逻辑**：价格倒数排名 $\times$ 相对成交量 $\times$ 最高价偏离 5 日均值的加权，减去 VWAP 5 日变化排名。
 **类型**：多因子组合
 
 ---
@@ -231,7 +231,7 @@ indneutralize(((correlation(delta(close, 1), delta(delay(close, 1), 1), 250) *
 delta(close, 1)) / close), IndClass.subindustry)
 / sum(((delta(close, 1) / delay(close, 1))^2), 250)
 ```
-**逻辑**：日收益与昨日收益的 250 日相关性 × 日收益，行业中性化后，除以 250 日收益平方和。
+**逻辑**：日收益与昨日收益的 250 日相关性 $\times$ 日收益，行业中性化后，除以 250 日收益平方和。
 **类型**：行业中性化动量
 
 ---

@@ -117,7 +117,7 @@ rank(((0 < ts_min(delta(close, 1), 4)) ? delta(close, 1) :
 ```
 sign(delta(volume, 1)) * (-1 * delta(close, 1))
 ```
-**逻辑**：成交量变化方向 × 价格变化的负值。成交量增加时做空，成交量减少时做多（均值回归）。
+**逻辑**：成交量变化方向 $\times$ 价格变化的负值。成交量增加时做空，成交量减少时做多（均值回归）。
 **类型**：均值回归
 
 ---
@@ -135,7 +135,7 @@ sign(delta(volume, 1)) * (-1 * delta(close, 1))
 ```
 (-1 * rank(delta(returns, 3))) * correlation(open, volume, 10)
 ```
-**逻辑**：3 日收益变化排名（取负）× 开盘价与成交量的 10 日相关性。
+**逻辑**：3 日收益变化排名（取负）$\times$ 开盘价与成交量的 10 日相关性。
 **类型**：动量 + 量价
 
 ---
@@ -163,7 +163,7 @@ sign(delta(volume, 1)) * (-1 * delta(close, 1))
 ((-1 * rank(ts_rank(close, 10))) * rank(delta(delta(close, 1), 1))) *
 rank(ts_rank((volume / adv20), 5))
 ```
-**逻辑**：收盘价 10 日时序排名（取负）× 价格二阶差分排名 × 相对成交量 5 日时序排名。
+**逻辑**：收盘价 10 日时序排名（取负）$\times$ 价格二阶差分排名 $\times$ 相对成交量 5 日时序排名。
 **类型**：多因子组合
 
 ---
@@ -247,7 +247,7 @@ rank((open - delay(low, 1)))
 ```
 rank(((((-1 * returns) * adv20) * vwap) * (high - close)))
 ```
-**逻辑**：收益率取负 × 20 日均量 × VWAP × 日内振幅（高-收），对乘积排名。
+**逻辑**：收益率取负 $\times$ 20 日均量 $\times$ VWAP $\times$ 日内振幅（高-收），对乘积排名。
 **类型**：多因子组合
 
 ---

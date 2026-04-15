@@ -84,7 +84,7 @@ Ts_Rank(decay_linear(correlation(IndNeutralize(volume, IndClass.sector),
 ((rank(delay(((high - low) / (sum(close, 5) / 5)), 2)) * rank(rank(volume)))
 / (((high - low) / (sum(close, 5) / 5)) / (vwap - close)))
 ```
-**逻辑**：2 日前日内振幅/5 日均价的排名 × 成交量排名的平方，除以当前日内振幅/5 日均价与 VWAP-收盘价之比。
+**逻辑**：2 日前日内振幅/5 日均价的排名 $\times$ 成交量排名的平方，除以当前日内振幅/5 日均价与 VWAP-收盘价之比。
 **类型**：量价结构
 
 ---
@@ -253,7 +253,7 @@ IndClass.subindustry), IndClass.subindustry)))
 - scale(indneutralize((correlation(close, rank(adv20), 5) - rank(ts_argmin(close, 30))),
 IndClass.subindustry))) * (volume / adv20)))
 ```
-**逻辑**：日内位置加权成交量的双重行业中性化缩放（×1.5），减去收盘价与均量相关性减去 30 日最低收盘价出现时间的行业中性化缩放，乘以相对成交量，取负。
+**逻辑**：日内位置加权成交量的双重行业中性化缩放（$\times 1.5$），减去收盘价与均量相关性减去 30 日最低收盘价出现时间的行业中性化缩放，乘以相对成交量，取负。
 **类型**：行业中性化 + 量价结构
 
 ---

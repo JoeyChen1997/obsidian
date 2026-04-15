@@ -4,8 +4,8 @@
   "title": "你读一下文件夹下面的两个新的pdf，帮我把这两个pdf整理一下，尤其是那个151 trading s...",
   "titleGenerationStatus": "failed",
   "createdAt": 1776279305879,
-  "updatedAt": 1776280940880,
-  "lastResponseAt": 1776280940880,
+  "updatedAt": 1776282691705,
+  "lastResponseAt": 1776282691705,
   "sessionId": "ab8b2075-dae3-4712-9088-1f4e46b2587b",
   "providerState": {
     "providerSessionId": "ab8b2075-dae3-4712-9088-1f4e46b2587b",
@@ -84,11 +84,12 @@
   "currentNote": "欢迎.md",
   "usage": {
     "model": "sonnet",
-    "inputTokens": 109,
-    "cacheCreationInputTokens": 62318,
-    "cacheReadInputTokens": 67403,
+    "inputTokens": 707,
+    "cacheCreationInputTokens": 70604,
+    "cacheReadInputTokens": 96794,
     "contextWindow": 200000,
-    "contextTokens": 129830,
-    "percentage": 65
+    "contextTokens": 168105,
+    "percentage": 84,
+    "contextWindowIsAuthoritative": true
   }
 }
