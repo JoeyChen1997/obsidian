@@ -13,7 +13,7 @@ tags: [量化交易, alpha, WorldQuant]
 (((((delay(close, 20) - delay(close, 10)) / 10) - ((delay(close, 10) - close) / 10)) < (-1 * 0.05)) ?
 1 : ((-1 * 1) * (close - delay(close, 1))))
 ```
-**逻辑**：与 Alpha#49 类似，阈值改为 -0.05（更宽松的加速下跌条件）→ 做多；否则均值回归。
+**逻辑**：与 Alpha#49 类似，阈值改为 $-0.05$（更宽松的加速下跌条件）→ 做多；否则均值回归。
 **类型**：条件动量
 
 ---
@@ -206,7 +206,7 @@ IndNeutralize(adv20, IndClass.subindustry), 6.03))) * -1)
 max(Ts_Rank(decay_linear(correlation(Ts_Rank(close, 3.44), Ts_Rank(adv180, 12.06), 18.02), 4.21), 15.69),
 Ts_Rank(decay_linear((rank(((low + open) - (vwap + vwap)))^2), 16.47), 4.44))
 ```
-**逻辑**：两个时序排名取最大值：收盘价时序排名与均量时序排名相关性的线性衰减，以及低价+开盘价偏离 2×VWAP 的平方线性衰减。
+**逻辑**：两个时序排名取最大值：收盘价时序排名与均量时序排名相关性的线性衰减，以及低价+开盘价偏离 $2\times VWAP$ 的平方线性衰减。
 **类型**：多因子最大值
 
 ---
