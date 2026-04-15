@@ -1,0 +1,343 @@
+Total pages: 22
+--- Page 1 ---
+101 Formulaic Alphas
+Zura Kakushadze§†1
+§ Quantigic® Solutions LLC,2 1127 High Ridge Road, #135, Stamford, CT 06905
+† Free University of Tbilisi, Business School & School of Physics
+240, David Agmashenebeli Alley, Tbilisi, 0159, Georgia
+December 9, 2015
+“There are two kinds of people in this world:
+Those seeking happiness, and bullfighters.”
+(Zura Kakushadze, ca. early ’90s)3
+Abstract
+We present explicit formulas – that are also computer code – for
+101 real-life quantitative trading alphas. Their average holding
+period approximately ranges 0.6-6.4 days. The average pair-wise
+correlation of these alphas is low, 15.9%. The returns are strongly
+correlated with volatility, but have no significant dependence on
+turnover, directly confirming an earlier result based on a more
+indirect empirical analysis. We further find empirically that
+turnover has poor explanatory power for alpha correlations.
+1 Zura Kakushadze, Ph.D., is the President and a Co-Founder of Quantigic® Solutions LLC and a Full Professor in the
+Business School and the School of Physics at Free University of Tbilisi. Email: zura@quantigic.com
+2 DISCLAIMER: This address is used by the corresponding author for no purpose other than to indicate his
+professional affiliation as is customary in publications. In particular, the contents of this paper are not intended as
+an investment, legal, tax or any other such advice, and in no way represent views of Quantigic® Solutions LLC, the
+website www.quantigic.com or any of their other affiliates.
+3 Paraphrasing Blondie’s (Clint Eastwood) one-liners from a great 1966 motion picture The Good, the Bad and the
+Ugly (directed by Sergio Leone).
+1
+Electronic copy available at: https://ssrn.com/abstract=2701346
+--- Page 2 ---
+1. Introduction
+There are two complementary – and in some sense even competing – trends in modern
+quantitative trading. On the one hand, more and more market participants (e.g., quantitative
+traders, inter alia) employ sophisticated quantitative techniques to mine alphas.4 This results in
+ever fainter and more ephemeral alphas. On the other hand, technological advances allow to
+essentially automate (much of) the alpha harvesting process. This yields an ever increasing
+number of alphas, whose count can be in hundreds of thousands and even millions, and with
+the exponentially increasing progress in this field will likely be in billions before we know it…
+This proliferation of alphas – albeit mostly faint and ephemeral – allows combining them in
+a sophisticated fashion to arrive at a unified “mega-alpha”. It is then this “mega-alpha” that is
+actually traded – as opposed to trading individual alphas – with a bonus of automatic internal
+crossing of trades (and thereby crucial-for-profitability savings on trading costs, etc.), alpha
+portfolio diversification (which hedges against any subset of alphas going bust in any given time
+period), and so on. One of the challenges in combining alphas is the usual “too many variables,
+too few observations” dilemma. Thus, the alpha sample covariance matrix is badly singular.
+Also, naturally, quantitative trading is a secretive field and data and other information from
+practitioners is not readily available. This inadvertently creates an enigma around modern
+quant trading. E.g., with such a large number of alphas, are they not highly correlated with
+each other? What do these alphas look like? Are they mostly based on price and volume data,
+mean-reversion, momentum, etc.? How do alpha returns depend on volatility, turnover, etc.?
+In a previous paper [Kakushadze and Tulchinsky, 2015] took a step in demystifying the
+realm of modern quantitative trading by studying some empirical properties of 4,000 real-life
+alphas. In this paper we take 
+--- Page 3 ---
+We discuss some general features of our formulaic alphas in Section 2. These alphas are
+mostly “price-volume” (daily close-to-close returns, open, close, high, low, volume and vwap)
+based, albeit “fundamental” input is used in some of the alphas, including one alpha utilizing
+market cap, and a number of alphas employing some kind of a binary industry classification
+such as GICS, BICS, NAICS, SIC, etc., which are used to industry-neutralize various quantities.6
+We discuss empirical properties of our alphas in Section 3 based on data for individual alpha
+Sharpe ratio, turnover and cents-per-share, and also on a sample covariance matrix. The
+average holding period approximately ranges from 0.6 to 6.4 days. The average (median) pair-
+wise correlation of these alphas is low, 15.9% (14.3%). The returns are strongly correlated
+(cid:7)
+with the volatility , and as in [Kakushadze and Tulchinsky, 2015] we find an empirical scaling
+(cid:8)
+(cid:11)
+(cid:7) ~ (cid:8) (1)
+with for our 101 alphas. Furthermore, we find that the returns have no significant
+(cid:15) ≈ 0.76
+dependence on the turnover . This is a direct confirmation of an earlier result by [Kakushadze
+(cid:21)
+and Tulchinsky, 2015], which is based on a more indirect empirical analysis.7
+We further find empirically that the turnover per se has poor explanatory power for alpha
+correlations. This is not to say that the turnover does not add value in, e.g., modeling the
+covariance matrix via a factor model.8 A more precise statement is that pair-wise correlations
+of the alphas ( label the alphas, ) are not highly correlated with the
+(cid:22) (cid:25),(cid:26) = 1,…,(cid:28) (cid:28) (cid:25) ≠ (cid:26)
+(cid:23)(cid:24)
+product , where , and is an a priori arbitrary normalization constant.9
+ln( ) ln( ) = (cid:21) / " "
+(cid:23) (cid:24) (cid:23) (cid:23)
+We briefly conclude in Section 4. Appendix A contains our formulaic alphas with definitions
+of the functions, operators and input data used therein. Appendix B contains so
+--- Page 4 ---
+Very coarsely, one can think of alpha signals as based on mean-reversion or momentum.10
+A mean-reversion alpha has a sign opposite to the return on which it is based. E.g., a simple
+mean-reversion alpha is given by
+) )
+−ln(today s open / yesterday s close) (2)
+Here yesterday’s close is adjusted for any splits and dividends if the ex-date is today. The idea
+(or hope) here is that the stock will mean-revert and give back part of the gains (if today’s open
+is higher than yesterday’s close) or recoup part of the losses (if today’s open is lower than
+yesterday’s close). This is a so-called “delay-0” alpha. Generally, “delay-0” means that the time
+of some data (e.g., a price) used in the alpha coincides with the time during which the alpha is
+intended to be traded. E.g., the alpha (2) would ideally be traded at or, more realistically, as
+close as possible to today’s open. More broadly, this can be some other time, e.g., the close.11
+A simple example of a momentum alpha is given by
+)
+ln(yesterday′s close / yesterday s open) (3)
+Here it makes no difference if the prices are adjusted or not. The idea (or hope) here is that if
+the stock ran up (slid down) yesterday, the trend will continue today and the gains (losses) will
+be further increased. This is a so-called “delay-1” alpha if the intent is to trade it today (e.g.,
+starting at the open).12 Generally, “delay-1” means that the alpha is traded on the day
+subsequent to the date of the most recent data used in computing it. A “delay- ” alpha is
+2
+defined similarly, with counting the number of days by which the data used is out-of-sample.
+2
+In complex alphas elements of mean-reversion and momentum can be mixed, making them
+less distinct in this regard. However, one can think of smaller building blocks of such alphas as
+being based on mean-reversion or momentum. For instance, Alpha#101 in Appendix A is a
+delay-1 momentum alpha: if the stock runs up intraday (i.e., close > open and high > low), the
+next day one takes a long pos
+--- Page 5 ---
+3. Data and Empirical Properties of Alphas
+In this section we describe empirical properties of our formulaic alphas based on data
+proprietary to WorldQuant LLC, which is used here with its express permission. We provide as
+many details as possible within the constraints of the proprietary nature of this dataset.
+For our alphas we take the annualized daily Sharpe ratio , daily turnover , and cents-per-
+3 (cid:21)
+share . Let us label our alphas by the index , where is the number of
+4 (cid:25) ((cid:25) = 1,…,(cid:28)) (cid:28) = 101
+alphas. For each alpha, , and are defined via
+3 (cid:21) 4
+(cid:23) (cid:23) (cid:23)
+7
+(cid:23)
+3 = √252 (4)
+(cid:23)
+(cid:8)
+(cid:23)
+9
+(cid:23)
+(cid:21) = (5)
+(cid:23)
+:
+(cid:23)
+7
+(cid:23)
+4 = 100 (6)
+(cid:23)
+;
+(cid:23)
+Here: is the average daily P&L (in dollars); is the daily portfolio volatility; is the average
+7 (cid:8) ;
+(cid:23) (cid:23) (cid:23)
+daily shares traded (buys plus sells) by the -th alpha; is the average daily dollar volume
+(cid:25) 9
+(cid:23)
+traded; and is the total dollar investment in said alpha (the actual long plus short positions,
+:
+(cid:23)
+without leverage). More precisely, the principal of is constant; however, fluctuates due to
+: :
+(cid:23) (cid:23)
+the daily P&L. So, both and are adjusted accordingly (such that is constant) in Equation
+9 : :
+(cid:23) (cid:23) (cid:23)
+(4). The period of time over which this data is collected is Jan 4, 2010-Dec 31, 2013. For the
+same period we also take the sample covariance matrix of the realized daily returns for our
+<
+(cid:23)(cid:24)
+alphas. The number of observations in the time series is 1,006, and is nonsingular. From
+< <
+(cid:23)(cid:24) (cid:23)(cid:24)
+we read off the daily return volatility (cid:4) and the correlation matrix
+= = < (cid:22) = < / = =
+(cid:23) (cid:23)(cid:23) (cid:23)(cid:24) (cid:23)(cid:24) (cid:23) (cid:24)
+(where Note that , and the average14 daily return is given by .
+(cid:22) = 1). (cid:8) = = : (cid:7) = 7 / :
+(cid:23)(cid:23) (cid:23) (ci
+--- Page 6 ---
+significant dependence on the turnover here, while the average daily return is strongly
+(cid:21) (cid:7)
+(cid:23) (cid:23)
+correlated with the daily return volatility and we have the scaling property (1) with .
+= (cid:15) ≈ 0.76
+(cid:23)
+3.2. Does Turnover Explain Correlations?
+If we draw a parallel between alphas and stocks, then alpha turnover is analogous to stock
+liquidity, which is typically measured via an average daily dollar volume (ADDV).15 Log of ADDV
+is routinely used as a style risk factor16 in multifactor risk models17 for approximating stock
+portfolio covariance matrix structure, whose chief goal is to model the off-diagonal elements of
+the covariance matrix, that is, the pair-wise correlation structure.18 Following this analogy, we
+can ask if the turnover – or more precisely its log – has explanatory power for modeling alpha
+correlations.19 It is evident that using the turnover directly (as opposed to its log) would get us
+nowhere due to the highly skewed (roughly log-normal) turnover distribution (see Figure 1).
+To answer this question, recall that in a factor model the covariance matrix is modeled via
+G
+(cid:4)
+@ = A B + D E J E (7)
+(cid:23)(cid:24) (cid:23) (cid:23)(cid:24) (cid:23)F FH (cid:24)H
+F,HI(cid:2)
+Here: (cid:4) is the specific risk; is an factor loadings matrix corresponding to risk
+A E (cid:28)×L L ≪ (cid:28)
+(cid:23) (cid:23)F
+factors; and is a factor covariance matrix. In our case, we are interested in modeling the
+J
+FH
+correlation matrix and ascertaining whether the turnover has explanatory power for pair-
+(cid:22)
+(cid:23)(cid:24)
+wise correlations. Whether the volatility and turnover are correlated is a separate issue.
+So, our approach is to take one of the columns of the factor loadings matrix as . More
+ln((cid:21))
+(cid:23)
+precisely, a priori there is no reason why we should pick as opposed to , where
+ln((cid:21)) ln( )
+(cid:23) (cid:23)
+, and is some normalization factor. To deal with this, let us normalize such that
+= (cid:21)
+--- Page 7 ---
+symmetric matrix into a vector . This way we can construct four -vectors , and
+Y Y X (cid:22) O ,P
+(cid:23)(cid:24) Z Z Z Z
+. Now we can run a linear regression of over and . Note that is simply
+S (cid:22) O ,P S O = 1
+Z Z Z Z Z Z
+the intercept (the unit -vector), so this is a regression of over and with the intercept.
+X (cid:22) P S
+Z Z Z
+The results are summarized in Table 4. It is evident that the linear and bilinear (in )
+ln( )
+(cid:23)
+variables and have poor explanatory power for pair-wise correlations , while (the
+P S (cid:22) O
+Z Z Z Z
+intercept) simply models the average correlation . Recall that by construction and
+Mean((cid:22) ) P
+Z Z
+are orthogonal to , and these three explanatory variables are independent of each other.
+S O
+Z Z
+Let us emphasize that our conclusion does not necessarily mean the turnover adds no value
+in the factor model context, it only means that the turnover per se does not appear to help in
+modeling pair-wise alpha correlations. The above analysis does not address whether the
+turnover adds explanatory value to modeling variances, e.g., the specific risk.20 Thus, a linear
+regression of over (with the intercept) shows nonzero correlation between these
+ln(=) ln((cid:21))
+variables (see Table 5), albeit not very strong. To see if the turnover adds value via, e.g., the
+specific risk requires using certain proprietary methods outside of the scope of this paper.21
+4. Conclusions
+We emphasize that the 101 alphas we present here are not “toy” alphas but real-life trading
+alphas used in production. In fact, 80 of these alphas are in production as of this writing.22 To
+our knowledge, this is the first time such a large number of real-life explicit formulaic alphas
+appear in the literature. This should come as no surprise: naturally, quant trading is highly
+proprietary and secretive. Our goal here is to provide a glimpse into the complex world of
+modern and ever-evolving quantitative trading and help demystify it, to any degree possible.
+Technol
+--- Page 8 ---
+In this spirit, we end this paper with an 1832 poem by a Russian poet Mikhail Lermontov
+(translation from Russian by Zura Kakushadze, ca. 1993):
+The Sail
+A lonely sail seeming white,
+In misty haze mid blue sea,
+Be foreign gale seeking might?
+Why home bays did it flee?
+The sail’s bending mast is creaking,
+The wind and waves blast ahead,
+It isn’t happiness it’s seeking,
+Nor is it happiness it’s fled!
+Beneath are running ázure streams,
+Above are shining golden beams,
+But wishing storms the sail seems,
+As if in storms is peace it deems.
+Appendix A: Formulaic Alphas
+In this appendix, in Subsection A.1, we provide our 101 formulaic alphas. The formulas are
+also code once the functions and operators are defined. The functions and operators used in
+the alphas are defined in Subsection A.2. The input data is elaborated upon in Subsection A.3.
+A.1. Formulaic Expressions for Alphas
+Alpha#1: (rank(Ts_ArgMax(SignedPower(((returns < 0) ? stddev(returns, 20) : close), 2.), 5)) -
+0.5)
+Alpha#2: (-1 * correlation(rank(delta(log(volume), 2)), rank(((close - open) / open)), 6))
+Alpha#3: (-1 * correlation(rank(open), rank(volume), 10))
+Alpha#4: (-1 * Ts_Rank(rank(low), 9))
+Alpha#5: (rank((open - (sum(vwap, 10) / 10))) * (-1 * abs(rank((close - vwap)))))
+Alpha#6: (-1 * correlation(open, volume, 10))
+Alpha#7: ((adv20 < volume) ? ((-1 * ts_rank(abs(delta(close, 7)), 60)) * sign(delta(close, 7))) : (-1
+* 1))
+8
+Electronic copy available at: https://ssrn.com/abstract=2701346
+--- Page 9 ---
+Alpha#8: (-1 * rank(((sum(open, 5) * sum(returns, 5)) - delay((sum(open, 5) * sum(returns, 5)),
+10))))
+Alpha#9: ((0 < ts_min(delta(close, 1), 5)) ? delta(close, 1) : ((ts_max(delta(close, 1), 5) < 0) ?
+delta(close, 1) : (-1 * delta(close, 1))))
+Alpha#10: rank(((0 < ts_min(delta(close, 1), 4)) ? delta(close, 1) : ((ts_max(delta(close, 1), 4) < 0)
+? delta(close, 1) : (-1 * delta(close, 1)))))
+Alpha#11: ((rank(ts_max((vwap - close), 3)) + rank(ts_min((vwap - close), 3))) *
+rank(delta(volume, 3)))
+Alpha#12: (sign(delta(volume, 1)) * (-1 * delta(close, 1)))
+Alpha#13: (-1 * rank(covariance(rank(close), rank(volume), 5)))
+Alpha#14: ((-1 * rank(delta(returns, 3))) * correlation(open, volume, 10))
+Alpha#15: (-1 * sum(rank(correlation(rank(high), rank(volume), 3)), 3))
+Alpha#16: (-1 * rank(covariance(rank(high), rank(volume), 5)))
+Alpha#17: (((-1 * rank(ts_rank(close, 10))) * rank(delta(delta(close, 1), 1))) *
+rank(ts_rank((volume / adv20), 5)))
+Alpha#18: (-1 * rank(((stddev(abs((close - open)), 5) + (close - open)) + correlation(close, open,
+10))))
+Alpha#19: ((-1 * sign(((close - delay(close, 7)) + delta(close, 7)))) * (1 + rank((1 + sum(returns,
+250)))))
+Alpha#20: (((-1 * rank((open - delay(high, 1)))) * rank((open - delay(close, 1)))) * rank((open -
+delay(low, 1))))
+Alpha#21: ((((sum(close, 8) / 8) + stddev(close, 8)) < (sum(close, 2) / 2)) ? (-1 * 1) : (((sum(close,
+2) / 2) < ((sum(close, 8) / 8) - stddev(close, 8))) ? 1 : (((1 < (volume / adv20)) || ((volume /
+adv20) == 1)) ? 1 : (-1 * 1))))
+Alpha#22: (-1 * (delta(correlation(high, volume, 5), 5) * rank(stddev(close, 20))))
+Alpha#23: (((sum(high, 20) / 20) < high) ? (-1 * delta(high, 2)) : 0)
+Alpha#24: ((((delta((sum(close, 100) / 100), 100) / delay(close, 100)) < 0.05) ||
+((delta((sum(close, 100) / 100), 100) / delay(close, 100)) == 0.05)) ? (-1 * (close - ts_min(close,
+100))) : (-1 * delta(close, 3)))
+9
+Electronic copy available at: https://ssrn.com/abstract=2701346
+--- Page 10 ---
+Alpha#25: rank(((((-1 * returns) * adv20) * vwap) * (high - close)))
+Alpha#26: (-1 * ts_max(correlation(ts_rank(volume, 5), ts_rank(high, 5), 5), 3))
+Alpha#27: ((0.5 < rank((sum(correlation(rank(volume), rank(vwap), 6), 2) / 2.0))) ? (-1 * 1) : 1)
+Alpha#28: scale(((correlation(adv20, low, 5) + ((high + low) / 2)) - close))
+Alpha#29: (min(product(rank(rank(scale(log(sum(ts_min(rank(rank((-1 * rank(delta((close - 1),
+5))))), 2), 1))))), 1), 5) + ts_rank(delay((-1 * returns), 6), 5))
+Alpha#30: (((1.0 - rank(((sign((close - delay(close, 1))) + sign((delay(close, 1) - delay(close, 2)))) +
+sign((delay(close, 2) - delay(close, 3)))))) * sum(volume, 5)) / sum(volume, 20))
+Alpha#31: ((rank(rank(rank(decay_linear((-1 * rank(rank(delta(close, 10)))), 10)))) + rank((-1 *
+delta(close, 3)))) + sign(scale(correlation(adv20, low, 12))))
+Alpha#32: (scale(((sum(close, 7) / 7) - close)) + (20 * scale(correlation(vwap, delay(close, 5),
+230))))
+Alpha#33: rank((-1 * ((1 - (open / close))^1)))
+Alpha#34: rank(((1 - rank((stddev(returns, 2) / stddev(returns, 5)))) + (1 - rank(delta(close, 1)))))
+Alpha#35: ((Ts_Rank(volume, 32) * (1 - Ts_Rank(((close + high) - low), 16))) * (1 -
+Ts_Rank(returns, 32)))
+Alpha#36: (((((2.21 * rank(correlation((close - open), delay(volume, 1), 15))) + (0.7 * rank((open
+- close)))) + (0.73 * rank(Ts_Rank(delay((-1 * returns), 6), 5)))) + rank(abs(correlation(vwap,
+adv20, 6)))) + (0.6 * rank((((sum(close, 200) / 200) - open) * (close - open)))))
+Alpha#37: (rank(correlation(delay((open - close), 1), close, 200)) + rank((open - close)))
+Alpha#38: ((-1 * rank(Ts_Rank(close, 10))) * rank((close / open)))
+Alpha#39: ((-1 * rank((delta(close, 7) * (1 - rank(decay_linear((volume / adv20), 9)))))) * (1 +
+rank(sum(returns, 250))))
+Alpha#40: ((-1 * rank(stddev(high, 10))) * correlation(high, volume, 10))
+Alpha#41: (((high * low)^0.5) - vwap)
+Alpha#42: (rank((vwap - close)) / rank((vwap + close)))
+Alpha#43: (ts_rank((volume / adv20), 20) * ts_rank((-1 * delta(close, 7)), 8))
+

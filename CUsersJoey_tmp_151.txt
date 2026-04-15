@@ -1,0 +1,162 @@
+Total pages: 480
+--- Page 1 ---
+151
+TR ADING
+S TR ATEGIES
+Z U R A K A K U S H A D Z E
+J U A N A N D R É S S E R U R
+--- Page 2 ---
+151 Trading Strategies
+--- Page 3 ---
+é
+Zura Kakushadze Juan Andr s Serur
+(cid:129)
+151 Trading Strategies
+--- Page 4 ---
+Zura Kakushadze Juan Andrés Serur
+Quantigic SolutionsLLC Universidad delCEMA
+Stamford,CT, USA Buenos Aires,Argentina
+ISBN978-3-030-02791-9 ISBN978-3-030-02792-6 (eBook)
+https://doi.org/10.1007/978-3-030-02792-6
+LibraryofCongressControlNumber:2018958724
+©TheEditor(s)(ifapplicable)andTheAuthor(s),underexclusivelicensetoSpringerNatureSwitzerlandAG,
+partofSpringerNature2018
+This work is subject to copyright. All rights are solely and exclusively licensed by the Publisher, whether
+the whole or part of the material is concerned, specifically the rights of translation, reprinting, reuse
+of illustrations, recitation, broadcasting, reproduction on microfilms or in any other physical way, and
+transmission or information storage and retrieval, electronic adaptation, computer software, or by similar or
+dissimilarmethodologynowknownorhereafterdeveloped.
+Theuseofgeneraldescriptivenames,registerednames,trademarks,servicemarks,etc.inthispublicationdoes
+notimply,evenintheabsenceofaspecificstatement,thatsuchnamesareexemptfromtherelevantprotective
+lawsandregulationsandthereforefreeforgeneraluse.
+The publisher, the authors and the editors are safe to assume that the advice and information in this book
+arebelievedtobetrueandaccurateatthedateofpublication.Neitherthepublishernortheauthorsorthe
+editorsgiveawarranty,expressorimplied,withrespecttothematerialcontainedhereinorforanyerrorsor
+omissions that may have been made. The publisher remains neutral with regard to jurisdictional claims in
+published
+--- Page 5 ---
+ZK: To my mother Mila and my children Mirabelle and Maximilien
+JAS: To my parents, Claudio and Andrea, and my brother Emiliano
+--- Page 6 ---
+Contents
+1 Introduction and Summary 1
+References 3
+2 Options 5
+2.1 Generalities 5
+2.2 Strategy: Covered Call 7
+2.3 Strategy: Covered Put 7
+2.4 Strategy: Protective Put 8
+2.5 Strategy: Protective Call 8
+2.6 Strategy: Bull Call Spread 8
+2.7 Strategy: Bull Put Spread 9
+2.8 Strategy: Bear Call Spread 9
+2.9 Strategy: Bear Put Spread 10
+2.10 Strategy: Long Synthetic Forward 10
+2.11 Strategy: Short Synthetic Forward 10
+2.12 Strategy: Long Combo 11
+2.13 Strategy: Short Combo 11
+2.14 Strategy: Bull Call Ladder 12
+2.15 Strategy: Bull Put Ladder 12
+2.16 Strategy: Bear Call Ladder 13
+2.17 Strategy: Bear Put Ladder 13
+2.18 Strategy: Calendar Call Spread 14
+2.19 Strategy: Calendar Put Spread 14
+2.20 Strategy: Diagonal Call Spread 15
+vii
+--- Page 7 ---
+viii Contents
+2.21 Strategy: Diagonal Put Spread 16
+2.22 Strategy: Long Straddle 16
+2.23 Strategy: Long Strangle 17
+2.24 Strategy: Long Guts 17
+2.25 Strategy: Short Straddle 18
+2.26 Strategy: Short Strangle 18
+2.27 Strategy: Short Guts 18
+2.28 Strategy: Long Call Synthetic Straddle 19
+2.29 Strategy: Long Put Synthetic Straddle 19
+2.30 Strategy: Short Call Synthetic Straddle 20
+2.31 Strategy: Short Put Synthetic Straddle 20
+2.32 Strategy: Covered Short Straddle 20
+2.33 Strategy: Covered Short Strangle 21
+2.34 Strategy: Strap 21
+2.35 Strategy: Strip 22
+2.36 Strategy: Call Ratio Backspread 22
+2.37 Strategy: Put Ratio Backspread 22
+2.38 Strategy: Ratio Call Spread 23
+2.39 Strategy: Ratio Put Spread 23
+fl
+2.40 Strategy: Long Call Butter y 24
+fi fl
+Strategy: Modi ed Call Butter y 24
+fl
+2.41 Strategy: Long Put Butter y 25
+fi fl
+Strategy: Modi ed Put Butter y 25
+fl
+2.42 Strategy: Short Call Butter y 25
+fl
+2.43 Strategy: Short Put Butter y 26
+“ ” fl
+2.44 Strategy: Long Iron Butter y 26
+“ ” fl
+2.45 Strategy: Short Iron Butter y 27
+2.46 Strategy: Long Call Condor 27
+2.47 Strategy: Long Put Condor 28
+2.48 Strategy: Short Call Condor 28
+2.49 Strategy: Short Put Condor 28
+2.50 Strategy: Long Iron Condor 29
+2.51 Strategy: Short Iron Condor 29
+2.52 Strategy: Long Box 30
+2.53 Strategy: Collar 30
+2.54 Strategy: Bullish Short Seagull Spread 31
+2.55 Strategy: Bearish Long Seagull Spread 31
+2.56 Strategy: Bearish Short Seagull Spread 32
+2.57 Strategy: Bullish Long Seagull Spread 32
+References 33
+--- Page 8 ---
+Contents ix
+3 Stocks 41
+3.1 Strategy: Price-Momentum 41
+3.2 Strategy: Earnings-Momentum 43
+3.3 Strategy: Value 44
+3.4 Strategy: Low-Volatility Anomaly 44
+3.5 Strategy: Implied Volatility 45
+3.6 Strategy: Multifactor Portfolio 45
+3.7 Strategy: Residual Momentum 46
+3.8 Strategy: Pairs Trading 48
+—
+3.9 Strategy: Mean-Reversion Single Cluster 49
+—
+Strategy: Mean-Reversion Multiple Clusters 50
+—
+3.10 Mean-Reversion Weighted Regression 52
+3.11 Strategy: Single Moving Average 53
+3.12 Strategy: Two Moving Averages 54
+3.13 Strategy: Three Moving Averages 54
+3.14 Strategy: Support and Resistance 55
+3.15 Strategy: Channel 55
+—
+3.16 Strategy: Event-Driven M&A 56
+—
+3.17 Strategy: Machine Learning Single-Stock KNN 57
+—
+3.18 Strategy: Statistical Arbitrage Optimization 59
+Dollar-Neutrality 61
+3.19 Strategy: Market-Making 63
+3.20 Strategy: Alpha Combos 64
+3.21 A Few Comments 66
+References 67
+4 Exchange-Traded Funds (ETFs) 87
+4.1 Strategy: Sector Momentum Rotation 87
+fi
+Strategy: Sector Momentum Rotation with MA lter 88
+Strategy: Dual-Momentum Sector Rotation 88
+4.2 Strategy: Alpha Rotation 89
+4.3 Strategy: R-squared 89
+4.4 Strategy: Mean-reversion 90
+4.5 Strategy: Leveraged ETFs (LETFs) 91
+4.6 Strategy: Multi-asset Trend Following 91
+References 92
+5 Fixed Income 99
+5.1 Generalities 99
+Zero-Coupon Bonds 99

@@ -1,0 +1,2845 @@
+=== Page 101 ===
+3 Stocks 85
+Teixeira,L.A.,&deOliveira,A.L.I.(2010).AMethodforAutomaticStockTrading
+CombiningTechnicalAnalysisandNearestNeighborClassification.ExpertSystems
+withApplications,37(10),6885–6890.
+Thomsett,M.C.(2003).SupportandResistanceSimplified.Columbia,MD:Market-
+placeBooks.
+Tsai,C.F.,&Hsiao,Y.C.(2010).CombiningMultipleFeatureSelectionMethodsfor
+StockPrediction:Union,Intersection,andMulti-intersectionApproaches.Decision
+SupportSystems,50(1),258–269.
+Tulchinsky, I., et al. (2015). Finding Alphas: A Quantitative Approach to Building
+TradingStrategies.NewYork,NY:Wiley.
+Vaitonis,M.,&Masteika,S.(2016).ResearchinHighFrequencyTradingandPairs
+SelectionAlgorithmwithBalticRegionStocks.InG.Dregvaite&R.Damasevicius
+(Eds.),Proceedingsofthe22ndInternationalConferenceonInformationandSoftware
+Technologies(ICIST2016) (pp.208–217).Cham,Switzerland:Springer.
+Van Kervel, V., & Menkveld, A. J. (2017). High-FrequencyTrading Around Large
+Institutional Orders. Journal of Finance (forthcoming). Available online: https://
+ssrn.com/abstract=2619686.
+Van Oord, J. A. (2016). Essays on Momentum Strategies in Finance. Ph.D. thesis,
+ErasmusUniversity,Rotterdam,TheNetherlands.Availableonline:https://repub.
+eur.nl/pub/80036/EPS2016380F-A9789058924445.pdf.
+Van Tassel, P. (2016). Merger Options and Risk Arbitrage (Federal Reserve Bank of
+NewYorkStaffReports,No.761).Availableonline:https://www.newyorkfed.org/
+medialibrary/media/research/staff_reports/sr761.pdf?la=en.
+Vanstone,B.,&Finnie,G.(2009).AnEmpiricalMethodologyforDevelopingStock-
+market Trading Systems Using Artificial Neural Networks. Expert Systems with
+Applications,36(3),6668–6680.
+Vidyamurthy,G.(2004).PairsTrading:QuantitativeMethodsandAnalysis.Hoboken,
+NJ:Wiley.
+Walkling,R.A.(1985).PredictingTenderOfferSuccess:ALogisticAnalysis.Journal
+ofFinancialandQuantitativeAnalysis,20(4),461–478.
+Wang, K. Q. (2005). Multifactor Evaluation of Style Rotation. Journal of Financial
+andQuantitativeAnalysis,40(2),349–372.
+Watts, R. L. (1978). Systematic ‘Abnormal’ Returns After Quarterly Earnings
+Announcements.JournalofFinancialEconomics,6(2–3),127–150.
+Weller,P.A.,Friesen,G.C.,&Dunham,L.M.(2009).PriceTrendsandPatternsin
+TechnicalAnalysis:ATheoreticalandEmpiricalExamination.JournalofBanking
+&Finance,6(33),1089–1100.
+Xie,W.,Liew,Q.R.,Wu,Y.,&Zou,X.(2014).PairsTradingwithCopulas (Working
+Paper).Availableonline:https://ssrn.com/abstract=2383185.
+Xing, Y., Zhang, X., & Zhao, R. (2010). What Does Individual Option Volatility
+SmirkTellUsAboutFutureEquityReturns?JournalofFinancialandQuantitative
+Analysis,45(3),641–662.
+Yao,Y.(2012).Momentum,Contrarian,andtheJanuarySeasonality.JournalofBank-
+ing&Finance,36(10),2757–2769.
+=== Page 102 ===
+86 Z.KakushadzeandJ.A.Serur
+Yao, J., &Tan, C. L. (2000). A Case Study on Using Neural Networks to Perform
+TechnicalForecastingofForex.Neurocomputing,34(1–4),79–98.
+Yao, J.,Tan, C. L., & Poh, H. L. (1999). Neural Networks forTechnical Analysis:
+A Study on KLCI. International Journal ofTheoretical and Applied Finance, 2(2),
+221–241.
+Yoshikawa,D.(2017).AnEntropicApproachforPairTrading.Entropy,19(7),320.
+Yu, L.,Wang, S., & Lai, K. K. (2005). Mining Stock MarketTendency Using GA-
+BasedSupportVectorMachines.InX.Deng&Y.Ye(Eds.),InternetandNetwork
+Economics.WINE2005.LectureNotesinComputerScience(Vol.3828,pp.336–
+345).Berlin,Germany:Springer.
+Zakamulin, V. (2014).The Real-Life Performance of MarketTiming with Moving
+Average andTime-Series Momentum Rules. Journal of Asset Management, 15(4),
+261–278.
+Zakamulin, V. (2015). A Comprehensive Look at the Empirical Performance of Mov-
+ingAverageTradingStrategies (WorkingPaper).Availableonline:https://ssrn.com/
+abstract=2677212.
+Zapranis, A., & Tsinaslanidis, P. E. (2012). Identifying and Evaluating Horizontal
+SupportandResistanceLevels:AnEmpiricalStudyonUSStockMarkets.Applied
+FinancialEconomics,22(19),1571–1585.
+Zeng,Z.,&Lee,C.G.(2014).PairsTrading:OptimalThresholdsandProfitability.
+QuantitativeFinance,14(11),1881–1893.
+Zhang,L.(2005).TheValuePremium.JournalofFinance,60(1),67–103.
+=== Page 103 ===
+4
+Exchange-Traded Funds (ETFs)
+4.1 Strategy: Sector Momentum Rotation
+Empirical evidence suggests that the momentum effect exists not only for
+individual stocks but also for sectors and industries.1 A sector momentum
+rotation strategy is based on overweighing holdings in outperforming sectors
+and underweighing holdings in underperforming sectors, where the “outper-
+formance”and“underperformance”arebasedonmomentumduringthepast
+T-month formation period (which typically ranges from 6 to 12 months).
+ETFs concentrated in specific sectors/industries offer a simple way to imple-
+ment sector/industry rotation without having to buy or sell a large number
+of underlying stocks. Similarly to Sect.3.1, as a measure of sector/industry
+momentum,wecanusethecorrespondingETF’scumulativereturn:
+P(t)
+Rcum(t) = i −1 (4.1)
+i P(t +T)
+i
+Here, P(t) isthepriceoftheETFlabeledbyi.(Asabove,t+T isT months
+i
+inthepastw.r.t.t.)Rightaftertimet,thetradercan,e.g.,buytheETFsinthe
+topdecileby
+Rcum(t)
+andholdtheportfolioforaholdingperiod(typically1
+i
+to3months).Dollar-neutralstrategiescanalsobeconstructedby,e.g.,buying
+1Forsomepertinentliterature,see,e.g.,CavagliaandVadim(2002),Conoveretal.(2008),Doeswijk
+andVliet(2011),DolvinandKirby(2011),GaoandRen(2015),Hongetal.(2007),LevisandLiodakis
+(1999),MoskowitzandGrinblatt(1999),O’Neal(2000),SeftonandScowcroft(2005),Simpsonand
+Grossman (2016), Sorensen and Burke (1986), Stovall (1996), Swinkels (2002), Szakmary and Zhou
+(2015),Wangetal.(2017).
+©TheAuthor(s)2018 87
+Z.KakushadzeandJ.A.Serur,151TradingStrategies,
+https://doi.org/10.1007/978-3-030-02792-6_4
+=== Page 104 ===
+88 Z.KakushadzeandJ.A.Serur
+ETFsinthetopdecileandshortingETFsinthebottomdecile(asstocks,ETFs
+canbeshorted).2
+Strategy: Sector Momentum Rotation with MA filter
+This is a variation/refinement of the sector momentum rotation strategy.
+AnETFinthetop(bottom)decileisbought(sold)onlyifitpassesanadditional
+filterbasedonamovingaverageMA
+(T (cid:2))
+ofthisETF’sprice:
+(cid:2)
+Buytop-decileETFsonlyif P > MA (T (cid:2))
+Rule
+= (4.2)
+Shortbottom-decileETFsonlyif P < MA (T (cid:2))
+Here, P is the ETF’s price at the time of the transaction, and MA (T (cid:2)) is
+(cid:2) (cid:2)
+computedusingdailyprices(T canbutneednotbeequal T;e.g., T canbe
+100–200days).
+Strategy: Dual-Momentum Sector Rotation
+In long-only strategies, to mitigate the risk of buying ETFs when the broad
+market is trending down, relative (i.e., cross-sectional) momentum of sector
+ETFscanbeaugmentedbytheabsolute(i.e.,time-series)momentumof,e.g.,a
+broadmarketindexETF(see,e.g.,Antonacci2014,2017).3So,alongposition
+based on the sector rotation signal (discussed above) is established only if the
+broad market index has an upward trend; otherwise, the total available funds
+are invested into an ETF (e.g., gold orTreasury ETF) uncorrelated with the
+broadmarketindex:
+(cid:2)
+Buytop-decileETFsif P > MA (T (cid:2))
+Rule
+= (4.3)
+BuyanuncorrelatedETFif P ≤ MA (T (cid:2))
+Here, P isthebroadmarketindexETF’spriceatthetimeofthetransaction,
+andMA (T (cid:2)) isthemovingaverageofthisETF’sprice.Typically,T (cid:2) is100–200
+days.
+2For some literature on ETFs, see, e.g., Agapova (2011), Aldridge (2016), Ben-David et al. (2017),
+Bhattacharya et al. (2017), Buetow and Henderson (2012), Clifford et al. (2014), Hill et al. (2015),
+Krauseetal.(2014),Madhavan(2016),MaduraandNgo(2008),Nyaradi(2010),Oztekinetal.(2017).
+3Forsomeadditionalliteratureonrelativemomentum,absolutemomentumandrelatedtopics,see,e.g.,
+Ahnetal.(2003),BandarchukandHilscher(2013),Berketal.(1999),Cooperetal.(2004),Famaand
+French(2008),Hurstetal.(2017),Johnson(2002),LiuandZhang(2008),Moskowitzetal.(2012),Sagi
+andSeasholes(2007),Schwert(2003),Zhang(2006).
+=== Page 105 ===
+4 Exchange-TradedFunds(ETFs) 89
+4.2 Strategy: Alpha Rotation
+Thisisthesameasthesectormomentumrotationstrategywiththecumulative
+ETFreturns Rcum replacedbyETFalphas α ,whicharetheregressioncoeffi-
+i i
+cientscorrespondingtotheinterceptinaserialregressionoftheETFreturns4
+R (t) over, e.g., the 3 Fama–French factors MKT (t) , SMB (t) , HML (t) (see
+i
+fn.16inSect.3.7)5:
+R i (t) = α i +β 1,i MKT (t)+β 2,i SMB (t)+β 3,i HML (t)+(cid:4) i (t) (4.4)
+4.3 Strategy: R-squared
+Empirical studies for mutual funds (see, e.g., Amihud and Goyenko 2013;
+Ferson and Mo 2016) and ETFs (see, e.g., Garyn-Tal 2014a, b) suggest
+that augmenting alpha by an indicator based on R2 of a serial regression
+of the returns R (t) over multiple factors, e.g., the 3 Fama–French factors
+i
+MKT
+(t)
+, SMB
+(t)
+, HML
+(t)
+plus Carhart’s momentum factor MOM
+(t)
+(see
+fn. 16 in Sect.3.7), adds value in forecasting future returns.Thus, from the
+serialregression
+R i (t) = α i +β 1,i MKT (t)+β 2,i SMB (t)+β 3,i HML (t)
++β
+4,i MOM
+(t)+(cid:4)
+i
+(t) (4.5)
+α
+wecanestimate (theregressioncoefficientscorrespondingtotheintercept)
+i
+andtheregression R2,whichisdefinedas(“SS”standsfor“sumofsquares”):
+SS
+R2 = 1− res (4.6)
+SS
+tot
+(cid:3)N
+SS
+= (cid:4)2(t) (4.7)
+res i
+i=1
+4Typically,theestimationperiodis1year,andRi (t)aredailyorweeklyreturns.
+5AlphahereisJensen’salphadefinedforETFreturnsasopposedtomutualfundreturnsasinJensen
+(1968).ForsomeadditionalliteraturerelatedtoJensen’salpha,see,e.g.,BollenandBusse(2005),Droms
+andWalker(2001),Eltonetal.(1996),GoetzmannandIbbotson(1994),GrinblattandTitman(1992),
+JanandHung(2004).
+=== Page 106 ===
+90 Z.KakushadzeandJ.A.Serur
+(cid:3)N
+SS
+= (R (t)− R(t))2 (4.8)
+tot i
+i=1
+(cid:3)N
+1
+R(t) = R (t) (4.9)
+i
+N
+i=1
+AnR-squaredstrategythenamountstooverweighingETFswithhigher“selec-
+tivity”(definedas1− R2 [AmihudandGoyenko2013])andunderweighing
+ETFswithlower“selectivity”.E.g.,onecanfirstsortETFsintoquintilesbyR2,
+and then sort ETFs in each such quintile into further sub-quintiles by alpha
+(resulting in 25 groups of ETFs). One can then, e.g., buy ETFs in the group
+correspondingtothelowest R2quintileanditshighestalphasub-quintileand
+sellETFsinthegroupcorrespondingtothehighest R2 quintileanditslowest
+alphasub-quintile.Othervariationsarepossible.Finally,theestimationperiod
+and the returns for R2 can be the same as in the alpha rotation strategy (see
+Sect.4.2 and fn. 4). However, longer estimation periods can be considered,
+especiallyif R (t) aremonthlyreturns.6
+i
+4.4 Strategy: Mean-reversion
+One way (among myriad others) to construct a mean-reversion strategy for
+ETFsistousetheInternalBarStrength(IBS)basedonthepreviousday’sclose
+P ,high P andlow P prices7:
+C H L
+P − P
+IBS
+= C L (4.10)
+P − P
+H L
+NotethatIBSrangesfrom0to1.8 AnETFcanbethoughtofasbeing“rich”
+if its IBS is close to 1, and as “cheap” if its IBS is close to 0. Upon sorting a
+universeofETFscross-sectionallybyIBS,adollar-neutralstrategycan,e.g.,be
+constructedbysellingETFsinthetopdecileandbuyingETFsinthebottom
+6Also,notethatinAmihudandGoyenko(2013) R2 isameasureofactivemanagementofamutual
+fund.InGaryn-Tal(2014a,b) R2 isappliedtoactivelymanagedETFs.Forsomeadditionalliterature
+onactivelymanagedETFs,see,e.g.,Mackintosh(2017),Meziani(2015),Rompotis(2011a,b),Schizas
+(2014),SherrillandUpton(2018).
+7See,e.g.,Pagonidis(2014).Forsomeadditionalrelatedliterature,see,e.g.,Brownetal.(2018),Caginalp
+etal.(2014),Chan(2013),Dunisetal.(2013),Laietal.(2016),LevyandLieberman(2013),Marshall
+etal.(2013),Rudyetal.(2010),Schizasetal.(2011),Smithetal.(2015),YuandWebb(2014).
+8AnequivalentbutmoresymmetricalmeasureisY = IBS−1/2 = (PC − P∗ )/(PH − PL ),where
+P∗ =(PH +PL )/2.NotethatY rangesfrom1/2forPC = PH to−1/2forPC = PL.
+=== Page 107 ===
+4 Exchange-TradedFunds(ETFs) 91
+decile.Aswithstockstrategiesdiscussedabove,weightscanbeuniformforall
+longandallshortETFs,respectively,ornonuniform,e.g.,basedonhistorical
+ETF volatilities. Furthermore, mean-reversion strategies we discussed above
+forstockscanalsobeadaptedtoETFs.
+4.5 Strategy: Leveraged ETFs (LETFs)
+A leveraged (inverse) ETF seeks to double or triple (the inverse of) the daily
+return of its underlying index.9 To maintain a daily leverage of 2× or 3× ,
+LETFsrebalanceeveryday,whichrequiresbuyingonthedayswhenthemarket
+is up and selling when the market is down.This can result in a negative drift
+in the long term, which can be exploited by shorting both a leveraged ETF
+and a leveraged inverse ETF (both with the same leverage and for the same
+underlyingindex)andinvestingtheproceedsinto,e.g.,aTreasuryETF.This
+strategy can have a significant downside risk in the short term if one of the
+shortETFlegshasasizablepositivereturn.
+4.6 Strategy: Multi-asset Trend Following
+OneallureofETFsistheirdiversificationpower:ETFsallowtogainexposure
+todifferentsectors,countries,assetclasses,factors,etc.,bytakingpositionsin
+a relatively small number of ETFs (as opposed to taking positions in a large
+numberofunderlyinginstruments,e.g.,thousandsofstocks).Here,wefocus
+on long-only trend-following portfolios. One needs to determine the weight
+w
+of each ETF. One (but by far not the only) way to fix these weights is
+i
+as follows. First, as in the sector momentum rotation strategy, we compute
+cumulative returns Rcum (over some period T, e.g., 6–12 months). We only
+i
+take ETFs with positive Rcum. If desired, optionally, we can further filter
+i
+out ETFs as in the sector momentum rotation strategy with an MA filter,
+by keeping only the ETFs whose last closing prices P are higher than their
+i
+correspondinglong-termmovingaveragesMA
+(T (cid:2))
+(typically,theMAlength
+i
+T (cid:2) is 100–200 days). Now, instead of taking ETFs in the top decile by Rcum
+i
+(asinthesectormomentumrotationstrategy),wecanassignnonzeroweights
+9ForsomeliteratureonleveragedETFs,seee.g.,AvellanedaandZhang(2010),Baietal.(2015),Charupat
+andMiu(2011),ChengandMadhavan(2010),IvanovandLenkey(2014),Jarrow(2010),Jiangand
+Peterburgsky(2017),Luetal.(2012),Shumetal.(2016),TangandXu(2013),Trainor(2010),Tuzun
+(2013).
+=== Page 108 ===
+92 Z.KakushadzeandJ.A.Serur
+w
+toallremainingETFs,whosenumberinthiscontextisrelativelysmallto
+i
+beginwithbydesign.Theweightscan,e.g.,beassignedasfollows:
+w = γ Rcum (4.11)
+i 1 i
+w = γ Rcum/σ (4.12)
+i 2 i i
+w = γ Rcum/σ2 (4.13)
+i 3 i i
+σ
+Here: is the historical volatility; and the overall normalization coeffi-
+i
+γ ,γ ,γ
+cients in each case are computed based on the requirement that
+(cid:4) 1 2 3
+i N =1 w i =1(where N isthenumberofETFsinourportfolioafterallfilters
+areapplied,i.e.,thosewithnonzeroweights).Thus,theweightsinEq.(4.11)
+aresimplyproportionaltothepastcumulativereturns Rcum,whicharetaken
+i
+as the measure of momentum, so the expected returns are also given by (or,
+more precisely, proportional to) Rcum.The issue with this weighting scheme
+i
+is that it overweighs volatile ETFs as on average Rcum ∝ σ . The weights
+i i
+in Eq.(4.12) mitigate this, while the weights in Eq.(4.13) actually optimize
+the Sharpe ratio of the ETF portfolio assuming a diagonal covariance matrix
+C = diag (σ2) for the ETF returns, i.e., by ignoring their correlations.10
+ij i
+Imposingbounds
+w ≤ wmax
+canfurthermitigateoverweighing.
+i i
+References
+Agapova, A. (2011). Conventional Mutual Funds Versus Exchange-Traded Funds.
+JournalofFinancialMarkets,14(2),323–343.
+Ahn,D.-H.,Conrad,J.,&Dittmar,R.(2003).RiskAdjustmentandTradingStrate-
+gies.ReviewofFinancialStudies,16(2),459–485.
+Aldridge, I. (2016). ETFs, High-Frequency Trading, and Flash Crashes. Journal of
+PortfolioManagement,43(1),17–28.
+Amihud,Y.,&Goyenko,R.(2013).MutualFund’s R2 asPredictorofPerformance.
+ReviewofFinancialStudies,26(3),667–694.
+Antonacci, G. (2014). Dual Momentum Investing: An Innovative Strategy for Higher
+ReturnswithLowerRisk.NewYork,NY:McGraw-Hill.
+Antonacci,G.(2017).RiskPremiaHarvestingThroughDualMomentum.Journalof
+Management&Entrepreneurship,11(1),27–55.
+Avellaneda, M., & Zhang, S. (2010). Path-Dependence of Leveraged ETF Returns.
+JournalonFinancialMathematics,1(1),586–603.
+10For some literature on multi-asset portfolios, dynamic asset allocation and related topics, see, e.g.,
+Bekkersetal.(2009),BlackandLitterman(1992),DetempleandRindisbacher(2010),Doeswijketal.
+(2014), Faber (2015, 2016), Mladina (2014), Petre (2015), Sassetti andTani (2006), Sharpe (2009),
+SharpeandPerold(2009),Sørensen(1999),TripathiandGarg(2016),Wu(2003),Zakamulin(2014).
+=== Page 109 ===
+4 Exchange-TradedFunds(ETFs) 93
+Bai,Q.,Bond,S.A.,&Hatch,B.C.(2015).TheImpactofLeveragedandInverse
+ETFsonUnderlyingRealEstateReturns.RealEstateEconomics,43(1),37–66.
+Bandarchuk, P., & Hilscher, J. (2013). Sources of Momentum Profits: Evidence on
+theIrrelevanceofCharacteristics.ReviewofFinance,17(2),809–845.
+Bekkers,N.,Doeswijk,R.Q.,&Lam,T.W.(2009).StrategicAssetAllocation:Deter-
+miningtheOptimalPortfoliowithTenAssetClasses.JournalofWealthManagement,
+12(3),61–77.
+Ben-David, I., Franzoni, F. A., & Moussawi, R. (2017). Do ETFs Increase
+Volatility? Journal of Finance (forthcoming). Available online: https://ssrn.com/
+abstract=1967599.
+Berk, J., Green, R., & Naik, V. (1999). Optimal Investment, Growth Options and
+SecurityReturns.JournalofFinance,54(5),1153–1608.
+Bhattacharya,U.,Loos,B.,Meyer,S.,&Hackethal,A.(2017).AbusingETFs.Review
+ofFinance,21(3),1217–1250.
+Black,F.,&Litterman,R.(1992).GlobalPortfolioOptimization.FinancialAnalysts
+Journal,48(5),28–43.
+Bollen, N. P. B., & Busse, J. A. (2005). Short-Term Persistence in Mutual Fund
+Performance.ReviewofFinancialStudies,18(2),569–597.
+Brown,D.C.,Davies,S.,&Ringgenberg,M.(2018).ETFArbitrageandReturnPre-
+dictability (WorkingPaper).Availableonline:https://ssrn.com/abstract=2872414.
+Buetow,G.W.,&Henderson,B.J.(2012).AnEmpiricalAnalysisofExchange-Traded
+Funds.JournalofPortfolioManagement,38(4),112–127.
+Caginalp,G.,DeSantis,M.,&Sayrak,A.(2014).TheNonlinearPriceDynamicsof
+USEquityETFs.JournalofEconometrics,183(2),193–201.
+Cavaglia,S.,&Vadim,M.(2002).Cross-Industry,CrossCountryAllocation.Finan-
+cialAnalystsJournal,58(6),78–97.
+Chan,E.P.(2013).AlgorithmicTrading:WinningStrategiesandTheirRationale.Hobo-
+ken,NJ:Wiley.
+Charupat,N.,&Miu,P.(2011).ThePricingandPerformanceofLeveragedExchange-
+TradedFunds.JournalofBanking&Finance,35(4),966–977.
+Cheng, M., & Madhavan, A. (2010). The Dynamics of Leveraged and Inverse
+Exchange-TradedFunds.JournalofInvestmentManagement,7(4),43–62.
+Clifford, C. P., Fulkerson, J. A., & Jordan, B. D. (2014).What Drives ETF Flows?
+FinancialReview,49(3),619–642.
+Conover,C.M.,Jensen,G.,Johnson,R.,&Mercer,M.(2008).SectorRotationand
+MonetaryConditions.JournalofInvesting,28(1),34–46.
+Cooper,M.J.,Gutierrez,R.C.,Jr.,&Hameed,A.(2004).MarketStatesandMomen-
+tum.JournalofFinance,59(3),1345–1365.
+Detemple, J., & Rindisbacher, M. (2010). Dynamic Asset Allocation: Portfolio
+DecompositionFormulaandApplications.ReviewofFinancialStudies,23(1),25–
+100.
+Doeswijk,R.,Lam,T.,&Swinkels,L.(2014).TheGlobalMulti-assetMarketPort-
+folio,1959–2012.FinancialAnalystsJournal,70(2),26–41.
+=== Page 110 ===
+94 Z.KakushadzeandJ.A.Serur
+Doeswijk,R.,&vanVliet,P.(2011).GlobalTacticalSectorAllocation:AQuantitative
+Approach.JournalofPortfolioManagement,28(1),29–47.
+Dolvin,S.,&Kirby,J.(2011).MomentumTradinginSectorETFs.JournalofIndex
+Investing,2(3),50–57.
+Droms, W. G., & Walker, D. A. (2001). Performance Persistence of International
+MutualFunds.GlobalFinanceJournal,12(2),237–248.
+Dunis,C.,Laws,J.,&Rudy,J.(2013,October).MeanReversionBasedonAutocor-
+relation:AComparisonUsingtheS&P100ConstituentStocksandthe100Most
+LiquidETFs.ETFRisk,pp.36–41.
+Elton,E.J.,Gruber,M.J.,&Blake,C.R.(1996).ThePersistenceofRisk-Adjusted
+MutualFundPerformance.JournalofBusiness,69(2),133–157.
+Faber,M.(2015).LearningtoPlayOffenseandDefense:CombiningValueandMomen-
+tum from the Bottom Up, and the Top Down (Working Paper). Available online:
+https://ssrn.com/abstract=2669202.
+Faber,M.(2016).TheTrinityPortfolio:ALong-TermInvestingFrameworkEngineeredfor
+Simplicity,Safety,andOutperformance (WorkingPaper).Availableonline:https://
+ssrn.com/abstract=2801856.
+Fama,E.F.,&French,K.R.(2008).DissectingAnomalies.JournalofFinance,63(4),
+1653–1678.
+Ferson, W., & Mo, H. (2016). Performance Measurement with Selectivity, Market
+andVolatilityTiming.JournalofFinancialEconomics,121(1),93–110.
+Gao, B., & Ren, R.-E. (2015). A New Sector Rotation Strategy and Its Performance
+Evaluation: Based on a Principal Component Regression Model (Working Paper).
+Availableonline:https://ssrn.com/abstract=2628058.
+Garyn-Tal,S.(2014a).AnInvestmentStrategyinActiveETFs.JournalofIndexInvest-
+ing,4(1),12–22.
+Garyn-Tal,S.(2014b).ExplainingandPredictingETFsAlphas:TheR2Methodology.
+JournalofIndexInvesting,4(4),19–32.
+Goetzmann,W.N.,&Ibbotson,R.G.(1994).DoWinnersRepeat?JournalofPortfolio
+Management,20(2),9–18.
+Grinblatt, M., &Titman, S. (1992).The Persistence of Mutual Fund Performance.
+JournalofFinance,47(5),1977–1984.
+Hill,J.M.,Nadig,D.,&Hougan,M.(2015).AComprehensiveGuidetoExchange-
+TradedFunds(ETFs).ResearchFoundationPublications,2015(3),1–181.
+Hong, H.,Torous, W., & Valkanov, R. (2007). Do Industries Lead Stock Markets?
+JournalofFinancialEconomics,83(2),367–396.
+Hurst,B.,Ooi,Y.H.,&Pedersen,L.H.(2017).ACenturyofEvidenceonTrend-
+FollowingInvesting.JournalofPortfolioManagement,44(1),15–29.
+Ivanov,I.T.,&Lenkey,S.L.(2014).AreConcernsAboutLeveragedETFsOverblown?
+FinanceandEconomicsDiscussionSeries(FEDS),PaperNo.2014-106.Washington,
+DC:BoardofGovernorsoftheFederalReserveSystem.Availableonline:https://
+www.federalreserve.gov/econresdata/feds/2014/files/2014106pap.pdf.
+Jan,T.C.,&Hung,M.W.(2004).Short-RunandLong-RunPersistenceinMutual
+Funds.JournalofInvesting,13(1),67–71.
+=== Page 111 ===
+4 Exchange-TradedFunds(ETFs) 95
+Jarrow, R. A. (2010). Understanding the Risk of Leveraged ETFs. Finance Research
+Letters,7(3),135–139.
+Jensen,M.C.(1968).ThePerformanceofMutualFundsinthePeriod1945–1964.
+JournalofFinance,23(2),389–416.
+Jiang,X.,&Peterburgsky,S.(2017).InvestmentPerformanceofShortedLeveraged
+ETFPairs.AppliedEconomics,49(44),4410–4427.
+Johnson,T.C.(2002).RationalMomentumEffects.JournalofFinance,57(2),585–
+608.
+Krause, T., Ehsani, S., & Lien, D. (2014). Exchange-Traded Funds, Liquidity and
+Volatility.AppliedFinancialEconomics,24(24),1617–1630.
+Lai, H.-C.,Tseng,T.-C., & Huang, S.-C. (2016). CombiningValue Averaging and
+Bollinger Band for an ETF Trading Strategy. Applied Economics, 48(37), 3550–
+3557.
+Levis,M.,&Liodakis,M.(1999).TheProfitabilityofStyleRotationStrategiesinthe
+UnitedKingdom.JournalofPortfolioManagement,26(1),73–86.
+Levy, A., & Lieberman, O. (2013). Overreaction of Country ETFs to US Market
+Returns:Intradayvs.DailyHorizonsandtheRoleofSynchronizedTrading.Journal
+ofBanking&Finance,37(5),1412–1421.
+Liu,L.X.,&Zhang,L.(2008).MomentumProfits,FactorPricing,andMacroeco-
+nomicRisk.ReviewofFinancialStudies,21(6),2417–2448.
+Lu,L.,Wang,J.,&Zhang,G.(2012).LongTermPerformanceofLeveragedETFs.
+FinancialServicesReview,21(1),63–80.
+Mackintosh, P. (2017). It’s All About Active ETFs. Journal of Index Investing, 7(4),
+6–15.
+Madhavan,A.N.(2016).Exchange-TradedFundsandtheNewDynamicsofInvesting.
+Oxford,UK:OxfordUniversityPress.
+Madura,J.,&Ngo,T.(2008).ImpactofETFInceptionontheValuationandTrading
+ofComponentStocks.AppliedFinancialEconomics,18(12),995–1007.
+Marshall,B.R.,Nguyen,N.H.,&Visaltanachoti,N.(2013).ETFArbitrage:Intraday
+Evidence.JournalofBanking&Finance,37(9),3486–3498.
+Meziani,A.S.(2015).ActiveExchange-TradedFunds:AreWeThereYet?Journalof
+IndexInvesting,6(2),86–98.
+Mladina, P. (2014). Dynamic Asset Allocation with Horizon Risk: Revisiting Glide
+PathConstruction.JournalofWealthManagement,16(4),18–26.
+Moskowitz,T.J.,&Grinblatt,M.(1999).DoIndustriesExplainMomentum?Journal
+ofFinance,54(4),1249–1290.
+Moskowitz,T. J., Ooi, Y. H., & Pedersen, L. H. (2012).Time Series Momentum.
+JournalofFinancialEconomics,104(2),228–250.
+Nyaradi, J. (2010). Super Sectors: How to Outsmart the Market Using Sector Rotation
+andETFs.Hoboken,NJ:Wiley.
+O’Neal,E.S.(2000).IndustryMomentumandSectorMutualFunds.FinancialAna-
+lystsJournal,56(4),37–49.
+=== Page 112 ===
+96 Z.KakushadzeandJ.A.Serur
+Oztekin,A.S.,Mishra,S.,Jain,P.K.,Daigler,R.T.,Strobl,S.,&Holowczak,R.D.
+(2017).PriceDiscoveryandLiquidityCharacteristicsforU.S.ElectronicFutures
+andETFMarkets.JournalofTrading,12(2),59–72.
+Pagonidis, A. S. (2014). The IBS Effect: Mean Reversion in Equity ETFs (Working
+Paper). Available online: http://www.naaim.org/wp-content/uploads/2014/04/
+00V_Alexander_Pagonidis_The-IBS-Effect-Mean-Reversion-in-Equity-ETFs-1.
+pdf.
+Petre, G. (2015). A Case for Dynamic Asset Allocation for Long Term Investors.
+ProcediaEconomicsandFinance,29,41–55.
+Rompotis, G. G. (2011a).The Performance of Actively Managed ExchangeTraded
+Funds.JournalofIndexInvesting,1(4),53–65.
+Rompotis, G. G. (2011b). Active vs. Passive Management: New Evidence from
+ExchangeTraded Funds. International Review of Applied Financial Issues and Eco-
+nomics,3(1),169–186.
+Rudy,J.,Dunis,C.,&Laws,J.(2010).ProfitablePairTrading:AComparisonUsing
+the S&P 100 Constituent Stocks and the 100 Most Liquid ETFs (Working Paper).
+Availableonline:https://ssrn.com/abstract=2272791.
+Sagi, J., & Seasholes, M. (2007). Firm-Specific Attributes and the Cross-Section of
+Momentum.JournalofFinancialEconomics,84(2),389–434.
+Sassetti, P., &Tani, M. (2006). Dynamic Asset Allocation Using Systematic Sector
+Rotation.JournalofWealthManagement,8(4),59–70.
+Schizas,P.(2014).ActiveETFsandTheirPerformancevis-à-visPassiveETFs,Mutual
+Funds,andHedgeFunds.JournalofWealthManagement,17(3),84–98.
+Schizas,P.,Thomakos,D.D.,&Wang,T.(2011).PairsTradingonInternationalETFs
+(WorkingPaper).Availableonline:https://ssrn.com/abstract=1958546.
+Schwert,G.W.(2003).Anomaliesandmarketefficiency.InG.M.Constantinides,
+M. Harris, & R. M. Stulz (Eds.), Handbook of the Economics of Finance,Vol 1B.
+(1sted.,Chapter15,pp.939–974).Amsterdam,TheNetherlands:Elsevier.
+Sefton,J.A.,&Scowcroft,A.(2005).UnderstandingMomentum.FinancialAnalysts
+Journal,61(2),64–82.
+Sharpe, W. F. (2009). Adaptive Asset Allocation Policies. Financial Analysts Journal,
+66(3),45–59.
+Sharpe,W.F.,&Perold,A.F.(1988).DynamicStrategiesforAssetAllocation.Finan-
+cialAnalystsJournal,44(1),16–27.
+Sherrill, D. E., & Upton, K. (2018). Actively Managed ETFs vs Actively Managed
+MutualFunds.ManagerialFinance,44(3),303–325.
+Shum,P.,Hejazi,W.,Haryanto,E.,&Rodier,A.(2016).IntradaySharePriceVolatility
+andLeveragedETFRebalancing.ReviewofFinance,20(6),2379–2409.
+Simpson,M.W.,&Grossman,A.(2016).TheRoleofIndustryEffectsinSimulta-
+neousReversalandMomentumPatternsinOne-MonthStockReturns.Journalof
+BehavioralFinance,17(4),309–320.
+Smith,D.M.,&Pantilei,V.S.(2015).Do“DogsoftheWorld”BarkorBite?Evidence
+fromSingle-CountryETFs.JournalofInvesting,24(1),7–15.
+=== Page 113 ===
+4 Exchange-TradedFunds(ETFs) 97
+Sørensen, C. (1999). Dynamic Asset Allocation and Fixed Income Management.
+JournalofFinancialandQuantitativeAnalysis,34(4),513–531.
+Sorensen,E.H.,&Burke,T.(1986).PortfolioReturnsfromActiveIndustryGroup
+Rotation.FinancialAnalystsJournal,42(5),43–50.
+Stovall,S.(1996).SectorInvesting.NewYork,NY:McGrawHillInc.
+Swinkels,L.(2002).InternationalIndustryMomentum.JournalofAssetManagement,
+3(2),124–141.
+Szakmary,A.C.,&Zhou,X.(2015).IndustryMomentuminanEarlierTime:Evi-
+dencefromtheCowlesData.JournalofFinancialResearch,38(3),319–347.
+Tang,H.,&Xu,X.E.(2013).SolvingtheReturnDeviationConundrumofLeveraged
+Exchange-Traded Funds. Journal of Financial and Quantitative Analysis, 48(1),
+309–342.
+Trainor, W. J., Jr. (2010). Do Leveraged ETFs Increase Volatility? Technology and
+Investment,1(3),215–220.
+Tripathi, V., & Garg, S. (2016). A Cross-Country Analysis of Pricing Efficiency of
+ExchangeTradedFunds.JournalofAppliedFinance,22(3),41–63.
+Tuzun,T.(2013).AreLeveragedandInverseETFstheNewPortfolioInsurers?Finance
+and Economics Discussion Series (FEDS), Paper No. 2013-48. Washington, DC:
+BoardofGovernorsoftheFederalReserveSystem.Availableonline:https://www.
+federalreserve.gov/pubs/feds/2013/201348/201348pap.pdf.
+Wang,J.,Brooks,R.,Lu,X.,&Holzhauer,H.M.(2017).SectorMomentum.Journal
+ofInvesting,26(2),48–60.
+Wu,L.(2003).JumpsandDynamicAssetAllocation.ReviewofQuantitativeFinance
+andAccounting,20(3),207–243.
+Yu,S.,&Webb,G.(2014).TheProfitabilityofPairsTradingStrategiesBasedonETFs
+(WorkingPaper).Availableonline:http://swfa2015.uno.edu/B_Asset_Pricing_III/
+paper_196.pdf.
+Zakamulin, V. (2014). Dynamic Asset Allocation Strategies Based on Unexpected
+Volatility.JournalofAlternativeInvestments,16(4),37–50.
+Zhang,X.F.(2006).InformationUncertaintyandStockReturns.JournalofFinance,
+61(1),105–136.
+=== Page 114 ===
+5
+Fixed Income
+5.1 Generalities
+Zero-Coupon Bonds
+Apromiseofbeingpaid$1atthematuritytimeT canberegardedasanasset,
+whichhassomeworthattimet before T.Thisassetiscalleda(zero-coupon)
+discountbond.Letitspriceattime0 ≤ t ≤ T be P(t,T) .Then P(T,T) = 1.
+Theyieldofadiscountbondisdefinedas1
+ln(P(t,T))
+R(t,T) = − (5.1)
+T −t
+andhasthemeaningofanaverageinterestrateovertheperiodoftimeT −t.
+Thehigherthebondpriceattimet,thelowertheyield R(t,T) andviceversa.
+Below we refer toa zero-coupon bond with a $1 principal and maturity T as
+a T-bond.
+Bonds with Coupons
+In practice, a bond usually pays not only its principal at maturity T, but
+also makes smaller coupon payments before maturity. Consider a bond that
+1Moreprecisely,thisdefinitionassumescontinuouscompounding.Forperiodiccompoundingatndiscrete
+time(cid:2)s Ti = T0 +iδ,i = (cid:3)1,...,n,theyieldbetweent = T0 andt = Tn isgivenby R(T0 ,Tn ) =
+δ−1 [P(T0 ,Tn )]−1/n−1 assumingP(Tn ,Tn )=1,i.e.,Tnisthematurity.Equation(5.1)isrecovered
+inthelimitwheren→∞,δ→0,nδ=fixed(andequaltoT −tinEq.(5.1)).
+©TheAuthor(s)2018 99
+Z.KakushadzeandJ.A.Serur,151TradingStrategies,
+https://doi.org/10.1007/978-3-030-02792-6_5
+=== Page 115 ===
+100 Z.KakushadzeandJ.A.Serur
+makes n regular coupon payments at a fixed uncompounded rate k at times
+T = T + iδ , i = 1,2,...,n, and also pays $1 principal at maturity T.
+i 0
+The amount of each coupon payment is
+kδ
+, where
+δ
+is the payment period.
+ThisincomestreamisequivalenttoowningoneT-bondpluskδ
+unitsofeach
+T -bond,i = 1,...,n.Thepriceofthecouponbondattimet thenis
+i
+(cid:4)n
+P (t,T) = P(t,T)+kδ P(t,T ) (5.2)
+c i
+i=I(t)
+where I(t) = min (i : t < T ) .Attimet = T wehave
+i 0
+(cid:4)n
+P (T ,T) = P(T ,T)+kδ P(T ,T ) (5.3)
+c 0 0 0 i
+i=1
+Ifwedesirethecouponbondtostartwithitsfacevalue(P (T ,T) = 1),then
+c 0
+thecorrespondingcouponrateisgivenby
+1− P(T ,T)
+k = (cid:5) 0 (5.4)
+δ n P(T ,T )
+i=1 0 i
+Floating Rate Bonds
+Abondmightalsohavefloatingcouponpayments.Thus,considerabondthat
+pays$1atmaturityT,andalsomakescouponpaymentsattimesT = T +iδ ,
+i 0
+i = 1,2,...,n,withamountsbasedonthevariablerate(usuallyLIBOR—see
+Sect.5.15) (cid:6) (cid:7)
+1 1
+L(T
+i−1
+) =
+δ P(T
+i−1
+,T
+i
+)
+−1 (5.5)
+Theactualcouponpaymentattime T is
+i
+1
+X i = L(T i−1 )δ = P(T
+i−1
+,T
+i
+) −1 (5.6)
+which is the amount of interest we would get by buying $1’s worth of a T -
+i
+bond at time T i−1 . Indeed, a T i -bond is worth P(T i−1 ,T i ) at t = T i−1 , so
+$1’s worth a T i -bond at t = T i−1 is worth 1/P(T i−1 ,T i ) at t = T i , so the
+=== Page 116 ===
+5 FixedIncome 101
+interest earned is given by Eq. (5.6). The total value of the variable coupon
+bondatt = T isgivenby:
+0
+V = 1−[P(T ,T )− P(T ,T)] (5.7)
+0 0 n 0
+IfT = T ,thenwehaveV = 1.Thisisbecausethisbondisequivalenttothe
+n 0
+followingsequenceoftrades.Attimet = T take$1andbuy T -bondswith
+0 1
+it.Attimet = T taketheinterestfromthe T -bondsasthe T -coupon,and
+1 1 1
+buy T -bonds with the leftover $1 principal. Repeat until we are left with $1
+2
+attimeT .Thishasexactlythesamecashflowasthevariablecouponbond,so
+n
+theinitialpricesmustmatch.IfT > T ,thenV < 1andcanbedetermined
+n 0
+asfollows.First,notethat
+V = P(T ,T)+V coupons (5.8)
+0 0 0
+where V coupons is the total value of all n coupon payments at t = T .This
+0 0
+valueisindependentof T andisdeterminedfrom
+P(T ,T )+V coupons = 1 (5.9)
+0 n 0
+which is the value of the variable coupon bond with maturity T . Hence
+n
+Eq.(5.7).
+Swaps
+Swaps are contracts that exchange a stream of floating rate payments for a
+streamoffixedratepaymentsorviceversa.Aswapwherewereceiveastreamof
+fixedratepaymentsinexchangeforfloatingratepaymentsissimplyaportfolio
+whichislongafixedcouponbondandshortavariablecouponbond.Theprice
+oftheformeratt = T isgivenbyEq.(5.3),whilethatofthelatterisgivenby
+0
+Eq. (5.7).The fixed rate that gives the swap initial null value is independent
+ofmaturity T andgivenby
+1− P(T ,T )
+k = (cid:5) 0 n (5.10)
+δ n P(T ,T )
+i=1 0 i
+=== Page 117 ===
+102 Z.KakushadzeandJ.A.Serur
+Duration and Convexity
+Macaulaydurationofabondisaweightedaveragematurityofitscashflows,
+wheretheweightsarethepresentvaluesofsaidcashflows.E.g.,forafixedrate
+couponbondwehave(seeEq.5.3)
+⎡ ⎤
+(cid:4)n
+MacD(t,T)=
+P (t
+1
+,T)
+⎣(T −t) P(t,T)+kδ (T
+i
+−t) P(t,T
+i
+)⎦ (5.11)
+c i=I(t)
+Modifieddurationisdefinedas(assumingparallelshiftsintheyieldcurve)2
+∂ln(P (t,T))
+ModD
+(t,T) = − c (5.12)
+∂R(t,T)
+Forcontinuouscompounding,Macaulaydurationandmodifieddurationare
+the same (see Eq.5.1). For periodic compounding, they differ. For a constant
+yield R(t,τ) = Y = const.(forallt < τ < T),theyarerelatedvia(seefn.1):
+ModD
+(t,T) =
+MacD
+(t,T)/(1+Yδ) (5.13)
+Modifieddurationisameasureoftherelativebondpricesensitivitytochanges
+in the interest rates:
+(cid:5)P (t,T)/P (t,T) ≈ −
+ModD
+(t,T) (cid:5)R(t,T)
+(for
+c c
+parallelshifts (cid:5)R(t,τ) = (cid:5)R = const . ,forallt < τ < T).Similarly,dollar
+durationdefinedas
+∂P (t,T)
+DD (t,T) = − c = ModD (t,T) P (t,T) (5.14)
+∂R(t,T) c
+isameasureoftheabsolutebondpricesensitivitytochangesintheinterestrates.
+Convexityofabondisdefinedas(again,assumingparallelshifts)3
+1 ∂2P (t,T)
+C(t,T) = − c (5.15)
+P (t,T) ∂R(t,T)2
+c
+2I.e.,∂R(t,τ)/∂R(t,T)=1forallt <τ <T.Fornonuniformshiftsthingsgetcomplicated.
+3Forsomeliteratureonvariouspropertiesofbonds,see,e.g.,BaxterandRennie(1996),Bessembinder
+and Maxwell (2008), Cˇerovic´ et al. (2014), Chance and Jordan (1996), Chen et al. (2007), Chen et
+al.(2010),Christensen(1999),ColeandYoung(1995),Fabozzi(2006a,2012a,b),FabozziandMann
+(2010),Henderson(2003),Horvath(1998),HotchkissandRonen(2002),Hull(2012),Hulletal.(2005),
+Jostovaetal.(2013),Kakushadze(2015a),LelandandPanos(1997),LittermanandScheinkman(1991),
+Macaulay(1938),Martellinietal.(2003),Osborne(2005),Samuelson(1945),Stulz(2010),Tuckman
+andSerrat(2012).
+=== Page 118 ===
+5 FixedIncome 103
+andcorrespondstononlineareffectsintheresponseofthebondpricetointerest
+ratechanges:
+1
+(cid:5)P
+c
+(t,T)/P
+c
+(t,T)≈−ModD(t,T)(cid:5)R(t,T)+ C(t,T)[(cid:5)R(t,T)]2 (5.16)
+2
+5.2 Strategy: Bullets
+Inabulletportfolio,allbondshavethesamematuritydateT therebytargeting
+aspecificsegmentoftheyieldcurve.Thematuritycanbepickedbasedonthe
+trader’s outlook on the future interest rates: if the interest rates are expected
+to fall (i.e., the bond prices to rise), then picking a longer maturity would
+makemoresense;iftheinterestratesareexpectedtorise(i.e.,thebondprices
+to fall), then a shorter maturity would be more warranted; however, if the
+traderisuncertainaboutthefutureinterestrates,amorediversifiedportfolio
+(e.g.,abarbell/ladderportfolio—seebelow)isinorder(asopposedtoabullet
+portfolio).Typically, the bonds in a bullet portfolio are purchased over time,
+which mitigates the interest rate risk to some extent: if the interest rates rise,
+the later bond purchases will be at higher rates; if the interest rates fall, the
+earlierbondpurchaseswillhavehigheryields.4
+5.3 Strategy: Barbells
+In this strategy, all purchased bonds are concentrated in two maturities T
+1
+(shortmaturity)and T (longmaturity),sothisportfolioisacombinationof
+2
+two bullet strategies. This strategy takes advantage of the higher yields from
+the long-maturity bonds while hedging the interest rate risk with the short-
+maturity bonds: if the interest rates rise, the long-maturity bonds will lose
+value, but the proceeds from the short-maturity bonds can be reinvested at
+higher rates.5 The modified duration (call it D) of the barbell strategy is the
+sameasthemodifiedduration(callit D∗)ofabulletstrategywithamid-range
+maturity(callit T∗, T
+1
+< T∗ < T
+2
+).However,theconvexity(callitC)ofthe
+barbellstrategyishigherthantheconvexity(callitC∗)ofthisbulletstrategy.
+4Forsomeliteratureonbulletandbarbell(seebelow)strategies,see,e.g.,Fabbozzietal.(2006),Grantier
+(1988),Jones(1991),MannandRamanlal(1997),PascalauandPoirier(2015),SuandKnowles(2010),
+Wilner(1996),Yamada(1999).
+5Flattening/steepeningoftheyieldcurve(thespreadbetweentheshort-termandlong-terminterestrates
+decreases/increases)hasapositive/negativeimpactonthevalueoftheportfolio.
+=== Page 119 ===
+104 Z.KakushadzeandJ.A.Serur
+Intuitively this can be understood by noting that modified duration scales
+approximately linearly with maturity, while convexity scales approximately
+quadratically with maturity. For illustrative purposes and simplicity, let us
+w
+consider a barbell strategy consisting of dollars’ worth of zero-coupon
+1
+bonds with short maturity T and w dollars’ worth of zero-coupon bonds
+1 2
+with long maturity T (each bond has $1 face value). Furthermore, let us
+2
+assumecontinuouscompoundingandaconstantyieldY.Wethenhave
+w(cid:12) T +w(cid:12) T
+D = 1 1 2 2 (5.17)
+w(cid:12) +w(cid:12)
+1 2
+T∗ = D∗ = D (5.18)
+w(cid:12) T2 +w(cid:12) T2
+C = 1 1 2 2 (5.19)
+w(cid:12) +w(cid:12)
+1 2
+C∗ = T
+∗
+2 (5.20)
+where
+w(cid:12) = w exp(−T Y)
+and
+w(cid:12) = w exp(−T Y)
+. Straightforward
+1 1 1 2 2 2
+algebragives
+w(cid:12) w(cid:12)
+C −C∗ =
+(w(cid:12) +
+1
+w(cid:12)
+2
+)2
+(T
+2
+−T
+1
+)2 > 0 (5.21)
+1 2
+Higher convexity of the barbell portfolio provides a better protection against
+parallelshiftsintheyieldcurve.However,thiscomesattheexpenseofalower
+overallyield.
+5.4 Strategy: Ladders
+Aladderisabondportfoliowith(roughly)equalcapitalallocationsintobonds
+of n different maturities T , i = 1,...,n (where the number of rungs n is
+i
+sizable, e.g., n = 10). The maturities are equidistant: T i+1 = T i + δ . This
+is a duration-targeting strategy,6 which maintains an approximately constant
+duration by selling shorter-maturity bonds as they approach maturity and
+replacing them with new longer-maturity bonds. A ladder portfolio aims to
+diversifytheinterestrateandreinvestmentrisks7byavoidingexposuretoonly
+afewmaturities(asinbulletsandbarbells).Italsogeneratesaregularrevenue
+6Forsomeliteratureonladderandduration-targetingstrategies,see,e.g.,Bierwagetal.(1978),Bohlin
+andStrickland(2004),Cheungetal.(2010),DylandMartin(1986),FridsonandXu(2014),Juddetal.
+(2011),Langetiegetal.(1990),LeibowitzandBova(2013),Leibowitzetal.(2014,2015).
+7Thereinvestmentriskistheriskthattheproceeds(fromcouponpaymentsand/orprincipal)wouldbe
+reinvestedatalowerratethantheoriginalinvestment.
+=== Page 120 ===
+5 FixedIncome 105
+streamfromthecouponsofeachbond.Thematurityofaladderportfoliocan
+bedefinedastheaveragematurity:
+(cid:4)n
+1
+T = T (5.22)
+i
+n
+i=1
+TheincomeishigherforhighervaluesofT;however,soistheinterestraterisk.
+5.5 Strategy: Bond Immunization
+Bondimmunizationisusedincasessuchasapredeterminedfuturecashobli-
+gation.Asimplesolutionwouldbetopurchaseazero-couponbondwiththe
+requiredmaturity(anddesirable/acceptableyield).However,suchabondmay
+not always be available in the market, so a portfolio of bonds with varying
+maturitiesmustbeusedinstead.Suchaportfolioissubjecttotheinterestrate
+andreinvestmentrisks.Onewaytomitigatetheserisksistobuildaportfolio
+whose duration matches the maturity of the future cash obligation (thereby
+“immunizing” the bond portfolio against parallel shifts in the yield curve).
+Consider a portfolio of bonds with 2 different maturities T ,T and the cor-
+1 2
+responding durations D ,D (where “duration” means modified duration).
+1 2
+Let:thedollaramountsinvestedinthesebondsbe P ,P ;thetotalamountto
+1 2
+beinvestedbe P;thedesireddurationoftheportfoliobe D (whichisrelated
+tothematurityT∗ ofthefuturecashobligation—seebelow);andtheconstant
+yield(whichisassumedtobethesameforallbonds—seebelow)beY.Then P
+isfixedusingY andtheamountofthefutureobligation F:
+P = F/(1+Yδ)T∗ /δ (5.23)
+δ
+where we are assuming periodic compounding and is the length of each
+compoundingperiod(e.g.,1year).8Thenwehave:
+P + P = P (5.24)
+1 2
+P D + P D = P D (5.25)
+1 1 2 2
+where
+D = T∗ /(1+Yδ) (5.26)
+8Forthesakeofsimplicity,inEq.(5.23)thenumbern = T∗ /δofcompoundingperiodsisassumedto
+beawholenumber.Extensiontonon-integerT∗ /δisstraightforward.
+=== Page 121 ===
+106 Z.KakushadzeandJ.A.Serur
+With3bonds,wecanalsomatchtheconvexity:
+P + P + P = P (5.27)
+1 2 3
+P D + P D + P D = P D (5.28)
+1 1 2 2 3 3
+P C + P C + P C = P C (5.29)
+1 1 2 2 3 3
+whereC ,C ,C aretheconvexitiesofthe3bondsand
+1 2 3
+C = T∗ (T∗ +δ)/(1+Yδ)2 (5.30)
+In practice, the yield curve changes over time, which (among other things)
+requiresthattheportfoliobeperiodicallyrebalanced.Thisintroducesnontriv-
+ialtransactioncosts,whichmustalsobeaccountedfor.Furthermore,theyields
+are not the same for all bonds in the portfolio, which introduces additional
+complexityintotheproblem.9
+5.6 Strategy: Dollar-Duration-Neutral Butterfly
+Thisisazero-costcombinationofalongbarbellportfolio(withshort T and
+1
+long T maturities)andashortbulletportfolio(withamediummaturity T ,
+3 2
+where T < T < T ). Let: the dollar amounts invested in the 3 bonds be
+1 2 3
+P ,P ,P ; and the corresponding modified durations be D ,D ,D .Then
+1 2 3 1 2 3
+zero cost (i.e., dollar-neutrality) and the dollar-duration-neutrality (the latter
+protectstheportfoliofromparallelshiftsintheyieldcurve)implythat
+P + P = P (5.31)
+1 3 2
+P D + P D = P D (5.32)
+1 1 3 3 2 2
+Thisfixes P ,P via P .Whiletheportfolioisimmunetoparallelshiftsinthe
+1 3 2
+yield curve, it is not immune to changes in the slope or the curvature of the
+yieldcurve.10
+9Forsomeliteratureonbondimmunization,includingmoresophisticatedoptimizationtechniques,see,
+e.g.,Albrecht(1985),AlexanderandResnick(1985),Bierwag(1979),Bodieetal.(1996),Boyle(1978),
+ChristensenandFabozzi(1985),DeLaPeñaetal.(2017),FisherandWeil(1971),FongandVasicek(1983,
+1984),Hürlimann(2002,2012),IturricastilloandDeLaPeña(2010),Khang(1983),Kocherlakotaetal.
+(1988,1990),MontrucchioandPeccati(1991),NawalkhaandChambers(1996),Reddington(1952),
+Reitano(1996),Shiu(1987,1988),Zhengetal.(2003).
+10Forsomeliteratureonvariousbutterflybondstrategies,see,e.g.,Bedendoetal.(2007),Brooksand
+Moskowitz (2017), Christiansen and Lund (2005), Fontaine and Nolin (2017), Gibson and Pritsker
+(2000),Grieves(1999),HeidariandWu(2003),Martellinietal.(2002).
+=== Page 122 ===
+5 FixedIncome 107
+5.7 Strategy: Fifty-Fifty Butterfly
+This is a variation of the standard butterfly. In the above notations for the
+dollar-duration-neutralbutterfly,wehave
+1
+P D = P D = P D (5.33)
+1 1 3 3 2 2
+2
+So, the fifty-fifty butterfly is still dollar-duration-neutral, but it is no longer
+dollar-neutral (i.e., it is not a zero-cost strategy). Instead, dollar durations of
+thewingsarethesame(hencetheterm“fifty-fifty”).Asaresult,thestrategyis
+(approximately)neutraltosmallsteepeningandflatteningoftheyieldcurve,to
+wit,iftheinterestratespreadchangebetweenthebodyandtheshort-maturity
+wing is equal to the spread change between the long-maturity wing and the
+body.That is why this strategy is a.k.a. “neutral curve butterfly” (whose cost
+isnon-dollar-neutrality).
+5.8 Strategy: Regression-Weighted Butterfly
+Empirically,short-terminterestratesaresizablymorevolatilethanlong-term
+interest rates.11 Therefore, the interest rate spread change between the body
+and theshort-maturitywing (of thebutterfly—seeabove) can be expected to
+β
+begreaterbysomefactor—callit —thanthespreadchangebetweenthelong-
+maturitywingandthebody(so,typically β > 1).Thisfactorcanbeobtained
+fromhistoricaldatavia,e.g.,runningaregressionofthespreadchangebetween
+thebodyandtheshort-maturitywingoverthespreadchangebetweenthelong-
+maturitywingandthebody.Then,insteadofEq.(5.33),wehavethefollowing
+dollar-duration-neutralityand“curve-neutrality”conditions:
+P D + P D = P D (5.34)
+1 1 3 3 2 2
+P D = β P D (5.35)
+1 1 3 3
+11See,e.g.,EdwardsandSusmel(2003),JoslinandKonchitchki(2018),MankiwandSummers(1984),
+Shiller(1979),Sill(1996),Turnovsky(1989).
+=== Page 123 ===
+108 Z.KakushadzeandJ.A.Serur
+Strategy: Maturity-Weighted Butterfly
+Thisisavariationoftheregression-weightedbutterfly,whereinsteadoffixing
+β
+inEq.(5.35)viaaregressionbasedonhistoricaldata,thiscoefficientisbased
+onthe3bondmaturities:
+T −T
+β = 2 1 (5.36)
+T −T
+3 2
+5.9 Strategy: Low-Risk Factor
+Asinstocks,empiricalevidencesuggeststhatlower-riskbondstendtooutper-
+formhigher-riskbondsontherisk-adjustedbasis(“low-riskanomaly”).12One
+candefine“riskiness”ofabondusingdifferentmetrics,e.g.,bondcreditrating
+andmaturity.Forinstance,alongportfoliocanbebuilt(see,e.g.,Houweling
+andvanVundert2017)bytakingInvestmentGradebondswithcreditratings
+−
+AAA through A , and then taking the bottom decile by maturity. Similarly,
+−
+onecantakeHighYieldbondswithcreditratingsBB+throughB ,andthen
+takethebottomdecilebymaturity.
+5.10 Strategy: Value Factor
+“Value”forbonds(see,e.g.,Correiaetal.2012;HouwelingandvanVundert
+2017; L’Hoir and Boulhabel 2010) is trickier to define than for stocks. One
+way is to compare the observed credit spread13 to a theoretical prediction
+therefor. One way to estimate the latter is, e.g., via a linear cross-sectional
+(across N bonds labeled by i = 1,...,N) regression (Houweling and van
+Vundert2017):
+(cid:4)K
+S = β I +γ T +(cid:8) (5.37)
+i r ir i i
+r=1
+S ∗ = S −(cid:8) (5.38)
+i i i
+Here: S is the credit spread; I is a dummy variable (I = 1 if the bond
+i ir ir
+labeled by i has credit rating r; otherwise, I = 0) for bond credit rating r
+ir
+12Forsomeliterature,see,e.g.,DeCarvalhoetal.(2014),Derwalletal.(2009),FrazziniandPedersen
+(2014),HouwelingandvanVundert(2017),Ilmanen(2011),Ilmanenetal.(2004),Kozhemiakin(2007),
+NgandPhelps(2015).
+13Creditspreadisthedifferencebetweenthebondyieldandtherisk-freerate.
+=== Page 124 ===
+5 FixedIncome 109
+(whichlabels K creditratingspresentamongthe N bonds,whichcanbeone
+of the 21 credit ratings)14; T are bond maturities; β ,γ are the regression
+i r
+coefficients; (cid:8) are the regression residuals; and S ∗ is the fitted (theoretical)
+i i
+valueofthecreditspread.The N×K matrix I hasnocolumnswithallzeros
+ir
+(so K can be less than 21). Note that by definition, since each bond has one
+andonlyonecreditrating,wehave
+(cid:4)K
+I = 1 (5.39)
+ir
+r=1
+sotheinterceptissubsumedinI (whichiswhythereisnoseparateregression
+ir
+coefficient for the intercept). Next, value is defined as V = ln(S /S ∗) or
+i i i
+V = (cid:8) /S ∗ = S /S ∗ −1, and the bonds in the top decile by V are selected
+i i i i i i
+fortheportfolio.
+5.11 Strategy: Carry Factor
+Carry is defined as the return from the appreciation of the bond value as the
+bond rolls down the yield curve (see, e.g., Beekhuizen et al. 2016; Koijen et
+al.2018)15:
+P(t +(cid:5)t,T)− P(t,T)
+C(t,t +(cid:5)t,T) = (5.40)
+P(t,T)
+Here
+(cid:5)t
+is the period over which carry is computed. A simplification arises
+ifweassumethattheentiretermstructureoftheinterestratesstaysconstant,
+i.e., the yield R(t,T) = f(T −t) is a function of only T −t (i.e., time to
+maturity).Then,attimet +(cid:5)t theyieldis R(t +(cid:5)t,T) = R(t,T −(cid:5)t) .
+So,wehave16
+C(t,t +(cid:5)t,T)=
+P(t +(cid:5)t,T)|
+R(t+(cid:5)t,T)
+− P(t,T)|
+R(t,T)
+=
+P(t,T)|
+R(t,T)
+= R(t,T)(cid:5)t +C (t,t +(cid:5)t,T) (5.41)
+roll
+14ThesecreditratingsareAAA,AA+,AA,AA−,A+,A,A−,BBB+,BBB,BBB−,BB+,BB,BB−,B+,B,
+B−,CCC+,CCC,CCC−,CC,C.
+15Here,forthesakeofsimplicity,weconsiderzero-couponbonds.Theend-resultbelowisalsovalidfor
+couponbonds.
+16Forfinancedportfolios,R(t,T)inthesecondlineofEq.(5.41)isreplacedbyR(t,T)−rf,whererf is
+therisk-freerate.However,thisoverallshiftdoesnotaffecttheactualholdingsinthecarrystrategybelow.
+=== Page 125 ===
+110 Z.KakushadzeandJ.A.Serur
+where(takingintoaccountthedefinitionofthemodifiedduration,Eq.(5.12))
+C (t,t +(cid:5)t,T)=
+P(t +(cid:5)t,T)|
+R(t,T−(cid:5)t)
+− P(t +(cid:5)t,T)|
+R(t,T)
+≈
+roll P(t,T)|
+R(t,T)
+≈−
+ModD
+(t,T)[R(t,T −(cid:5)t)− R(t,T)] (5.42)
+So, if the term structure of the interest rates is constant, then carry
+C(t,t +
+(cid:5)t,T)
+receives two contributions: (i)
+R(t,T) (cid:5)t
+from the bond yield; and
+(ii) C (t,t +(cid:5)t,T) from the bond rolling down the yield curve. A zero-
+roll
+coststrategycanbebuilt,e.g.,bybuyingbondsinthetopdecilebycarryand
+sellingbondsinthebottomdecile.
+5.12 Strategy: Rolling Down the Yield Curve
+The objective of this strategy is to capture the “roll-down” component
+C (t,t +(cid:5)t,T) ofbondyields.Thesereturnsaremaximizedinthesteep-
+roll
+est segments of the yield curve. Therefore, the trader can, e.g., buy long- or
+medium-termbondsfromsuchsegmentsandholdthemwhiletheyare“rolling
+downthecurve”.17Thebondsmustbesoldastheyapproachmaturityandthe
+proceedscanbeusedtobuynewlong/medium-termbondsfromthesteepest
+segmentoftheyieldcurveatthattime.
+5.13 Strategy: Yield Curve Spread (Flatteners
+and Steepeners)
+This strategy consists of buying or selling the yield curve spread.18 The yield
+curve spread is defined as the difference between the yields of two bonds of
+the same issuer with different maturities. If the interest rates are expected to
+fall,theyieldcurveisexpectedtosteepen.Iftheinterestratesareexpectedto
+rise,theyieldcurveisexpectedtoflatten.Theyieldcurvespreadstrategycan
+besummarizedviathefollowingrule:
+17Forsomeliteratureonthe“rollingdowntheyieldcurve”strategies,see,e.g.,Angetal.(1998),Bieri
+andChincarini(2004,2005),DylandJoehnk(1981),Grievesetal.(1999),GrievesandMarcus(1992),
+Osteryoungetal.(1981),PantaloneandPlatt(1984),Pelaez(1997).
+18Forsomeliteratureonyieldcurvespreadstrategies,theyieldcurvedynamicsandrelatedtopics,see,e.g.,
+Bernadelletal.(2005),BoydandMercer(2010),Chuaetal.(2006),DieboldandLi(2002),Dieboldet
+al.(2006),Dolan(1999),EvansandMarshall(2007),FüssandNikitina(2011),Jones(1991),Kalevand
+Inder(2006),Krishnamurthy(2002),ShillerandModigliani(1979).
+=== Page 126 ===
+5 FixedIncome 111
+(cid:13)
+Flattener:Shortspreadifinterestratesareexpectedtorise
+Rule= (5.43)
+Steepener:Buyspreadifinterestratesareexpectedtofall
+Shortingthespreadamountstosellingshorter-maturitybonds(a.k.a.thefront
+leg)andbuyinglonger-maturitybonds(a.k.a.thebackleg).Buyingthespread
+is the opposite trade: buying the front leg and selling the back leg. If the
+yieldcurvehasparallelshifts,thisstrategycangeneratelosses.Matchingdollar
+durationsofthefrontandbacklegsimmunizestheportfoliotosmallparallel
+shiftsintheyieldcurve.
+5.14 Strategy: CDS Basis Arbitrage
+A credit default swap (CDS) is insurance against default on a bond.19 The
+CDS price, known as the CDS spread, is a periodic (e.g., annual) premium
+perdollaroftheinsureddebt.TheCDSessentiallymakesthebondarisk-free
+instrument. Therefore, the CDS spread should equal the bond yield spread,
+i.e., the spread between the bond yield and the risk-free rate.The difference
+betweentheCDSspreadandthebondspreadisknownastheCDSbasis:
+CDSbasis
+=
+CDSspread
+−
+bondspread
+(5.44)
+Negative basis indicates that the bond spread is too high relative to the CDS
+spread,i.e.,thebondisrelativelycheap.TheCDSarbitragetradethenamounts
+tobuyingthebondandinsuringitwiththeCDS20 therebygeneratingarisk-
+freeprofit.21
+5.15 Strategy: Swap-Spread Arbitrage
+This dollar-neutral strategy consists of a long (short) position in an interest
+rate swap (see Sect.5.1) and a short (long) position in aTreasury bond (with
+the constant yield Y ) with the same maturity as the swap. A long
+Treasury
+(short)swapinvolvesreceiving(making)fixedrater swap couponpaymentsin
+19ForsomeliteratureonCDSbasisarbitrageandrelatedtopics,see,e.g.,BaiandCollin-Dufresne(2013),
+Choudhry(2004,2006,2007),DeWit(2006),Fontana(2010),FontanaandScheicher(2016),Kimet
+al.(2016,2017),Nashikkaretal.(2011),Rajanetal.(2007),Wang(2014),Zhu(2006).
+20NotethattheCDSisequivalenttoasyntheticshortbondposition.
+21Inthecaseofpositivebasis,theoreticallyonewouldenterintotheoppositetrade,i.e.,sellingthebond
+andsellingtheCDS.However,inpracticethiswouldusuallyimplythatthetraderalreadyownsthebond
+andtheCDS,i.e.,thiswouldamounttounwindinganexistingposition.
+=== Page 127 ===
+112 Z.KakushadzeandJ.A.Serur
+exchangeformaking(receiving)variableratecouponpaymentsatLIBOR(the
+LondonInterbankOfferRate)
+L(t)
+.Theshort(long)positionintheTreasury
+bondgenerates(isfinancedat)the“reporate”(thediscountrateatwhichthe
+central bank repurchases government securities from commercial
+banks)r(t)
+in a margin account.The per-dollar-invested rate
+C(t)
+at which this strategy
+generatesP&Lisgivenby
+C(t) = ±[C −C (t)] (5.45)
+1 2
+C 1 =r swap −Y Treasury (5.46)
+C (t) = L(t)−r(t) (5.47)
+2
+where the plus (minus) sign corresponds to the long (short) swap strategy.
+Thelong(short)swapstrategyisprofitableifLIBORfalls(rises).So,thisisa
+LIBORbet.22
+References
+Albrecht,P.(1985).ANoteonImmunizationUnderaGeneralStochasticEquilibrium
+Model of theTerm Structure. Insurance: Mathematics and Economics, 4(4), 239–
+244.
+Alexander,G.J.,&Resnick,B.G.(1985).UsingLinearandGoalProgrammingto
+ImmunizeBondPortfolios.JournalofBanking&Finance,9(1),35–54.
+Ang,S.,Alles,L.,&Allen,D.(1998).RidingtheYieldCurve:AnAnalysisofInter-
+nationalEvidence.JournalofFixedIncome,8(3),57–74.
+Asgharian,H.,&Karlsson,S.(2008).AnEmpiricalAnalysisofFactorsDrivingthe
+SwapSpread.JournalofFixedIncome,18(2),41–56.
+Aussenegg, W., Götz, L., & Jelic, R. (2014). European Asset Swap Spreads and the
+CreditCrisis.EuropeanJournalofFinance,22(7),572–600.
+Bai,J.,&Collin-Dufresne,P.(2013).TheCDS-BondBasis(WorkingPaper).Available
+online:https://ssrn.com/abstract=2024531.
+Baxter, M., & Rennie, A. (1996). Financial Calculus: An Introduction to Derivative
+Pricing.Cambridge,UK:CambridgeUniversityPress.
+Bedendo,M.,Cathcart,L.,&El-Jahel,L.(2007).TheSlopeoftheTermStructureof
+Credit Spreads: An Empirical Investigation. Journal of Financial Research, 30(2),
+237–257.
+22For some literature on swap spreads and related topics, see, e.g., Asgharian and Karlsson (2008),
+Ausseneggetal.(2014),ChenandSelender(1994),Collin-DufresneandSolnik(2001),Duarteetal.
+(2006), Dubil(2011), Duffie(1996), DuffieandSingleton(b),FeldhütterandLando(2008), Fisher
+(2002),Jermann(2016),JordanandJordan(1997),Kambhu(2006),Keane(1996),KlinglerandSun-
+daresan(2016),Koboretal.(2005),Langetal.(1998),Liuetal.(2006),Minton(1997).
+=== Page 128 ===
+5 FixedIncome 113
+Beekhuizen, P., Duyvesteyn, J., Martens, M., & Zomerdijk, C. (2016). Carry
+Investing on theYield Curve (Working Paper). Available online: http://ssrn.com/
+abstract=2808327.
+Bernadell,C.,Coche,J.,&Nyholm,K.(2005).YieldCurvePredictionfortheStrategic
+Investor (Working Paper Series, No. 472). Frankfurt am Main, Germany: Euro-
+peanCentralBank.Availableonline:https://www.ecb.europa.eu/pub/pdf/scpwps/
+ecbwp472.pdf?1dc8846d9df4642959c54aa73cee81ad.
+Bessembinder,H.,&Maxwell,W.(2008).Markets:TransparencyandtheCorporate
+BondMarket.JournalofEconomicPerspectives,22(2),217–234.
+Bieri, D. S., & Chincarini, L. B. (2004). Riding the Yield Curve: Diversification of
+Strategies (WorkingPaper).Availableonline:https://ssrn.com/abstract=547682.
+Bieri,D.S.,&Chincarini,L.B.(2005).RidingtheYieldCurve:AVarietyofStrategies.
+JournalofFixedIncome,15(2),6–35.
+Bierwag,G.O.(1979).DynamicPortfolioImmunizationPolicies.JournalofBanking
+&Finance,3(1),23–41.
+Bierwag, G. O., & Kaufman, G. (1978). Bond Portfolio Strategy Simulations: A
+Critique.JournalofFinancialandQuantitativeAnalysis,13(3),519–525.
+Bodie,Z.,Kane,A.,&Marcus,A.J.(1996).Investments.NewYork,NY:McGraw-
+Hill.
+Bohlin,S.,&Strickland,G.(2004).ClimbingtheLadder:HowtoManageRiskin
+Your Bond Portfolio. American Association of Individual Investors Journal (July),
+5–8.
+Boyd,N.E.,&Mercer,J.M.(2010).GainsfromActiveBondPortfolioManagement
+Strategies.JournalofFixedIncome,19(4),73–83.
+Boyle, P. P. (1978). Immunization Under Stochastic Models of theTerm Structure.
+JournaloftheInstituteofActuaries,105(2),177–187.
+Brooks,J.,&Moskowitz,T.J.(2017).YieldCurvePremia(WorkingPaper).Available
+online:https://ssrn.com/abstract=2956411.
+Cˇerovic´,S.,Pepic´,M.,Cˇerovic´,S.,&Cˇerovic´,N.(2014).DurationandConvexity
+ofBonds.SingidunumJournalofAppliedSciences,11(1),53–66.
+Chance,D.M.,&Jordan,J.V.(1996).Duration,Convexity,andTimeasCompo-
+nentsofBondReturns.JournalofFixedIncome,6(2),88–96.
+Chen,A.H.,&Selender,A.K.(1994).DeterminationofSwapSpreads:AnEmpirical
+Analysis (CoxSchoolofBusinessHistoricalWorkingPapers,No.170).Dallas,TX:
+SouthernMethodistUniversity.Availableonline:http://scholar.smu.edu/business_
+workingpapers/170.
+Chen, L., Lesmond, D. A., & Wei, J. (2007). Corporate Yield Spreads and Bond
+Liquidity.JournalofFinance,62(1),119–149.
+Chen,Z.,Mao,C.X.,&Wang,Y.(2010).WhyFirmsIssueCallableBonds:Hedging
+InvestmentUncertainty.JournalofCorporateFinance,16(4),588–607.
+Cheung, C. S., Kwan, C. C. Y., & Sarkar, S. (2010). Bond Portfolio Laddering: A
+Mean-VariancePerspective.JournalofAppliedFinance,20(1),103–109.
+=== Page 129 ===
+114 Z.KakushadzeandJ.A.Serur
+Choudhry, M. (2004).The Credit Default Swap Basis: Analysing the Relationship
+Between Cash and Synthetic Credit Markets. Journal of Derivatives Use,Trading
+andRegulation,10(1),8–26.
+Choudhry,M.(2006).RevisitingtheCreditDefaultSwapBasis:FurtherAnalysisof
+theCashandSyntheticCreditMarketDifferential.JournalofStructuredFinance,
+11(4),21–32.
+Choudhry,M.(2007).TradingtheCDSBasis:IllustratingPositiveandNegativeBasis
+ArbitrageTrades.JournalofTrading,2(1),79–94.
+Christensen,M.(1999).DurationandConvexityforBondPortfolios.Finanzmarkt
+undPortfolioManagement,13(1),66–72.
+Christensen, P. E., & Fabozzi, F. J. (1985). Bond Immunization: An Asset Liability
+Optimization Strategy. In F. J. Fabozzi & I. M. Pollack (Eds.),The Handbook of
+FixedIncomeSecurities (2nded.,pp.676–703).Homewood,IL:DowJones-Irwin.
+Christiansen, C., & Lund, J. (2005). Revisiting the Shape of the Yield Curve: The
+EffectofInterestRateVolatility (WorkingPaper).Availableonline:https://ssrn.com/
+abstract=264139.
+Chua,C.T.,Koh,W.T.H.,&Ramaswamy,K.(2006).ProfitingfromMean-Reverting
+YieldCurveTradingStrategies.JournalofFixedIncome,15(4),20–33.
+Cole,C.S.,&Young,P.J.(1995).ModifiedDurationandConvexitywithSemiannual
+Compounding.JournalofEconomicsandFinance,19(1),1–15.
+Collin-Dufresne,P.,&Solnik,B.(2001).OntheTermStructureofDefaultPremia
+intheSwapandLIBORMarkets.JournalofFinance,56(3),1095–1115.
+Correia, M. M., Richardson, S. A., &Tuna, A. I. (2012).Value Investing in Credit
+Markets.ReviewofAccountingStudies,17(3),572–609.
+DeCarvalho,R.L.,Dugnolle,P.,Lu,X.,&Moulin,P.(2014).Low-RiskAnomalies
+in Global Fixed Income: Evidence from Major Broad Markets. Journal of Fixed
+Income,23(4),51–70.
+De La Peña, J. I., Garayeta, A., & Iturricastillo, I. (2017). Dynamic Immunisation
+Does Not Imply Cash Flow Matching: A Hard Application to Spain. Economic
+Research—EkonomskaIstraživanja,30(1),238–255.
+DeWit,J.(2006).ExploringtheCDS-BondBasis (WorkingPaper).Availableonline:
+https://ssrn.com/abstract=1687659.
+Derwall, J., Huij, J., & De Zwart, G. B. (2009). The Short-Term Corporate Bond
+Anomaly (WorkingPaper).Availableonline:https://ssrn.com/abstract=1101070.
+Diebold,F.X.,&Li,C.(2002).ForecastingtheTermStructureofGovernmentBond
+Yields.JournalofEconometrics,130(2),337–364.
+Diebold, F. X., Rudebusch, G. D., & Aruoba, S. B. (2006). The Macroeconomy
+andtheYieldCurve:ADynamicLatentFactorApproach.JournalofEconometrics,
+131(1–2),309–338.
+Dolan,C.P.(1999).ForecastingtheYieldCurveShape.JournalofFixedIncome,9(1),
+92–99.
+Duarte,J.,Longstaff,F.A.,&Yu,F.(2006).RiskandReturninFixed-IncomeArbi-
+trage:NickelsinFrontofaSteamroller?ReviewofFinancialStudies,20(3),769–
+811.
+=== Page 130 ===
+5 FixedIncome 115
+Dubil, R. (2011). Hedge Funds: Alpha, Beta and Replication Strategies. Journal of
+FinancialPlanning,24(10),68–77.
+Duffie,D.(1996).SpecialRepoRates.JournalofFinance,51(2),493–526.
+Duffie,D.,&Singleton,K.J.(1997).AnEconometricModeloftheTermStructure
+ofInterestRateSwapYields.JournalofFinance,52(4),1287–1321.
+Dyl,E.A.,&Joehnk,M.D.(1981).RidingtheYieldCurve:DoesItWork?Journal
+ofPortfolioManagement,7(3),13–17.
+Dyl,E.A.,&Martin,S.A.(1986).AnotherLookatBarbellsVersusLadders.Journal
+ofPortfolioManagement,12(3),54–59.
+Edwards, S., & Susmel, R. (2003). Interest-Rate Volatility in Emerging Markets.
+ReviewofEconomicsandStatistics,85(2),328–348.
+Evans, C. L., & Marshall, D. A. (2007). Economic Determinants of the Nominal
+TreasuryYieldCurve.JournalofMonetaryEconomics,54(7),1986–2003.
+Fabozzi, F. J. (2006). Fixed Income Mathematics: Analytical & StatisticalTechniques.
+NewYork,NY:McGraw-Hill.
+Fabozzi,F.J.(2012a).BondMarkets,Analysis,andStrategies.UpperSaddleRiver,NJ:
+PrenticeHall.
+Fabozzi,F.J.(2012b).InstitutionalInvestmentManagement:EquityandBondPortfolio
+StrategiesandApplications.Hoboken,NJ:Wiley.
+Fabozzi,F.J.,&Mann,S.V.(2010).IntroductiontoFixedIncomeAnalytics:Relative
+ValueAnalysis,RiskMeasures,andValuation.Hoboken,NJ:Wiley.
+Fabozzi,F.J.,Martellini,L.,&Priaulet,P.(2006).AdvancedBondPortfolioManage-
+ment.BestPracticesinModelingandStrategies.Hoboken,NJ:Wiley.
+Feldhütter,P.,&Lando,D.(2008).DecomposingSwapSpreads.JournalofFinancial
+Economics,88(2),375–405.
+Fisher, M. (2002). Special Repo Rates: An Introduction. Federal Reserve Bank of
+Atlanta,EconomicReview,87(2),27–43.
+Fisher,L.,&Weil,R.L.(1971).CopingwiththeRiskofInterest-RateFluctuations:
+Returns to Bondholders from Naïve and Optimal Strategies. Journal of Business,
+44(4),408–431.
+Fong, H. G., & Vasicek, O. A. (1983). The Tradeoff Between Return and Risk in
+ImmunizedPortfolios.FinancialAnalystsJournal,39(5),73–78.
+Fong, H. G., & Vasicek, O. A. (1984). A Risk Minimizing Strategy for Portfolio
+Immunization.JournalofFinance,39(5),1541–1546.
+Fontaine, J.-F., & Nolin, G. (2017). Measuring Limits of Arbitrage in Fixed-Income
+Markets (StaffWorkingPaper,No.2017-44).Ottawa,Canada:BankofCanada.
+Fontana, A. (2010). The Persistent Negative CDS-Bond Basis During the 2007/08
+Financial Crisis (Working Paper). Available online: http://www.unive.it/media/
+allegato/DIP/Economia/Working_papers/Working_papers_2010/WP_DSE_
+fontana_13_10.pdf.
+Fontana,A.,&Scheicher,M.(2016).AnAnalysisofEuroAreaSovereignCDSand
+TheirRelationwithGovernmentBonds.JournalofBanking&Finance,62,126–
+140.
+=== Page 131 ===
+116 Z.KakushadzeandJ.A.Serur
+Frazzini, A., & Pedersen, L. H. (2014). Betting Against Beta. Journal of Financial
+Economics,111(1),1–25.
+Fridson, M. S., & Xu, X. (2014). Duration Targeting: No Magic for High-Yield
+Investors.FinancialAnalystsJournal,70(3),28–33.
+Füss,R.,&Nikitina,O.(2011).ExplainingYieldCurveDynamics.JournalofFixed
+Income,21(2),68–87.
+Gibson,M.S.,&Pritsker,M.(2000).ImprovingGrid-BasedMethodsforEstimating
+ValueatRiskofFixed-IncomePortfolios.JournalofRisk,3(2),65–89.
+Grantier, B. J. (1988). Convexity and Bond Performance: The Benter the Better.
+FinancialAnalystsJournal,44(6),79–81.
+Grieves,R.(1999).ButterflyTrades.JournalofPortfolioManagement,26(1),87–95.
+Grieves,R.,Mann,S.V.,Marcus,A.J.,&Ramanlal,P.(1999).RidingtheBillCurve.
+JournalofPortfolioManagement,25(3),74–82.
+Grieves, R., & Marcus, A. J. (1992). Riding the Yield Curve: Reprise. Journal of
+PortfolioManagement,18(4),67–76.
+Heidari, M., & Wu, L. (2003). Are Interest Rate Derivatives Spanned by theTerm
+StructureofInterestRates?JournalofFixedIncome,13(1),75–86.
+Henderson,T.M.(2003).FixedIncomeStrategy:ThePractitioner’sGuidetoRidingthe
+Curve.Chichester,UK:Wiley.
+Horvath,P. A. (1998). AMeasurement oftheErrorsinIntra-PeriodCompounding
+andBondValuation:AShortExtension.FinancialReview,23(3),359–363.
+Hotchkiss,E.S.,&Ronen,R.(2002).TheInformationalEfficiencyoftheCorporate
+BondMarket:AnIntradayAnalysis.ReviewofFinancialStudies,15(5),1325–1354.
+Houweling, P., & van Vundert, J. (2017). Factor Investing in the Corporate Bond
+Market.FinancialAnalystsJournal,73(2),100–115.
+Hull, J. C. (2012). Options, Futures and Other Derivatives. Upper Saddle River, NJ:
+PrenticeHall.
+Hull, J., Predescu, M., &White, A. (2005). Bond Prices, Default Probabilities and
+RiskPremiums.JournalofCreditRisk,1(2),53–60.
+Hürlimann,W.(2002).OnImmunization,Stop-LossOrderandtheMaximumShiu
+Measure.Insurance:MathematicsandEconomics,31(3),315–325.
+Hürlimann,W.(2012).OnDirectionalImmunizationandExactMatching.Commu-
+nicationsinMathematicalFinance,1(1),1–12.
+Ilmanen,A.(2011).ExpectedReturns:AnInvestor’sGuidetoHarvestingMarketRewards.
+Hoboken,NJ:Wiley.
+Ilmanen, A., Byrne, R.,Gunasekera, H., & Minikin, R. (2004).WhichRisks Have
+BeenBestRewarded?JournalofPortfolioManagement,30(2),53–57.
+Iturricastillo,I.,&DeLaPeña,J.I.(2010).AbsoluteImmunizationRiskasGeneral
+MeasureofImmunizationRisk.AnálisisFinanciero,114(3),42–59.
+Jermann,U.J.(2016).NegativeSwapSpreadsandLimitedArbitrage (WorkingPaper).
+Availableonline:https://ssrn.com/abstract=2737408.
+Jones,F.J.(1991).YieldCurveStrategies.JournalofFixedIncome,1(2),43–48.
+Jordan,B.D.,&Jordan,S.(1997).SpecialRepoRates:AnEmpiricalAnalysis.Journal
+ofFinance,52(5),2051–2072.
+=== Page 132 ===
+5 FixedIncome 117
+Joslin,S.,&Konchitchki,Y.(2018).InterestRateVolatility,theYieldCurve,andthe
+Macroeconomy.JournalofFinancialEconomics,128(2),344–362.
+Jostova,G.,Nikolova,S.,Philipov,A.,&Stahel,C.W.(2013).MomentuminCor-
+porateBondReturns.ReviewofFinancialStudies,26(7),1649–1693.
+Judd,K.L.,Kubler,F.,&Schmedders,K.(2011).BondLaddersandOptimalPort-
+folios.ReviewofFinancialStudies,24(12),4123–4166.
+Kakushadze,Z.(2015).Phynance.UniversalJournalofPhysicsandApplication,9(2),
+64–133.Availableonline:https://ssrn.com/abstract=2433826.
+Kalev,P.S.,&Inder,B.A.(2006).TheInformationContentoftheTermStructure
+ofInterestRates.AppliedEconomics,38(1),33–45.
+Kambhu, J. (2006). Trading Risk, Market Liquidity, and Convergence Trading in
+theInterestRateSwapSpread.FederalReserveBankofNewYork,EconomicPolicy
+Review,12(1),1–13.
+Keane,F.(1996).RepoRatePatternsforNewTreasuryNotes.FederalReserveBankof
+NewYork,CurrentIssuesinEconomicsandFinance,2(10),1–6.
+Khang, C. H. (1983). A Dynamic Global Portfolio Immunization Strategy in the
+WorldofMultipleInterestRateChanges:ADynamicImmunizationandMinimax
+Theorem.JournalofFinancialandQuantitativeAnalysis,18(3),355–363.
+Kim, G. H., Li, H., & Zhang,W. (2016). CDS-Bond Basis and Bond Return Pre-
+dictability.JournalofEmpiricalFinance,38,307–337.
+Kim, G. H., Li, H., & Zhang,W. (2017).The CDS-Bond Basis Arbitrage and the
+CrossSectionofCorporateBondReturns.JournalofFuturesMarkets,37(8),836–
+861.
+Klingler, S., & Sundaresan, S. M. (2016). An Explanation of Negative Swap Spreads:
+DemandforDurationfromUnderfundedPensionPlans (WorkingPaper).Available
+online:https://ssrn.com/abstract=2814975.
+Kobor,A.,Shi,L.,&Zelenko,I.(2005).WhatDeterminesU.S.SwapSpreads? (World
+BankWorkingPaperNo.62).Washington,DC:WorldBank.
+Kocherlakota, R., Rosenbloom, E., & Shiu, E. (1988). Algorithms for Cash-Flow
+Matching.TransactionsofSocietyofActuaries,40,477–484.
+Kocherlakota, R., Rosenbloom, E., & Shiu, E. (1990). Cash-Flow Matching and
+LinearProgrammingDuality.TransactionsofSocietyofActuaries,42,281–293.
+Koijen, R. S. J., Moskowitz, T. J., Pedersen, L. H., & Vrugt, E. B. (2018). Carry.
+JournalofFinancialEconomics,127(2),197–225.
+Kozhemiakin,A.V.(2007).TheRiskPremiumofCorporateBonds.JournalofPortfolio
+Management,33(2),101–109.
+Krishnamurthy, A. (2002). The Bond/Old-Bond Spread. Journal of Financial Eco-
+nomics,66(2),463–506.
+Langetieg,T.C.,Leibowitz,L.,&Kogelman,S.(1990).DurationTargetingandthe
+ManagementofMultiperiodReturns.FinancialAnalystsJournal,46(5),35–45.
+Lang, L. H. P., Litzenberger, R. H., & Liu, A. L. (1998). Determinants of Interest
+RateSwapSpreads.JournalofBanking&Finance,22(12),1507–1532.
+Leibowitz, M. L., & Bova, A. (2013). DurationTargeting and Index Convergence.
+MorganStanleyInvestmentManagementJournal,3(1),73–80.
+=== Page 133 ===
+118 Z.KakushadzeandJ.A.Serur
+Leibowitz,M.L.,Bova,A.,&Kogelman,S.(2014).Long-TermBondReturnsUnder
+DurationTargeting.FinancialAnalystsJournal,70(1),31–51.
+Leibowitz,M.L.,Bova,A.,&Kogelman,S.(2015).BondLaddersandRollingYield
+Convergence.FinancialAnalystsJournal,71(2),32–46.
+Leland,E.C.,&Panos,N.(1997).ThePuttableBondMarket:Structure,Historical
+Experience,andStrategies.JournalofFixedIncome,7(3),47–60.
+L’Hoir, M., & Boulhabel, M. (2010). A Bond-Picking Model for Corporate Bond
+Allocation.JournalofPortfolioManagement,36(3),131–139.
+Litterman,R.B.,&Scheinkman,J.(1991).CommonFactorsAffectingBondReturns.
+JournalofFixedIncome,1(1),54–61.
+Liu,J.,Longstaff,F.A.,&Mandell,R.E.(2006).TheMarketPriceofRiskinInterest
+RateSwaps:TheRolesofDefaultandLiquidityRisks.JournalofBusiness,79(5),
+2337–2360.
+Macaulay,F.R.(1938).SomeTheoreticalProblemsSuggestedbytheMovementsofInterest
+Rates,BondYieldsandStockPricesintheUnitedStatesSince1856.NewYork,NY:
+NBERInc.
+Mankiw,N.G.,&Summers,L.H.(1984).DoLong-TermInterestRatesOverreact
+toShort-TermInterestRates?BrookingsPapersonEconomicActivity,1,223–242.
+Mann,S.V.,&Ramanlal,P.(1997).TheRelativePerformanceofYieldCurveStrate-
+gies.JournalofPortfolioManagement,23(4),64–70.
+Martellini,L.,Priaulet,P.,&Priaulet,S.(2002).UnderstandingtheButterflyStrategy.
+JournalofBondTradingandManagement,1(1),9–19.
+Martellini, L., Priaulet, P., & Priaulet, S. (2003). Fixed Income Securities:Valuation,
+RiskManagementandPortfolioStrategies.Hoboken,NJ:Wiley.
+Minton,B.A.(1997).AnEmpiricalExaminationofBasicValuationModelsforPlain
+VanillaU.S.InterestRateSwaps.JournalofFinancialEconomics,44(2),251–277.
+Montrucchio, L., & Peccati, L. (1991). A Note on Shiu-Fisher-Weil Immunization
+Theorem.Insurance:MathematicsandEconomics,10(2),125–131.
+Nashikkar,A.,Subrahmanyam,M.G.,&Mahanti,S.(2011).LiquidityandArbitrage
+intheMarketforCreditRisk.JournalofFinancialandQuantitativeAnalysis,46(3),
+627–656.
+Nawalkha,S.K.,&Chambers,D.R.(1996).AnImprovedImmunizationStrategy:
+M-absolute.FinancialAnalystsJournal,52(5),69–76.
+Ng,K.Y.,&Phelps,B.D.(2015).TheHuntforaLow-RiskAnomalyintheUSD
+CorporateBondMarket.JournalofPortfolioManagement,42(1),63–84.
+Osborne,M.J.(2005).OntheComputationofaFormulafortheDurationofaBond
+thatYieldsPreciseResults.QuarterlyReviewofEconomicsandFinance,45(1),161–
+183.
+Osteryoung,J.S.,McCarty,D.E.,&Roberts,G.S.(1981).RidingtheYieldCurve
+withTreasuryBills.FinancialReview,16(3),57–66.
+Pantalone,C.,&Platt,H.(1984).RidingtheYieldCurve.JournalofFinancialEdu-
+cation,13,5–9.
+Pascalau, R., & Poirier, R. (2015). Bootstrapping the Relative Performance ofYield
+CurveStrategies.JournalofInvestmentStrategies,4(2),55–81.
+=== Page 134 ===
+5 FixedIncome 119
+Pelaez, R. F. (1997). Riding the Yield Curve: Term Premiums and Excess Returns.
+ReviewofFinancialEconomics,6(1),113–119.
+Rajan,A.,McDermott,G.,&Roy,R.(Eds.).(2007).TheStructuredCreditHandbook.
+Hoboken,NJ:Wiley.
+Reddington, F. M. (1952). Review of the Principles of Life Insurance Valuations.
+JournaloftheInstituteofActuaries,78(3),286–340.
+Reitano, R. (1996). Non-parallel Yield Curve Shifts and Stochastic Immunization.
+JournalofPortfolioManagement,22(2),71–78.
+Samuelson,P.A.(1945).TheEffectofInterestRateIncreasesontheBankingSystem.
+AmericanEconomicReview,35(1),16–27.
+Shiller, R. J. (1979). The Volatility of Long-Term Interest Rates and Expectations
+ModelsoftheTermStructure.JournalofPoliticalEconomy,87(6),1190–1219.
+Shiller,R.J.,&Modigliani,F.(1979).CouponandTaxEffectsonNewandSeasoned
+BondYieldsandtheMeasurementoftheCostofDebtCapital.JournalofFinancial
+Economics,7(3),297–318.
+Shiu,E.S.W.(1987).OntheFisher-WeilImmunizationTheorem.Insurance:Math-
+ematicsandEconomics,6(4),259–266.
+Shiu,E.S.W.(1988).ImmunizationofMultipleLiabilities.Insurance:Mathematics
+andEconomics,7(4),219–224.
+Sill,K.(1996).TheCyclicalVolatilityofInterestRates.BusinessReviewoftheFederal
+ReserveBankofPhiladelphia (January/February),15–29.
+Stulz,R.M.(2010).CreditDefaultSwapsandtheCreditCrisis.JournalofEconomic
+Perspectives,24(1),73–92.
+Su,E.,&Knowles,T.W.(2010).MeasuringBondPortfolioValueatRiskandExpected
+ShortfallinUSTreasuryMarket.AsiaPacificManagementReview,15(4),477–501.
+Tuckman, B., & Serrat, A. (2012). Fixed Income Securities:Tools forToday’s Markets
+(3rded.).Hoboken,NJ:Wiley.
+Turnovsky, S. J. (1989). The Term Structure of Interest Rates and the Effects of
+MacroeconomicPolicy.JournalofMoney,CreditandBanking,21(3),321–347.
+Wang,L.(2014).Margin-BasedAssetPricingandtheDeterminantsoftheCDSBasis.
+JournalofFixedIncome,24(2),61–78.
+Wilner,R.(1996).ANewToolforPortfolioManagers:Level,Slope,andCurvature
+Durations.JournalofFixedIncome,6(1),48–59.
+Yamada,S.(1999).RiskPremiumsintheJGBMarketandApplicationtoInvestment
+Strategies.JournalofFixedIncome,9(2),20–41.
+Zheng,H.,Thomas,L.C.,&Allen,D.E.(2003).TheDurationDerby:AComparison
+ofDurationStrategiesinAssetLiabilityManagement.JournalofBondTradingand
+Management,1(4),371–380.
+Zhu, H. (2006). An Empirical Comparison of Credit Spreads between the Bond
+MarketandtheCreditDefaultSwapMarket.JournalofFinancialServicesResearch,
+29(3),211–235.
+=== Page 135 ===
+6
+Indexes
+6.1 Generalities
+Anindexisadiversifiedportfolioofassetscombinedwithsomeweights.The
+underlying assets are often stocks, e.g., in indexes such as DJIA, S&P 500,
+Russell3000,etc.DJIAweightsarebasedonprice,whileS&P500andRussell
+3000 weights are based on market capitalization. Investment vehicles such as
+indexfutures,index-basedETFs,etc.,allowgainingexposuretoabroadindex
+withasingletrade.1
+6.2 Strategy: Cash-and-carry Arbitrage
+This strategy (a.k.a. “index arbitrage”) aims to exploit price inefficiencies
+between the index spot2 price and index futures price.3 Theoretically, the
+priceoftheindexfuturesmustequalthespotpriceaccountingforthecostof
+carryduringthelifeofthefuturescontract:
+1Forsomeliteratureonindexes,see,e.g.,AntoniouandHolmes(1995),BeneishandWhaley(1996),
+BolognaandCavallo(2002),Bos(2000),Changetal.(1999),ChiangandWang(2002),Edwards(1988),
+Frinoetal.(2004),GrahamandPirie(1994),Hautcoeur(2006),IlluecaandLafuente(2003),Kenettetal.
+(2013),LamoureuxandWansley(1987),LarsenandResnick(1998),Lo(2016),SchwartzandLaatsch
+(1991),Spyrou(2005),Yo(2001).
+2“Spot”referstothecurrentvalueoftheindexbasedonthecurrentpricesofitsconstituents.“Cash”
+referstotheunderlyingindexportfolio.Thisiscommontraderlingo.
+3See,e.g.,Brenneretal.(1989),BühlerandKempf(1995),ButterworthandHolmes(2010),Chanand
+Chung(1993),CornellandFrench(1983),Dwyeretal.(1996),Fassas(2011),Puttonen(1993),Richie
+etal.(2008),YadavandPope(1990),YadavandPope(1994).
+©TheAuthor(s)2018 121
+Z.KakushadzeandJ.A.Serur,151TradingStrategies,
+https://doi.org/10.1007/978-3-030-02792-6_6
+=== Page 136 ===
+122 Z.KakushadzeandJ.A.Serur
+F ∗(t,T) = [S(t)− D(t,T)]exp(r (T −t)) (6.1)
+Here:F
+∗(t,T)
+isthetheoretical(“fair”)price,attimet,ofthefuturescontract
+withthedeliverytimeT;S(t) isthespotvalueattimet; D(t,T) isthesumof
+(discountedvaluesof)thedividendspaidbytheunderlyingstocksbetweenthe
+timet anddelivery;andr istherisk-freerate,whichforthesakeofsimplicity
+isassumedtobeconstantfromt todelivery.4Thebasisisdefinedas
+F(t,T)− F ∗(t,T)
+B(t,T) = (6.2)
+S(t)
+where
+F(t,T)
+is the current price of the futures contract with the delivery
+time T. If B(t,T) (cid:3)= 0, more precisely, if |B(t,T)| exceeds the pertinent
+transaction costs of executing the arbitrage trade, then there is an arbitrage
+opportunity.Ifthebasisispositive(negative),thefuturespriceisrich(cheap)
+comparedwiththespotprice,sothearbitragetradeamountstoselling(buying)
+thefuturesandbuying(selling)thecash(i.e.,theindexbasket).5Theposition
+isclosedwhenthebasisgoestozero,i.e.,thefuturespriceconvergestoitsfair
+value.Sucharbitrageopportunitiesareshort-livedandwiththeadventofhigh
+frequencytradingrequireextremelyfastexecution.Inmanycases,theslippage
+canbeprohibitivetoexecutethetrade.6
+6.3 Strategy: Dispersion Trading in Equity
+Indexes
+Thisstrategytakeslongpositionsonvolatilitiesoftheindexconstituentsand
+a short position on index volatility. It is rooted in an empirical observation
+that,forthemostpart,7 theimpliedvolatility (cid:2)σ fromindexoptionsissizably
+I
+σ
+higherthanthetheoreticalindexvolatility givenby
+I
+4Equation(6.1)furtherignoressomeotherpertinentaspectssuchastaxes,asymmetryofinterestrates
+(forlongandshortholdings),transactioncosts,etc.
+5Sellingthefuturesposesnoissues.However,sellingthecashcanbeproblematicwithshort-sellingissues
+suchashard-to-borrowsecurities,etc.Continuouslymaintainingasizabledollar-neutralbookwhichis
+longcashandshortfuturescanhelpcircumventsuchissues.
+6Insomecasesincompletebasketsapproximatingtheindexcanbeexecutedtoreducethetransaction
+costs,e.g.,inmarketcapweightedindexes,byomittinglowercap(andthuslessliquid)stocks.However,
+suchmishedgesalsoincreasetheriskoflosingmoneyonthetrade.
+7Butnotalways—seebelow.Forsomeliteratureonindexvs.constituentvolatilitiesanddispersionand
+correlationtrading,see,e.g.,Carrasco(2007),Deng(2008),LozovaiaandHizhniakova(2005),Marshall
+(2008),Marshall(2009),Maze(2012),Meissner(2016),Nelken(2006).
+=== Page 137 ===
+6 Indexes 123
+(cid:3)N
+σ2 = w w σ σ ρ (6.3)
+I i j i j ij
+i,j=1
+w σ
+where are the weights of the stocks in the index, are their implied
+i i
+ρ
+volatilitiesfromsingle-stockoptions,and isthesamplecorrelationmatrix
+ij
+( ρ = 1)8 computed based on a time series of historical returns.9 Put differ-
+ii
+ently,theindexoptionsarepricedhigherthanthepricecorrespondingtothe
+aforesaidtheoreticalvolatility.So,abasicstrategycanbestructuredasfollows.
+Foreachstockintheindexwehavealongpositioninn (near-ATM)single-
+i
+stock option straddles (whose payoffs are based on the stock prices P), and
+i
+wehaveashortpositionina(near-ATM)optionstraddlefortheindex(whose
+payoffisbasedontheindexlevel P —seebelow),where
+I
+S P
+n = (cid:4) i I (6.4)
+i
+N
+S P
+i=1 i i
+Here: S issharesoutstandingforstocki (weareassumingtheindexismarket
+i
+cap weighted); and P is the index level. With this definition of n , we have
+(cid:4) I i
+P I = i N =1 n i P i ,sotheindexoptionstraddlepayoffmatchestheindividual
+single-stock option straddle payoffs as closely as possible.10 All options have
+approximately 1month until the expiration, and all positions remain open
+untiltheexpiration.11
+Strategy: Dispersion Trading: Subset Portfolio
+Forsomeindexes,somecomponentstocksmaynothavesingle-stockoptions.
+Often these would be less liquid, lower market cap stocks.They would have
+to be excluded from the bought portfolio. Reducing the number of bought
+8Notethatthepair-wisecorrelationsρ ij,i (cid:3)= j,typicallyareunstableout-of-sample,whichcanintroduce
+asizableerrorintothiscomputation.
+9Forsomepertinentliterature,see,e.g.,BakshiandKapadia(2003a,b),Bakshietal.(2003),Bollenand
+Whaley(2004),BrangerandSchlag(2004),CovalandShumway(2001),DennisandMayhew(2002),
+Dennisetal.(2006),Driessenetal.(2009),Gârleanuetal.(2009),Lakonishoketal.(2007).
+10IfATMoptionsarenotavailableforagivenstock,OTMoptions(closetoATM)canbeused.
+11Thisstrategycanbearguedtobeavolatilitystrategy.However,itcanalsobearguedtobecorrelation
+tradingasthevolatilityoftheportfoliodependsonthecorrelationsbetweenitscomponents(seeEq.(6.3)).
+Thus,whentheimpliedindexvolatility(cid:2)σ I ishigherthanthetheoreticalvalueσ I,thiscanbe(arguably)
+interpretedastheimpliedaveragepair-wisecorrelationbeinghigherthantheaveragepair-wisecorrelation
+basedonρ ij.Inthisregard,attimestheindeximpliedvolatilitycanbelowerthanitstheoreticalvalue,
+sothedispersionstrategythatisshortindexvolatilitywouldlosemoneyandthereversetrademightbein
+order.See,e.g.,Deng(2008).
+=== Page 138 ===
+124 Z.KakushadzeandJ.A.Serur
+underlying single-stock options is also desirable to reduce transaction costs.
+ρ
+Furthermore,thesamplecorrelationmatrix issingularforatypicallookback
+ij
+period(e.g.,dailyclose-to-closereturns,goingback1year,whichisabout252
+tradingdays)asthenumberofassetsislarge(500forS&P500andevenlarger
+forotherindexes).Asmentionedabove,thepair-wisecorrelationsareunstable
+σ
+out-of-sample,whichincreaseserrorsinthetheoreticalvalue computedvia
+I
+Eq.(6.3).Thiscanbemitigatedasfollows.12
+Thesingularandunstablecorrelationmatrixcanbemadenonsingularand
+more stable by replacing it with a statistical risk model (Kakushadze and Yu
+2017).LetV (A) betheprincipalcomponentsof ρ withtheeigenvalues λ(A)
+i ij
+in the decreasing order, λ(1) > λ(2) > λ(r) , where r is the rank of ρ (if
+ij
+r < N, the other eigenvalues are null: λ(A) = 0, A > r).The statistical risk
+modelcorrelationmatrixisgivenby
+(cid:3)K
+ψ = ξ2 δ + λ(A) V (A) V (A) (6.5)
+ij i ij i j
+A=1
+(cid:3)K (cid:5) (cid:6)
+ξ2 = 1− λ(A) V (A) 2 (6.6)
+i i
+A=1
+where K < r is the number of risk factors based on the first K principal
+ξ
+components that are chosen to explain systematic risk, and is the specific
+i
+(a.k.a. idiosyncratic) risk. The simplest way to fix K is via eRank (effective
+rank)(RoyandVetterli2007)—seeKakushadzeandYu(2017)fordetailsand
+complete source code for constructing ψ and fixing K. So, now we can use
+ij
+ψ ρ σ
+(insteadof )tocomputethetheoreticalvolatility :
+ij ij I
+(cid:7) (cid:8)
+(cid:3)N (cid:3)N (cid:3)K (cid:3)N 2
+σ2 = w w σ σ ψ = w2σ2ξ2+ λ(A) V (A)w σ (6.7)
+I i j i j ij i i i i i i
+i,j=1 i=1 A=1 i=1
+The first term on the r.h.s. of Eq. (6.7) is due to the specific risk. The long
+portfoliothencontainsonlythestraddlescorrespondingtothefirst N∗single-
+stockoptionswiththelowest N∗valuesof w2σ2ξ2.E.g.,forS&P500wecan
+i i i
+take N∗ = 100.
+12ThevariationofthedispersiontradingstrategywediscusshereissimilarbutnotidenticaltothePCA
+(principalcomponentanalysis)basedstrategydiscussedinDeng(2008),LarssonandFlohr(2011),Su
+(2006).Thestatisticalriskmodelconstruction(seebelow)ismorestreamlined.
+=== Page 139 ===
+6 Indexes 125
+6.4 Strategy: Intraday Arbitrage Between
+Index ETFs
+Thisstrategyamountstoexploitingshort-termmispricingsbetweentwoETFs
+(call them ETF1 and ETF2) on the same underlying index.13 It can be sum-
+marizedasfollows:
+⎧
+⎪ ⎪BuyETF2,shortETF1 if PBid ≥ PAsk ×κ
+⎪ ⎨ 1 2
+Liquidateposition if PBid ≥ PAsk
+Rule = 2 1 (6.8)
+⎪ ⎪ ⎪ ⎩ BuyETF1,shortETF2 if P 2 Bid ≥ P 1 Ask ×κ
+Liquidateposition if PBid ≥ PAsk
+1 2
+Here:
+κ
+isapredefinedthreshold,whichiscloseto1,e.g.,
+κ = 1.002(see,e.g.,
+Marshalletal.2013); PBid and PBid arethebidpricesforETF1andETF2,
+1 2
+and PAsk and PAsk aretheaskprices.Marketable“fillorkill”limitorderscan
+1 2
+beusedtoexecutethetrades.Sucharbitrageopportunitiesareephemeraland
+requireafastorderexecutionsystemorelseslippagewilleatawaytheprofits.
+6.5 Strategy: Index Volatility Targeting with
+Risk-Free Asset
+Avolatilitytargetingstrategyaimstomaintainaconstantvolatilitylevel,which
+can be achieved by a periodic (weekly, monthly, etc.) rebalancing between a
+risky asset—in this case an index—and a riskless asset (e.g., U.S. Treasury
+bills).14 If σ isthevolatilityoftheriskyasset15 andthevolatilitytargetis σ ∗,
+then the allocation weight for the risky asset is given by16 w = σ ∗ /σ , and
+the allocation weight for the risk-free asset is 1 − w . To avoid overtrading
+13E.g., S&P 500 ETFs, SPDRTrust (ticker SPY) and iShares (ticker IVV). See, e.g., Marshall et al.
+(2013).ForsomeadditionalliteratureonETFarbitrageandrelatedtopics,see,e.g.,AbreuandBrun-
+nermeier(2002),AckertandTian(2000),Ben-Davidetal.(2012),Brownetal.(2018),Cherry(2004),
+Dolvin(2009),GarveyandWu(2009),HendershottandMoulton(2011),Johnson(2008),Malufand
+Albuquerque(2013).
+14Forsomepertinentliterature,see,e.g.,Albeverioetal.(2013),Andersonetal.(2014),Cirellietal.
+(2017),Cooper(2010),Giese(2012),KhuzwayoandMaré(2014),KimandEnke(2016),Kirbyand
+Ostdiek(2012),Papageorgiouetal.(2017),Perchetetal.(2014),Torricelli(2018),Zakamulin(2014).
+15Usually,thisisimpliedvolatilityasopposedtohistoricalvolatilityastheformerisconsideredtobe
+forward-looking.Alternatively,itcanbebasedonvariousvolatility-forecastingtechniques.
+16IfthereisapresetmaximumleverageL,thenwiscappedatL.
+=== Page 140 ===
+126 Z.KakushadzeandJ.A.Serur
+andreducetransactioncosts,rebalancing(insteadofperiodically)canbedone
+κ |(cid:9)w|/w
+based,e.g.,onapresetthreshold ,say,onlyifthepercentagechange
+κ
+sincethelastrebalancingexceeds .
+References
+Abreu,D.,&Brunnermeier,M.K.(2002).SynchronizationRiskandDelayedArbi-
+trage.JournalofFinancialEconomics,66(2–3),341–360.
+Ackert,L.F.,&Tian,Y.S.(2000).ArbitrageandValuationintheMarketforStandard
+andPoor’sDepositaryReceipts.FinancialManagement,29(3),71–87.
+Albeverio,S.,Steblovskaya,V.,&Wallbaum,K.(2013).InvestmentInstrumentswith
+VolatilityTargetMechanism.QuantitativeFinance,13(10),1519–1528.
+Anderson,R.M.,Bianchi,S.W.,&Goldberg,L.R.(2014).DeterminantsofLevered
+PortfolioPerformance.FinancialAnalystsJournal,70(5),53–72.
+Antoniou, A., & Holmes, P. (1995). Futures Trading, Information and Spot Price
+Volatility: Evidence from the FTSE 100 Stock Index Futures Contract Using
+GARCH.JournalofBanking&Finance,19(1),117–129.
+Bakshi, G., & Kapadia, N. (2003a). Delta-Hedged Gains and the Negative Market
+VolatilityRiskPremium.ReviewofFinancialStudies,16(2),527–566.
+Bakshi,G.,&Kapadia,N.(2003b).VolatilityRiskPremiumsEmbeddedinIndividual
+EquityOptions.JournalofDerivatives,11(1),45–54.
+Bakshi, G., Kapadia, N., & Madan, D. (2003). Stock Return Characteristics, Skew
+Laws,andtheDifferentialPricingofIndividualEquityOptions.ReviewofFinancial
+Studies,16(1),101–143.
+Ben-David,I.,Franzoni,F.A.,&Moussawi,R.(2012).ETFs,Arbitrage,andContagion
+(WorkingPaper).Availableonline:http://www.nccr-finrisk.uzh.ch/media/pdf/wp/
+WP793_B1.pdf.
+Beneish, M. D., & Whaley, R. E. (1996). An Anatomy of the “S&P Game”: The
+EffectsofChangingtheRules.JournalofFinance,51(5),1909–1930.
+Bollen,N.P.B.,&Whaley,R.(2004).DoesNetBuyingPressureAffecttheShapeof
+ImpliedVolatilityFunctions?JournalofFinance,59(2),711–754.
+Bologna,P.,&Cavallo,L.(2002).DoestheIntroductionofIndexFuturesEffectively
+Reduce Stock MarketVolatility? Is the Futures Effect Immediate? Evidence from
+the Italian Stock Exchange Using GARCH. Applied Financial Economics, 12(3),
+183–192.
+Bos,R.(2000).IndexCalculationPrimer.NewYork,NY:StandardandPoor’sQuan-
+titativeServices.
+Branger,N.,&Schlag,C.(2004).WhyIstheIndexSmilesoSteep?ReviewofFinance,
+8(1),109–127.
+Brenner,M.,Subrahmanyam,M.G.,&Uno,J.(1989).StockIndexFuturesArbitrage
+intheJapaneseMarkets.JapanandtheWorldEconomy,1(3),303–330.
+=== Page 141 ===
+6 Indexes 127
+Brown,D.C.,Davies,S.,&Ringgenberg,M.(2018).ETFArbitrageandReturnPre-
+dictability (WorkingPaper).Availableonline:https://ssrn.com/abstract=2872414.
+Bühler,W., & Kempf, A. (1995). DAX Index Futures: Mispricing and Arbitrage in
+GermanMarkets.JournalofFuturesMarkets,15(7),833–859.
+Butterworth,D.,&Holmes,P.(2010).MispricinginStockIndexFuturesContracts:
+EvidencefortheFTSE100andFTSEmid250Contracts.AppliedEconomicsLetters,
+7(12),795–801.
+Carrasco, C. G. (2007). Studying the Properties of the Correlation Trades (Work-
+ingPaper).Availableonline:https://mpra.ub.uni-muenchen.de/22318/1/MPRA_
+paper_22318.pdf.
+Chan, K., & Chung, Y. P. (1993). Intraday Relationships Among Index Arbitrage,
+Spot and Futures PriceVolatility, and Spot MarketVolume: ATransactions Data
+Test.JournalofBanking&Finance,17(4),663–687.
+Chang,E.C.,Cheng,J.W.,&Pinegar,J.M.(1999).DoesFuturesTradingIncrease
+Stock Market Volatility?The Case of the Nikkei Stock Index Futures Exchange.
+JournalofBanking&Finance,23(5),727–753.
+Cherry,J.(2004).TheLimitsofArbitrage:EvidencefromExchangeTradedFunds(Work-
+ingPaper).Availableonline:https://ssrn.com/abstract=628061.
+Chiang,M.H.,&Wang,C.Y.(2002).TheImpactofFuturesTradingonSpotIndex
+Volatility: Evidence fromTaiwan Index Futures. Applied Economics Letters, 9(6),
+381–385.
+Cirelli, S., Vitali, S., Ortobelli Lozza, S., & Moriggia, V. (2017). A Conservative
+Discontinuous Target Volatility Strategy. Investment Management and Financial
+Innovations,14(2–1),176–190.
+Cooper, T. (2010). Alpha Generation and Risk Smoothing Using Managed Volatility
+(WorkingPaper).Availableonline:https://ssrn.com/abstract=1664823.
+Cornell,B.,&French,K.R.(1983).ThePricingofStockIndexFutures.Journalof
+FuturesMarkets,3(1),1–14.
+Coval,J.D.,&Shumway,T.(2001).ExpectedOptionsReturns.JournalofFinance,
+56(3),983–1009.
+Deng, Q. (2008). Volatility Dispersion Trading (Working Paper). Available online:
+https://ssrn.com/abstract=1156620.
+Dennis, P., & Mayhew, S. (2002). Risk-Neutral Skewness: Evidence from Stock
+Options.JournalofFinancialandQuantitativeAnalysis,37(3),471–493.
+Dennis,P.,Mayhew,S.,&Stivers,C.(2006).StockReturns,ImpliedVolatilityInnova-
+tions,andtheAsymmetricVolatilityPhenomenon.JournalofFinancialandQuan-
+titativeAnalysis,41(2),381–406.
+Dolvin,S.D.(2009).ETFs:ArbitrageOpportunitiesandMarketForecasting.Journal
+ofIndexInvesting,1(1),107–116.
+Driessen, J., Maenhout, P. J., & Vilkov, G. (2009).The Price of Correlation Risk:
+EvidencefromEquityOptions.JournalofFinance,64(3),1377–1406.
+Dwyer,G.P.,Jr.,Locke,P.,&Yu,W.(1996).IndexArbitrageandNonlinearDynamics
+BetweentheS&P500FuturesandCash.ReviewofFinancialStudies,9(1),301–
+332.
+=== Page 142 ===
+128 Z.KakushadzeandJ.A.Serur
+Edwards,F.R.(1988).FuturesTradingandCashMarketVolatility:StockIndexand
+InterestRateFutures.JournalofFuturesMarkets,8(4),421–439.
+Fassas,A.P.(2011).MispricinginStockIndexFuturesMarkets—TheCaseofGreece.
+InvestmentManagementandFinancialInnovations,8(2),101–107.
+Frino,A.,Gallagher,D.R.,Neubert,A.S.,&Oetomo,T.N.(2004).IndexDesignand
+ImplicationsforIndexTracking.JournalofPortfolioManagement,30(2),89–95.
+Gârleanu,N.,Pedersen,L.H.,&Poteshman,A.M.(2009).Demand-BasedOption
+Pricing.ReviewofFinancialStudies,22(10),4259–4299.
+Garvey,R.,&Wu,F.(2009).IntradayTimeandOrderExecutionQualityDimensions.
+JournalofFinancialMarkets,12(2),203–228.
+Giese,P.(2012).OptimalDesignofVolatility-DrivenAlgo-alphaTradingStrategies.
+Risk,25(5),68–73.
+Graham, S., & Pirie, W. (1994). Index Fund Rebalancing and Market Efficiency.
+JournalofEconomicsandFinance,18(2),219–229.
+Hautcoeur, P. C. (2006). Why and How to Measure Stock Market Fluctuations? The
+EarlyHistoryofStockMarketIndices,withSpecialReferencetotheFrenchCase(Work-
+ingPaper).Availableonline:https://halshs.archives-ouvertes.fr/halshs-00590522/
+PDF/wp200610.pdf.
+Hendershott,T., & Moulton, P. C. (2011). Automation, Speed, and Stock Market
+Quality:TheNYSE’sHybrid.JournalofFinancialMarkets,14(4),568–604.
+Illueca,M.,&Lafuente,J.A.(2003).TheEffectofSpotandFuturesTradingonStock
+Index Volatility: A Non-parametric Approach. Journal of Futures Markets, 23(9),
+841–858.
+Johnson,T. C. (2008). Volume, Liquidity, and Liquidity Risk. Journal of Financial
+Economics,87(2),388–417.
+Kakushadze,Z.,&Yu,W.(2017).StatisticalRiskModels.JournalofInvestmentStrate-
+gies,6(2):1–40.Availableonline:https://ssrn.com/abstract=2732453.
+Kenett,D.Y.,Ben-Jacob,E.,Stanley,H.E.,&gur-Gershgoren,G.(2013).HowHigh
+FrequencyTradingAffectsaMarketIndex.ScientificReports,3,2110.
+Khuzwayo,B.,&Maré,E.(2014).AspectsofVolatilityTargetingforSouthAfrican
+Equity Investors. South African Journal of Economic and Management Sciences,
+17(5),691–699.
+Kim, Y., & Enke, D. (2016). Using Neural Networks to Forecast Volatility for an
+AssetAllocationStrategyBasedontheTargetVolatility.ProcediaComputerScience,
+95,281–286.
+Kirby,C.,&Ostdiek,B.(2012).It’sAllintheTiming:SimpleActivePortfolioStrate-
+giesThatOutperformNaïveDiversification.JournalofFinancialandQuantitative
+Analysis,47(2),437–467.
+Lakonishok,J.,Lee,I.,Pearson,N.D.,&Poteshman,A.M.(2007).OptionMarket
+Activity.ReviewofFinancialStudies,20(3),813–857.
+Lamoureux, C., & Wansley, J. (1987). Market Effects of Changes in the S&P 500
+Index.FinancialReview,22(1),53–69.
+Larsen,G.,&Resnick,B.(1998).EmpiricalInsightsonIndexing.JournalofPortfolio
+Management,25(1),51–60.
+=== Page 143 ===
+6 Indexes 129
+Larsson,P.,&Flohr,L.(2011).OptimalProxy-HedgingofOptionsonIlliquidBaskets
+(Working Paper). Available online: https://www.math.kth.se/matstat/seminarier/
+reports/M-exjobb11/110131a.pdf.
+Lo,A.(2016).WhatIsanIndex?JournalofPortfolioManagement,42(2),21–36.
+Lozovaia,T., & Hizhniakova, H. (2005). How to Extend Modern PortfolioTheory to
+MakeMoneyfromTradingEquityOptions(WorkingPaper).Availableonline:http://
+www.ivolatility.com/doc/Dispersion_Article.pdf.
+Maluf,Y. S., & Albuquerque, P. H. M. (2013). Empirical Evidence: Arbitrage with
+Exchange-TradedFunds(ETFs)ontheBrazilianMarket.RevistaContabilidade&
+Finanças,24(61),64–74.
+Marshall, C. M. (2008). Volatility Trading: Hedge Funds and the Search for Alpha
+(NewChallengestotheEfficientMarketsHypothesis).Ph.D.thesis,FordhamUniver-
+sity, New York, NY. Available online: https://fordham.bepress.com/dissertations/
+AAI3353774/.
+Marshall,C.M.(2009).DispersionTrading:EmpiricalEvidencefromU.S.Options
+Markets.GlobalFinanceJournal,20(3),289–301.
+Marshall,B.R.,Nguyen,N.H.,&Visaltanachoti,N.(2013).ETFArbitrage:Intraday
+Evidence.JournalofBanking&Finance,37(9),3486–3498.
+Maze, S. (2012). Dispersion Trading in South Africa: An Analysis of Profitability
+and a Strategy Comparison (Working Paper). Available online: https://ssrn.com/
+abstract=2398223.
+Meissner,G.(2016).CorrelationTradingStrategies:OpportunitiesandLimitations.
+JournalofTrading,11(4),14–32.
+Nelken, I. (2006). Variance Swap Volatility Dispersion. Derivatives Use, Trading &
+Regulation,11(4),334–344.
+Papageorgiou,N.A.,Reeves,J.J.,&Sherris,M.(2017).EquityInvestingwithTargeted
+ConstantVolatility Exposure (Working Paper). Available online: https://ssrn.com/
+abstract=2614828.
+Perchet, R., de Carvalho, R. L., & Moulin, P. (2014). Intertemporal Risk Parity: A
+ConstantVolatilityFrameworkforFactorInvesting.JournalofInvestmentStrategies,
+4(1),19–41.
+Puttonen,V.(1993).TheExanteProfitabilityofIndexArbitrageintheNewFinnish
+Markets.ScandinavianJournalofManagement,9(S1),117–127.
+Richie, N., Daigler, R. T., & Gleason, K. C. (2008). The Limits to Stock Index
+Arbitrage: Examining S&P 500 Futures and SPDRS. Journal of Futures Markets,
+28(12),1182–1205.
+Roy, O., & Vetterli, M. (2007, September 3–7).The Effective Rank: A Measure of
+EffectiveDimensionality.In:Proceedings—EUSIPCO2007,15thEuropeanSignal
+ProcessingConference (pp.606–610).Poznan´,Poland.
+Schwartz, T. V., & Laatsch, F. (1991). Price Discovery and Risk Transfer in Stock
+IndexCashandFuturesMarkets.JournalofFuturesMarkets,11(6),669–683.
+Spyrou,S.I.(2005).IndexFuturesTradingandSpotPriceVolatility:Evidencefrom
+anEmergingMarket.JournalofEmergingMarketFinance,4(2),151–167.
+=== Page 144 ===
+130 Z.KakushadzeandJ.A.Serur
+Su,X.(2006).HedgingBasketOptionsbyUsingaSubsetofUnderlyingAssets (Work-
+ing Paper). Available online: https://www.econstor.eu/bitstream/10419/22959/1/
+bgse14_2006.pdf.
+Torricelli, L. (2018). Volatility Targeting Using Delayed Diffusions (Working Paper).
+Availableonline:https://ssrn.com/abstract=2902063.
+Yadav,P.K.,&Pope,P.F.(1990).StockIndexFuturesArbitrage:InternationalEvi-
+dence.JournalofFuturesMarkets,10(6),573–603.
+Yadav,P.K.,&Pope,P.F.(1994).StockIndexFuturesMispricing:ProfitOpportunities
+orRiskPremia?JournalofBanking&Finance,18(5),921–953.
+Yo,S.W.(2001).IndexFuturesTradingandSpotPriceVolatility.AppliedEconomics
+Letters,8(3),183–186.
+Zakamulin, V. (2014). Dynamic Asset Allocation Strategies Based on Unexpected
+Volatility.JournalofAlternativeInvestments,16(4),37–50.
+=== Page 145 ===
+7
+Volatility
+7.1 Generalities
+SomeoptiontradingstrategiesdiscussedinChapter2arevolatilitystrategies,
+in the sense that they make bets on high or low future volatility.1 There are
+variouswaystomakevolatilitybets,andvolatilitycanbeviewedasanassetclass
+ofitsown.Historicalvolatilityisbasedonatimeseriesofpastreturns.Incon-
+trast,impliedvolatilityextractedfromoptionsisconsideredaforward-looking
+measure of volatility.2 VIX (CBOE Volatility Index, a.k.a. the “uncertainty
+index”orthe“feargaugeindex”)3andothervolatilityindexes4andderivatives
+(options and futures) on volatility indexes such as VIX provide avenues for
+volatilitytrading.
+7.2 Strategy: VIX Futures Basis Trading
+This is essentially a mean-reversion strategy. It is rooted in empirical obser-
+vations(see,e.g.,Mixon2007;NossmanandWilhelmsson2009;Simonand
+1E.g.,long(short)straddlesbetonincreasing(decreasing)volatility.
+2See,e.g.,AbkenandNandi(1996),AnéandLabidi(2001),CaninaandFiglewski(1993),Christensen
+andPrabhala(1998),DermanandKani(1994),Dumasetal.(1998),Dupire(1994),GlassermanandWu
+(2010),Heetal.(2015),LamoureuxandLastrapes(1993),Mayhew(1995),Skiadopoulosetal.(1999).
+3See,e.g.,Äijö(2008),CorradoandMiller(2005),Flemingetal.(1995),Maghrebietal.(2007),Shaikh
+andPadhi(2015),SiriopoulosandFassas(2009),Skiadopoulos(2004),Whaley(2000),Whaley(2009).
+4E.g.,RVX(CBOERussell2000VolatilityIndex),VXEEM(CBOEEmergingMarketsETFVolatility
+Index),TYVIX(CBOE/CBOT10-yearU.S.TreasuryNoteVolatilityIndex),GVZ(CBOEGoldETF
+VolatilityIndex),EUVIX(CBOE/CME FXEuroVolatility Index),VXGOG(CBOE EquityVIXon
+Google),VVIX(CBOEVIXofVIXIndex),etc.
+©TheAuthor(s)2018 131
+Z.KakushadzeandJ.A.Serur,151TradingStrategies,
+https://doi.org/10.1007/978-3-030-02792-6_7
+=== Page 146 ===
+132 Z.KakushadzeandJ.A.Serur
+Campasano 2014)5 that theVIX futures basis (defined below) has essentially
+noforecastingpowerforsubsequentVIXchangesbuthassubstantialforecast-
+ing power for subsequent VIX futures price changes. The VIX futures basis
+B (forourpurposeshere)isdefinedas
+VIX
+B = P − P (7.1)
+VIX UX1 VIX
+B
+D = VIX (7.2)
+T
+Here: P is the price of the first-month contract VIX futures6; P is
+UX1 VIX
+the VIX price; D is the daily roll value; and T is the number of business
+daysuntilthesettlement(whichisassumedtobeatleast10).Empirically,the
+futures prices tend to fall for positive basis and rise for negative basis (mean-
+reversion). So, the strategy amounts to shorting VIX futures when the VIX
+futures curve is upward-sloping (a.k.a. “contango”, so the basis is positive),
+and buying VIX futures when the VIX futures curve is downward-sloping
+(a.k.a.“backwardation”, sothebasisisnegative).Hereisasimpletradingrule
+(see,e.g.,SimonandCampasano2014):
+⎧
+⎪ ⎪OpenlongUX1position if D < −0.10
+⎪
+⎨
+CloselongUX1position if D > −0.05
+Rule
+= (7.3)
+⎪ ⎪ ⎪OpenshortUX1position if D > 0.10
+⎩
+CloseshortUX1position if D < 0.05
+Ashort(long)UX1positionisexposedtoariskofasuddenincrease(decrease)
+inthevolatility,whichtypicallyoccursduringequitymarketsell-offs(rallies),
+sothisriskcanbehedgedby,e.g.,shorting(buying)mini-S&P500futures.7
+The hedge ratio can be estimated, e.g., based on a historical serial regression
+oftheVIXfuturespricechangesoverthefront-monthmini-S&P500futures
+contractreturns.8
+5ForsomeadditionalliteratureonVIXfuturesbasisandrelatedtopics,see,e.g.,BuetowandHenderson
+(2016),Donninger(2014),Fuetal.(2016),Leeetal.(2017),Zhangetal.(2010),ZhangandZhu(2006).
+6UX1hasapproximately1monthtomaturity,UX2hasapproximately2months,etc.
+7Typically,VIXandtheequitymarketsareanti-correlated.
+8See,e.g.,SimonandCampasano(2014)fordetails.
+=== Page 147 ===
+7 Volatility 133
+7.3 Strategy: Volatility Carry with Two ETNs
+VXX is an exchange-traded note (ETN) that tracks VIX via a portfolio of
+short-maturity(months1and2)VIXfuturescontracts.Tomaintainaconstant
+maturity,atthecloseofeach day,aportionoftheshorter-maturityfuturesis
+soldandreplacedwiththelonger-maturityfuturesboughtwiththeproceeds.
+SincetheVIXfuturescurveisincontangomostofthetime,thelonger-maturity
+futuresarepricedhigherthantheshorter-maturityfutures,sothisrebalancing
+amountstoadecayinthevalueofVXXovertime,whichisknownastheroll
+(or contango) loss. Further, as time passes, the futures converge to the spot
+(VIX), so VXX loses value so long as the VIX futures curve is in contango.
+VXZisyetanotherETNthattracksVIXviaaportfolioofmedium-maturity
+(months 4 through 7) VIX futures. VXZ also suffers roll loss, but to a lesser
+degree than VXX as the slope of the VIX futures curve, when in contango,
+decreases with maturity.9 The basic strategy then is to short VXX and buy
+VXZ with the hedge ratio that can be determined via a serial regression.10
+Thisstrategyisnotwithoutrisks,however.Therecanbeshort-termspikesin
+VXX(thecorrespondingspikesinVXZusuallyaresizablysmaller),whichcan
+lead to substantial short-term P&L drawdowns, even if the strategy is overall
+profitable.
+Strategy: Hedging Short VXX with VIX Futures
+Instead of using a long position inVXZ to hedge the short position inVXX,
+one can directly use a basket of, e.g., medium-maturity VIX futures.11 The
+N VIXfutureshavesomeweights w .Theseweightscanbefixedinavarietyof
+i
+ways,e.g.,byminimizingthetrackingerror,i.e.,byrunningaserialregression
+(withtheintercept)ofVXXreturnsoverthe N futuresreturns.Thenwehave:
+(cid:6)N
+w = σ C −1σ ρ (7.4)
+i X ij j j
+j=1
+9ForsomeliteratureonvolatilityETNsandrelatedtopics,see,e.g.,AlexanderandKorovilas(2012),
+AvellanedaandPapanicolaou(2018),DeLisleetal.(2014),Dengetal.(2012),ErakerandWu(2014),
+Gehricke and Zhang (2018), Grasselli andWagalath (2018), Hancock (2013), Husson and McCann
+(2011),LiuandDash(2012),Liuetal.(2018),MoranandDash(2007).
+10Wehaveh = β = ρσ X /σ Z,where:h(knownastheoptimalhedgeratio)isthenumberofVXZto
+buyforeachVXXshorted;β isthecoefficient(fortheVXZreturns)oftheserialregression(withthe
+intercept)oftheVXXreturnsovertheVXZreturns;σ X andσ Z arethehistoricalvolatilitiesofVXXand
+VXZ,respectively;andρisthepair-wisehistoricalcorrelationbetweenVXXandVXZ.
+11Thesecanhavematuritiesof,e.g.,4through7months(thusmimickingtheVXZcomposition).
+=== Page 148 ===
+134 Z.KakushadzeandJ.A.Serur
+ρ
+Here: is the pair-wise historical correlation between the futures labeled by
+i
+i and VXX; C is the N × N sample covariance matrix for the N futures
+ij
+( σ2 = C is the historical variance for the futures labeled by i); and σ is
+i ii X
+w
+the historical volatility of VXX. Some may turn out to be negative.This
+i
+is not necessarily an issue, but one may wish to impose the bounds w ≥ 0.
+i
+Further,onemaywishthestrategytobedollar-neutral,whichwouldamount
+toimposingtheconstraint
+(cid:6)N
+w = 1 (7.5)
+i
+i=1
+which the optimal hedge ratios (7.4) generally do not satisfy. Also, instead of
+minimizing thetracking error,onemay wish tominimize thevariance of the
+entireportfolio.Andsoon.Theportfoliocanberebalancedmonthlyormore
+frequently.
+7.4 Strategy: Volatility Risk Premium
+Empirical evidence indicates that implied volatility tends to be higher than
+realized volatility most of the time, which is known as the “volatility risk
+premium”.12 Simply put, most of the time options are priced higher than
+the prices one would expect based on realized volatility, so the idea is to sell
+volatility. E.g., the trader can sell straddles based on S&P 500 options. As a
+possibleproxyforvolatilityriskpremium,thetradercan,e.g.,usethedifference
+betweenVIXatthebeginningofthecurrentmonthandtherealizedvolatility
+(in %, as VIX is quoted in %) of S&P 500 daily returns since the beginning
+of the current month. If the spread is positive, the trader sells the straddle. If
+thevolatilityspikes(whichusuallyhappensifthemarketsellsof),thestrategy
+willlosemoney.Itisprofitableinsidewaysmarkets.13
+12Forsomepertinentliterature,see,e.g.,BakshiandKapadia(2003a),Bollerslevetal.(2011),Carrand
+Wu (2009, 2016), Christensen and Prabhala (1998), Eraker (2009), Ge (2016), Miao et al. (2012),
+ProkopczukandSimen(2014),SarettoandGoyal(2009),Todorov(2010).
+13Also,indexoptionsarebettersuitedforthisstrategythansingle-stockoptionsasindexoptionstypically
+havehighervolatilityriskpremia(seeSect.6.3).
+=== Page 149 ===
+7 Volatility 135
+Strategy: Volatility Risk Premium with Gamma Hedging
+The ATM straddles in the above strategy are Delta-neutral.14 So, this is a
+“Vega play”, i.e., the trader is shorting Vega. If the underlying (S&P 500)
+moves,theshortstraddleisnolongerDelta-neutral:iftheunderlyinggoesup
+(down), Delta becomes negative (positive). So a variation of this strategy is
+to use Gamma hedging to keep the strategy close to Delta-neutral, which is
+achieved by buying (selling) the underlying if it moves up (down).Then this
+becomesa“Thetaplay”,i.e.,thestrategynowaimstocapitalizeontheTheta-
+decay of the value of the sold options. So, the price of this is the cost of the
+Gammahedging,whichreducestheP&L.Astheunderlyingmovesmoreand
+moreawayfromthestrikeofthesoldputandcalloptions,theGammahedge
+becomes more and more expensive and eventually will exceed the collected
+optionpremia,atwhichpointthestrategystartslosingmoney.
+7.5 Strategy: Volatility Skew—Long Risk
+Reversal
+OTMputoptionswiththeunderlyingatS = K+κ tendtobepricedhigher
+0
+than OTM call options with the underlying at S = K − κ (here K is the
+0
+strikeprice,and κ > 0isthedistancefromthestrike).I.e.,withallelsebeing
+equal, the implied volatility for puts is higher than for calls.15 The long risk
+reversal strategy (see Sect. 2.12), where the trader buys an OTM call option
+andsellsanOTMputoption,capturesthisskew.However,thisisadirectional
+strategy—itlosesmoneyifthepriceoftheunderlyingdropsbelow K −C,
+put
+where K is the strike price of the put, and C > 0 is the premium of the
+put
+putminusthepremiumofthecall.
+14Some of the Greeks for options are: (cid:6) = ∂V/∂t (Theta), (cid:8) = ∂V/∂S (Delta), (cid:9) = ∂2V/∂S2
+(Gamma), ν = ∂V/∂σ (Vega). Here: V is the value of the option; t is time; S is the price of the
+underlying;σ istheimpliedvolatility.
+15Forsomepertinentliterature,see,e.g.,Bondarenko(2014),Chambersetal.(2014),CorradoandSu
+(1997),DamghaniandKos(2013),DeMigueletal.(2013),DoranandKrieger(2010),Doranetal.
+(2007),Fengleretal.(2012),FlintandMaré(2017),Jackwerth(2000),Kozhanetal.(2013),Liuetal.
+(2016),Mixon(2011),ZhangandXiang(2008).
+=== Page 150 ===
+136 Z.KakushadzeandJ.A.Serur
+7.6 Strategy: Volatility Trading with Variance
+Swaps
+One issue with trading volatility using options is the need to (almost con-
+tinuously) Delta-hedge the position to avoid directional exposure,16 which
+practically can be both cumbersome and costly.To avoid the need for Delta-
+hedging,onecanmakevolatilitybetsusingvarianceswaps.Avarianceswapis
+aderivativecontractwhosepayoff P(T) atmaturity T isproportionaltothe
+differencebetweentherealizedvariance
+v(T)
+oftheunderlyingandthepreset
+variancestrike K:
+P(T) = N ×(v(T)− K) (7.6)
+(cid:6)T
+F
+v(T) = R2(t) (7.7)
+T
+(cid:7)t=1
+(cid:8)
+S(t)
+R(t) = ln (7.8)
+S(t −1)
+Here: t = 0,1,...,T labels sample points (e.g., trading days); S(t) is the
+price of the underlying at time t; R(t) is the log-return from t − 1 to t; F
+is the annualization factor (thus, if t labels trading days, then F = 252);
+and N is the “variance notional”, which is preset. Note that in Eq. (7.7) the
+mean of R(t) over the period t = 1 to t = T is not subtracted, hence T in
+thedenominator.17Long(short)varianceswapisabetthatthefuturerealized
+volatilitywillbehigher(lower)thanthecurrentimpliedvolatility.Long(short)
+variance swaps can therefore be used instead of, e.g., long (short) straddles to
+golong(short)volatility.Forinstance,thedispersionstrategyofSect.6.3can
+beexecutedbysellingavarianceswaponanindexandbuyingvarianceswaps
+ontheindexconstituents(cf.sellingandbuyingstraddles).18
+16SeeSect.“Strategy:VolatilityRiskPremiumwithGammaHedging”foraDelta-hedgingstrategy(a.k.a.
+“Gammascalping”).
+17Ifthemeanissubtracted,thenthedenominatorwouldbeT −1instead.
+18Forsomeliteratureonvarianceswaps,see,e.g.,Aït-Sahaliaetal.(2015),Bernardetal.(2014),Broadie
+andJain(2008),Bossu(2006),CarrandLee(2007),CarrandLee(2009),Carretal.(2012),Demeterfi
+et al. (1999), Elliott et al. (2007), Filipovic´ et al. (2016), Hafner andWallmeier (2007), Härdle and
+Silyakova(2010),Jarrowetal.(2013),KonstantinidiandSkiadopoulos(2016),LeontsinisandAlexander
+(2016),Liverance(2010),Martin(2011),RujivanandZhu(2012),Schoutens(2005),WystupandZhou
+(2014),Zhang(2014),ZhengandKwok(2014).
+=== Page 151 ===
+7 Volatility 137
+References
+Abken, P. A., & Nandi, S. (1996). Options and Volatility. Federal Reserve Bank of
+Atlanta,EconomicReview,81(3),21–35.
+Äijö, J. (2008). Implied VolatilityTerm Structure Linkages Between VDAX, VSMI
+andVSTOXXVolatilityIndices.GlobalFinanceJournal,18(3),290–302.
+Aït-Sahalia, Y., Karaman, M., & Mancini, L. (2015). The Term Structure of Vari-
+anceSwaps andRiskPremia (WorkingPaper). Availableonline:https://ssrn.com/
+abstract=2136820.
+Alexander,C.,&Korovilas,D.(2012).UnderstandingETNsonVIXFutures(Working
+Paper).Availableonline:https://ssrn.com/abstract=2043061.
+Ané,T., & Labidi, C. (2001). ImpliedVolatilitySurfaces and Market Activity Over
+Time.JournalofEconomicsandFinance,25(3),259–275.
+Avellaneda,M.,&Papanicolaou,A.(2018).StatisticsofVIXFuturesandApplications
+to Trading Volatility Exchange-Traded Products. Journal of Investment Strategies,
+7(2),1–33.
+Bakshi, G., & Kapadia, N. (2003). Delta-Hedged Gains and the Negative Market
+VolatilityRiskPremium.ReviewofFinancialStudies,16(2),527–566.
+Bernard, C., Cui, Z., & Mcleish, D. (2014). Convergence of the Discrete Variance
+SwapinTime-HomogeneousDiffusionModels.QuantitativeFinanceLetters,2(1),
+1–6.
+Bollerslev,T.,Gibson,M.,&Zhou,H.(2011).DynamicEstimationofVolatilityRisk
+PremiaandInvestorRiskAversionfromOption-ImpliedandRealizedVolatilities.
+JournalofEconometrics,160(1),235–245.
+Bondarenko, O. (2014). Why Are Put Options so Expensive? Quarterly Journal of
+Finance,4(3),1450015.
+Bossu, S. (2006, March). Introduction to Variance Swaps. Wilmott Magazine, pp.
+50–55.
+Broadie,M.,&Jain,A.(2008).TheEffectofJumpsandDiscreteSamplingonVolatil-
+ity and Variance Swaps. International Journal ofTheoretical and Applied Finance,
+11(8),761–797.
+Buetow, G. W., & Henderson, B. J. (2016).The VIX Futures Basis: Determinants
+andImplications.JournalofPortfolioManagement,42(2),119–130.
+Canina,L.,&Figlewski,S.(1993).TheInformationalContentofImpliedVolatility.
+ReviewofFinancialStudies,6(3),659–681.
+Carr,P.,&Lee,R.(2007).RealizedVolatilityandVariance:OptionsviaSwaps.Risk,
+20(5),76–83.
+Carr,P.,&Lee,R.(2009).VolatilityDerivatives.AnnualReviewofFinancialEconomics,
+1,319–339.
+Carr,P.,&Wu,L.(2009).VarianceRiskPremiums.ReviewofFinancialStudies,22(3),
+1311–1341.
+Carr, P., & Wu, L. (2016). Analyzing Volatility Risk and Risk Premium in Option
+Contracts:ANewTheory.JournalofFinancialEconomics,120(1),1–20.
+=== Page 152 ===
+138 Z.KakushadzeandJ.A.Serur
+Carr,P.,Lee,R.,&Wu,L.(2012).VarianceSwapsonTime-ChangedLévyProcesses.
+FinanceandStochastics,16(2),335–355.
+Chambers,D.R.,Foy,M.,Liebner,J.,&Lu,Q.(2014).IndexOptionReturns:Still
+Puzzling.ReviewofFinancialStudies,27(6),1915–1928.
+Christensen, B. J., & Prabhala, N. R. (1998). The Relation Between Implied and
+RealizedVolatility.JournalofFinancialEconomics,50(2),125–150.
+Corrado, C. J., & Miller,T.W, Jr. (2005).The Forecast Quality of CBOE Implied
+VolatilityIndexes.JournalofFuturesMarkets,25(4),339–373.
+Corrado,C.J.,&Su,T.(1997).ImpliedVolatilitySkewsandStockReturnSkewness
+and Kurtosis Implied by Stock Option Prices. European Journal of Finance, 3(1),
+73–85.
+Damghani,B.M.,&Kos,A.(2013).De-arbitragingWithaWeakSmile:Application
+toSkewRisk.WilmottMagazine,2013(64),40–49.
+DeLisle,J.,Doran,J.,&Krieger,K.(2014).VolatilityasanAssetClass:HoldingVIXin
+aPortfolio(WorkingPaper).Availableonline:https://ssrn.com/abstract=2534081.
+Demeterfi,K.,Derman,E.,Kamal,M.,&Zou,J.(1999).AGuidetoVolatilityand
+VarianceSwaps.JournalofDerivatives,6(4),9–32.
+DeMiguel, V., Plyakha, Y., Uppal, R., & Vilkov, G. (2013). Improving Portfolio
+SelectionUsingOption-ImpliedVolatilityandSkewness.JournalofFinancialand
+QuantitativeAnalysis,48(6),1813–1845.
+Deng,G.,McCann,C.,&Wang,O.(2012).AreVIXFuturesETPsEffectiveHedges?
+JournalofIndexInvesting,3(3),35–48.
+Derman,E.,&Kani,I.(1994).RidingonaSmile.Risk,7(2),139–145.
+Donninger,C.(2014).VIXFuturesBasisTrading:TheCalvados-Strategy2.0 (Working
+Paper).Availableonline:https://ssrn.com/abstract=2379985.
+Doran, J. S., & Krieger, K. (2010). Implications for Asset Returns in the Implied
+VolatilitySkew.FinancialAnalystsJournal,66(1),65–76.
+Doran,J. S., Peterson, D. R.,&Tarrant, B. C. (2007). IsThere Informationin the
+VolatilitySkew?JournalofFuturesMarkets,27(10),921–959.
+Dumas,B.,Fleming,J.,&Whaley,R.(1998).ImpliedVolatilityFunctions:Empirical
+Tests.JournalofFinance,53(6),2059–2106.
+Dupire,B.(1994).PricingwithaSmile.Risk,7(1),18–20.
+Elliott, R., Siu, T., & Chan, L. (2007). Pricing Volatility Swaps Under Heston’s
+StochasticVolatilityModelwithRegimeSwitching.AppliedMathematicalFinance,
+14(1),41–62.
+Eraker,B.(2009).TheVolatilityPremium (WorkingPaper).Availableonline:http://
+www.nccr-finrisk.uzh.ch/media/pdf/Eraker_23-10.pdf.
+Eraker, B., & Wu, Y. (2014). Explaining the Negative Returns to VIX Futures and
+ETNs: An Equilibrium Approach (Working Paper). Available online: https://ssrn.
+com/abstract=2340070.
+Fengler, M. R., Herwartz, H., &Werner, C. (2012). A Dynamic Copula Approach
+toRecoveringtheIndexImpliedVolatilitySkew.JournalofFinancialEconometrics,
+10(3),457–493.
+=== Page 153 ===
+7 Volatility 139
+Filipovic´,D.,Gourier,E.,&Mancini,L.(2016).QuadraticVarianceSwapModels.
+JournalofFinancialEconomics,119(1),44–68.
+Fleming,J.,Ostdiek,B.,&Whaley,R.E.(1995).PredictingStockMarketVolatility:
+ANewMeasure.JournalofFuturesMarkets,15(3),265–302.
+Flint, E., & Maré, E. (2017). Fractional Black-Scholes Option Pricing, Volatility
+CalibrationandImpliedHurstExponentsinSouthAfricanContext.SouthAfrican
+JournalofEconomicandManagementSciences,20(1),a1532.
+Fu,X.,Sandri,M.,&Shackleton,M.B.(2016).AsymmetricEffectsofVolatilityRisk
+onStockReturns:EvidencefromVIXandVIXFutures.JournalofFuturesMarkets,
+36(11),1029–1056.
+Ge,W.(2016).ASurveyofThreeDerivative-BasedMethodstoHarvesttheVolatility
+PremiuminEquityMarkets.JournalofInvesting,25(3),48–58.
+Gehricke,S.A.,&Zhang,J.E.(2018).ModelingVXX.JournalofFuturesMarkets,
+38(8),958–976.
+Glasserman,P.,&Wu,Q.(2010).ForwardandFutureImpliedVolatility.International
+JournalofTheoreticalandAppliedFinance,14(3),407–432.
+Grasselli, M., & Wagalath, L. (2018). VIX vs VXX: A Joint Analytical Framework
+(WorkingPaper).Availableonline:https://ssrn.com/abstract=3144526.
+Hafner,R.,&Wallmeier,M.(2007).VolatilityasanAssetClass:EuropeanEvidence.
+EuropeanJournalofFinance,13(7),621–644.
+Hancock,G.D.(2013).VIXFuturesETNs:ThreeDimensionalLosers.Accounting
+andFinanceResearch,2(3),53–64.
+Härdle,W.,andSilyakova,E.(2010).VolatilityInvestingwithVarianceSwaps(Working
+Paper).Availableonline:https://ssrn.com/abstract=2894245.
+He,D.X.,Hsu,J.C.,&Rue,N.(2015).Option-WritingStrategiesinaLow-Volatility
+Framework.JournalofInvesting,24(3),116–128.
+Husson,T.,&McCann,C.J.(2011).TheVXXETNandVolatilityExposure.PIABA
+BarJournal,18(2),235–252.
+Jackwerth,J.C.(2000).RecoveringRiskAversionfromOptionPricesandRealized
+Returns.ReviewofFinancialStudies,13(2),433–451.
+Jarrow, R., Kchia, Y., Larsson, M., & Protter, P. (2013). Discretely Sampled Vari-
+anceandVolatilitySwapsVersusTheirContinuousApproximations.Financeand
+Stochastics,17(2),305–324.
+Konstantinidi,E.,&Skiadopoulos,G.(2016).HowDoestheMarketVarianceRisk
+Premium Vary Over Time? Evidence from S&P 500 Variance Swap Investment
+Returns.JournalofBanking&Finance,62,62–75.
+Kozhan,R.,Neuberger,A.,&Schneider,P.(2013).TheSkewRiskPremiuminthe
+EquityIndexMarket.ReviewofFinancialStudies,26(9),2174–2203.
+Lamoureux, C. G., & Lastrapes, W. (1993). Forecasting Stock Return Variance:
+TowardsUnderstandingStochasticImpliedVolatility.ReviewofFinancialStudies,
+6(2),293–326.
+Lee, H., Liao, T., & Tung, P. (2017). Investors’ Heterogeneity in Beliefs, the VIX
+Futures Basis, and S&P 500 Index Futures Returns. Journal of Futures Markets,
+37(9),939–960.
+=== Page 154 ===
+140 Z.KakushadzeandJ.A.Serur
+Leontsinis, S., & Alexander, C. (2016). Arithmetic Variance Swaps. Quantitative
+Finance,17(4),551–569.
+Liu,Z.F.,&vanderHeijden,T.(2016).Model-FreeRisk-NeutralMomentsandProxies
+(WorkingPaper).Availableonline:https://ssrn.com/abstract=2641559.
+Liu, B., & Dash, S. (2012). Volatility ETFs and ETNs. Journal of Trading, 7(1),
+43–48.
+Liu,F.,Pantelous,A.A.,&vonMettenheim,H.-J.(2018).ForecastingandTrading
+HighFrequencyVolatilityonLargeIndices.QuantitativeFinance,18(5),737–748.
+Liverance,E.(2010).VarianceSwap.InR.Cont(Ed.),EncyclopediaofQuantitative
+Finance.Hoboken,NJ:Wiley.
+Maghrebi, N., Kim, M., & Nishina, K. (2007).The KOSPI200 Implied Volatility
+Index: Evidence of Regime Shifts in Expected Volatility. Asia-Pacific Journal of
+FinancialStudies,36(2),163–187.
+Martin, I. (2011). SimpleVariance Swaps (Working Paper). Available online: http://
+www.nber.org/papers/w16884.
+Mayhew,S.(1995).ImpliedVolatility.FinancialAnalystsJournal,51(4),8–20.
+Miao,G.J.,Wei,B.,&Zhou,H.(2012).AmbiguityAversionandVariancePremium
+(WorkingPaper).Availableonline:https://ssrn.com/abstract=2023765.
+Mixon, S. (2007). The Implied Volatility Term Structure of Stock Index Options.
+JournalofEmpiricalFinance,14(3),333–354.
+Mixon,S.(2011).WhatDoesImpliedVolatilitySkewMeasure?JournalofDerivatives,
+18(4),9–25.
+Moran, M. T., & Dash, S. (2007). VIX Futures and Options: Pricing and Using
+Volatility Products to Manage Downside Risk and Improve Efficiency in Equity
+Portfolios.JournalofTrading,2(3),96–105.
+Nossman, M., & Wilhelmsson, A. (2009). Is the VIX Futures Market Able to Pre-
+dict the VIX Index? ATest of the Expectation Hypothesis. Journal of Alternative
+Investments,12(2),54–67.
+Prokopczuk, M., & Simen, C. W. (2014). The Importance of the Volatility Risk
+PremiumforVolatilityForecasting.JournalofBanking&Finance,40,303–320.
+Rujivan,S.,&Zhu,S.P.(2012).ASimplifiedAnalyticalApproachforPricingDis-
+cretely Sampled Variance Swaps with Stochastic Volatility. Applied Mathematics
+Letters,25(11),1644–1650.
+Saretto, A., & Goyal, A. (2009). Cross-Section of Option Returns and Volatility.
+JournalofFinancialEconomics,94(2),310–326.
+Schoutens,W.(2005).MomentSwaps.QuantitativeFinance,5(6),525–530.
+Shaikh,I.,&Padhi,P.(2015).TheImpliedVolatilityIndex:Is‘InvestorFearGauge’
+or‘Forward-Looking’?BorsaIstanbulReview,15(1),44–52.
+Simon,D.P.,&Campasano,J.(2014).TheVIXFuturesBasis:EvidenceandTrading
+Strategies.JournalofDerivatives,21(3),54–69.
+Siriopoulos, C., & Fassas, A. (2009). ImpliedVolatility Indices—A Review (Working
+Paper).Availableonline:https://ssrn.com/abstract=1421202.
+Skiadopoulos,G.(2004).TheGreekImpliedVolatilityIndex:ConstructionandProp-
+erties.AppliedFinancialEconomics,14(16),1187–1196.
+=== Page 155 ===
+7 Volatility 141
+Skiadopoulos,G.,Hodges,S.,&Clewlow,L.(1999).TheDynamicsoftheS&P500
+ImpliedVolatilitySurface.ReviewofDerivativesResearch,3(3),263–282.
+Todorov,V.(2010).VarianceRisk-PremiumDynamics:TheRoleofJumps.Reviewof
+FinancialStudies,23(1),345–383.
+Whaley, R. E. (2000). The Investor Fear Gauge. Journal of Portfolio Management,
+26(3),12–16.
+Whaley,R.E.(2009).UnderstandingtheVIX.JournalofPortfolioManagement,35(3),
+98–105.
+Wystup, U., & Zhou, Q. (2014). Volatility as Investment—Crash Protection with
+CalendarSpreadsofVarianceSwaps.JournalofAppliedOperationalResearch,6(4),
+243–254.
+Zhang, L. (2014). A Closed-form Pricing Formula for Variance Swaps with Mean-
+RevertingGaussianVolatility.ANZIAMJournal,55(4),362–382.
+Zhang,J.E.,&Xiang,Y.(2008).TheImpliedVolatilitySmirk.QuantitativeFinance,
+8(3),263–284.
+Zhang, J. E., & Zhu, Y. (2006). VIX Futures. Journal of Futures Markets, 26(6),
+521–531.
+Zhang,J.E.,Shu,J.,&Brenner,M.(2010).TheNewMarketforVolatilityTrading.
+JournalofFuturesMarkets,30(9),809–833.
+Zheng, W., & Kwok, Y. K. (2014). Closed form Pricing Formulas for Discretely
+SampledGeneralizedVarianceSwaps.MathematicalFinance,24(4),855–881.
+=== Page 156 ===
+8
+Foreign Exchange (FX)
+8.1 Strategy: Moving Averages with HP Filter
+In Sect.3.12, we discussed a trading strategy for stocks wherein the trading
+signalisbasedon2intersecting(shorterandlonger)movingaverages.Asimilar
+approachcanbeappliedtoFXaswell.However,FXspotratetimeseriestend
+to be rather noisy, which can lead to false signals based on moving averages.
+Tomitigatethis,beforecomputingthemovingaverages,thehigher-frequency
+noisecanfirstbefilteredout,e.g.,usingtheso-calledHodrick–Prescott(HP)
+filter.1 Then, the remaining lower-frequency trend component (as opposed
+to the raw spot rate) can be used to compute the moving averages and gen-
+erate the trading signal (see, e.g., Harris and Yilmaz 2009). The HP filter is
+givenby:
+S(t)= S ∗(t)+ν(t) (8.1)
+(cid:2)T (cid:3) (cid:4) T(cid:2)−1(cid:3) (cid:4)
+g = S(t)−S ∗(t) 2+λ S ∗(t +1)−2S ∗(t)+S ∗(t −1) 2 (8.2)
+t=1 t=2
+g →min (8.3)
+Here:theobjectivefunctiong isminimizedw.r.t.thesetofT valuesof S
+∗(t)
+,
+t = 1,...,T; S(t) istheFXspotrateattimet; S ∗(t) isthelower-frequency
+1A.k.a.theWhittaker–Hendersonmethodinactuarialsciences.Forsomepertinentliterature,see,e.g.,
+BaxterandKing(1999),Bruderetal.(2013),Dao(2014),Ehlgen(1998),HarrisandYilmaz(2009),
+HarveyandTrimbur(2008),Henderson(1924,1925,1938),HodrickandPrescott(1997),Joseph(1952),
+Lahmiri(2014),Mcelroy(2008),Weinert(2007),Whittaker(1923,1924).
+©TheAuthor(s)2018 143
+Z.KakushadzeandJ.A.Serur,151TradingStrategies,
+https://doi.org/10.1007/978-3-030-02792-6_8
+=== Page 157 ===
+144 Z.KakushadzeandJ.A.Serur
+(“regular”)component;
+ν(t)
+isthehigher-frequency(“irregular”)component,
+which is treated as noise; the first term in Eq. (8.2) minimizes the noise,
+while the second term (based on the discretized second derivative of S
+∗(t)
+)
+penalizes the variation in S ∗(t) ; and λ is the smoothing parameter.There is
+λ
+no “fundamental” method to fix . Sometimes (but not always) it is set to
+λ = 100×n2,wherenisthedatafrequencymeasuredonanannualbasis(see,
+e.g., Baxter and King (1999) for more detail). So, for monthly data, which is
+what is usually used in this context, n = 12. The estimation period usually
+spansseveralyears(ofmonthlydata).Once S
+∗(t)
+isdetermined,twomoving
+averagesMA (T ) andMA (T ) ,T < T ,arecalculatedbasedonS ∗(t) .Then,
+1 2 1 2
+as before, MA
+(T ) >
+MA
+(T )
+is a buy signal, and MA
+(T ) <
+MA
+(T )
+is a
+1 2 1 2
+sellsignal.
+8.2 Strategy: Carry Trade
+Pursuantto“UncoveredInterestRateParity”(UIRP),excessinterestearnedin
+onecountrycomparedwithanothercountryduetoadifferentialbetweenrisk-
+free interest rates in these countries would be precisely offset by depreciation
+intheFXratebetweentheircurrencies:
+E (S(t +T))
+(1+r ) = t (1+r ) (8.4)
+d S(t) f
+Here:r isthedomesticinterestrate;r istheforeigninterestrate;bothr and
+d f d
+r areassumedtobeconstantoverthecompoundingperiodT;S(t) isthespot
+f
+FXrateattimet,whichistheworthof1unitoftheforeigncurrencyinunits
+ofthedomesticcurrency;and E (S(t +T)) isthefuture(attimet +T)spot
+t
+FXrateexpectedattimet.2 UIRPdoesnotalwayshold,givingrisetotrading
+opportunities—which are not risk-free arbitrage opportunities (see below).
+Thus,UIRP implies thathigh interest ratecurrencies shoulddepreciate w.r.t.
+lowinterestratecurrencies,whereasempiricallyonaveragetheoppositetends
+totranspire,i.e.,suchcurrenciestendtoappreciate(somewhat).3So,thebasic
+2Thus,1USDinvestedattimet inarisk-freeassetintheU.S.wouldbeforth(1+rd )USDattime
+t+T.Alternatively,1USDwouldbuy1/S(t)JPYattimet,whichsumcouldbeinvestedinarisk-free
+assetinJapanattimet,whichwouldbeworth(1/S(t))×(1+rf )JPYattimet+T,whichinturn
+couldbeexpectedtobeexchangedfor(Et (S(t+T))/S(t))×(1+rf )USDattimet+T.Requiring
+thattheU.S.andJapaninvestmentsyieldthesamereturngivesEq.(8.4).
+3Thisisknownas“forwardpremium/discountanomaly/puzzle”or“Famapuzzle”.Forsomeliteratureon
+UIRPandrelatedtopics,see,e.g.,Anker(1999),AyusoandRestoy(1996),BacchetaandvanWincopp
+(2006,2010),BaillieandOsterberg(2000),Bekaertetal.(2007),Beyaertetal.(2007),Bilson(1981),
+Chaboud andWright (2005), Engel (1996), Fama (1984), Frachot (1996), Froot andThaler (1990),
+=== Page 158 ===
+8 ForeignExchange(FX) 145
+carrystrategyamountstowriting(i.e.,selling)forwardsoncurrenciesthatare
+at a forward premium, i.e., the forward FX rate
+F(t,T)
+exceeds the spot FX
+rate
+S(t)
+, and buying forwards on currencies that are at a forward discount,
+i.e., the forward FX rate F(t,T) is lower than the spot FX rate S(t) .4 The
+forwardFXrateisgivenby5
+1+r
+F(t,T) = S(t) d (8.5)
+1+r
+f
+As mentioned above, the carry strategy6 is not without risks: this trade can
+generate losses if the borrowed (lent) currency suddenly appreciates (depreci-
+ates) w.r.t.its counterpart, i.e., it is exposed to theFX rate risk. On theother
+hand, if we borrow the low interest rate currency with the maturity date T,
+invest the funds in the high interest rate currency, and hedge this position
+with a forward contract to exchange the high interest rate currency for the
+low interest rate currency at maturity T (so we can cover the loan), ignoring
+thetransactioncosts(andothersubtletiessuchastaxes,etc.),thisisarisk-free
+positionandanygainstherefromwouldamounttorisk-freearbitrage.Hence
+Eq.(8.5),whichisano-risk-free-arbitragecondition.7
+Strategy: High-minus-low Carry
+Thecarrystrategydiscussedabovecanbeappliedtoindividualforeigncurren-
+cies.Itcanalsobeappliedcross-sectionally,tomultipleforeigncurrencies.Let
+s(t) = ln(S(t))
+(log spot FX rate) and
+f(t,T) = ln(F(t,T))
+(log forward
+HansenandHodrick(1980),Harvey(2015),Hodrick(1987),Ilut(2012),Lewis(1995),Lustigand
+Verdelhan(2007),MarkandWu(2001),RollandYan(2008).
+4Ignoringtransactioncosts,thisisequivalenttoborrowing(lending)low(high)interestratecurrencies
+withouthedgingtheFXraterisk.
+5Thisisknownas“CoveredInterestRateParity”(CIRP).Notethat,assumingEq.(8.5)holds(seebelow),
+whenUIRP(i.e.,Eq.8.4)doesnothold,F(t,T)(cid:4)=Et (S(t+T)).
+6Forsomeliteratureoncurrencycarrytradesandrelatedtopics,see,e.g.,BakshiandPanayotov(2013),
+Brunnermeieretal.(2008),Burnsideetal.(2007,2008,2011),Claridaetal.(2009),Deardorff(1979),
+DoskovandSwinkels(2015),Hau(2014),Jurek(2014),Lustigetal.(2011,2014),OlmoandPilbeam
+(2009),Readyetal.(2017),RheeandChang(1992).
+7Nonetheless,deviationsfromCIRP(i.e.,Eq.8.5)dooccur,whichgivesrisetocoveredinterestarbitrage.
+See,e.g.,Akrametal.(2008),Avdjievetal.(2016),BabaandPacker(2009),BoulosandSwanson(1994),
+Clinton(1988),Coffeyetal.(2009),CosandierandLang(1981),Duetal.(2018),Duffie(2017),Frenkel
+andLevich(1975),FrenkelandLevich(1981),Liao(2016),Mancini-GriffoliandRanaldo(2011),Popper
+(1993),Rimeetal.(2017).
+=== Page 159 ===
+146 Z.KakushadzeandJ.A.Serur
+FXrate).Theforwarddiscount
+D(t,T)
+isdefinedas
+D(t,T) = s(t)− f(t,T) (8.6)
+PursuanttoCIRP,Eq.(8.5),wehave
+(cid:5) (cid:6)
+1+r
+D(t,T) = ln f ≈r −r (8.7)
+1+r f d
+d
+For a positive forward discount, we buy a forward (i.e., borrow the domes-
+tic currency and invest in the foreign currency), and the higher the forward
+discount, the more profitable the strategy. For a negative forward discount,
+wesellaforward(i.e.,borrowtheforeigncurrencyandinvestinthedomestic
+currency),andthelowertheforwarddiscount,themoreprofitablethestrategy.
+So,wecanconstructacross-sectionaltrade(includingazero-cost,i.e.,dollar-
+neutral trade—see, e.g., Lustig et al. 2011) by buying forwards on currencies
+insometopquantile8 byforwarddiscountandsellingforwardsoncurrencies
+in the corresponding bottomquantile.The forwards can, e.g., be one-month
+forwards.
+8.3 Strategy: Dollar Carry Trade
+Thisstrategyisbasedontheaveragecross-sectionalforwarddiscount
+D(t,T)
+(see,e.g.,Lustigetal.2014)forabasketof N foreigncurrencies:
+(cid:2)N
+1
+D(t,T) = D (t,T) (8.8)
+i
+N
+i=1
+where D (t,T) is the forward discount for the currency labeled by i =
+i
+1,...,N. This strategy then goes long (short), with equal weights, all N
+foreign currency forwards when D(t,T) is positive (negative), where T can
+be1,2,3,6,12months.Empiricalevidencesuggeststhatthisstrategyrelates
+tothestateoftheU.S.economy,towit,whentheU.S.economyisweak,the
+averageforwarddiscounttendstobepositive.9
+8Unlikestocks,thatnumberinthousands,thereisalimitednumberofcurrenciestoplaywith.Therefore,
+onedoesnotnecessarilyhavetheluxuryoftakingtopandbottomdecilesbyforwarddiscount.So,this
+quantilecanbeahalf,athird,etc.,dependingonthenumberofcurrencies.
+9See,e.g.,CooperandPriestley(2008),JoslinandKonchitchki(2018),Joslinetal.(2014),Lustigetal.
+(2014),Stambaugh(1988),Tilleetal.(2001).
+=== Page 160 ===
+8 ForeignExchange(FX) 147
+8.4 Strategy: Momentum and Carry Combo
+This is a combination of the momentum strategy (Sect.8.1)10 and the carry
+strategy (Sect.8.2), or their variations.There is a variety of ways these strate-
+gies can be combined (including an equally weighted combo, or some ideas
+discussedin,e.g.,Sects.3.6and4.6).Asimplecombinationisbasedonmini-
+mizingthevarianceofthecombostrategyusingthesamplecovariancematrixof
+historicalreturns R (t ) and R (t ) ofthetwostrategies(see, e.g.,Olszweski
+1 s 2 s
+and Zhou 2013). Let (here Var and Cor are serial variance and correlation,
+respectively)
+σ2 =
+Var
+(R (t )) (8.9)
+1 1 s
+σ2 =
+Var
+(R (t )) (8.10)
+2 2 s
+ρ =
+Cor
+(R (t ),R (t )) (8.11)
+1 s 2 s
+Then minimizing the historical variance of the combined return
+R(t )
+fixes
+s
+w w
+thestrategyweights and :
+1 2
+R(t ) = w R (t )+w R (t ) (8.12)
+s 1 1 s 2 2 s
+w +w = 1 (8.13)
+1 2
+Var
+(R(t )) →
+min
+(8.14)
+s
+σ2 −σ σ ρ
+w = 2 1 2 (8.15)
+1 σ2 +σ2 −2σ σ ρ
+1 2 1 2
+σ2 −σ σ ρ
+w = 1 1 2 (8.16)
+2 σ2 +σ2 −2σ σ ρ
+1 2 1 2
+8.5 Strategy: FX Triangular Arbitrage
+Thisstrategyisbasedon3currencypairs.11LetthesecurrenciesbeA,B,andC.
+Thenwehave2chains:(i)exchangeAforB,exchangeBfor C,andexchangeC
+for A;and(ii)exchangeAforC,exchange C forB,andexchange BforA.We
+willfocusonthefirstchainasthesecondoneisobtainedbyswappingBforC.
+Eachcurrencypairhasthebidandtheask;e.g.,
+Bid(A → B)
+and
+Ask(B →
+10For additional literature onFX momentum strategiesandrelatedtopics, see,e.g., Accominotti and
+Chambers (2014), Ahmerkamp and Grant (2013), Burnside et al. (2011), Chiang and Jiang (1995),
+Grobysetal.(2016),Menkhoffetal.(2012),OkunevandWhite(2003),Serban(2010).
+11Albeitonecanalsoconsidermorethan3pairs,whichisknownasmulti-currencyarbitrage(see,e.g.,
+Moosa2003).
+=== Page 161 ===
+148 Z.KakushadzeandJ.A.Serur
+A) fortheA-Bpair.So,therateatwhichAisexchangedintoBisBid(A → B)
+,
+whiletherateatwhichBisexchangedintoAis1/Ask(B → A)
+.Therefore,
+Bid(B → A) = 1/Ask(B → A)
+, and
+Ask(A → B) = 1/Bid(A → B)
+.
+In the chain (i) above, the trader starts with A and loops back to A with the
+overallexchangerate
+1
+R(A→ B →C → A)= Bid(A→ B)×Bid(B →C)× (8.17)
+Ask(C → A)
+If this quantity is greater than 1, then the trader makes a profit. Such oppor-
+tunities are ephemeral, so fast market data and trade execution systems are
+criticalhere.12
+References
+Accominotti, O., & Chambers, D. (2014). Out-of-Sample Evidence on the
+Returns to CurrencyTrading (Working Paper). Available online: https://ssrn.com/
+abstract=2293684.
+Ahmerkamp,J.D.,&Grant,J.(2013).TheReturnstoCarryandMomentumStrategies
+(WorkingPaper).Availableonline:https://ssrn.com/abstract=2227387.
+Aiba,Y.,&Hatano,N.(2006).AMicroscopicModelofTriangularArbitrage.Physica
+A:StatisticalMechanicsandItsApplications,371(2),572–584.
+Aiba,Y.,Hatano,N.,Takayasu,H.,Marumo,K.,&Shimizu,T.(2002).Triangular
+Arbitrage as an Interaction Among Foreign Exchange Rates. Physica A: Statistical
+MechanicsandItsApplications,310(3–4),467–479.
+Aiba,Y.,Hatano,N.,Takayasu,H.,Marumo,K.,&Shimizu,T.(2003).Triangular
+Arbitrage and Negative Auto-Correlation of Foreign Exchange Rates. Physica A:
+StatisticalMechanicsandItsApplications,324(1–2),253–257.
+Akram, Q. F., Rime, D., & Sarno, L. (2008). Arbitrage in the Foreign Exchange
+Market: Turning on the Microscope. Journal of International Economics, 76(2),
+237–253.
+Anker,P.(1999).UncoveredInterestParity,MonetaryPolicyandTime-VaryingRisk
+Premia.JournalofInternationalMoneyandFinance,18(6),835–851.
+Avdjiev,S.,Du,W.,Koch,C.,&Shin,H.S.(2016).TheDollar,BankLeverageandthe
+Deviation from CoveredInterest Parity (WorkingPaper). Availableonline:https://
+ssrn.com/abstract=2870057.
+Ayuso,J.,&Restoy,F.(1996).InterestRateParityandForeignExchangeRiskPremia
+intheERM.JournalofInternationalMoneyandFinance,15(3),369–382.
+12Forsomeliteratureontriangulararbitrageandrelatedtopics,see,e.g.,AibaandHatano(2006),Aiba
+etal.(2002,2003),Akrametal.(2008),Choi(2011),CrossandKozyakin(2015),Fennetal.(2009),
+Goldstein(1964),Gradojevicetal.(2017),Itoetal.(2012),Moosa(2001),Morisawa(2009),Mwangi
+andDuncan(2012),Osu(2010).
+=== Page 162 ===
+8 ForeignExchange(FX) 149
+Baba,N.,&Packer,F.(2009).InterpretingDeviationsfromCoveredInterestParity
+DuringtheFinancialMarketTurmoilof2007–08.JournalofBanking&Finance,
+33(11),1953–1962.
+Bacchetta, P., & van Wincoop, E. (2006). Incomplete Information Processing: A
+SolutiontotheForwardDiscountPuzzle.AmericanEconomicReview,96(3),552–
+576.
+Bacchetta,P.,&vanWincoop,E.(2010).InfrequentPortfolioDecisions:ASolution
+totheForwardDiscountPuzzle.AmericanEconomicReview,100(3),870–904.
+Baillie,R.T.,&Osterberg,W.P.(2000).DeviationsfromDailyUncoveredInterest
+RateParityandtheRoleofIntervention.JournalofInternationalFinancialMarkets,
+InstitutionsandMoney,10(4),363–379.
+Bakshi, G., & Panayotov, G. (2013). Predictability of Currency Carry Trades and
+AssetPricingImplications.JournalofFinancialEconomics,110(1),139–163.
+Baxter,M.,&King,R.(1999).MeasuringBusinessCycles:ApproximateBand-Pass
+Filters for EconomicTime-Series. Review of Economics and Statistics, 81(4), 575–
+593.
+Bekaert,G.,Wei,M.,&Xing,Y.(2007).UncoveredInterestRateParityandtheTerm
+Structure.JournalofInternationalMoneyandFinance,26(6),1038–1069.
+Beyaert, A., García-Solanes, J., & Pérez-Castejón, J. J. (2007). Uncovered Interest
+ParitywithSwitchingRegimes.EconomicModelling,24(2),189–202.
+Bilson,J.F.O.(1981).The“SpeculativeEfficiency”Hypothesis.JournalofBusiness,
+54(3),435–451.
+Boulos, N., & Swanson, P. E. (1994). Interest Rate Parity inTimes ofTurbulence:
+TheIssueRevisited.JournalofFinancialandStrategicDecisions,7(2),43–52.
+Bruder, B., Dao,T.-L., Richard, R.-J., & Roncalli,T. (2013).Trend Filtering Meth-
+odsforMomentumStrategies (WorkingPaper).Availableonline:https://ssrn.com/
+abstract=2289097.
+Brunnermeier,M.K.,Nagel,S.,&Pedersen,L.H.(2008).CarryTradesandCurrency
+Crashes.NBERMacroeconomicsAnnual,23(1),313–347.
+Burnside,C.,Eichenbaum,M.,Kleshchelski,I.,&Rebelo,S.(2011).DoPesoProb-
+lems Explain the Returns to the CarryTrade? Review of Financial Studies, 24(3),
+853–891.
+Burnside,C.,Eichenbaum,M.,&Rebelo,S.(2007).TheReturnstoCurrencySpec-
+ulationinEmergingMarkets.AmericanEconomicReview,97(2),333–338.
+Burnside, C., Eichenbaum, M., & Rebelo, S. (2008). Carry Trade: The Gains of
+Diversification.JournaloftheEuropeanEconomicAssociation,6(2/3),581–588.
+Burnside, C., Eichenbaum, M., & Rebelo, S. (2011). CarryTrade and Momentum
+inCurrencyMarkets.AnnualReviewofFinancialEconomics,3,511–535.
+Chaboud,A.P.,&Wright,J.H.(2005).UncoveredInterestParity:ItWorks,butNot
+forLong.JournalofInternationalEconomics,66(2),349–362.
+Chiang,T.C.,&Jiang,C.X.(1995).ForeignExchangeReturnsoverShortandLong
+Horizons.InternationalReviewofEconomics&Finance,4(3),267–282.
+Choi,M.S.(2011).MomentaryExchangeRateLockedinaTriangularMechanism
+ofInternationalCurrency.AppliedEconomics,43(16),2079–2087.
+=== Page 163 ===
+150 Z.KakushadzeandJ.A.Serur
+Clarida,R.H.,Davis,J.M.,&Pedersen,N.(2009).CurrencyCarryTradeRegimes:
+Beyond the Fama Regression. Journal of International Money and Finance, 28(8),
+1375–1389.
+Clinton,K.(1988).TransactionsCosts andCovered InterestArbitrage:Theoryand
+Evidence.JournalofPoliticalEconomy,96(2),358–370.
+Coffey, N., Hrung, W. B., & Sarkar, A. (2009). Capital Constraints, Counterparty
+Risk, and Deviations from Covered Interest Rate Parity (Federal Reserve Bank of
+NewYorkStaffReports,No.393).Availableonline:https://www.newyorkfed.org/
+medialibrary/media/research/staff_reports/sr393.pdf.
+Cooper,I.,&Priestley,R.(2008).Time-VaryingRiskPremiumsandtheOutputGap.
+ReviewofFinancialStudies,22(7),2801–2833.
+Cosandier, P.-A., & Lang, B. R. (1981). Interest Rate ParityTests: Switzerland and
+SomeMajorWesternCountries.JournalofBanking&Finance,5(2),187–200.
+Cross,R.,&Kozyakin,V.(2015).FactandFictionsinFXArbitrageProcesses.Journal
+ofPhysics:ConferenceSeries,585,012015.
+Dao, T.-L. (2014). Momentum Strategies with the L1 Filter. Journal of Investment
+Strategies,3(4),57–82.
+Deardorff, A. V. (1979). One-Way Arbitrage and Its Implications for the Foreign
+ExchangeMarkets.JournalofPoliticalEconomy,87(2),351–364.
+Doskov,N.,&Swinkels,L.(2015).EmpiricalEvidenceontheCurrencyCarryTrade,
+1900–2012.JournalofInternationalMoneyandFinance,51,370–389.
+Du, W., Tepper, A., & Verdelhan, A. (2018). Deviations from Covered Interest
+RateParity.JournalofFinance (forthcoming).https://doi.org/10.1111/jofi.12620.
+Availableonline:https://ssrn.com/abstract=2768207.
+Duffie, D. (2017, May). The Covered Interest Parity Conundrum. Risk. Available
+online:https://www.risk.net/4353726.
+Ehlgen,J.(1998).DistortionaryEffectsoftheOptimalHodrick-PrescottFilter.Eco-
+nomicsLetters,61(3),345–349.
+Engel,C.(1996).TheForwardDiscountAnomalyandtheRiskPremium:ASurvey
+ofRecentEvidence.JournalofEmpiricalFinance,3(2),123–192.
+Fama,E.F.(1984).ForwardandSpotExchangeRates.JournalofMonetaryEconomics,
+14(3),319–338.
+Fenn,D.J.,Howison,S.D.,Mcdonald,M.,Williams,S.,&Johnson,N.F.(2009).
+The Mirage ofTriangular Arbitrage in the Spot Foreign Exchange Market. Inter-
+nationalJournalofTheoreticalandAppliedFinance,12(8),1105–1123.
+Frachot,A.(1996).AReexaminationoftheUncoveredInterestRateParityHypoth-
+esis.JournalofInternationalMoneyandFinance,15(3),419–437.
+Frenkel, J. A., & Levich, R. M. (1975). Covered Interest Arbitrage: Unexploited
+Profits?JournalofPoliticalEconomy,83(2),325–338.
+Frenkel, J. A., & Levich, R. M. (1981). Covered Interest Arbitrage in the 1970’s.
+EconomicsLetters,8(3),267–274.
+Froot,K.A.,&Thaler,R.H.(1990).Anomalies:ForeignExchange.JournalofEco-
+nomicPerspectives,4(3),179–192.
+=== Page 164 ===
+8 ForeignExchange(FX) 151
+Goldstein, H. N. (1964). The Implications of Triangular Arbitrage for Forward
+ExchangePolicy.JournalofFinance,19(3),544–551.
+Gradojevic,N.,Gençay,R.,&Erdemlioglu,D.(2017).RobustPredictionofTriangular
+CurrencyArbitragewithLiquidityandRealizedRiskMeasures:ANewWavelet-Based
+Ultra-High-FrequencyAnalysis(WorkingPaper).Availableonline:https://ssrn.com/
+abstract=3018815.
+Grobys,K.,Heinonen,J.-P.,&Kolari,J.W.(2016).IsCurrencyMomentumaHedge
+for Global Economic Risk? (Working Paper). Available online: https://ssrn.com/
+abstract=2619146.
+Hansen,L.P.,&Hodrick,R.J.(1980).ForwardExchangeRatesasOptimalPredictors
+ofFutureSpotRates:AnEconometricAnalysis.JournalofPoliticalEconomy,88(5),
+829–853.
+Harris,R.D.F.,&Yilmaz,F.(2009).AMomentumTradingStrategyBasedonthe
+LowFrequencyComponentoftheExchangeRate.JournalofBanking&Finance,
+33(9),1575–1585.
+Harvey,J.T.(2015).DeviationsfromUncoveredInterestRateParity:APostKeynesian
+Explanation.JournalofPostKeynesianEconomics,27(1),19–35.
+Harvey,A.,&Trimbur,T.(2008).TrendEstimationandtheHodrick-PrescottFilter.
+JournaloftheJapanStatisticalSociety,38(1),41–49.
+Hau,H.(2014).TheExchangeRateEffectofMulti-currencyRiskArbitrage.Journal
+ofInternationalMoneyandFinance,47,304–331.
+Henderson, R. (1924). A New Method of Graduation.Transactions of the Actuarial
+SocietyofAmerica,25,29–40.
+Henderson,R.(1925).FurtherRemarksonGraduation.TransactionsoftheActuarial
+SocietyofAmerica,26,52–57.
+Henderson,R.(1938).MathematicalTheoryofGraduation.NewYork,NY:Actuarial
+SocietyofAmerica.
+Hodrick,R.J.(1987).TheEmpiricalEvidenceontheEfficiencyofForwardandFutures
+ForeignExchangeMarkets.NewYork,NY:HarwoodAcademic.
+Hodrick,R.J.,&Prescott,E.C.(1997).PostwarU.S.BusinessCycles:AnEmpirical
+Investigation.JournalofMoney,CreditandBanking,29(1),1–16.
+Ilut, C. (2012). Ambiguity Aversion: Implications for the Uncovered Interest Rate
+ParityPuzzle.AmericanEconomicJournal:Macroeconomics,4(3),33–65.
+Ito, T., Yamada, K., Takayasu, M., & Takayasu, H. (2012). Free Lunch! Arbitrage
+OpportunitiesintheForeignExchangeMarkets (WorkingPaper).Availableonline:
+http://www.nber.org/papers/w18541.
+Joseph,A.(1952).TheWhittaker-HendersonMethodofGraduation.Journalofthe
+InstituteofActuaries,78(1),99–114.
+Joslin,S.,&Konchitchki,Y.(2018).InterestRateVolatility,theYieldCurve,andthe
+Macroeconomy.JournalofFinancialEconomics,128(2),344–362.
+Joslin,S.,Priebsch,M.,&Singleton,K.J.(2014).RiskPremiumsinDynamicTerm
+StructureModelswithUnspannedMacroRisks.JournalofFinance,69(3),1197–
+1233.
+=== Page 165 ===
+152 Z.KakushadzeandJ.A.Serur
+Jurek,J.W.(2014).Crash-NeutralCurrencyCarryTrades.JournalofFinancialEco-
+nomics,113(3),325–347.
+Lahmiri,S.(2014).WaveletLow-andHigh-FrequencyComponentsasFeaturesfor
+Predicting Stock Prices with Backpropagation Neural Networks. Journal of King
+SaudUniversity—ComputerandInformationSciences,26(2),218–227.
+Lewis, K. (1995). Puzzles in International Financial Markets. In G. M. Grossman
+& K. Rogoff (Eds.), Handbook of International Economics (Vol. 3, Chapter 37).
+Amsterdam,TheNetherlands:North-Holland.
+Liao,G.Y.(2016).CreditMigrationandCoveredInterestRateParity (WorkingPaper).
+Availableonline:http://scholar.harvard.edu/files/gliao/files/creditcip.pdf.
+Lustig,H.,Roussanov,N.,&Verdelhan,A.(2011).CommonRiskFactorsinCurrency
+Markets.ReviewofFinancialStudies,24(11),3731–3777.
+Lustig, H., Roussanov, N., &Verdelhan, A. (2014). Countercyclical Currency Risk
+Premia.JournalofFinancialEconomics,111(3),527–553.
+Lustig, H., & Verdelhan, A. (2007). The Cross-Section of Foreign Currency Risk
+Premia and US Consumption Growth Risk. American Economic Review, 97(1),
+89–117.
+Mancini-Griffoli, T., & Ranaldo, A. (2011). Limits to Arbitrage During the Crisis:
+FundingLiquidityConstraintsandCoveredInterestParity(WorkingPaper).Available
+online:https://ssrn.com/abstract=1549668.
+Mark,N.C.,&Wu,Y.(2001).RethinkingDeviationsFromUncoveredInterestParity:
+TheRoleofCovarianceRiskandNoise.EconomicJournal,108(451),1686–1706.
+Mcelroy,T.(2008).ExactFormulasfortheHodrick-PrescottFilter.EconometricsJour-
+nal,11(1),208–217.
+Menkhoff,L.,Sarno,L.,Schmeling,M.,&Schrimpf,A.(2012).CurrencyMomen-
+tumStrategies.JournalofFinancialEconomics,106(3),660–684.
+Moosa,I.A.(2001).TriangularArbitrageintheSpotandForwardForeignExchange
+Markets.QuantitativeFinance,1(4),387–390.
+Moosa,I.A.(2003).Two-Currency,Three-CurrencyandMulti-CurrencyArbitrage.
+InInternationalFinancialOperations:Arbitrage,Hedging,Speculation,Financingand
+Investment. Finance and Capital Markets Series (Chapter 1, pp. 1–18). London,
+UK:PalgraveMacmillan.
+Morisawa,Y. (2009).Toward a Geometric Formulation ofTriangular Arbitrage: An
+IntroductiontoGaugeTheoryofArbitrage.ProgressofTheoreticalPhysicsSupple-
+ment,179,209–215.
+Mwangi, C. I., & Duncan, M. O. (2012). An Investigation into the Existence of
+Exchange Rate Arbitrage in the Mombasa Spot Market. International Journal of
+HumanitiesandSocialScience,2(21),182–196.
+Okunev, J., & White, D. (2003). Do Momentum-Based Strategies Still Work in
+ForeignCurrencyMarkets?JournalofFinancialandQuantitativeAnalysis,38(2),
+425–447.
+Olmo,J.,&Pilbeam,K.(2009).TheProfitabilityofCarryTrades.AnnalsofFinance,
+5(2),231–241.
