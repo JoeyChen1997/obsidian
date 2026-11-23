@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Marketing Paper/文献卡/Chen 与 Iyer 2002 - 顾客可触达性与定制定价.md",
+                "file": "Marketing Paper/文献卡/Iyer 等 2005 - 广告定向与定价.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,11 +52,35 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Chen 与 Iyer 2002 - 顾客可触达性与定制定价"
+              "title": "Iyer 等 2005 - 广告定向与定价"
+            }
+          },
+          {
+            "id": "ec9e449720ca36b5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Marketing Paper/精读台账与研究流程.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "精读台账与研究流程"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -233,15 +257,15 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "f63b593260cf50c5",
+  "active": "ec9e449720ca36b5",
   "lastOpenFiles": [
-    "Marketing Paper/精读台账与研究流程.md",
-    "Marketing Paper/文献卡/Iyer 等 2005 - 广告定向与定价.md",
-    "Marketing Paper/研究谱系/定向广告与定向定价 - 研究谱系.md",
-    "Marketing Paper/研究谱系",
-    "Marketing Paper/文献卡/Chen 与 Iyer 2002 - 顾客可触达性与定制定价.md",
-    "Marketing Paper/Paperlist 研究知识库.md",
     "Marketing Paper/文献卡/Moorthy 与 Shahrokhi Tehrani 2023 - Hotelling 定向投放与定价.md",
+    "Marketing Paper/研究谱系/定向广告与定向定价 - 研究谱系.md",
+    "Marketing Paper/文献卡/Iyer 等 2005 - 广告定向与定价.md",
+    "Marketing Paper/文献卡/Chen 与 Iyer 2002 - 顾客可触达性与定制定价.md",
+    "Marketing Paper/精读台账与研究流程.md",
+    "Marketing Paper/研究谱系",
+    "Marketing Paper/Paperlist 研究知识库.md",
     "Marketing Paper/Theory 文献卡模板.md",
     "Marketing Paper/文献卡",
     "Marketing Paper/paperlist.py",
