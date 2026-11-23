@@ -168,17 +168,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "欢迎.md",
+                "file": "量化交易学习/101公式化Alpha/101公式化Alpha - 概述.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "欢迎 的大纲"
+              "title": "大纲"
             }
           },
           {
-            "id": "3c07c0a1b865b2e4",
+            "id": "d2e40da301c97e6a",
             "type": "leaf",
             "state": {
               "type": "claudian-view",
@@ -196,6 +196,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "claudian:Open Claudian": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -204,11 +205,10 @@
       "command-palette:打开命令面板": false,
       "bases:新建数据库": false,
       "obsidian-git:Open Git source control": false,
-      "claudian:Open Claudian": false,
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "3c07c0a1b865b2e4",
+  "active": "d2e40da301c97e6a",
   "lastOpenFiles": [
     "量化交易学习/101公式化Alpha/101公式化Alpha - Alpha#26到#50.md",
     "151 Trading Strategies.pdf",

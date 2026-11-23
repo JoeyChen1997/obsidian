@@ -1,0 +1,26 @@
+{
+  "id": "conv-1795440794370-4mhjzj989",
+  "providerId": "codex",
+  "title": "确认现在能否开始工作",
+  "titleGenerationStatus": "success",
+  "createdAt": 1795440794370,
+  "updatedAt": 1795440970253,
+  "lastResponseAt": 1795440970253,
+  "sessionId": "01a2089e-d5fe-7ab1-b51d-2a88e6a35c48",
+  "providerState": {
+    "threadId": "01a2089e-d5fe-7ab1-b51d-2a88e6a35c48",
+    "sessionFilePath": "C:\\Users\\Joey Cheun\\.codex\\sessions\\2026\\11\\23\\rollout-2026-11-23T21-35-56-01a2089e-d5fe-7ab1-b51d-2a88e6a35c48.jsonl",
+    "transcriptRootPath": "C:\\Users\\Joey Cheun\\.codex\\sessions"
+  },
+  "currentNote": "量化交易学习/101公式化Alpha/101公式化Alpha - 概述.md",
+  "usage": {
+    "inputTokens": 11158,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 10880,
+    "contextWindow": 475000,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 11158,
+    "percentage": 2,
+    "model": "gpt-6.2-sol"
+  }
+}
