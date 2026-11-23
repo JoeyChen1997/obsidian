@@ -12,6 +12,12 @@ aliases:
 
 用于 quantitative marketing 的 analytical modeling（theory）研究。原件位于 `C:\paperlist`，保持只读；这个 vault 保存检索工具和研究笔记，机器上的可重建全文索引在 `%LOCALAPPDATA%\PaperlistResearch\papers.sqlite3`。这是一个可以按需查询、逐页复核的本地语料库，不是对模型权重的训练，也不是已经逐篇审读的综述。
 
+2026-11-23 首次建库：12 个期刊目录、47,568 个 PDF 均已编目；918,188 页中有 918,124 页可检索（其中 10,007 页来自 OCR）。47,526 件每页均有可检索文字，41 件部分页有文字，1 件仅有目录条目。后者为 JMR 的 `Oliver_1980_A Cognitive Model of the Antecedents and Consequences of Satisfaction Decisions.pdf`：本地这份文件的 11 页均渲染为空白，PDF 解析还报告了对象引用异常，建议补入一份可读副本。实际覆盖以 `status` 为准。
+
+## 精读知识层
+
+[[Marketing Paper/精读台账与研究流程|精读台账与研究流程]]区分「已编目」「已初筛」「正文与核心证明已读」。[[Marketing Paper/研究谱系/定向广告与定向定价 - 研究谱系|定向广告与定向定价：首个研究谱系]]示范如何把前驱、模型继承、结论反转和前向扩展接起来，并给出原文证据。后续回答研究问题时，同时用精读卡做综合、用全库索引找漏网近邻；未读原文的节点保持待核。
+
 ## 怎么用
 
 可以直接问：「用 Paperlist 找与我的模型最相近的 theory 文献。我的设定是两家差异化卖家、平台先选抽成、卖家再选定价。请比较博弈时序、信息结构、均衡和结论反转的条件，并附 PDF 页码。」
@@ -21,7 +27,7 @@ aliases:
 - **写 related literature**：按机制组织，不按期刊罗列；对最接近的论文写清「共享设定 → 实质差异 → 哪个预测改变」，不要把「用了另一个情境」误当理论贡献。写 novelty claim 前，检索向前和向后扩展；本库无结果不等于没有先例。
 - **复核公式和引用**：全文命中只是线索。回看 PDF 原页和 appendix，核对不等号方向、上标下标、命题适用条件和 off-equilibrium deviations；正式引用前核对完整作者、发表年份、期刊、卷期、印刷页码和 DOI。工具返回的是从 1 开始的 **PDF 物理页**。
 
-已核对的示例：[[Marketing Paper/文献卡/Moorthy 与 Shahrokhi Tehrani 2023 - Hotelling 定向投放与定价|Hotelling 定向投放与定价]]。后续可从 [[Marketing Paper/Theory 文献卡模板|Theory 文献卡模板]] 记录与自己项目真正有关的论文。
+精读示例：[[Marketing Paper/文献卡/Moorthy 与 Shahrokhi Tehrani 2023 - Hotelling 定向投放与定价|Hotelling 定向投放与定价]]，含命题、证明骨架、数值复算和原文口径差异。后续用 [[Marketing Paper/Theory 文献卡模板|Theory 文献卡模板]] 记录模型指纹和关系证据。
 
 ## 检索范围与关键词
 

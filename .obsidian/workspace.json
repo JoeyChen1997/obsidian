@@ -11,13 +11,52 @@
             "id": "d7ca22333357553b",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Marketing Paper/Paperlist 研究知识库.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "Paperlist 研究知识库"
+            }
+          },
+          {
+            "id": "f63b593260cf50c5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Marketing Paper/文献卡/Chen 与 Iyer 2002 - 顾客可触达性与定制定价.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Chen 与 Iyer 2002 - 顾客可触达性与定制定价"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -194,12 +233,17 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "d2e40da301c97e6a",
+  "active": "f63b593260cf50c5",
   "lastOpenFiles": [
-    "Marketing Paper/文献卡/Moorthy 与 Shahrokhi Tehrani 2023 - Hotelling 定向投放与定价.md",
-    "Marketing Paper/文献卡",
-    "Marketing Paper/Theory 文献卡模板.md",
+    "Marketing Paper/精读台账与研究流程.md",
+    "Marketing Paper/文献卡/Iyer 等 2005 - 广告定向与定价.md",
+    "Marketing Paper/研究谱系/定向广告与定向定价 - 研究谱系.md",
+    "Marketing Paper/研究谱系",
+    "Marketing Paper/文献卡/Chen 与 Iyer 2002 - 顾客可触达性与定制定价.md",
     "Marketing Paper/Paperlist 研究知识库.md",
+    "Marketing Paper/文献卡/Moorthy 与 Shahrokhi Tehrani 2023 - Hotelling 定向投放与定价.md",
+    "Marketing Paper/Theory 文献卡模板.md",
+    "Marketing Paper/文献卡",
     "Marketing Paper/paperlist.py",
     "Marketing Paper/未命名.base",
     "Marketing Paper",
@@ -214,7 +258,6 @@
     "量化交易学习/151交易策略/151交易策略 - 第10章：期货策略.md",
     "量化交易学习/151交易策略/151交易策略 - 第2章：期权策略.md.tmp.39820.1776282590948",
     "量化交易学习/101公式化Alpha/101公式化Alpha - Alpha#26到#50.md.tmp.39820.1776282428444",
-    "量化交易学习/101公式化Alpha/101公式化Alpha - Alpha#26到#50.md.tmp.39820.1776282428438",
     "量化交易学习/量化交易索引.md",
     "量化交易学习/151交易策略/151交易策略 - 第11章及以后.md",
     "量化交易学习/151交易策略/151交易策略 - 第9章：大宗商品策略.md",
@@ -227,7 +270,6 @@
     "量化交易学习/101公式化Alpha/101公式化Alpha - Alpha.md",
     "量化交易学习/101公式化Alpha/101公式化Alpha - Alpha#1到#25.md",
     "量化交易学习/101公式化Alpha/101公式化Alpha - Alpha#51到#75.md",
-    "量化交易学习/101公式化Alpha/101公式化Alpha - Alpha#76到#101.md",
-    "README.md"
+    "量化交易学习/101公式化Alpha/101公式化Alpha - Alpha#76到#101.md"
   ]
 }
