@@ -4,31 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "0f1735a1bab6472d",
+        "id": "d1f0edd49a726d79",
         "type": "tabs",
         "children": [
           {
-            "id": "1adf6149e3a75889",
+            "id": "d7ca22333357553b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "量化交易学习/101公式化Alpha/101公式化Alpha - 概述.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "101公式化Alpha - 概述"
+              "title": "新标签页"
             }
           }
         ]
@@ -210,6 +196,10 @@
   },
   "active": "d2e40da301c97e6a",
   "lastOpenFiles": [
+    "Marketing Paper/未命名.base",
+    "Marketing Paper",
+    "未命名.base",
+    "量化交易学习/101公式化Alpha/101公式化Alpha - 概述.md",
     "量化交易学习/101公式化Alpha/101公式化Alpha - Alpha#26到#50.md",
     "151 Trading Strategies.pdf",
     "101 Formulaic Alphas - arXiv.org.pdf",
@@ -223,8 +213,6 @@
     "量化交易学习/101公式化Alpha/101公式化Alpha - Alpha#26到#50.md.tmp.39820.1776282418152",
     "量化交易学习/101公式化Alpha/101公式化Alpha - Alpha#26到#50.md.tmp.39820.1776282418143",
     "量化交易学习/101公式化Alpha/101公式化Alpha - Alpha#26到#50.md.tmp.39820.1776282408850",
-    "量化交易学习/101公式化Alpha/101公式化Alpha - Alpha#26到#50.md.tmp.39820.1776282408841",
-    "量化交易学习/101公式化Alpha/101公式化Alpha - Alpha#26到#50.md.tmp.39820.1776282398943",
     "量化交易学习/量化交易索引.md",
     "量化交易学习/151交易策略/151交易策略 - 第11章及以后.md",
     "量化交易学习/151交易策略/151交易策略 - 第9章：大宗商品策略.md",
@@ -234,7 +222,6 @@
     "欢迎.md",
     "量化交易学习/151交易策略/151交易策略 - 第5章：固定收益策略.md",
     "量化交易学习/151交易策略/151交易策略 - 第2章：期权策略.md",
-    "量化交易学习/101公式化Alpha/101公式化Alpha - 概述.md",
     "量化交易学习/101公式化Alpha/101公式化Alpha - Alpha.md",
     "量化交易学习/101公式化Alpha/101公式化Alpha - Alpha#1到#25.md",
     "量化交易学习/101公式化Alpha/101公式化Alpha - Alpha#51到#75.md",
