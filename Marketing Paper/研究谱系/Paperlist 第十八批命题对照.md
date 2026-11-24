@@ -10,7 +10,7 @@ batch: paperlist-18
 | 作品 | 识别／模型 | 可迁移结论与边界 |
 | --- | --- | --- |
 | [[Marketing Paper/文献卡/Ursu 2018 - 排名与在线搜索购买|Ursu（2018）]] | Expedia 随机排名实验；点击代表搜索，购买代表最终成交；用 Weitzman 顺序搜索联合估计。 | 排名显著改变搜索对象，但条件于已搜索不显著改变购买；位置效应约 $0.55$–$3.19$。排名因果效应与排名内生性分开。PDF 3、17–20。 |
-| [[Marketing Paper/文献卡/Compiani 等 2024 - 在线搜索与最优产品排序|Compiani 等（2024）]] | 延用 Weitzman 型搜索，但分开 search index 与 utility index；随机排名训练、Expedia 算法测试，用 exploded logit 估计后做排序反事实。 | 消费者剩余排序偏向“diamond in the rough”，静态收入排序偏向高利润品；OPT3G-CS 相对 Expedia 同时提高剩余和收入，但这是模型反事实，不是长期留存估计。PDF 1–4、8、15、22–23。 |
+| [[Marketing Paper/文献卡/Compiani 等 2024 - 在线搜索与最优产品排序\|Compiani 等（2024）]] | 延用 Weitzman 型搜索，但分开 search index 与 utility index；随机排名训练、Expedia 算法测试，用 exploded logit 估计后做排序反事实。 | 消费者剩余排序偏向“diamond in the rough”，静态收入排序偏向高利润品；OPT3G-CS 相对 Expedia 同时提高剩余和收入，但这是模型反事实，不是长期留存估计。PDF 1–4、8、14、18–19。 |
 | [[Marketing Paper/文献卡/Natan 2025 - 大型组合的选择摩擦|Natan（2025）]] | 配送边界局部准实验和 rational inattention；没有具体排名、推荐和单个 impression。 | 组合变大提高新客采用、降低老客频率；不能由此识别排序展示效应。Natan 的排序不可观测正是 Compiani／Ursu 这条分支的来源缺口。PDF 7–15。 |
 
 ## 关系与缺口

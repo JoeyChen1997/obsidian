@@ -65,7 +65,7 @@
       "id": "platform-ranking-and-search",
       "title": "平台排序、搜索指数与在线成交",
       "aliases": ["平台排序", "在线排名", "搜索指数", "optimal rankings", "position effects", "ranking algorithms", "online search"],
-      "papers": ["weitzman-1979-pandora", "choi-dai-kim-2018-effective-values", "ursu-2018-ranking-search", "compiani-et-al-2024-optimal-rankings"],
+      "papers": ["weitzman-1979-pandora", "choi-dai-kim-2018-effective-values", "ursu-2018-ranking-search", "derakhshan-et-al-2022-product-ranking", "donnelly-kanodia-morozov-2023-personalized-rankings", "compiani-et-al-2024-optimal-rankings"],
       "queries": ["ranking position search cost", "optimal product rankings consumer surplus", "random ranking booking conversion"]
     },
     {
@@ -103,8 +103,8 @@
       "aliases": ["Donnelly Kanodia Morozov 2023", "Donnelly 2024", "welfare personalized rankings"],
       "card": "Marketing Paper/文献卡/Donnelly 等 2023 - 个性化排序与福利.md",
       "reading_status": "core_read",
-      "reading_note": "核随机分配、Table 1、Weitzman 型结构模型、Eqs. (1)–(13)、Table 4–5 福利与利润权重；在线附录和数据未独立核。",
-      "sections": {"introduction": [[1, 4]], "model": [[9, 14]], "results": [[6, 8], [18, 20]], "discussion": [[20, 21]]}
+      "reading_note": "核随机分派、主文平行搜索、估计识别、表 4 福利及图 5；在线附录和数据未独立核，无跨品类长期留存。",
+      "sections": {"introduction": [[1, 4]], "model": [[7, 13]], "results": [[6, 7], [14, 18]], "discussion": [[18, 19]]}
     },
     {
       "id": "derakhshan-et-al-2022-product-ranking",
@@ -133,7 +133,7 @@
       "card": "Marketing Paper/文献卡/Compiani 等 2024 - 在线搜索与最优产品排序.md",
       "reading_status": "core_read",
       "reading_note": "核 Weitzman 型模型、Lemma 1、Props. 1–3、排序算法保证、Expedia 随机训练／算法测试设计、表 5–8；在线附录和原始数据未独立核。",
-      "sections": {"introduction": [[1, 4]], "model": [[5, 9]], "results": [[9, 13]], "discussion": [[13, 14]], "proof": [[8, 13]]}
+      "sections": {"introduction": [[1, 4]], "model": [[5, 8]], "results": [[8, 13], [17, 20]], "discussion": [[20, 20]]}
     },
     {
       "id": "ursu-2018-ranking-search",
@@ -757,32 +757,54 @@
       "to": "donnelly-kanodia-morozov-2023-personalized-rankings",
       "type": "contrasts_assumptions",
       "review": "verified",
-      "claim": "Donnelly 等把个性化排序的真实随机实验接到 Compiani 等的排序与搜索福利议题，但估计的是实际零售算法而非穷举最优排序。",
-      "changed": "由随机训练／算法测试和平台可直接调 rank function，改为用户级个性化与非个性化随机分配、利润和效用加权的实际排序。",
-      "limit": "Donnelly 的样本不观察长期留存且只研究床品；不能把短期消费者剩余当作 Compiani 的一般长期平台目标。",
-      "evidence": [{"paper": "compiani-et-al-2024-optimal-rankings", "page": 4, "printed": "618", "locator": "Related literature，排序算法与福利目标"}, {"paper": "compiani-et-al-2024-optimal-rankings", "page": 22, "printed": "632", "locator": "表 6，消费者剩余／收入排序反事实"}, {"paper": "donnelly-kanodia-morozov-2023-personalized-rankings", "page": 4, "printed": "95", "locator": "随机实验和数据限制"}, {"paper": "donnelly-kanodia-morozov-2023-personalized-rankings", "page": 19, "printed": "110", "locator": "个性化算法的利润权重与福利权衡"}]
+      "claim": "Donnelly 等讨论 Compiani 等的双指数早稿，并对照假想排序优化与已部署的个性化排序。两篇分别使用顺序搜索和平行搜索来模拟福利。",
+      "changed": "从 Expedia 随机排名用于估计、再优化算法，转为床品类按用户随机分派个性化、联合估计用户偏好与已部署算法的利润和效用权重。",
+      "limit": "两篇正式卷期都是 2024；明确被引用的是 2021 早稿，不把图谱方向当作正式卷期的先后。随机化识别行为差异，福利仍依赖结构模型；不识别长期留存。",
+      "evidence": [{"paper": "compiani-et-al-2024-optimal-rankings", "page": 18, "printed": "632", "locator": "表 6，消费者剩余／收入排序反事实"}, {"paper": "donnelly-kanodia-morozov-2023-personalized-rankings", "page": 3, "printed": "94", "locator": "对照 Compiani et al. (2021) 的目标权衡"}, {"paper": "donnelly-kanodia-morozov-2023-personalized-rankings", "page": 8, "printed": "99", "locator": "Eqs. (2)–(4)，先承诺查验集合"}, {"paper": "donnelly-kanodia-morozov-2023-personalized-rankings", "page": 18, "printed": "109", "locator": "图 5，利润权重与福利反事实"}, {"paper": "donnelly-kanodia-morozov-2023-personalized-rankings", "page": 21, "printed": "112", "locator": "参考文献列出双指数早稿"}]
     },
     {
-      "id": "compiani-derakhshan-free-order-versus-position-screening",
-      "from": "compiani-et-al-2024-optimal-rankings",
-      "to": "derakhshan-et-al-2022-product-ranking",
+      "id": "derakhshan-compiani-position-screening-versus-free-order",
+      "from": "derakhshan-et-al-2022-product-ranking",
+      "to": "compiani-et-al-2024-optimal-rankings",
       "type": "contrasts_assumptions",
       "review": "verified",
       "claim": "两篇都让平台优化排序，但消费者的下一步搜索规则不同：Compiani 允许任意择序，Derakhshan 由位置成本推出向下筛选。",
-      "changed": "由 search index 与 utility index 的 max-min 成交，改为先逐位观察 preference weight、形成考虑集，再在集内观察 idiosyncratic utility；高权重顶部品会缩短后位考虑集。",
+      "changed": "从未查位置同分布、位置成本递增、先知权重而后知匹配，转为商品各有先验指标，点击时揭示完整效用，以 max-min 指标表示最终成交。",
       "limit": "不能把两篇的最优排序算法或福利保证互换；Derakhshan 的详细证明在 e-companion，未独立核。",
-      "evidence": [{"paper": "compiani-et-al-2024-optimal-rankings", "page": 4, "printed": "618", "locator": "明确说消费者可任意选择搜索顺序"}, {"paper": "compiani-et-al-2024-optimal-rankings", "page": 8, "printed": "622", "locator": "Lemma 1，effective index"}, {"paper": "derakhshan-et-al-2022-product-ranking", "page": 3, "printed": "4026", "locator": "两阶段模型与逐位筛选"}, {"paper": "derakhshan-et-al-2022-product-ranking", "page": 10, "printed": "4033", "locator": "Theorem 1，向下筛选及考虑集外部性"}]
+      "evidence": [{"paper": "compiani-et-al-2024-optimal-rankings", "page": 3, "printed": "617", "locator": "明确对照 Derakhshan 的页面方向和自己的可跳位搜索"}, {"paper": "compiani-et-al-2024-optimal-rankings", "page": 8, "printed": "622", "locator": "Lemma 1，effective index"}, {"paper": "derakhshan-et-al-2022-product-ranking", "page": 9, "printed": "4032", "locator": "Eq. (5)，累加权重式保留阈值"}, {"paper": "derakhshan-et-al-2022-product-ranking", "page": 10, "printed": "4033", "locator": "Theorem 1，向下筛选是结论，不是约束"}]
     },
     {
-      "id": "donnelly-derakhshan-personalized-versus-position-externality",
+      "id": "derakhshan-donnelly-personalized-versus-position-externality",
       "from": "derakhshan-et-al-2022-product-ranking",
       "to": "donnelly-kanodia-morozov-2023-personalized-rankings",
       "type": "contrasts_assumptions",
       "review": "verified",
       "claim": "Donnelly 的个性化实验提高搜索和购买概率；Derakhshan 的逐位模型提醒：把高权重品放顶部也可能因外部性缩短考虑集并降低总购买。",
-      "changed": "由已知位置成本、平台排序对所有类型的共同机制，改为用户级历史个性化、随机 assignment 和估计 tastes／position effects。",
+      "changed": "由逐步揭示未知权重形成前缀考虑集，转为列表提供基础属性，再一次选定查验集合；个性化根据用户历史改变商品在位情况。",
       "limit": "两者不是直接继承关系；Donnelly 的实验结果不能裁决 Derakhshan 的 NP-complete 排序问题，Derakhshan 也不估计 Donnelly 的个性化算法权重。",
-      "evidence": [{"paper": "derakhshan-et-al-2022-product-ranking", "page": 2, "printed": "4025", "locator": "图 1，顶部高权重品对后位的外部性"}, {"paper": "derakhshan-et-al-2022-product-ranking", "page": 10, "printed": "4033", "locator": "Theorem 1，外部性与考虑集"}, {"paper": "donnelly-kanodia-morozov-2023-personalized-rankings", "page": 6, "printed": "97", "locator": "Table 1，搜索与购买率的随机差异"}, {"paper": "donnelly-kanodia-morozov-2023-personalized-rankings", "page": 19, "printed": "110", "locator": "利润权重提高使福利下降的反事实"}]
+      "evidence": [{"paper": "derakhshan-et-al-2022-product-ranking", "page": 10, "printed": "4033", "locator": "Theorem 1，外部性与考虑集"}, {"paper": "donnelly-kanodia-morozov-2023-personalized-rankings", "page": 6, "printed": "97", "locator": "Table 1，搜索与购买率的随机差异"}, {"paper": "donnelly-kanodia-morozov-2023-personalized-rankings", "page": 8, "printed": "99", "locator": "平行选集及位置成本"}]
+    },
+    {
+      "id": "wang-sahin-derakhshan-assortment-versus-ranking",
+      "from": "wang-sahin-2018-search-assortment",
+      "to": "derakhshan-et-al-2022-product-ranking",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "Derakhshan 等明引 Wang–Sahin 的 consider-then-choose：顾客会把后续评估成本计入考虑集选择；两者的集内选择都可写成 logit。",
+      "changed": "从给定吸引力、顾客一次选子集、卖家定组合或价格，改为平台决定排列、顾客边筛边获知吸引力，位置成本使考虑集形成前缀。",
+      "limit": "引文支持计入评估成本这一部件；不能把一篇的 NP-complete 结论当作另一篇的归约。Wang 的页码为本地先行版。",
+      "evidence": [{"paper": "wang-sahin-2018-search-assortment", "page": 5, "printed": "4", "locator": "Eqs. (2)–(4)，先选子集后查验"}, {"paper": "derakhshan-et-al-2022-product-ranking", "page": 6, "printed": "4029", "locator": "明确引用 Wang–Sahin，提前计入评估成本"}, {"paper": "derakhshan-et-al-2022-product-ranking", "page": 10, "printed": "4033", "locator": "Eq. (6)，位置前缀条件"}]
+    },
+    {
+      "id": "ursu-donnelly-position-cost-exclusion",
+      "from": "ursu-2018-ranking-search",
+      "to": "donnelly-kanodia-morozov-2023-personalized-rankings",
+      "type": "introduces_component",
+      "review": "verified",
+      "claim": "Donnelly 等明引 Ursu 支持将位置放进搜索成本而非直接效用；保留该排除限制，把顺序搜索改为平行选集。",
+      "changed": "Expedia 的随机排名用来检测位置影响点击和条件购买；床品数据用非个性化热度加噪声估计位置效应，并把它固定到个性化制度。",
+      "limit": "Ursu 的跨产品、跨制度外推不是自动成立的定理。本条只核位置建模及其引文，不升级 Ursu 的通篇阅读状态。",
+      "evidence": [{"paper": "ursu-2018-ranking-search", "page": 7, "printed": "536", "locator": "表 2，随机名次、点击与条件购买"}, {"paper": "donnelly-kanodia-morozov-2023-personalized-rankings", "page": 8, "printed": "99", "locator": "两处明确引 Ursu，成本与效用排除限制"}, {"paper": "donnelly-kanodia-morozov-2023-personalized-rankings", "page": 12, "printed": "103", "locator": "识别及跨制度稳定性"}]
     },
     {
       "id": "weitzman-compiani-ranking-index",
@@ -815,7 +837,7 @@
       "claim": "Compiani 等明确使用与 Ursu 相同的 Expedia 排名数据环境，把随机排名识别的因果位置效应推进到双指数估计与最优排序反事实。",
       "changed": "由随机排名下的 reduced-form／结构位置效应和 utility-based counterfactual，改为随机训练样本、算法排名测试样本，并同时优化消费者剩余和平台收入。",
       "limit": "数据环境相同不代表样本完全相同；Compiani 的测试交易率与训练样本不同，反事实受模型与未核附录约束。",
-      "evidence": [{"paper": "ursu-2018-ranking-search", "page": 3, "printed": "532", "locator": "随机排名数据与研究贡献"}, {"paper": "ursu-2018-ranking-search", "page": 19, "printed": "548", "locator": "随机排名估计与 utility-based counterfactual"}, {"paper": "compiani-et-al-2024-optimal-rankings", "page": 4, "printed": "618", "locator": "Related literature，说明使用 Ursu 数据"}, {"paper": "compiani-et-al-2024-optimal-rankings", "page": 15, "printed": "629", "locator": "训练随机排名、测试 Expedia 排名"}, {"paper": "compiani-et-al-2024-optimal-rankings", "page": 22, "printed": "632", "locator": "表 6，排序反事实结果"}]
+      "evidence": [{"paper": "ursu-2018-ranking-search", "page": 4, "printed": "533", "locator": "随机排名的数据设计"}, {"paper": "ursu-2018-ranking-search", "page": 19, "printed": "548", "locator": "随机排名估计与 utility-based counterfactual"}, {"paper": "compiani-et-al-2024-optimal-rankings", "page": 3, "printed": "617", "locator": "说明用过 Ursu 所用的 Expedia 数据"}, {"paper": "compiani-et-al-2024-optimal-rankings", "page": 14, "printed": "628", "locator": "训练随机排名、测试 Expedia 排名"}, {"paper": "compiani-et-al-2024-optimal-rankings", "page": 18, "printed": "632", "locator": "表 6，排序反事实结果"}]
     },
     {
       "id": "kamenica-kuksov-contextual-overload",
