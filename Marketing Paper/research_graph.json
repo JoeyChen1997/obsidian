@@ -12,7 +12,7 @@
       "id": "sponsored-organic-listing",
       "title": "赞助竞价与自然排序",
       "aliases": ["赞助排序", "赞助竞价", "自然排序", "sponsored organic ranking", "strategic listing"],
-      "papers": ["long-jerath-sarvary-2022-listing"],
+      "papers": ["berman-katona-2013-seo", "long-jerath-sarvary-2022-listing", "yang-et-al-2024-ad-information", "long-liu-2024-manipulation"],
       "queries": ["sponsored advertising organic ranking", "strategic listing quality information", "paid placement sales commission"]
     },
     {
@@ -53,6 +53,20 @@
       "sections": {"introduction": [[1, 4]], "model": [[20, 28]], "results": [[14, 19], [29, 38]], "discussion": [[38, 39]]}
     },
     {
+      "id": "berman-katona-2013-seo",
+      "title": "The Role of Search Engine Optimization in Search Marketing",
+      "authors": "Ron Berman and Zsolt Katona",
+      "year": 2013,
+      "journal": "Marketing Science",
+      "doi": "10.1287/mksc.2013.0783",
+      "pdf": "MKSC/Berman_2013_The Role of Search Engine Optimization in Search Marketing.pdf",
+      "aliases": ["Berman and Katona 2013", "Berman Katona 2013"],
+      "card": "Marketing Paper/文献卡/Berman 与 Katona 2013 - SEO 与赞助竞价.md",
+      "reading_status": "core_read",
+      "reading_note": "核主模型、两种制度及印刷证明；保留 Corollary 1 倒 U 形与印刷公式复算的冲突；未核线上附录或勘误。",
+      "sections": {"introduction": [[1, 3]], "model": [[3, 4]], "results": [[4, 6]], "discussion": [[6, 7]], "proof": [[7, 8]]}
+    },
+    {
       "id": "long-jerath-sarvary-2022-listing",
       "title": "Designing an Online Retail Marketplace: Leveraging Information from Sponsored Advertising",
       "authors": "Fei Long, Kinshuk Jerath, and Miklos Sarvary",
@@ -66,6 +80,36 @@
       "reading_status": "core_read",
       "reading_note": "核信息结构、竞价、抽佣与加入，复算自然排序信息权重；混合竞价和相关信号扩展未逐式复证。",
       "sections": {"introduction": [[1, 5]], "model": [[5, 8]], "results": [[8, 18]], "discussion": [[18, 19]], "proof": [[19, 22]]}
+    },
+    {
+      "id": "yang-et-al-2024-ad-information",
+      "title": "Advertising as Information for Ranking E-Commerce Search Listings",
+      "authors": "Joonhyuk Yang, Navdeep S. Sahni, Harikesh S. Nair, and Xi Xiong",
+      "year": 2024,
+      "online_year": 2023,
+      "journal": "Marketing Science",
+      "doi": "10.1287/mksc.2021.0292",
+      "pdf": "MKSC/Yang_2023_Advertising as Information for Ranking E-Commerce Search Listings.pdf",
+      "aliases": ["Yang et al 2024", "JD.com cold start"],
+      "card": "Marketing Paper/文献卡/Yang 等 2024 - 广告信息与新品冷启动.md",
+      "reading_status": "core_read",
+      "reading_note": "核 A/B 算法与随机化、表 3–4 和推广后 DiD；保留正文与表 3 的转化率差异，不把历史广告支出等同竞价；未复估或独立核线上附录。",
+      "sections": {"introduction": [[1, 5]], "model": [[6, 10]], "results": [[11, 16]]}
+    },
+    {
+      "id": "long-liu-2024-manipulation",
+      "title": "Platform Manipulation in Online Retail Marketplace with Sponsored Advertising",
+      "authors": "Fei Long and Yunchuan Liu",
+      "year": 2024,
+      "online_year": 2023,
+      "journal": "Marketing Science",
+      "doi": "10.1287/mksc.2023.1446",
+      "pdf": "MKSC/Long_2023_Platform Manipulation in Online Retail Marketplace with Sponsored Advertising.pdf",
+      "aliases": ["Long and Liu 2024", "Long Liu 2024"],
+      "card": "Marketing Paper/文献卡/Long 与 Liu 2024 - 平台操纵与广告竞价.md",
+      "reading_status": "core_read",
+      "reading_note": "核主模型、Props. 1–3 和印刷附录 A.2–A.5 关键比较；复算按点击的二价支付与多均衡边界，未逐项重证全部分区和线上扩展。",
+      "sections": {"introduction": [[1, 4]], "model": [[4, 7]], "results": [[8, 18]], "discussion": [[19, 23]], "proof": [[25, 27]]}
     },
     {
       "id": "zhong-2023-search",
@@ -301,6 +345,39 @@
     }
   ],
   "edges": [
+    {
+      "id": "berman-katona-long-jerath-sarvary-organic-sponsored",
+      "from": "berman-katona-2013-seo",
+      "to": "long-jerath-sarvary-2022-listing",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "Long 等明确把 Berman–Katona 当作自然位和赞助位相互作用的前驱。2013 年模型的赞助位是自然位置既定后的后备；2022 年模型则让平台先承诺用均衡竞价提供的信息改善自然匹配。",
+      "changed": "从网站通过 SEO 改变带噪得分、自然位置出炉后竞价、消费者付成本可连搜两次，改为平台先承诺自然位排序的信息权重、广告竞价在最终自然位之前、消费者基准仅搜一次。后者平台另有成交佣金。",
+      "limit": "多项原语同时改变，不是单参数嵌套；Berman–Katona 的低保留价、异质质量分支中，高质量网站在失掉自然位时赢得后备赞助位，不支持低质量者一般赢广告位。本边不引用 Corollary 1 的争议结果。",
+      "evidence": [{"paper": "berman-katona-2013-seo", "page": 4, "printed": "647", "locator": "§2.3 自然位先于赞助竞价"}, {"paper": "berman-katona-2013-seo", "page": 8, "printed": "651", "locator": "Prop. 2 证明，异质质量、低保留价分支与 Eq. 6"}, {"paper": "long-jerath-sarvary-2022-listing", "page": 5, "printed": "119", "locator": "明确引用并区别自然成交收入"}, {"paper": "long-jerath-sarvary-2022-listing", "page": 7, "printed": "121", "locator": "承诺规则与卖家私知质量"}, {"paper": "long-jerath-sarvary-2022-listing", "page": 10, "printed": "124", "locator": "Prop. 1 纯策略区间的高质量广告赢家"}]
+    },
+    {
+      "id": "long-jerath-sarvary-yang-ad-information-followup",
+      "from": "long-jerath-sarvary-2022-listing",
+      "to": "yang-et-al-2024-ad-information",
+      "type": "empirical_followup",
+      "review": "verified",
+      "claim": "Yang 等明确把 Long、Jerath 与 Sarvary 列作互补理论，并用随机实验考察把历史广告数据纳入新品自然排序的增量效果。",
+      "changed": "将模型中可反推卖家私人质量的均衡出价，换成分别训练的两套预测算法中是否加入历史投放状态与标准化支出；结果从均衡匹配比较转为用户订单和 GMV 等行为。",
+      "limit": "实验没有随机化出价或广告位，不能检验理论的最优排序权重、长期出价反应或福利。转化率正文与表 3 存在报告差异。",
+      "evidence": [{"paper": "long-jerath-sarvary-2022-listing", "page": 7, "printed": "121", "locator": "信息结构与平台先承诺排序规则"}, {"paper": "long-jerath-sarvary-2022-listing", "page": 10, "printed": "124", "locator": "自然排序与竞价信号"}, {"paper": "yang-et-al-2024-ad-information", "page": 5, "printed": "364", "locator": "明确引用并将研究定位为互补"}, {"paper": "yang-et-al-2024-ad-information", "page": 8, "printed": "367", "locator": "处理组新增的广告特征与算法设计"}, {"paper": "yang-et-al-2024-ad-information", "page": 12, "printed": "371", "locator": "表 3 用户层订单及 GMV"}]
+    },
+    {
+      "id": "long-jerath-sarvary-long-liu-information-timing",
+      "from": "long-jerath-sarvary-2022-listing",
+      "to": "long-liu-2024-manipulation",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "Long 与 Liu 引用 Long、Jerath 与 Sarvary，但把排序机制从利用卖家出价推断质量，改为研究知情平台先定消费者的感知环境与自然位如何影响出价及商品价格。",
+      "changed": "平台原先不知卖家私知质量且商品价固定；后文平台知道真实匹配率，先确定呈现与自然位，再由卖家同时定零售价和竞价。",
+      "limit": "理论条件对照，不是嵌套证明，也不表明利用历史广告数据、内生竞价或更高排序质量会导致平台操纵。",
+      "evidence": [{"paper": "long-jerath-sarvary-2022-listing", "page": 7, "printed": "121", "locator": "卖家私知质量与平台承诺"}, {"paper": "long-jerath-sarvary-2022-listing", "page": 8, "printed": "122", "locator": "价格归一与竞价时序"}, {"paper": "long-liu-2024-manipulation", "page": 3, "printed": "319", "locator": "明确引用并区分研究问题"}, {"paper": "long-liu-2024-manipulation", "page": 6, "printed": "322", "locator": "主模型时序与匹配率信息"}, {"paper": "long-liu-2024-manipulation", "page": 14, "printed": "330", "locator": "Prop. 3 比较平台方案"}]
+    },
     {
       "id": "dinerstein-zhou-search-redesign-citation",
       "from": "dinerstein-et-al-2018-search",
