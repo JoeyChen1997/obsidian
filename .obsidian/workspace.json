@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Marketing Paper/文献卡/Jeuland 与 Shugan 1983 - 渠道协调.md",
+                "file": "Marketing Paper/Theory 文献卡模板.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Jeuland 与 Shugan 1983 - 渠道协调"
+              "title": "Theory 文献卡模板"
             }
           }
         ]
@@ -208,19 +208,19 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "d2e40da301c97e6a",
+  "active": "d7ca22333357553b",
   "lastOpenFiles": [
-    "Marketing Paper/Paperlist 持续研究总纲.md",
-    "Marketing Paper/文献卡/Zhu 等 2025 - 广告平台与隐私.md",
-    "Marketing Paper/文献卡/Xu 2009 - 渠道价格与质量.md",
-    "Marketing Paper/文献卡/Shi 等 2013 - 消费者异质性与渠道质量.md",
-    "Marketing Paper/文献卡/Jeuland 与 Shugan 1983 - 渠道协调.md",
-    "Marketing Paper/研究谱系/定向广告与定向定价 - 研究谱系.md",
+    "Marketing Paper/精读台账与研究流程.md",
     "Marketing Paper/Theory 文献卡模板.md",
     "Marketing Paper/Paperlist Research Agent.md",
     "Marketing Paper/Paperlist 研究知识库.md",
+    "Marketing Paper/Paperlist 持续研究总纲.md",
+    "Marketing Paper/文献卡/Jeuland 与 Shugan 1983 - 渠道协调.md",
+    "Marketing Paper/文献卡/Zhu 等 2025 - 广告平台与隐私.md",
+    "Marketing Paper/文献卡/Xu 2009 - 渠道价格与质量.md",
+    "Marketing Paper/文献卡/Shi 等 2013 - 消费者异质性与渠道质量.md",
+    "Marketing Paper/研究谱系/定向广告与定向定价 - 研究谱系.md",
     "Marketing Paper/研究谱系/Paperlist 首批命题对照.md",
-    "Marketing Paper/精读台账与研究流程.md",
     "Marketing Paper/文献卡",
     "Marketing Paper/test_semantic_discovery.py",
     "Marketing Paper/citation_claims.py",
