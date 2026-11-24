@@ -43,19 +43,37 @@ class ResearchAgentTest(unittest.TestCase):
         result = self.run_tool('trace', '想知道定向广告和定向定价的历史')
         self.assertEqual(result['topics'], ['targeting'])
         self.assertIn('iyer-moorthy-conditional-profit', {e['id'] for e in result['relations']})
-        self.assertIn('moorthy-zhu-endogenous-rates', {e['id'] for e in result['leads']})
+        self.assertIn('moorthy-zhu-endogenous-rates', {e['id'] for e in result['relations']})
         self.assertNotIn('cites', {e['type'] for e in result['relations']})
 
     def test_directed_path_excludes_unreviewed_by_default(self):
-        base = self.run_tool('path', 'iyer-2005', 'zhu-2025')
+        base = self.run_tool('path', 'butters-1977', 'moorthy-2023')
         self.assertEqual(base['paths'], [])
-        expanded = self.run_tool('path', 'iyer-2005', 'zhu-2025', '--include-screened')
+        expanded = self.run_tool('path', 'butters-1977', 'moorthy-2023', '--include-screened')
         self.assertEqual(len(expanded['paths']), 1)
         path = expanded['paths'][0]
-        self.assertEqual([p['id'] for p in path['papers']], ['iyer-2005', 'moorthy-2023', 'zhu-2025'])
+        self.assertEqual([p['id'] for p in path['papers']], ['butters-1977', 'grossman-1984', 'moorthy-2023'])
         self.assertTrue(path['contains_screened_edge'])
         with self.assertRaisesRegex(ValueError, 'older paper'):
             self.run_tool('path', 'zhu-2025', 'iyer-2005')
+
+    def test_reviewed_channel_chain_has_bilateral_evidence_and_limits(self):
+        result = self.run_tool('trace', '分销渠道与产品质量')
+        self.assertEqual(result['topics'], ['channel-quality'])
+        path, = self.run_tool('path', 'jeuland-shugan-1983', 'shi-liu-petruzzi-2013')['paths']
+        self.assertEqual([p['id'] for p in path['papers']],
+                         ['jeuland-shugan-1983', 'xu-2009', 'shi-liu-petruzzi-2013'])
+        for edge in path['relations']:
+            self.assertEqual({e['paper'] for e in edge['evidence']}, {edge['from'], edge['to']})
+        self.assertFalse(path['contains_screened_edge'])
+
+    def test_verified_privacy_path_distinguishes_model_change_and_welfare(self):
+        result = self.run_tool('path', 'iyer-2005', 'zhu-2025')
+        path, = result['paths']
+        self.assertFalse(path['contains_screened_edge'])
+        edge = path['relations'][-1]
+        self.assertEqual(edge['id'], 'moorthy-zhu-endogenous-rates')
+        self.assertTrue({9, 11}.issubset({e['page'] for e in edge['evidence'] if e['paper']=='zhu-2025'}))
 
     def test_past_does_not_return_future_papers(self):
         result = self.run_tool('trace', '--anchor', 'moorthy-2023', '--direction', 'past')

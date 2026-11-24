@@ -14,6 +14,13 @@
       "aliases": ["广告平台", "隐私与广告", "隐私限制", "advertising platforms", "privacy restrictions"],
       "papers": ["zhu-2025"],
       "queries": ["advertising privacy platform targeting", "privacy targeting consumer welfare", "endogenous advertising rates"]
+    },
+    {
+      "id": "channel-quality",
+      "title": "分销渠道与产品质量",
+      "aliases": ["分销渠道与产品质量", "渠道分权", "渠道质量", "渠道定价与质量", "distribution channel product quality", "channel decentralization"],
+      "papers": ["xu-2009", "shi-liu-petruzzi-2013"],
+      "queries": ["distribution channel product quality", "channel decentralization product quality", "consumer heterogeneity channel", "wholesale retail price endogeneity"]
     }
   ],
   "papers": [
@@ -105,8 +112,51 @@
       "doi": "10.1287/mksc.2024.0879",
       "pdf": "MKSC/Ruizhi_2025_Advertising Platforms and Privacy.pdf",
       "aliases": ["Zhu et al 2025", "Zhu 等 2025", "Zhu 2025"],
+      "card": "Marketing Paper/文献卡/Zhu 等 2025 - 广告平台与隐私.md",
+      "reading_status": "core_read",
+      "reading_note": "正文模型、福利命题及印刷附录核心步骤已核；独立在线附录与非对称区间未完整复算。",
+      "sections": {"introduction": [[1, 4]], "model": [[5, 7]], "results": [[7, 16]], "discussion": [[16, 17]], "proof": [[17, 23]], "references": [[25, 27]]}
+    },
+    {
+      "id": "jeuland-shugan-1983",
+      "title": "Managing Channel Profits",
+      "authors": "Abel P. Jeuland and Steven M. Shugan",
+      "year": 1983,
+      "journal": "Marketing Science",
+      "pdf": "MKSC/Jeuland_1983_Managing Channel Profits.pdf",
+      "aliases": ["Jeuland and Shugan 1983", "Jeuland Shugan 1983"],
+      "card": "Marketing Paper/文献卡/Jeuland 与 Shugan 1983 - 渠道协调.md",
       "reading_status": "screened",
-      "reading_note": "已核摘要和第 3 页与先前研究的比较；完整福利命题未核。"
+      "reading_note": "简单双边渠道、质量偏离、对应附录与数量折扣局部已核；完整竞争／谈判扩展未精读。"
+    },
+    {
+      "id": "xu-2009",
+      "title": "Optimal Price and Product Quality Decisions in a Distribution Channel",
+      "authors": "Xiaowei Xu",
+      "year": 2009,
+      "journal": "Management Science",
+      "doi": "10.1287/mnsc.1090.1023",
+      "pdf": "MS/Xu_2009_Optimal Price and Product Quality Decisions in a Distribution Channel.pdf",
+      "aliases": ["Xu 2009"],
+      "card": "Marketing Paper/文献卡/Xu 2009 - 渠道价格与质量.md",
+      "reading_status": "core_read",
+      "reading_note": "模型、比较与印刷证明已核；电子附录内唯一性充分条件和计算细节未核。",
+      "sections": {"introduction": [[2, 3]], "model": [[3, 5]], "results": [[5, 6]], "proof": [[7, 7]]}
+    },
+    {
+      "id": "shi-liu-petruzzi-2013",
+      "title": "Consumer Heterogeneity, Product Quality, and Distribution Channels",
+      "authors": "Hongyan Shi, Yunchuan Liu, and Nicholas C. Petruzzi",
+      "year": 2013,
+      "online_year": 2012,
+      "journal": "Management Science",
+      "doi": "10.1287/mnsc.1120.1604",
+      "pdf": "MS/Shi_2012_Consumer Heterogeneity, Product Quality, and Distribution Channels.pdf",
+      "aliases": ["Shi et al 2013", "Shi et al 2012", "Shi 等 2013"],
+      "card": "Marketing Paper/文献卡/Shi 等 2013 - 消费者异质性与渠道质量.md",
+      "reading_status": "core_read",
+      "reading_note": "正文与核心印刷证明已核，重点 Props. 1、3、5；完整在线竞争扩展证明待核。",
+      "sections": {"introduction": [[2, 4]], "model": [[5, 5]], "results": [[5, 12]], "discussion": [[13, 13]], "proof": [[13, 16]]}
     },
     {
       "id": "karle-2025",
@@ -181,11 +231,27 @@
     },
     {
       "id": "moorthy-zhu-endogenous-rates", "from": "moorthy-2023", "to": "zhu-2025",
-      "type": "endogenizes", "review": "screened",
+      "type": "endogenizes", "review": "verified",
       "claim": "Zhu 等明确以平台选择广告费率区别于先前的外生广告成本。",
-      "changed": "加入有市场势力的广告平台，使广告价格可随隐私制度变化。",
-      "limit": "只核对摘要和引用语境；未按参数检验后文福利结论，也不称其为原模型的一参数扩展。",
-      "evidence": [{"paper": "zhu-2025", "page": 3, "printed": "1383", "locator": "前文比较，In comparison, ad rates in our model ..."}]
+      "changed": "继续使用概率性信息广告，改用平台先定费率、竞争性产品厂商随后选投放与报价的两阶段结构；固定和可调费率对隐私的福利预测在文内可对照。",
+      "limit": "已核模型与 Props. 2–5 并复核对称灵活案例的费率。跨论文同时改变产品市场竞争、偏好与目标变量；不是一参数扩展，也不意味着内生费率足以让隐私改善福利。",
+      "evidence": [{"paper": "moorthy-2023", "page": 5, "printed": "1061", "locator": "广告开支与概率触达的成本函数"}, {"paper": "zhu-2025", "page": 3, "printed": "1383", "locator": "§2 给定成本与平台费率的比较"}, {"paper": "zhu-2025", "page": 6, "printed": "1386", "locator": "§3 定义 1；平台先定费率"}, {"paper": "zhu-2025", "page": 9, "printed": "1389", "locator": "Props. 2–3"}, {"paper": "zhu-2025", "page": 11, "printed": "1391", "locator": "Props. 4–5"}]
+    },
+    {
+      "id": "jeuland-xu-quality-boundary", "from": "jeuland-shugan-1983", "to": "xu-2009",
+      "type": "limits_result", "review": "verified",
+      "claim": "联合最优处的降质激励不能推广为间接渠道总是提供较低质量。",
+      "changed": "由独立加价、其他决策固定下的偏离，转向批发价与质量先选、零售价最优响应；Xu Prop. 2 的方向取决于逆 hazard 曲率。",
+      "limit": "早期模型的加价本身是可选决策。两个模型不嵌套，不能把质量反转归因于唯一原语或称为对早期命题本身的反证。",
+      "evidence": [{"paper": "jeuland-shugan-1983", "page": 9, "printed": "247", "locator": "Eqs. (5)–(6)，联合利润最优处的质量偏离"}, {"paper": "jeuland-shugan-1983", "page": 30, "printed": "268", "locator": "附录，独立加价及质量微分"}, {"paper": "xu-2009", "page": 6, "printed": "1351", "locator": "Prop. 2 和对早期模型的对照"}, {"paper": "xu-2009", "page": 7, "printed": "1352", "locator": "Proof of Propositions 1 and 2"}]
+    },
+    {
+      "id": "xu-shi-normalized-retail-response", "from": "xu-2009", "to": "shi-liu-petruzzi-2013",
+      "type": "contrasts_assumptions", "review": "verified",
+      "claim": "Shi 等明示质量可上升的结果与 Xu 一致，但效用设定不同；在共用的纯纵向内点上，两篇零售响应可归一为同一个逆 hazard 关系。",
+      "changed": "效用改用支付意愿乘质量减价格，并进一步区分交易成本异质、两维纵向异质和零售竞争。单位质量价格下，Shi 的零售端响应与 Xu 的归一化响应可逐式对照。",
+      "limit": "响应等价是独立代数核对；只在同一可微需求及单调、可逆内点响应上成立。不是全文互为特例或两篇质量命题全局等价。",
+      "evidence": [{"paper": "xu-2009", "page": 4, "printed": "1349", "locator": "§2.2 归一化价格与零售商反应"}, {"paper": "xu-2009", "page": 7, "printed": "1352", "locator": "Lemma 1 证明，G(u)=H(v(u))"}, {"paper": "shi-liu-petruzzi-2013", "page": 6, "printed": "1166", "locator": "零售一阶条件、命题 1 和脚注 5"}]
     },
     {
       "id": "iyer-karle-targeting-accuracy", "from": "iyer-2005", "to": "karle-2025",
