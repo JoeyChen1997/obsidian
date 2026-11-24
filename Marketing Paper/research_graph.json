@@ -79,8 +79,15 @@
       "id": "algorithmic-pricing-deviation",
       "title": "算法定价、探索与偏离诊断",
       "aliases": ["算法合谋", "算法定价", "表观合谋", "algorithmic collusion", "reinforcement learning with prices", "off path exploration"],
-      "papers": ["maskin-tirole-1988-price-competition", "calvano-et-al-2020-algorithmic-pricing", "klein-2021-sequential-pricing", "abada-lambin-2023-seeming-collusion", "qiu-et-al-2025-personalized-pricing"],
+      "papers": ["maskin-tirole-1988-price-competition", "wang-2009-gasoline-timing", "calvano-et-al-2020-algorithmic-pricing", "klein-2021-sequential-pricing", "abada-lambin-2023-seeming-collusion", "qiu-et-al-2025-personalized-pricing"],
       "queries": ["algorithmic pricing collusion", "reinforcement learning forced deviation", "imperfect monitoring off path exploration"]
+    },
+    {
+      "id": "dynamic-commitment-timing",
+      "title": "行动承诺、时序与价格领先",
+      "aliases": ["数量承诺", "轮流调价", "价格领先", "调价时序规制", "price leadership", "endogenous timing", "price commitment", "Edgeworth cycles"],
+      "papers": ["maskin-tirole-1988-quantity-competition", "maskin-tirole-1988-price-competition", "wang-2009-gasoline-timing", "klein-2021-sequential-pricing"],
+      "queries": ["gasoline price cycles timing regulation", "mixed strategy price leadership relenting", "alternating moves endogenous timing capacity"]
     },
     {
       "id": "targeting",
@@ -105,6 +112,34 @@
     }
   ],
   "papers": [
+    {
+      "id": "maskin-tirole-1988-quantity-competition",
+      "title": "A Theory of Dynamic Oligopoly, I: Overview and Quantity Competition with Large Fixed Costs",
+      "authors": "Eric Maskin and Jean Tirole",
+      "year": 1988,
+      "journal": "Econometrica",
+      "doi": "10.2307/1911700",
+      "pdf": "ECMA/Maskin_1988_A Theory of Dynamic Oligopoly, I Overview and Quantity Competition with Large Fixed Costs.pdf",
+      "aliases": ["Maskin Tirole 1988 I", "dynamic oligopoly part I", "quantity competition large fixed costs"],
+      "card": "Marketing Paper/文献卡/Maskin 与 Tirole 1988 - 数量承诺与自然垄断.md",
+      "reading_status": "core_read",
+      "reading_note": "核正文 §§2–4 与印刷附录，复算高折现的阻止进入门槛；数量内生时序和非对称辅助证明转引独立工作稿。",
+      "sections": {"introduction": [[2, 4]], "model": [[4, 9], [18, 20]], "results": [[9, 18]], "proof": [[9, 14], [20, 21]], "discussion": [[14, 20]], "references": [[21, 22]]}
+    },
+    {
+      "id": "wang-2009-gasoline-timing",
+      "title": "(Mixed) Strategy in Oligopoly Pricing: Evidence from Gasoline Price Cycles Before and Under a Timing Regulation",
+      "authors": "Zhongmin Wang",
+      "year": 2009,
+      "journal": "Journal of Political Economy",
+      "doi": "10.1086/649801",
+      "pdf": "JPE/Wang_2009_(Mixed) Strategy in Oligopoly Pricing Evidence from Gasoline Price Cycles Before and Under a Timing Regulation.pdf",
+      "aliases": ["Zhongmin Wang 2009", "Wang gasoline timing law", "Perth fuelwatch mixed strategy"],
+      "card": "Marketing Paper/文献卡/Wang 2009 - 加油站调价规制与价格领先.md",
+      "reading_status": "core_read",
+      "reading_note": "核 24 小时规则、领涨数据、分组检验、时长推算及价格比较；未取得微观数据重估，不能直接检验动态无差异。",
+      "sections": {"introduction": [[1, 8]], "model": [[8, 10], [26, 35]], "results": [[17, 38]], "discussion": [[36, 40]]}
+    },
     {
       "id": "maskin-tirole-1988-price-competition",
       "title": "A Theory of Dynamic Oligopoly, II: Price Competition, Kinked Demand Curves, and Edgeworth Cycles",
@@ -850,6 +885,39 @@
     }
   ],
   "edges": [
+    {
+      "id": "maskin-quantity-price-shared-commitment",
+      "from": "maskin-tirole-1988-quantity-competition",
+      "to": "maskin-tirole-1988-price-competition",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "同一期两篇论文共享两期承诺和 Markov 反应的递推；数量篇高固定成本下的对称 MPE 以规模阻止进入，价格篇允许焦点与周期 MPE。原价格篇明确对照两文的当期利润交叉效应。",
+      "changed": "由高固定成本的产量／产能、向下动态反应，改为同质品报价，压价夺市场与低价处恢复导致非单调反应。",
+      "limit": "两篇同年同卷，不把边方向当出版先后，也不是只换行动变量的比较静态；数量利润趋零限对称高折现分支。",
+      "evidence": [{"paper": "maskin-tirole-1988-quantity-competition", "page": 5, "printed": "552", "locator": "只按对方未到期承诺反应"}, {"paper": "maskin-tirole-1988-quantity-competition", "page": 9, "printed": "556", "locator": "Lemma 1，数量反应非增"}, {"paper": "maskin-tirole-1988-quantity-competition", "page": 14, "printed": "561", "locator": "对称稳态阻止进入"}, {"paper": "maskin-tirole-1988-price-competition", "page": 5, "printed": "574", "locator": "Eqs. (2)–(3) 的两期决策"}, {"paper": "maskin-tirole-1988-price-competition", "page": 20, "printed": "589", "locator": "§8 明确比较价格与数量"}, {"paper": "maskin-tirole-1988-price-competition", "page": 21, "printed": "590", "locator": "非单调动态反应及折现比较"}]
+    },
+    {
+      "id": "maskin-wang-attrition-under-timing-law",
+      "from": "maskin-tirole-1988-price-competition",
+      "to": "wang-2009-gasoline-timing",
+      "type": "empirical_followup",
+      "review": "verified",
+      "claim": "Wang 明引理论消耗战，把两家轮流涨价的重启动机用于珀斯三家可能每日同步领涨的场景。规制后共同领涨和跨轮相关不符合原例的严格预测。",
+      "changed": "由可观测对手承诺价的交替双寡头，转为每日同步申报、至少全天承诺、允许前一轮改变三家混合率的检验。",
+      "limit": "四组频数拟合中两组在 5% 被拒；不识别日内锁价和信息的各自作用，也不直接观察动作价值无差异。",
+      "evidence": [{"paper": "maskin-tirole-1988-price-competition", "page": 7, "printed": "576", "locator": "Table II，零价的随机等待与涨价"}, {"paper": "wang-2009-gasoline-timing", "page": 3, "printed": "989", "locator": "次日同步申报和全天价格承诺"}, {"paper": "wang-2009-gasoline-timing", "page": 20, "printed": "1006", "locator": "102 个价格周期及多家领涨计数"}, {"paper": "wang-2009-gasoline-timing", "page": 26, "printed": "1012", "locator": "原理论假设与珀斯多家、序列相关的差异"}, {"paper": "wang-2009-gasoline-timing", "page": 34, "printed": "1020", "locator": "Table 5，四组 Pearson 拟合检验"}]
+    },
+    {
+      "id": "wang-klein-price-leader-rotation-diagnostic",
+      "from": "wang-2009-gasoline-timing",
+      "to": "klein-2021-sequential-pricing",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "共同的理论前驱是 Maskin–Tirole；仅看周期锯齿会漏掉可观测差异：珀斯在规制后有不同及共同的重启者，Klein 的细网格纯贪心路径中同一家反复重启。",
+      "changed": "由不同品牌、监管前后市场数据和领涨联合分布，改成同质双寡头数值实验及冻结对手算最优性。",
+      "limit": "核读参考文献未发现 Klein 引这篇 Wang，不标直接继承。规制前单一领先也不能当作采用某种算法的证据；跨市场或模拟不能互相证明。",
+      "evidence": [{"paper": "wang-2009-gasoline-timing", "page": 17, "printed": "1003", "locator": "规制前 21 轮领涨者"}, {"paper": "wang-2009-gasoline-timing", "page": 20, "printed": "1006", "locator": "规制后 102 轮、七种领涨组合"}, {"paper": "klein-2021-sequential-pricing", "page": 14, "printed": "14", "locator": "细格点的确定性重启与模拟限制"}, {"paper": "klein-2021-sequential-pricing", "page": 15, "printed": "15", "locator": "Figure 7，三个模拟样例"}]
+    },
     {
       "id": "maskin-klein-two-period-price-commitment",
       "from": "maskin-tirole-1988-price-competition",

@@ -101,10 +101,20 @@ class ResearchAgentTest(unittest.TestCase):
         correction, = self.graph.papers[original]['verified_variants']
         self.assertEqual((correction['kind'], correction['identity_page']), ('erratum', 2))
         self.assertFalse(any(p.get('pdf') == correction['pdf'] for p in self.graph.papers.values()))
-        path, = self.run_tool('path', original, 'klein-2021-sequential-pricing')['paths']
+
+    def test_price_cycle_paths_distinguish_direct_extension_and_empirical_comparison(self):
+        original = 'maskin-tirole-1988-price-competition'
+        target = 'klein-2021-sequential-pricing'
+        path, = self.run_tool('path', original, target, '--depth', '1')['paths']
         edge, = path['relations']
         self.assertEqual(edge['review'], 'verified')
-        self.assertEqual({e['paper'] for e in edge['evidence']}, {original, 'klein-2021-sequential-pricing'})
+        self.assertEqual(edge['type'], 'extends_component')
+        self.assertEqual({e['paper'] for e in edge['evidence']}, {original, target})
+        paths = self.run_tool('path', original, target, '--depth', '2')['paths']
+        indirect, = [p for p in paths if [n['id'] for n in p['papers']] ==
+                     [original, 'wang-2009-gasoline-timing', target]]
+        self.assertEqual([e['type'] for e in indirect['relations']],
+                         ['empirical_followup', 'contrasts_assumptions'])
 
     def test_unknown_topic_uses_fts_with_phrase_and_filters(self):
         result = self.run_tool('brief', '卖家为什么采用代理模式', '--phrase', 'agency selling', '--journal', 'MS')
