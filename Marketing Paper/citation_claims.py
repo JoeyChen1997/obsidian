@@ -5,6 +5,7 @@ from collections import Counter, defaultdict
 from contextlib import closing
 import hashlib
 import json
+import math
 from pathlib import Path
 import re
 import sqlite3
@@ -50,9 +51,12 @@ SENTENCE_LEAD = re.compile(r'^(?:\d{1,3}\s*)?(?:(?:first|second|finally|however|
 MODEL_LEAD = re.compile(r'^(?:\d{1,3}\s*)?In (?:the |a )?(?:model|framework|setting|game) '
                         r'(?:of|in|developed by)\s*$', re.I)
 NOISE = re.compile(r'^\s*(?:this paper|our model|we|our results)\b', re.I)
+ATTRIBUTION_WORDS = set('show shows demonstrated demonstrate found find finds assume assumes '
+                        'always provides provide develops paper section theorem proposition'
+                        .split())
 PRIMARY_SECTIONS = {'introduction', 'abstract', 'discussion', 'model', 'results', 'other', 'unknown'}
 NOTE = ('An attribution is the citing authors’ account of a named paper, not a verified result, '
-        'a claim of priority, or evidence of model inheritance. Verify the older source independently.')
+        'a claim of priority, or evidence of model inheritance. Cited-source leads are retrieval hits only.')
 
 
 def connect(path, write=False):
@@ -188,6 +192,44 @@ def status(con, rag):
                 'SELECT COUNT(*) FROM (SELECT DISTINCT citing,cited FROM claims)').fetchone()[0], 'note':NOTE}
 
 
+def source_leads(rag, paper, excerpt, query, limit=2):
+    """Find candidate pages in the cited paper using the attributed claim and research query."""
+    clean = BODY_CITE.sub(' ', excerpt)
+    keywords = vocabulary(clean) - ATTRIBUTION_WORDS
+    if len(keywords) < 3:
+        return []
+    lo = paper * corpus_rag.PASSAGE_BASE
+    pages, frequencies = [], Counter()
+    for row in rag.execute('''SELECT rowid,page,section,text FROM passages WHERE rowid>=? AND rowid<?
+                              ORDER BY rowid''', (lo, lo+corpus_rag.PASSAGE_BASE)):
+        if row['section'] in ('abstract','introduction','endmatter','references'):
+            continue
+        matches = vocabulary(row['text']) & keywords
+        frequencies.update(matches)
+        if len(matches) >= 3:
+            pages.append((row, matches))
+    if not pages:
+        return []
+    scored = []
+    for row, matches in pages:
+        terms = sorted(matches, key=lambda w: (frequencies[w], w))
+        relevance = sum((1.4 if w in query else 1.0)/(1+math.log(frequencies[w])) for w in matches)
+        if row['section'] in ('model','results','proof'):
+            relevance *= 1.15
+        scored.append((relevance, row['rowid'], row, terms))
+    seen, results = set(), []
+    for _, _, row, match in sorted(scored, key=lambda x:(-x[0],x[1])):
+        if row['page'] in seen:
+            continue
+        seen.add(row['page'])
+        results.append({'page':row['page'],'passage':row['rowid'],'section':row['section'],
+                        'excerpt':row['text'],'matched_words':match[:12],
+                        'state':'cited_source_retrieval_lead'})
+        if len(results)>=limit:
+            break
+    return results
+
+
 def search(con, rag, seeds, terms, direction, limit=12):
     query = vocabulary(' '.join(terms))
     rows = {}
@@ -217,7 +259,8 @@ def search(con, rag, seeds, terms, direction, limit=12):
             continue
         for d in docs.values():
             d.pop('stamp')
-        results.append(dict(row) | {'citing_paper':docs[a],'cited_paper':docs[b],'state':'attribution_candidate'})
+        results.append(dict(row) | {'citing_paper':docs[a],'cited_paper':docs[b],'state':'attribution_candidate',
+                                    'cited_source_leads':source_leads(rag,b,row['excerpt'],query)})
         pairs[a,b] += 1
         if len(results)>=limit:
             break

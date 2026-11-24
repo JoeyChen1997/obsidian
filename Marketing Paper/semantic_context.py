@@ -7,8 +7,8 @@ BREAK = re.compile(r"""(?<!et al)(?<!\be\.g)(?<!\bi\.e)[.!?](?:[”’"')]+)?(?=
 BODY_CITE = re.compile(
     r"\b[A-ZÀ-Þ][\w’'-]{1,}(?:\s+et al\.|(?:,\s*[A-ZÀ-Þ][\w’'-]+){0,2}"
     r"(?:,?\s+(?:and|&)\s+[A-ZÀ-Þ][\w’'-]+))?(?:['’]s)?"
-    r"\s*,?\s*(?:\(\s*(?:18|19|20)\d\d[a-z]?(?=\s*[,;)])|"
-    r"\s(?:18|19|20)\d\d[a-z]?(?=\s*[,;).]))")
+    r"\s*,?\s*(?:\(\s*(?:17|18|19|20)\d\d[a-z]?(?=\s*[,;)])|"
+    r"\s(?:17|18|19|20)\d\d[a-z]?(?=\s*[,;).]))")
 PRIOR = re.compile(r"\b(?:model|framework|assumption|equilibrium|result|finding|"
                    r"assum(?:e|es|ed)|show(?:s|ed)|find(?:s)?|develop(?:s|ed)|"
                    r"study|studies|consider(?:s|ed)|analy[sz](?:e|es|ed)|examine[sd]?)\b", re.I)
@@ -23,13 +23,21 @@ OUTCOME = re.compile(r"\b(?:we (?:show|find|obtain|confirm|replicate|demonstrate
                      r"our (?:results?|findings?|conclusions?))\b", re.I)
 JOINT = re.compile(r"^\s*(?:\d{1,3}\s*)?(?:both|these|the two) (?:papers|studies|models)"
                    r" (?:both )?(?:assume|feature|use|model|consider|take|treat|abstract from|do not)\b", re.I)
-EQUIVALENCE = re.compile(r"\b(?:their (?:results?|model|equilibrium) (?:is|are) (?:interpretable|equivalent|"
-                         r"obtained|recovered)|(?:we|our model) (?:can )?(?:replicate|recover|nest) "
-                         r"(?:their|this|the) (?:results?|model|equilibrium))\b", re.I)
+EQUIVALENCE = re.compile(r"\b(?:their (?:results?|model|equilibrium) (?:is|are) (?:interpretable as|"
+                         r"equivalent to (?:our|this))|(?:we|our model) (?:can )?(?:recover|nest) "
+                         r"their (?:results?|model|equilibrium))\b", re.I)
 ORDINAL = re.compile(r"^\s*The (?P<rank>first|second) (?:paper |study |model )?(?:examines|considers|studies|"
                      r"models|analy[sz]es|develops|assumes|investigates)\b", re.I)
 SCOPE_END = re.compile(r"^\s*(?:\d{1,3}\s*)?(?:The (?:first|second|third|next|other)\b|"
                        r"Another (?:paper|study|stream)\b|We (?:next|now) turn\b)", re.I)
+INCIDENTAL = re.compile(r"\b(?:see(?: also)?(?:,? e\.g\.)?|such as|and many others|"
+                        r"among others|for a (?:detailed )?discussion)\s*$", re.I)
+PRIOR_SCOPE = re.compile(r"\b(?:we|our)\b", re.I)
+NAMED_PREDICATE = re.compile(r"^\s*(?:\)\s*)?(?:(?:also|explicitly|first|in turn)\s+)?"
+                             r"(?:assum\w*|show\w*|find\w*|found|argu\w*|"
+                             r"provid\w*|modell?\w*|develop\w*|defin\w*|predict\w*|"
+                             r"consider\w*|stud\w*|examin\w*|analy[sz]\w*|do not|"
+                             r"report\w*|introduc\w*|focus\w*|derive\w*)\b", re.I)
 DIMENSIONS = (
     (re.compile(r"\bexogen\w*\b", re.I), re.compile(r"\bendogen\w*\b", re.I)),
     (re.compile(r"\bdeterministic\b", re.I), re.compile(r"\b(?:probabilistic|stochastic|random)\b", re.I)),
@@ -80,7 +88,7 @@ def cross_kind(prior, own):
     lowered = own.strip().casefold()
     if re.search(r"\bwe (?:relax|extend|generaliz\w*|build on)\b|\bour (?:model|framework) extends\b", lowered):
         if re.search(r"\b(?:this|that|the) (?:assumption|model|framework|setting|approach|analysis)|"
-                     r"\b(?:their|these) (?:model|results|assumptions|findings|approach)\b", lowered):
+                     r"\b(?:their|these) (?:model|results|assumptions|findings|approach|equilibrium)\b", lowered):
             return 'extends_component'
     if re.search(r"\bwe (?:adopt|retain|follow|use) (?:this|their|the same)\b", lowered):
         return 'adopts_component'
@@ -95,7 +103,7 @@ def cross_kind(prior, own):
                  r"\b(?:hold(?:s)? only|no longer hold|need(?:s)? not hold|fail(?:s)? to hold|are special to)\b",
                  lowered):
         return 'limits_result'
-    if not DISCOURSE.search(own) or not shared:
+    if not DISCOURSE.search(own) or len(shared) < 2:
         return None
     if OWN_MODEL.search(own):
         return 'contrasts_assumptions'
@@ -121,10 +129,19 @@ def discourse_relations(text, matches, spans):
         # A unique antecedent; stop at the next citation or topic marker.
         if (len(same) == cited_spans == 1 and PRIOR.search(citation_sentence)
                 and not any(lo <= m.start() < hi for m in spans) and not SCOPE_END.search(following)):
+            before = text[a:same[0].start()].rstrip(' (,:')
+            after = text[same[0].end():b]
+            # A generic contrast marker alone does not bind an incidental citation.
+            # Require a named predicate unless the next sentence explicitly points back.
+            explicit_reference = re.search(
+                r"\b(?:their|this|these|that) (?:model|approach|definition|framework|equilibrium|"
+                r"result|results|finding|findings|assumption|assumptions)\b", following, re.I)
+            bound = bool(NAMED_PREDICATE.match(after) and not PRIOR_SCOPE.search(before))
             if (DISCOURSE.search(following) or EQUIVALENCE.search(following)
                     or re.match(r"^\s*(?:their|these|this) (?:finding|result|conclusion)", following, re.I)):
-                if kind := cross_kind(citation_sentence, following):
-                    yield same[0], kind, a, hi, 'adjacent_sentences'
+                if (bound or explicit_reference) and not INCIDENTAL.search(before):
+                    if kind := cross_kind(citation_sentence, following):
+                        yield same[0], kind, a, hi, 'adjacent_sentences'
         # Explicit plural anchor: 'A and B ... . These papers feature ...'.
         if 2 <= cited_spans <= 5 and JOINT.search(following):
             if any(lo <= m.start() < hi for m in spans):

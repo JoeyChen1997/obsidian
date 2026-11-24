@@ -368,6 +368,8 @@ def build_snapshot(args, rag, dest, source, start, topic_labels, concepts, diges
     docs = rag.execute('SELECT id,stamp,year FROM docs ORDER BY id').fetchall()
     live = {r['id'] for r in docs}
     prior = dict(dest.execute('SELECT paper,fingerprint FROM scanned'))
+    recheck = ({r[0] for r in dest.execute("SELECT DISTINCT later FROM relations WHERE method <> 'explicit_single_sentence'")}
+               if args.recheck_contexts else set())
     refs = defaultdict(list)
     for row in rag.execute('''SELECT l.citing,l.page,d.id,d.author,d.year FROM links l
                   JOIN docs d ON d.id=l.cited WHERE l.method='section_title_author_year'
@@ -378,7 +380,7 @@ def build_snapshot(args, rag, dest, source, start, topic_labels, concepts, diges
         key = d['id']
         fingerprint = hashlib.sha256(repr((d['stamp'], d['year'],
                                           [tuple(r) for r in refs.get(key, ())])).encode()).hexdigest()
-        if args.refresh or prior.get(key) != fingerprint:
+        if args.refresh or key in recheck or prior.get(key) != fingerprint:
             todo.append((d, fingerprint))
     if args.limit:
         todo = todo[:args.limit]
@@ -572,6 +574,7 @@ def parser():
     q = sub.add_parser('build')
     q.add_argument('--limit', type=int)
     q.add_argument('--refresh', action='store_true')
+    q.add_argument('--recheck-contexts', action='store_true', help='recheck papers with existing discourse candidates')
     sub.add_parser('status')
     q = sub.add_parser('path')
     q.add_argument('older', type=int)
