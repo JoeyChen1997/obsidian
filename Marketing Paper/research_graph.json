@@ -60,7 +60,24 @@
       "journal": "Review of Economic Studies",
       "pdf": "RES/Butters_1977_Equilibrium Distributions of Sales and Advertising Prices.pdf",
       "aliases": ["Butters 1977"],
-      "reading_status": "queued"
+      "card": "Marketing Paper/文献卡/Butters 1977 - 随机报价与价格分散.md",
+      "reading_status": "core_read",
+      "reading_note": "核 §2–4、Props. 2.1–2.4、Appendix A 大市场极限。扩展和完整多均衡分区未复推。",
+      "sections": {"introduction": [[2, 3]], "model": [[3, 6]], "results": [[7, 15]], "proof": [[20, 25]]}
+    },
+    {
+      "id": "cachon-2004-inventory-risk",
+      "title": "The Allocation of Inventory Risk in a Supply Chain: Push, Pull, and Advance-Purchase Discount Contracts",
+      "authors": "Gérard P. Cachon",
+      "year": 2004,
+      "journal": "Management Science",
+      "doi": "10.1287/mnsc.1030.0190",
+      "pdf": "MS/Cachon_2004_The Allocation of Inventory Risk in a Supply Chain Push, Pull, and Advance-Purchase Discount Contracts.pdf",
+      "aliases": ["Cachon 2004", "advance-purchase discount contracts", "库存风险归属"],
+      "card": "Marketing Paper/文献卡/Cachon 2004 - 批发合同与库存风险归属.md",
+      "reading_status": "core_read",
+      "reading_note": "核 §§3–4.5、关键数量条件及 Theorem 7 文内证明；§5 扩展未独立复推。",
+      "sections": {"introduction": [[1, 3]], "model": [[4, 5]], "results": [[5, 15]], "proof": [[12, 12]]}
     },
     {
       "id": "grossman-1984",
@@ -152,6 +169,16 @@
       "year": 1983,
       "journal": "Marketing Science",
       "pdf": "MKSC/Jeuland_1983_Managing Channel Profits.pdf",
+      "verified_variants": [
+        {
+          "pdf": "MKSC/Jeuland_2008_Managing Channel Profits.pdf",
+          "kind": "reprint",
+          "year": 2008,
+          "doi": "10.1287/mksc.1070.0332",
+          "identity_page": 1,
+          "identity_note": "首页明确注明 1983 年 Marketing Science 2(3), 239–272 是同一文章的初刊；重刊页码和 DOI 独立。"
+        }
+      ],
       "aliases": ["Jeuland and Shugan 1983", "Jeuland Shugan 1983"],
       "card": "Marketing Paper/文献卡/Jeuland 与 Shugan 1983 - 渠道协调.md",
       "reading_status": "screened",
@@ -201,6 +228,17 @@
     }
   ],
   "edges": [
+    {
+      "id": "butters-bergemann-random-matching",
+      "from": "butters-1977",
+      "to": "bergemann-bonatti-2011",
+      "type": "extends_component",
+      "review": "verified",
+      "claim": "Bergemann 与 Bonatti 明确使用 Butters 的指数随机触达组件，并把它用于异质商品和多广告子市场。",
+      "changed": "Butters 给定每次曝光成本、内生商品报价分布；Bergemann–Bonatti 固定商品价格，改由广告供给与广告商需求内生广告价格。",
+      "limit": "继承的是概率匹配技术，不是原商品市场 Nash 博弈或原福利结论。",
+      "evidence": [{"paper": "butters-1977", "page": 7, "printed": "470", "locator": "Props. 2.1–2.4，报价截点与指数命中"}, {"paper": "bergemann-bonatti-2011", "page": 6, "printed": "422", "locator": "明确归因 Butters，并区分两类价格"}]
+    },
     {
       "id": "bergemann-zhu-price-formation", "from": "bergemann-bonatti-2011", "to": "zhu-2025",
       "type": "contrasts_assumptions", "review": "verified",

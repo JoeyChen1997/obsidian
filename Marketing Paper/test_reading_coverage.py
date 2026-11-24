@@ -18,6 +18,27 @@ class FixtureGraph:
 
 
 class CoverageTest(unittest.TestCase):
+    def test_verified_edition_shares_work_not_reading_state(self):
+        con = sqlite3.connect(':memory:')
+        self.addCleanup(con.close)
+        con.row_factory = sqlite3.Row
+        con.execute('CREATE TABLE papers(id,relpath,journal,year,title_hint,author_hint,status,pages,text_pages)')
+        title = 'Comparative Statics of Distribution Channels'
+        con.executemany('INSERT INTO papers VALUES (?,?,?,?,?,?,?,?,?)', [
+            (1, 'MS/a.pdf', 'MS', 2013, title, 'A', 'indexed', 10, 10),
+            (2, 'MS/reprint.pdf', 'MS', 2020, title, 'A', 'indexed', 7, 7),
+        ])
+        graph = FixtureGraph()
+        graph.papers = {key: dict(item) for key, item in graph.papers.items()}
+        graph.papers['registered']['verified_variants'] = [
+            {'pdf': 'MS/reprint.pdf', 'kind': 'reprint', 'identity_page': 1, 'identity_note': 'Reprint notice'}]
+        stats, rows, _ = coverage(con, graph)
+        self.assertEqual(stats['present_registered_work_ids'], 1)
+        self.assertEqual(stats['present_verified_variants'], 1)
+        self.assertEqual(stats['same_title_groups_identity_resolved'], 1)
+        self.assertEqual(rows[1]['reading_state'], 'not_reviewed')
+        self.assertEqual(rows[1]['work_reading_state'], 'core_read')
+
     def test_candidates_do_not_inherit_reading_status(self):
         con = sqlite3.connect(':memory:')
         self.addCleanup(con.close)

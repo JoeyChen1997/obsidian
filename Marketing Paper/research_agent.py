@@ -78,6 +78,16 @@ class Graph:
                 pdf_relpath(source)
                 require(source.casefold() not in files, f'Duplicate PDF path: {source}')
                 files.add(source.casefold())
+            for variant in paper.get('verified_variants', []):
+                pdf = variant['pdf']
+                pdf_relpath(pdf)
+                require(pdf.casefold() not in files, f'Duplicate PDF path: {pdf}')
+                files.add(pdf.casefold())
+                require(variant['kind'] in {'reprint', 'working_paper', 'supplement', 'same_edition_copy'},
+                        f'Invalid source role: {key}')
+                require(type(variant['identity_page']) is int and variant['identity_page'] >= 1
+                        and isinstance(variant['identity_note'], str) and variant['identity_note'].strip(),
+                        f'Variant lacks identity evidence: {key}')
             if paper.get('card'):
                 card = (VAULT / paper['card']).resolve()
                 require(card.is_relative_to(VAULT) and card.suffix == '.md', f'Invalid card path: {key}')
@@ -204,6 +214,7 @@ class Graph:
             for ev in edge['evidence']:
                 required[ev['paper']].add(ev['page'])
         missing_cards = []
+        variant_pages_checked = 0
         for key, paper in self.papers.items():
             if paper.get('card') and not self.node(key)['card_available']:
                 missing_cards.append(key)
@@ -217,10 +228,21 @@ class Graph:
                     require(con.execute('SELECT 1 FROM page_index WHERE rowid=?',
                                         (source['id'] * paperlist.PAGE_STRIDE + page,)).fetchone() is not None,
                             f'No searchable text for evidence page {key}:{page}')
+            for variant in paper.get('verified_variants', []):
+                source = con.execute("SELECT id,pages FROM papers WHERE relpath=? AND status <> 'missing'",
+                                     (variant['pdf'],)).fetchone()
+                page = variant['identity_page']
+                require(source is not None and source['pages'] and page <= source['pages'],
+                        f"Missing or invalid identity source: {variant['pdf']}")
+                require(con.execute('SELECT 1 FROM page_index WHERE rowid=?',
+                                    (source['id'] * paperlist.PAGE_STRIDE + page,)).fetchone() is not None,
+                        f"No indexed identity page: {variant['pdf']}:{page}")
+                variant_pages_checked += 1
         return {'papers': len(self.papers), 'topics': len(self.topics), 'edges': len(self.edges),
                 'reading_states': dict(Counter(p['reading_status'] for p in self.papers.values())),
                 'edge_review_states': dict(Counter(e['review'] for e in self.edges.values())),
                 'evidence_pages_checked': sum(len(pages) for pages in required.values()),
+                'variant_identity_pages_checked': variant_pages_checked,
                 'missing_markdown_cards': missing_cards}
 
 
