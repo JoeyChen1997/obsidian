@@ -12,7 +12,7 @@
       "id": "sponsored-organic-listing",
       "title": "赞助竞价与自然排序",
       "aliases": ["赞助排序", "赞助竞价", "自然排序", "sponsored organic ranking", "strategic listing"],
-      "papers": ["berman-katona-2013-seo", "long-jerath-sarvary-2022-listing", "yang-et-al-2024-ad-information", "long-liu-2024-manipulation"],
+      "papers": ["berman-katona-2013-seo", "long-jerath-sarvary-2022-listing", "yang-et-al-2024-ad-information", "long-liu-2024-manipulation", "long-amaldoss-2024-self-preferencing"],
       "queries": ["sponsored advertising organic ranking", "strategic listing quality information", "paid placement sales commission"]
     },
     {
@@ -110,6 +110,20 @@
       "reading_status": "core_read",
       "reading_note": "核主模型、Props. 1–3 和印刷附录 A.2–A.5 关键比较；复算按点击的二价支付与多均衡边界，未逐项重证全部分区和线上扩展。",
       "sections": {"introduction": [[1, 4]], "model": [[4, 7]], "results": [[8, 18]], "discussion": [[19, 23]], "proof": [[25, 27]]}
+    },
+    {
+      "id": "long-amaldoss-2024-self-preferencing",
+      "title": "Self-Preferencing in E-Commerce Marketplaces: The Role of Sponsored Advertising and Private Labels",
+      "authors": "Fei Long and Wilfred Amaldoss",
+      "year": 2024,
+      "journal": "Marketing Science",
+      "doi": "10.1287/mksc.2022.0262",
+      "pdf": "MKSC/Long_2024_Self-Preferencing in E-Commerce Marketplaces The Role of Sponsored Advertising and Private Labels.pdf",
+      "aliases": ["Long and Amaldoss 2024", "self-preferencing sponsored advertising", "自营品牌赞助位"],
+      "card": "Marketing Paper/文献卡/Long 与 Amaldoss 2024 - 自营品牌与赞助位.md",
+      "reading_status": "core_read",
+      "reading_note": "核 §§3–5、§6.5 与印刷附录；用正文收入与附录需求复算局部定价和参与约束，Eq. (2) 未获独立支持；在线闭式阈值、全局偏离证明及其他扩展未核。",
+      "sections": {"introduction": [[1, 4]], "model": [[6, 9]], "results": [[9, 21]], "discussion": [[21, 22]], "proof": [[22, 26]]}
     },
     {
       "id": "zhong-2023-search",
@@ -345,6 +359,28 @@
     }
   ],
   "edges": [
+    {
+      "id": "long-jerath-sarvary-long-amaldoss-ownership",
+      "from": "long-jerath-sarvary-2022-listing",
+      "to": "long-amaldoss-2024-self-preferencing",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "Long 与 Amaldoss 明确区别已有的出价信号模型：同样比较广告收益与成交佣金，但自营销售使平台还须决定是否把唯一显眼的赞助位留给自己。",
+      "changed": "从卖家私知纵向质量、零售价固定、竞价影响自然位，改为横向差异化、内生价格和是否由自营占据赞助位；广告改变考虑集而不承担质量推断。",
+      "limit": "对照的是不同的平台收益与位置规则，不是因果检验或模型嵌套；不以可调抽佣 Eq. (2) 的争议闭式解为证据。",
+      "evidence": [{"paper": "long-jerath-sarvary-2022-listing", "page": 7, "printed": "121", "locator": "质量信息、按展示二价拍卖、抽佣和自然排序"}, {"paper": "long-jerath-sarvary-2022-listing", "page": 8, "printed": "122", "locator": "零售价归一与承诺时序"}, {"paper": "long-amaldoss-2024-self-preferencing", "page": 6, "printed": "930", "locator": "§2 明确区别前文的自然排序和非对称信息"}, {"paper": "long-amaldoss-2024-self-preferencing", "page": 7, "printed": "931", "locator": "§§3.1–3.2，考虑集、三种收益和自占选择"}, {"paper": "long-amaldoss-2024-self-preferencing", "page": 14, "printed": "938", "locator": "Prop. 1，固定抽佣下让出与自占的门槛"}]
+    },
+    {
+      "id": "long-liu-long-amaldoss-position-instruments",
+      "from": "long-liu-2024-manipulation",
+      "to": "long-amaldoss-2024-self-preferencing",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "两篇都让平台在定价和竞价之前选择位置政策，但两种利润冲突不同：Long–Liu 调整消费者感知和第三方自然位，自营模型则决定是否让给第三方赞助位。",
+      "changed": "取消可操纵的纵向感知率和自然位先后，把第三方加上自营的横向产品纳入比较；利润多了自营销售、占位则丧失外部广告收入。",
+      "limit": "同为 2024 卷期；2023 年在线的 Long–Liu 是后文列举的背景。为独立核对的机制对照，不主张后文继承其证明，也不认为自占等同虚报质量。",
+      "evidence": [{"paper": "long-liu-2024-manipulation", "page": 1, "printed": "317", "locator": "2023 年 5 月在线和感知操纵研究对象"}, {"paper": "long-liu-2024-manipulation", "page": 6, "printed": "322", "locator": "平台先选真实性与自然位，店家随后定价和报价"}, {"paper": "long-liu-2024-manipulation", "page": 14, "printed": "330", "locator": "Prop. 3，真实性和自然排序方案比较"}, {"paper": "long-amaldoss-2024-self-preferencing", "page": 6, "printed": "930", "locator": "§2 把 2023 年在线的 Long–Liu 列为平台变现研究"}, {"paper": "long-amaldoss-2024-self-preferencing", "page": 8, "printed": "932", "locator": "Fig. 2，平台先定架构，之后入驻、定价和竞价"}, {"paper": "long-amaldoss-2024-self-preferencing", "page": 14, "printed": "938", "locator": "Prop. 1 及位次选择的广告收入和销售利润权衡"}]
+    },
     {
       "id": "berman-katona-long-jerath-sarvary-organic-sponsored",
       "from": "berman-katona-2013-seo",
