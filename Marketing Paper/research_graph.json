@@ -5,7 +5,7 @@
       "id": "platform-search-precision",
       "title": "平台搜索精度与价格",
       "aliases": ["搜索精度", "平台搜索", "search precision", "platform search design"],
-      "papers": ["dinerstein-et-al-2018-search", "zhong-2023-search", "zhou-et-al-2025-search"],
+      "papers": ["armstrong-vickers-zhou-2009-prominence", "dinerstein-et-al-2018-search", "zhong-2023-search", "zhou-et-al-2025-search"],
       "queries": ["platform search design", "search precision", "price weighting search", "search algorithm consumer engagement"]
     },
     {
@@ -21,6 +21,13 @@
       "aliases": ["自我优待", "搜索中立", "自营品牌", "self-preferencing", "search neutrality", "private label ad slot"],
       "papers": ["long-liu-2024-manipulation", "long-amaldoss-2024-self-preferencing", "zou-zhou-2025-search-neutrality"],
       "queries": ["self preferencing search neutrality", "private label ad slot", "personalized ranking seller entry", "presearch price observability"]
+    },
+    {
+      "id": "search-prominence-captivity",
+      "title": "顺序搜索、显眼位置与被俘获顾客",
+      "aliases": ["顺序搜索", "显眼位置", "被俘获顾客", "prominence", "ordered search", "captive consumers", "captive customers"],
+      "papers": ["wolinsky-1986-random-search", "arbatskaya-2007-ordered-search", "armstrong-vickers-zhou-2009-prominence", "armstrong-vickers-2019-captive", "zou-zhou-2025-search-neutrality"],
+      "queries": ["prominence consumer search", "captive customers uniform pricing", "search order price observability"]
     },
     {
       "id": "targeting",
@@ -45,6 +52,59 @@
     }
   ],
   "papers": [
+    {
+      "id": "wolinsky-1986-random-search",
+      "title": "True Monopolistic Competition as a Result of Imperfect Information",
+      "authors": "Asher Wolinsky",
+      "year": 1986,
+      "journal": "Quarterly Journal of Economics",
+      "pdf": "QJE/Wolinsky_1986_True Monopolistic Competition as a Result of Imperfect Information.pdf",
+      "aliases": ["Wolinsky 1986", "Wolinsky random search"],
+      "card": "Marketing Paper/文献卡/Wolinsky 1986 - 随机搜索与垄断竞争.md",
+      "reading_status": "core_read",
+      "reading_note": "核保留值、需求分解、对称均衡、自由进入与极限；复算均匀例和随机顺序双寡头，不外推任意估值分布。",
+      "sections": {"introduction": [[2, 5]], "model": [[5, 10]], "results": [[11, 18]], "discussion": [[16, 18]], "proof": [[18, 20]]}
+    },
+    {
+      "id": "arbatskaya-2007-ordered-search",
+      "title": "Ordered Search",
+      "authors": "Maria Arbatskaya",
+      "year": 2007,
+      "journal": "RAND Journal of Economics",
+      "pdf": "RAND/Arbatskaya_2007_Ordered search.pdf",
+      "aliases": ["Arbatskaya 2007"],
+      "card": "Marketing Paper/文献卡/Arbatskaya 2007 - 有序搜索与价格梯度.md",
+      "reading_status": "core_read",
+      "reading_note": "核全信息及理性预期的排序定价模型、两条命题与有限活跃列表端点；复算三家一阶条件，未独立验证外引位置拍卖。",
+      "sections": {"introduction": [[1, 2]], "model": [[3, 4]], "results": [[3, 6]], "discussion": [[6, 8]], "proof": [[3, 5]]}
+    },
+    {
+      "id": "armstrong-vickers-zhou-2009-prominence",
+      "title": "Prominence and consumer search",
+      "authors": "Mark Armstrong, John Vickers, and Jidong Zhou",
+      "year": 2009,
+      "journal": "RAND Journal of Economics",
+      "pdf": "RAND/Armstrong_2009_Prominence and consumer search.pdf",
+      "aliases": ["Armstrong Vickers Zhou 2009", "Armstrong et al 2009"],
+      "card": "Marketing Paper/文献卡/Armstrong 等 2009 - 显眼位置与顺序搜索.md",
+      "reading_status": "core_read",
+      "reading_note": "核 §§2–4、有限家对称质量的定价和福利印刷证明；复算双寡头。异质质量为无限家分支；偏离推广未另证。",
+      "sections": {"introduction": [[1, 4]], "model": [[5, 8]], "results": [[9, 19]], "discussion": [[19, 20]], "proof": [[21, 24]]}
+    },
+    {
+      "id": "armstrong-vickers-2019-captive",
+      "title": "Discriminating against Captive Customers",
+      "authors": "Mark Armstrong and John Vickers",
+      "year": 2019,
+      "journal": "American Economic Review: Insights",
+      "doi": "10.1257/aeri.20180581",
+      "pdf": "AER_insight/Armstrong_2019_Discriminating against Captive Customers.pdf",
+      "aliases": ["Armstrong Vickers 2019", "Armstrong and Vickers 2019"],
+      "card": "Marketing Paper/文献卡/Armstrong 与 Vickers 2019 - 被俘获顾客与定价歧视.md",
+      "reading_status": "core_read",
+      "reading_note": "核可见正文、文内证明、给定总俘获率而改变集中度的福利算例。PDF 16 无文本且渲染空白，未用独立同版确认最后刊页。",
+      "sections": {"introduction": [[1, 3]], "model": [[3, 6]], "results": [[5, 14]], "proof": [[6, 14]], "discussion": [[14, 15]]}
+    },
     {
       "id": "dinerstein-et-al-2018-search",
       "title": "Consumer Price Search and Platform Design in Internet Commerce",
@@ -395,6 +455,72 @@
     }
   ],
   "edges": [
+    {
+      "id": "wolinsky-armstrong-random-benchmark",
+      "from": "wolinsky-1986-random-search",
+      "to": "armstrong-vickers-zhou-2009-prominence",
+      "type": "extends_component",
+      "review": "verified",
+      "claim": "Armstrong 等明确以 Wolinsky 的有成本随机搜索为基准；保留值和无限企业的逆风险率加价直接对应，均匀分布有限两家时的价格方程也一致。",
+      "changed": "保留事后发现价格与匹配、无放回与免费回访，在原随机基准上另设所有人共用的外生搜索首位，比较有限企业的价格和福利。",
+      "limit": "对应的是随机基准和消费者搜索组件；前文没有固定首位结论，后文也没有复用前文全部进入分析。",
+      "evidence": [{"paper": "wolinsky-1986-random-search", "page": 7, "printed": "498", "locator": "Eq. (3)，保留值"}, {"paper": "wolinsky-1986-random-search", "page": 14, "printed": "505", "locator": "Eq. (18)，逆风险率加价"}, {"paper": "wolinsky-1986-random-search", "page": 19, "printed": "510", "locator": "Eq. (A.1)，有限均匀价格方程"}, {"paper": "armstrong-vickers-zhou-2009-prominence", "page": 5, "printed": "213", "locator": "§2 明确继承随机搜索基准并另设首位"}, {"paper": "armstrong-vickers-zhou-2009-prominence", "page": 6, "printed": "214", "locator": "Eq. (2)，识别与 Wolinsky Eq. (18) 一致"}, {"paper": "armstrong-vickers-zhou-2009-prominence", "page": 9, "printed": "217", "locator": "Eq. (11)，有限随机基准"}]
+    },
+    {
+      "id": "arbatskaya-armstrong-first-position-search-cost",
+      "from": "arbatskaya-2007-ordered-search",
+      "to": "armstrong-vickers-zhou-2009-prominence",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "Armstrong 等用 Arbatskaya 解释前排高价的异质搜索成本分支，并对照其同质搜索成本、差异化商品基准的首位低价。",
+      "changed": "Arbatskaya 的连续搜索成本与所有位置固定，变成 Armstrong 等 §4 的零／无限成本和从第二家起充分竞争；后文 §2 另用匹配异质和统一搜索成本。",
+      "limit": "明确引用的机制比较；不同搜索成本分布、排序制度和需求口径，不是前文的一般参数嵌套或福利继承。",
+      "evidence": [{"paper": "arbatskaya-2007-ordered-search", "page": 3, "printed": "121", "locator": "Prop. 1，全序、异质成本和价格梯度"}, {"paper": "armstrong-vickers-zhou-2009-prominence", "page": 11, "printed": "219", "locator": "Prop. 1，同质成本下的首位低价"}, {"paper": "armstrong-vickers-zhou-2009-prominence", "page": 19, "printed": "227", "locator": "§4 Eq. (26) 及直接讨论 Arbatskaya"}]
+    },
+    {
+      "id": "arbatskaya-zou-zhou-price-invites-search",
+      "from": "arbatskaya-2007-ordered-search",
+      "to": "zou-zhou-2025-search-neutrality",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "两篇都使价格可见性影响非首位吸引搜索的能力。Arbatskaya 还在自身模型中直接比较报价可预见和到店才见的两个制度。",
+      "changed": "从同质品和固定全序、异质搜索成本，改为按类型和价格个性化的顺序、查验后才知匹配、平台有抽佣和自营。",
+      "limit": "Zou–Zhou §2 明确列前者于有序搜索文献。价格可见性是共同建模轴，不等于后文继承先行命题，也不外推前文的有限列表末位条件。",
+      "evidence": [{"paper": "arbatskaya-2007-ordered-search", "page": 3, "printed": "121", "locator": "§2，先见价格的固定全序"}, {"paper": "arbatskaya-2007-ordered-search", "page": 6, "printed": "124", "locator": "§3 Eq. (6) 及可见价格比较"}, {"paper": "zou-zhou-2025-search-neutrality", "page": 3, "printed": "4089", "locator": "明确引前文为有序搜索工作"}, {"paper": "zou-zhou-2025-search-neutrality", "page": 6, "printed": "4092", "locator": "次位价差动员搜索的需求分支"}]
+    },
+    {
+      "id": "armstrong-prominence-captive-price-information",
+      "from": "armstrong-vickers-zhou-2009-prominence",
+      "to": "armstrong-vickers-2019-captive",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "2009 §4 的零／无限后续搜索成本可表示为全比较与单家考虑两类顾客；2019 将这种顾客集合直接给定，再改变卖家能否辨认这两类顾客并定不同价格。",
+      "changed": "一个改变搜索首位与被俘获顾客归属而无分类报价；另一个固定考虑集合，比较状态可观察时的垄断／竞争价与状态不可用时的统一混合报价。",
+      "limit": "双侧原文核过的机制对照；未发现直接引用。2009 §4 至少三家且单位需求，2019 的 Lemma 1 与弹性需求福利比较是双寡头，不是逐式嵌套。",
+      "evidence": [{"paper": "armstrong-vickers-zhou-2009-prominence", "page": 18, "printed": "226", "locator": "§4 零与无限后续搜索成本"}, {"paper": "armstrong-vickers-zhou-2009-prominence", "page": 19, "printed": "227", "locator": "Eq. (26)，集中被俘获顾客使首位收高价"}, {"paper": "armstrong-vickers-2019-captive", "page": 4, "printed": "260", "locator": "给定考虑集合、完全辨认状态与统一定价"}, {"paper": "armstrong-vickers-2019-captive", "page": 6, "printed": "262", "locator": "Lemma 1，双寡头混合策略与触达率"}]
+    },
+    {
+      "id": "armstrong-zou-zhou-presearch-price",
+      "from": "armstrong-vickers-zhou-2009-prominence",
+      "to": "zou-zhou-2025-search-neutrality",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "Zou–Zhou 援引顺序搜索基准，改变价格可见时间与首位分配；次位可以用事前可见的低价吸引搜索，基准定价机制因此不同。",
+      "changed": "从全体先搜同一家、价格在检查后才见且每次成本相同，转为价格事前可见、平台按顾客类别给首位、首位搜索成本低于其次。",
+      "limit": "对照的是一组同时变化的假设；不把价格方向差异单独归因于事前价格可见，也不把两个福利反事实视为同一政策。",
+      "evidence": [{"paper": "armstrong-vickers-zhou-2009-prominence", "page": 5, "printed": "213", "locator": "§2 见价时点、相同检查成本和可回访"}, {"paper": "armstrong-vickers-zhou-2009-prominence", "page": 11, "printed": "219", "locator": "Prop. 1，先搜卖家与随机搜索的报价比较"}, {"paper": "zou-zhou-2025-search-neutrality", "page": 3, "printed": "4089", "locator": "顺序搜索文献中直接提及 2009 基准"}, {"paper": "zou-zhou-2025-search-neutrality", "page": 6, "printed": "4092", "locator": "Eqs. (1)–(2)，次位低价邀请搜索"}, {"paper": "zou-zhou-2025-search-neutrality", "page": 11, "printed": "4097", "locator": "Prop. 4 低抽佣时次位第三方报价低"}]
+    },
+    {
+      "id": "armstrong-moshary-prominence-background",
+      "from": "armstrong-vickers-zhou-2009-prominence",
+      "to": "moshary-2025-sponsored-search",
+      "type": "cites",
+      "review": "verified",
+      "claim": "Moshary 将 Armstrong 等列作一个位置协调搜索顺序、改变竞争的理论解释。",
+      "changed": "前文比较设一个固定首位与随机搜索；后文随机移除部分访客的赞助展示，比较平台当时的成交和收入。",
+      "limit": "只是明确背景引用；实验未识别基准的企业均衡价格排序或福利效应。",
+      "evidence": [{"paper": "armstrong-vickers-zhou-2009-prominence", "page": 5, "printed": "213", "locator": "顺序搜索基准与固定首位"}, {"paper": "moshary-2025-sponsored-search", "page": 3, "printed": "9689", "locator": "讨论 Armstrong 等的位置协调机制"}, {"paper": "moshary-2025-sponsored-search", "page": 5, "printed": "9691", "locator": "随机化的是广告展示资格"}]
+    },
     {
       "id": "long-amaldoss-zou-zhou-neutrality-policy",
       "from": "long-amaldoss-2024-self-preferencing",
