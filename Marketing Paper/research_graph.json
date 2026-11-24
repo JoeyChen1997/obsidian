@@ -55,6 +55,13 @@
       "queries": ["choice overload noisy positioning", "search cost assortment planning pricing", "within firm consideration set"]
     },
     {
+      "id": "product-line-signals-and-platform-frictions",
+      "title": "产品线信号与平台组合摩擦",
+      "aliases": ["产品线信号", "情境推断", "组合扩张", "平台采用", "contextual inference", "assortment expansion", "platform adoption", "choice frictions"],
+      "papers": ["kamenica-2008-contextual-inference", "kuksov-villas-boas-2010-choice-overload", "nocke-rey-2024-steering", "natan-2025-assortment-frictions"],
+      "queries": ["product line informational content", "assortment expansion adoption churn", "choice overload returning customers"]
+    },
+    {
       "id": "targeting",
       "title": "定向广告与定向定价",
       "aliases": ["定向广告", "定向投放", "广告定向", "广告曝光", "定向定价", "个性化定价", "informative advertising", "advertising targeting", "targeted advertising", "targeted pricing", "imperfect targeting", "consumer addressability"],
@@ -77,6 +84,35 @@
     }
   ],
   "papers": [
+    {
+      "id": "kamenica-2008-contextual-inference",
+      "title": "Contextual Inference in Markets: On the Informational Content of Product Lines",
+      "authors": "Emir Kamenica",
+      "year": 2008,
+      "journal": "American Economic Review",
+      "doi": "10.1257/aer.98.5.2127",
+      "pdf": "AER/Kamenica_2008_Contextual Inference in Markets On the Informational Content of Product Lines.pdf",
+      "aliases": ["Kamenica 2008", "contextual inference", "informational content product lines", "rational choice overload"],
+      "card": "Marketing Paper/文献卡/Kamenica 2008 - 产品线的情境推断与选择过载.md",
+      "reading_status": "core_read",
+      "reading_note": "核产品线信号、Lemma 3、Props. 1–5 及印刷附录 A–F；外生价格是本文主结果，早期内生价格版本只作缺口记录。",
+      "sections": {"introduction": [[1, 3]], "model": [[3, 5]], "results": [[5, 10]], "discussion": [[10, 12]], "proof": [[20, 22]]}
+    },
+    {
+      "id": "natan-2025-assortment-frictions",
+      "title": "Choice Frictions in Large Assortments",
+      "authors": "Olivia R. Natan",
+      "year": 2025,
+      "online_year": 2024,
+      "journal": "Marketing Science",
+      "doi": "10.1287/mksc.2023.0415",
+      "pdf": "MKSC/Natan_2024_Choice Frictions in Large Assortments.pdf",
+      "aliases": ["Natan 2025", "Natan 2024", "choice frictions large assortments", "assortment expansion adoption"],
+      "card": "Marketing Paper/文献卡/Natan 2025 - 大型组合的选择摩擦.md",
+      "reading_status": "core_read",
+      "reading_note": "核准实验、主回归表 2–8、搜索结果、rational inattention 结构式与 Tables 9–11；在线附录 OA1–OA6、原始数据和平台排名未独立核对。",
+      "sections": {"introduction": [[1, 4]], "model": [[14, 16]], "results": [[9, 13]], "discussion": [[13, 15]], "proof": [[15, 22]]}
+    },
     {
       "id": "weitzman-1979-pandora",
       "title": "Optimal Search for the Best Alternative",
@@ -103,7 +139,7 @@
       "aliases": ["Kuksov Villas-Boas 2010", "Kuksov Villas-Boas 2009", "more alternatives less choice", "sequential evaluation without replacement"],
       "card": "Marketing Paper/文献卡/Kuksov 与 Villas-Boas 2010 - 逐件评估与选择过载.md",
       "reading_status": "core_read",
-      "reading_note": "核逐件无放回、允许盲选、有限品种优于连续极限的构造；以有限动态规划复算，记录 Lemma 1 文字歧义。未复证一般位置的全局最优。",
+      "reading_note": "核逐件无放回、允许盲选、有限品种优于连续极限的构造；以有限动态规划复算，记录 Lemma 1 的阈值误植。未复证一般位置的全局最优。",
       "sections": {"introduction": [[1, 3]], "model": [[3, 5]], "results": [[5, 13]], "discussion": [[12, 15]], "proof": [[15, 18]]}
     },
     {
@@ -650,6 +686,50 @@
     }
   ],
   "edges": [
+    {
+      "id": "kamenica-kuksov-contextual-overload",
+      "from": "kamenica-2008-contextual-inference",
+      "to": "kuksov-villas-boas-2010-choice-overload",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "Kuksov–Villas-Boas 明确把 Kamenica 列为独立的情境推断研究；两篇都能产生选择过载，但一篇来自菜单的流行度信号，一篇来自固定偏好空间中的逐件评估成本。",
+      "changed": "由只看产品线、价格外生、未充分信息者随机选，改为消费者知道自身位置却逐件随机抽未查商品，并可在搜索、盲选和不买之间选择。",
+      "limit": "正文明确称 independent work；不把引用关系写成严格模型继承，也不把两篇的有限品种阈值当作同一参数边界。",
+      "evidence": [{"paper": "kamenica-2008-contextual-inference", "page": 8, "printed": "2139", "locator": "Lemma 3 与 Props. 4–5，流行度与产品线宽度"}, {"paper": "kuksov-villas-boas-2010-choice-overload", "page": 4, "printed": "510", "locator": "Related literature，明确列 Kamenica (2008) 为 independent work"}, {"paper": "kuksov-villas-boas-2010-choice-overload", "page": 5, "printed": "511", "locator": "§2，位置、无放回逐件评估和盲选"}]
+    },
+    {
+      "id": "kamenica-natan-signal-versus-attention",
+      "from": "kamenica-2008-contextual-inference",
+      "to": "natan-2025-assortment-frictions",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "Natan 将 Kamenica 作为较大组合导致消费效用下降的理论对照，但实证中的老客负效应不等于产品线信号机制的结构检验。",
+      "changed": "由厂商私有状态和未充分信息消费者据菜单更新流行度，改为平台局部进入的准实验、用户历史与 rational inattention；新客采用和老客频率使用不同分母。",
+      "limit": "Natan 的平台组合含品类和餐馆质量、未观测排名及推荐；控制品类后仍有进入质量和呈现方式缺口，不能据估计识别 Kamenica 的 posterior。",
+      "evidence": [{"paper": "kamenica-2008-contextual-inference", "page": 3, "printed": "2131", "locator": "情境推断定义，菜单改变后验而非效用函数"}, {"paper": "kamenica-2008-contextual-inference", "page": 8, "printed": "2139", "locator": "Lemma 3 与 Prop. 4，均质加价下扩展菜单降低未充分信息需求"}, {"paper": "natan-2025-assortment-frictions", "page": 7, "printed": "599", "locator": "局部进入识别、邻域时间固定效应与识别假设"}, {"paper": "natan-2025-assortment-frictions", "page": 9, "printed": "601", "locator": "表 2，采用上升、老客订单下降、首次流失不显著"}, {"paper": "natan-2025-assortment-frictions", "page": 14, "printed": "606", "locator": "结构模型的期望、信息成本与 consideration probability"}]
+    },
+    {
+      "id": "kuksov-natan-search-frictions-empirical",
+      "from": "kuksov-villas-boas-2010-choice-overload",
+      "to": "natan-2025-assortment-frictions",
+      "type": "empirical_followup",
+      "review": "verified",
+      "claim": "Natan 的搜索摩擦证据与 Kuksov–Villas-Boas 的逐件搜索渠道方向相容：组合扩大时老客搜索 session 减少、订单频率下降；但 Natan 同时发现新品类可带来正向品种收益。",
+      "changed": "由均匀消费者、等距产品和理论购买概率，改为真实平台的历史用户、餐馆进入、邻域固定效应与结构注意力；不再假设消费者能随机抽到全部位置。",
+      "limit": "Natan 无法观察具体排名、推荐或单个 impression，且老客样本筛选要求 60 天内有第二单；不能据此估计 Kuksov–Villas-Boas 的理论参数或单独识别逐件成本。",
+      "evidence": [{"paper": "kuksov-villas-boas-2010-choice-overload", "page": 11, "printed": "517", "locator": "Prop. 3，有限品种与无限品种的购买概率"}, {"paper": "kuksov-villas-boas-2010-choice-overload", "page": 13, "printed": "519", "locator": "搜索过程与扩品后的负向成本机制"}, {"paper": "natan-2025-assortment-frictions", "page": 9, "printed": "601", "locator": "表 2，老客订单与支出分开"}, {"paper": "natan-2025-assortment-frictions", "page": 13, "printed": "605", "locator": "表 6，搜索 session 与搜索时长"}, {"paper": "natan-2025-assortment-frictions", "page": 20, "printed": "612", "locator": "按历史选择概率定向删选的反事实"}]
+    },
+    {
+      "id": "nocke-natan-garbling-and-assortment-life-cycle",
+      "from": "nocke-rey-2024-steering",
+      "to": "natan-2025-assortment-frictions",
+      "type": "empirical_followup",
+      "review": "verified",
+      "claim": "Natan 明确把 Nocke–Rey 的摆位噪声与组合大小下的 garbling 作为理论机制对照；Natan 的数据把新客扩张与老客注意力负效应拆开。",
+      "changed": "从单一垄断者能承诺槽位、匹配概率和统一价，改为平台与餐馆的局部进入，平台排名不可见，估计重点是需求分母和历史 consideration probability。",
+      "limit": "只是机制对应而非 Nocke–Rey 均衡的估计；Natan 不能观察排名／推荐，且平台可能通过呈现改变信息成本。",
+      "evidence": [{"paper": "nocke-rey-2024-steering", "page": 8, "printed": "1691", "locator": "逐件搜索与选择过载的理论动机"}, {"paper": "nocke-rey-2024-steering", "page": 23, "printed": "1706", "locator": "Prop. 5，摆位引导与全上架边界"}, {"paper": "natan-2025-assortment-frictions", "page": 14, "printed": "606", "locator": "引用 Nocke–Rey 的 garbling overload"}, {"paper": "natan-2025-assortment-frictions", "page": 15, "printed": "607", "locator": "组合大小、期望和信息成本的两条渠道"}]
+    },
     {
       "id": "weitzman-jing-binary-reservation-index",
       "from": "weitzman-1979-pandora",

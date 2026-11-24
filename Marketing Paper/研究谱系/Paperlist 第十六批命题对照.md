@@ -21,4 +21,4 @@ batch: paperlist-16
 - 无题名、无种子用 `reservation price stopping selection`、`sequential evaluation dependent locations`、`choice overload product space` 及 “What breaks the rule to inspect the highest reservation value next when assortment options are placed in a shared preference space and one failed inspection reveals information about the remaining options?”：11545、24496 分别第 1、3 且均入自动时间图；第 2 是对商品留白视觉的研究，未升入主题图。带两篇种子的另一轮找到 Natan（24759）与 Au（16296）等分支；Au 等仍是候选。命中不是召回率。
 - 版次：24496 存 2010 卷期并保留 2009 在线；尚未定位被引用的 2006 早稿，未添加同作品的已核变体。来源 14679 的同名 Oliver 论文已定位官方 DOI，但本地不可读原件仍未恢复；仅核外部元数据，不冒充已读或确认文件内容。
 
-第十七批先读 Kamenica（3892）与 Natan（24759）。Kamenica 的关键是从产品线推断流行度或自身偏好，不等于边查边排除位置；Natan 应将新客采用、老客留存与条件消费频率分别核，不能用一个效应概括全文。先行版证据页与正式卷期分存。
+第十七批先读 Kamenica（3892）与 Natan（24759）。Kamenica 的关键是从产品线推断流行度或自身偏好，不等于边查边排除位置；Natan 应将新客采用、老客留存与条件消费频率分别核，不能用一个效应概括全文。Natan 正文采用正式卷期刊页，首页标有在线日期；记录各自口径。
