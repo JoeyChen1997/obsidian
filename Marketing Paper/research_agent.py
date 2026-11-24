@@ -298,6 +298,11 @@ def corpus_layer(source, args, traced, lexical, terms):
         require(bound is not None and Path(bound[0]).resolve() == args.db.resolve(), 'RAG index belongs to another catalog.')
         passages = corpus_rag.passage_search(pre,terms,args.phrase,args.journal,args.section,args.limit,
                                              args.from_year,args.to_year)
+        for paper in passages['papers']:
+            for hit in paper['hits']:
+                ocr = source.execute("SELECT result FROM ocr_attempts WHERE rowid=?",
+                                     (paper['paper']*paperlist.PAGE_STRIDE+hit['page'],)).fetchone()
+                hit['text_source'] = 'ocr' if ocr and ocr[0]=='text' else 'pdf_text'
         dense = {'papers':[], 'state':'not_requested'}
         if args.semantic:
             import corpus_vectors
@@ -453,6 +458,8 @@ def run(args, graph):
                 terms = args.phrase
         require(len(terms) <= 8, 'Supply at most eight distinct retrieval queries per brief.')
         require(all(quote_query(t, t in args.phrase) for t in terms), 'Search terms must include a letter or number.')
+        require(len(args.semantic) <= 8 and all(norm(t) for t in args.semantic),
+                'Supply up to eight nonempty semantic queries.')
         coverage = dict(con.execute('''SELECT COUNT(*) AS pdf_files, SUM(text_pages) AS searchable_pages,
             SUM(status='pending') AS pending, SUM(status IN ('partial','no_text','error')) AS text_gaps
             FROM papers WHERE status <> 'missing' ''').fetchone())

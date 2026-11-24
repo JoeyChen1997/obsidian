@@ -1,6 +1,6 @@
 ---
 name: paperlist-research
-description: Use the Paperlist vault index and reviewed literature graph to find, compare, or trace quantitative marketing and economics research, audit theory propositions against PDF pages, or draft evidence-grounded related literature. Use when the user asks to use Paperlist or its research agent; not for general questions unrelated to the corpus.
+description: Use Paperlist's full-corpus RAG and citation network to find, compare, or trace quantitative marketing and economics research, audit theory against PDF pages, or draft evidence-grounded related literature. Use for requests involving Paperlist or its research agent, not for unrelated general questions.
 ---
 
 # Paperlist research agent
