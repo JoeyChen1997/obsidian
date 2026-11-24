@@ -17,7 +17,7 @@ batch: paperlist-15
 ## 关系、复算与覆盖审计
 
 - 核了 4 条双侧原页关系：Villas-Boas → Nocke–Rey、Villas-Boas → Jing、Liu–Dukes → Jing 是后文明确讨论的机制对照；Armstrong 等 → Jing 是据原模型独立核出的首访与价格反向对照，未核得直接引用。不把两个环境中同时变化的原语写成一项因果识别。
-- Villas-Boas 的印刷导数与正文参与条件不一致；重新微分 $\hat v=p+\sqrt{kt/n}$ 确认相对斜率，以附录及正文限定绝对方向。复算还表明在一组参数下，扩品虽使初访少了，销量却能上升。Jing 的覆盖算例中，若 $s=0.015$、高端相对投资差 0.4，高端供给价上调 0.002、份额从 0.900 到 0.902；不把指定投资当作完整均衡。
+- Villas-Boas 的印刷导数与正文参与条件不一致；重新微分 $\hat v=p+\sqrt{kt/n}$ 确认相对斜率，以附录及正文限定绝对方向。复算还表明在一组参数下，扩品虽使初访少了，销量却能上升。Jing 的覆盖算例中，若 $s=0.015$、高端相对投资差 0.4，高端报价上调 0.002、份额从 0.900 到 0.902；不把指定投资当作完整均衡。
 - 无标题、无种子以 `product variety evaluation costs`、`learning investment search order`、`endogenous pricing evaluation costs` 与 “When consumers evaluate all seller products with a single cost, does variety change entry into search through higher expected prices, and how does this differ when competing sellers each subsidize inspection?” 检索，24396、35527 排前二，均在自动时间图。原排名第 5 的 36293 只是 *Index to Volume 55*。核查同类 9 份原页后，从融合论文推荐和起点单列，底层索引和原 PDF 保留。自动检索不估计全库召回率。
 - 缺件：Jing 的独立线上附录与 Villas-Boas 首页所列早稿未在本地定位。Jing 仅多出的 PDF 16 是版权页，不视为附录；按 2016 卷期记作品，保留 2015 在线年。两篇并未重证所有价格偏离或推广。
 
