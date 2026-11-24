@@ -5,8 +5,15 @@
       "id": "platform-search-precision",
       "title": "平台搜索精度与价格",
       "aliases": ["搜索精度", "平台搜索", "search precision", "platform search design"],
-      "papers": ["zhong-2023-search", "zhou-et-al-2025-search"],
+      "papers": ["dinerstein-et-al-2018-search", "zhong-2023-search", "zhou-et-al-2025-search"],
       "queries": ["platform search design", "search precision", "price weighting search", "search algorithm consumer engagement"]
+    },
+    {
+      "id": "sponsored-organic-listing",
+      "title": "赞助竞价与自然排序",
+      "aliases": ["赞助排序", "赞助竞价", "自然排序", "sponsored organic ranking", "strategic listing"],
+      "papers": ["long-jerath-sarvary-2022-listing"],
+      "queries": ["sponsored advertising organic ranking", "strategic listing quality information", "paid placement sales commission"]
     },
     {
       "id": "targeting",
@@ -31,6 +38,35 @@
     }
   ],
   "papers": [
+    {
+      "id": "dinerstein-et-al-2018-search",
+      "title": "Consumer Price Search and Platform Design in Internet Commerce",
+      "authors": "Michael Dinerstein, Liran Einav, Jonathan Levin, and Neel Sundaresan",
+      "year": 2018,
+      "journal": "American Economic Review",
+      "doi": "10.1257/aer.20171218",
+      "pdf": "AER/Dinerstein_2018_Consumer Price Search and Platform Design in Internet Commerce.pdf",
+      "aliases": ["Dinerstein et al 2018", "eBay 搜索改版"],
+      "card": "Marketing Paper/文献卡/Dinerstein 等 2018 - 搜索改版与价格竞争.md",
+      "reading_status": "core_read",
+      "reading_note": "核实地改版、A/B 设计、考虑集需求与定价、估计和结构反事实；未重估或独立核在线附录。",
+      "sections": {"introduction": [[1, 4]], "model": [[20, 28]], "results": [[14, 19], [29, 38]], "discussion": [[38, 39]]}
+    },
+    {
+      "id": "long-jerath-sarvary-2022-listing",
+      "title": "Designing an Online Retail Marketplace: Leveraging Information from Sponsored Advertising",
+      "authors": "Fei Long, Kinshuk Jerath, and Miklos Sarvary",
+      "year": 2022,
+      "online_year": 2021,
+      "journal": "Marketing Science",
+      "doi": "10.1287/mksc.2021.1307",
+      "pdf": "MKSC/Long_2021_Designing an Online Retail Marketplace Leveraging Information from Sponsored Advertising.pdf",
+      "aliases": ["Long Jerath Sarvary 2022", "Long et al 2022"],
+      "card": "Marketing Paper/文献卡/Long 等 2022 - 赞助竞价与自然排序.md",
+      "reading_status": "core_read",
+      "reading_note": "核信息结构、竞价、抽佣与加入，复算自然排序信息权重；混合竞价和相关信号扩展未逐式复证。",
+      "sections": {"introduction": [[1, 5]], "model": [[5, 8]], "results": [[8, 18]], "discussion": [[18, 19]], "proof": [[19, 22]]}
+    },
     {
       "id": "zhong-2023-search",
       "title": "Platform Search Design: The Roles of Precision and Price",
@@ -265,6 +301,17 @@
     }
   ],
   "edges": [
+    {
+      "id": "dinerstein-zhou-search-redesign-citation",
+      "from": "dinerstein-et-al-2018-search",
+      "to": "zhou-et-al-2025-search",
+      "type": "cites",
+      "review": "verified",
+      "claim": "Zhou 等将 Dinerstein 等的 eBay 商品页改版及成交价变化作为较早的搜索设计证据。",
+      "changed": "从聚合同一商品的报价、关注定价与成交，转为品类细分改版、关注搜索转化与后续参与。",
+      "limit": "已核背景引用，不构成结构模型继承或价格效应复制；前文 A/B 本身不识别均衡价格响应。",
+      "evidence": [{"paper": "dinerstein-et-al-2018-search", "page": 19, "printed": "1838", "locator": "§II.D，实验与价格反应的区分"}, {"paper": "zhou-et-al-2025-search", "page": 20, "printed": "6223", "locator": "注 1 直接引用 eBay 改版"}]
+    },
     {
       "id": "zhong-zhou-search-precision-followup",
       "from": "zhong-2023-search",

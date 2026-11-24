@@ -89,6 +89,13 @@ class ResearchAgentTest(unittest.TestCase):
         self.assertEqual((years[edge['from']], years[edge['to']]), (2023, 2025))
         self.assertEqual({e['paper'] for e in edge['evidence']}, {edge['from'], edge['to']})
 
+    def test_reviewed_citation_is_not_an_inheritance_path(self):
+        result = self.run_tool('trace', '--anchor', 'dinerstein-et-al-2018-search')
+        self.assertIn('dinerstein-zhou-search-redesign-citation', {e['id'] for e in result['leads']})
+        self.assertNotIn('dinerstein-zhou-search-redesign-citation', {e['id'] for e in result['relations']})
+        self.assertFalse(self.run_tool('path', 'dinerstein-et-al-2018-search',
+                                       'zhou-et-al-2025-search')['paths'])
+
     def test_unknown_topic_uses_fts_with_phrase_and_filters(self):
         result = self.run_tool('brief', '卖家为什么采用代理模式', '--phrase', 'agency selling', '--journal', 'MS')
         self.assertEqual(result['graph']['anchors'], [])
