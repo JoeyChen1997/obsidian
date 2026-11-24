@@ -11,6 +11,7 @@ import sys
 import unicodedata
 
 import paperlist
+import corpus_rag
 
 
 HERE = Path(__file__).resolve().parent
@@ -286,6 +287,58 @@ def retrieve(con, terms, args):
             'papers': [papers[k] | {'rank_score': round(scores[k], 5)} for k in selected]}
 
 
+def corpus_layer(source, args, traced, lexical, terms):
+    path = args.corpus_db
+    if path is None and args.db.resolve() == paperlist.DEFAULT_DB.resolve():
+        path = corpus_rag.DEFAULT_DB
+    if not path or not path.is_file():
+        return {'available':False,'note':'Section/citation index not available for this catalog; used original page search.'}
+    with closing(corpus_rag.connect(path)) as pre:
+        bound = pre.execute("SELECT value FROM config WHERE key='source'").fetchone()
+        require(bound is not None and Path(bound[0]).resolve() == args.db.resolve(), 'RAG index belongs to another catalog.')
+        passages = corpus_rag.passage_search(pre,terms,args.phrase,args.journal,args.section,args.limit,
+                                             args.from_year,args.to_year)
+        dense = {'papers':[], 'state':'not_requested'}
+        if args.semantic:
+            import corpus_vectors
+
+            try:
+                dense = corpus_vectors.search(pre,path,args.vector_db or corpus_vectors.DEFAULT_DB,list(dict.fromkeys(args.semantic))[:8],
+                                              args.journal,args.limit,args.from_year,args.to_year) | {'state':'available'}
+            except (ValueError,ImportError,OSError,sqlite3.Error) as err:
+                dense = {'papers':[],'state':'unavailable','note':str(err)}
+        ranks = defaultdict(float)
+        channels = defaultdict(list)
+        for name, weight, results, key in [('title_page',1,lexical['papers'],'id'),
+                ('section_passages',1.3,passages['papers'],'paper'),('dense_document',0.9,dense['papers'],'id')]:
+            for rank, hit in enumerate(results,1):
+                paper = hit[key]
+                ranks[paper] += weight / (20+rank)
+                channels[paper].append(name)
+        shortlist = []
+        for paper in sorted(ranks,key=lambda k:(-ranks[k],k))[:args.limit]:
+            row = source.execute('SELECT id,relpath,title_hint,author_hint,year,journal FROM papers WHERE id=?',(paper,)).fetchone()
+            if row:
+                shortlist.append(dict(row) | {'channels':channels[paper], 'score':round(ranks[paper],6)})
+        anchors = []
+        for node in traced['papers']:
+            if node['id'] in traced['anchors'] and node.get('pdf'):
+                item = pre.execute('SELECT id FROM docs WHERE relpath=?',(node['pdf'],)).fetchone()
+                if item:
+                    anchors.append(item['id'])
+        anchors = list(dict.fromkeys([*anchors,*args.citation_seed,*[p['id'] for p in shortlist[:3]]]))[:8]
+        if args.intent in ('lineage','compare','write') or args.citation_seed:
+            citations = {side:corpus_rag.neighborhood(pre,anchors,side,min(args.depth,3),args.citation_limit,args.include_tail)
+                         for side in ('past','future') if args.direction in (side,'both') and anchors}
+        else:
+            citations = {}
+        coverage = dict(pre.execute('SELECT COUNT(*) AS documents,SUM(page_count) AS source_pages, SUM(page_count=0) AS no_text FROM docs').fetchone())
+        return {'available':True,'coverage':coverage,'ranked_candidates':shortlist,'passages':passages,
+                'dense':dense,'citation_candidates':citations,
+                'notes':['Section labels and citation matches are machine-generated leads, not independently checked facts.',
+                         'Use corpus_rag.py context to locate actual discussion before upgrading a citation to a model relation.']}
+
+
 def evidence(graph, con, args):
     if args.paper in graph.papers:
         paper = graph.node(args.paper)
@@ -335,6 +388,8 @@ def parser():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--db', type=Path, default=paperlist.DEFAULT_DB)
     p.add_argument('--graph', type=Path, default=DEFAULT_GRAPH)
+    p.add_argument('--corpus-db',type=Path,help='separate full-corpus sections and citation database')
+    p.add_argument('--vector-db',type=Path,help='separate local dense index')
     sub = p.add_subparsers(dest='cmd', required=True)
     sub.add_parser('validate', help='verify graph schema and evidence pages against the local catalog')
     sub.add_parser('topics', help='list available graph topics and paper IDs')
@@ -357,6 +412,11 @@ def parser():
             q.add_argument('--from-year', type=int)
             q.add_argument('--to-year', type=int)
             q.add_argument('--limit', type=bounded(30), default=10)
+            q.add_argument('--semantic',action='append',default=[],help='English natural-language dense query (repeatable)')
+            q.add_argument('--section',choices=corpus_rag.SECTIONS,help='restrict the passage search channel only')
+            q.add_argument('--citation-seed',action='append',type=bounded(99_999_999),default=[])
+            q.add_argument('--citation-limit',type=bounded(100),default=16)
+            q.add_argument('--include-tail',action='store_true',help='allow low-confidence matches outside detected references')
     q = sub.add_parser('evidence', help='fetch text for explicit PDF pages or verified sections')
     q.add_argument('paper', help='graph paper ID or numeric paperlist ID')
     q.add_argument('--page', action='append', type=bounded(999999), default=[])
@@ -396,12 +456,13 @@ def run(args, graph):
         coverage = dict(con.execute('''SELECT COUNT(*) AS pdf_files, SUM(text_pages) AS searchable_pages,
             SUM(status='pending') AS pending, SUM(status IN ('partial','no_text','error')) AS text_gaps
             FROM papers WHERE status <> 'missing' ''').fetchone())
+        lexical = retrieve(con, terms, args)
         return {'question': args.question, 'intent': args.intent, 'coverage': coverage,
-                'graph': traced, 'retrieval': retrieve(con, terms, args),
+                'graph': traced, 'retrieval': lexical, 'corpus_rag':corpus_layer(con,args,traced,lexical,terms),
                 'notes': ['Graph coverage is curated and incomplete; graph edges are not causal proof.',
                           'Journal/year filters apply to search, not historical graph neighbors. Search years come from filenames.',
-                          'No semantic embedding search or external citation database in this version. Use multiple edited queries.',
-                          *([] if terms else ['No search was run; pass --term or --phrase with 2-6 focused English queries.'])]}
+                          'Semantic matches and automated citations supplement lexical evidence; no external citation database.',
+                          *([] if terms else ['No lexical search was run; pass --term or --phrase with 2-6 focused English queries.'])]}
 
 
 def main():

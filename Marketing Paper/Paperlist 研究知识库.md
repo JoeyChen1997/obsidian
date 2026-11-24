@@ -16,7 +16,7 @@ aliases:
 
 ## 精读知识层
 
-[[Marketing Paper/Paperlist Research Agent|Paperlist Research Agent]]是研究调用入口：按任务结合全文检索、证据图谱和原页复核。
+[[Marketing Paper/Paperlist Research Agent|Paperlist Research Agent]]是研究调用入口：用全库段落检索、论文向量和候选引用网络找相关研究，再用已核图谱与 PDF 原页判断哪些关系真的成立。自动索引与人工／Agent 精读分别计数。
 
 [[Marketing Paper/精读台账与研究流程|精读台账与研究流程]]区分「已编目」「已初筛」「正文与核心证明已读」。[[Marketing Paper/研究谱系/定向广告与定向定价 - 研究谱系|定向广告与定向定价：首个研究谱系]]示范如何把前驱、模型继承、结论反转和前向扩展接起来，并给出原文证据。后续回答研究问题时，同时用精读卡做综合、用全库索引找漏网近邻；未读原文的节点保持待核。
 

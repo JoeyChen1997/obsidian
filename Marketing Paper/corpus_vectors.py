@@ -105,13 +105,22 @@ def build(args):
                 last = now
 
 
-def search(con, corpus, db, terms, journals=(), limit=10):
+def search(con, corpus, db, terms, journals=(), limit=10, from_year=None, to_year=None):
     import numpy as np
 
     encoder = Encoder(6)
-    filters = ' AND upper(journal) IN (' + ','.join('?' for _ in journals) + ')' if journals else ''
+    clauses = []
+    params = []
+    if journals:
+        clauses.append('upper(journal) IN (' + ','.join('?' for _ in journals) + ')')
+        params.extend(j.upper() for j in journals)
+    for op,year in [('>=',from_year),('<=',to_year)]:
+        if year is not None:
+            clauses.append(f'year{op}?')
+            params.append(year)
+    filters = ''.join(' AND '+f for f in clauses)
     docs = {r['id']: dict(r) for r in con.execute('SELECT id,title,author,year,journal,relpath,stamp,has_abstract FROM docs WHERE page_count>0'+filters,
-                                               [j.upper() for j in journals])}
+                                               params)}
     with closing(vectors(db)) as store:
         saved = dict(store.execute('SELECT key,value FROM settings'))
         if saved != {'source':str(corpus.resolve()), 'encoder':encoder.version}:

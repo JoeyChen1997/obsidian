@@ -1,10 +1,9 @@
 """Build/query a section-passage RAG index and candidate citation graph for Paperlist."""
 
 import argparse
-from collections import Counter, defaultdict
+from collections import defaultdict
 from contextlib import closing
 import json
-import os
 from pathlib import Path
 import re
 import sqlite3
@@ -42,7 +41,6 @@ CONTROL = re.compile(r'[\x00-\x08\x0b\x0c\x0e-\x1f]')
 HEADER = re.compile(r'^(?:(?P<number>(?:\d+(?:\.\d+)*|[IVX]{1,6}|[A-Z])\s*[.)]?)[ \t]+)?(?P<title>[A-Za-z][^\n]{0,105})$')
 REF = re.compile(r'^(?:references(?: and notes)?|literature cited|bibliography|works cited)\s*[:.]?$', re.I)
 ABSTRACT = re.compile(r'^abstract(?:\s*[.:—–-]\s*|\s+|$)', re.I)
-DOI = re.compile(r'\b10\.\d{4,9}/[-._;()/:A-Z0-9]+', re.I)
 SECTION_WORDS = {
     'introduction': r'^(introduction|motivation|background|overview|related (?:literature|work|research)|literature review)\b',
     'proof': r'^(appendix|appendices|proof|proofs|supplementary)\b',
@@ -246,7 +244,7 @@ def process(con, row, page_rows, matcher):
     con.executemany('INSERT INTO passages(rowid,text,paper,page,section,heading) VALUES (?,?,?,?,?,?)',
                     ((old_start + i, *p) for i, p in enumerate(passages)))
     con.executemany('INSERT INTO links VALUES (?,?,?,?,?)', links.values())
-    con.execute('INSERT OR REPLACE INTO docs VALUES (?,?,?,?,?,?,?,?,?,?,?)',
+    con.execute('INSERT OR REPLACE INTO docs VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',
                 (row['id'], row['relpath'], row['title_hint'], row['author_hint'], row['year'], row['journal'], stamp(row),
                  abstract_text, len(page_rows), len(headings), bib, int(bool(abstract))))
     return len(passages), len(links)
@@ -310,7 +308,7 @@ def stats(con):
     return result
 
 
-def passage_search(con, terms, phrases=(), journals=(), section=None, limit=10):
+def passage_search(con, terms, phrases=(), journals=(), section=None, limit=10, from_year=None, to_year=None):
     filters = []
     params = []
     if journals:
@@ -319,6 +317,12 @@ def passage_search(con, terms, phrases=(), journals=(), section=None, limit=10):
     if section:
         filters.append('p.section=?')
         params.append(section)
+    if from_year is not None:
+        filters.append('d.year>=?')
+        params.append(from_year)
+    if to_year is not None:
+        filters.append('d.year<=?')
+        params.append(to_year)
     extra = ''.join(f' AND {item}' for item in filters)
     scores = defaultdict(float)
     records = {}
@@ -360,13 +364,14 @@ def neighborhood(con, anchors, direction, depth, limit, include_tail):
     hit_cap = False
     for hop in range(1, depth + 1):
         future = []
-        for anchor in frontier:
-            sides = [('citing','cited')] if direction == 'past' else [('cited','citing')] if direction == 'future' else [('citing','cited'),('cited','citing')]
-            for src, target in sides:
+        sides = [('citing','cited')] if direction == 'past' else [('cited','citing')] if direction == 'future' else [('citing','cited'),('cited','citing')]
+        share = max(2, min(16, limit // (len(frontier) * len(sides))))
+        for src, target in sides:
+            for anchor in frontier:
                 for d in con.execute(f'''SELECT l.citing,l.cited,l.page,l.method,l.excerpt, n.id AS neighbor,
                     n.year,n.title,n.author,n.relpath,n.journal, c.relpath AS citing_pdf
                     FROM links l JOIN docs n ON n.id=l.{target} JOIN docs c ON c.id=l.citing
-                    WHERE l.{src}=?{allowed} ORDER BY l.method, n.id LIMIT ?''', (anchor,limit+1)):
+                    WHERE l.{src}=?{allowed} ORDER BY l.method, n.year DESC NULLS LAST, n.id LIMIT ?''', (anchor,share+1)):
                     key = (d['citing'], d['cited'])
                     if key not in output:
                         if len(output) >= limit:
@@ -382,6 +387,44 @@ def neighborhood(con, anchors, direction, depth, limit, include_tail):
             break
     return {'anchors':anchors, 'direction':direction, 'edges':list(output.values()), 'bounded':hit_cap,
             'note':'citing → cited; exact normalized title + nearby filename author/year. Candidate citations, not model inheritance.'}
+
+
+def related(con, anchor, limit=12):
+    result = con.execute('''WITH seed AS (SELECT cited FROM links WHERE citing=? AND method='section_title_author_year')
+        SELECT d.id,d.title,d.year,d.journal,d.relpath,COUNT(*) AS shared_references
+        FROM seed JOIN links l ON l.cited=seed.cited JOIN docs d ON d.id=l.citing
+        WHERE l.citing<>? AND l.method='section_title_author_year'
+        GROUP BY d.id HAVING COUNT(*)>=2 ORDER BY shared_references DESC,d.year DESC,d.id LIMIT ?''',
+        (anchor,anchor,limit)).fetchall()
+    return {'anchor':anchor,'papers':[dict(r) for r in result],
+            'note':'Bibliographic coupling via multiple shared candidate references, not a direct citation or mechanism match.'}
+
+
+def citation_context(con, source, citing, cited):
+    edge = con.execute('SELECT * FROM links WHERE citing=? AND cited=?',(citing,cited)).fetchone()
+    target = con.execute('SELECT title,author,year FROM docs WHERE id=?',(cited,)).fetchone()
+    if not edge or not target:
+        return {'found':False,'citing':citing,'cited':cited,'note':'No indexed direct candidate edge; this does not rule out a citation.'}
+    names = [w for w in norm(target['author']).split() if len(w)>=3]
+    year = target['year']
+    title = normalized_title(target['title'])
+    result = []
+    start = citing * paperlist.PAGE_STRIDE
+    for page, text in source.execute('SELECT pdf_page,body FROM page_index WHERE rowid>=? AND rowid<? ORDER BY rowid',
+                                     (start,start+paperlist.PAGE_STRIDE)):
+        if page >= edge['page']:
+            continue
+        normalized = norm(text)
+        for name in names:
+            match = re.search(rf'\b{re.escape(name)}\b(?: \w+){{0,7}} {year}\b', normalized)
+            if match:
+                result.append({'page':page,'match':'author_year','excerpt':normalized[max(0,match.start()-180):match.end()+330]})
+                break
+        else:
+            if title and (i:=normalized.find(title)) >= 0:
+                result.append({'page':page,'match':'title','excerpt':normalized[max(0,i-180):i+len(title)+330]})
+    return {'found':True,'reference':dict(edge),'body_candidates':result[:8],
+            'note':'Normalized text only; author/year can collide and earlier bibliography pages may appear. Check actual PDF before interpreting.'}
 
 
 def parser():
@@ -405,6 +448,12 @@ def parser():
     c.add_argument('--depth', type=int, choices=[1,2,3], default=1)
     c.add_argument('--limit', type=paperlist.positive, default=24)
     c.add_argument('--include-tail', action='store_true')
+    r = commands.add_parser('related')
+    r.add_argument('paper',type=paperlist.positive)
+    r.add_argument('--limit',type=paperlist.positive,default=12)
+    x = commands.add_parser('context')
+    x.add_argument('citing',type=paperlist.positive)
+    x.add_argument('cited',type=paperlist.positive)
     return p
 
 
@@ -420,8 +469,14 @@ def main():
                     result = stats(con)
                 elif args.cmd == 'search':
                     result = passage_search(con,args.term,args.phrase,args.journal,args.section,min(args.limit,40))
-                else:
+                elif args.cmd == 'citations':
                     result = neighborhood(con,args.paper[:12],args.direction,args.depth,min(args.limit,100),args.include_tail)
+                elif args.cmd == 'related':
+                    result = related(con,args.paper,min(args.limit,40))
+                else:
+                    filename = con.execute("SELECT value FROM config WHERE key='source'").fetchone()[0]
+                    with closing(paperlist.connect(Path(filename))) as source:
+                        result = citation_context(con,source,args.citing,args.cited)
             print(json.dumps(result, ensure_ascii=False, indent=2))
     except (ValueError, ImportError, sqlite3.Error, OSError) as exc:
         print(f'corpus_rag: {exc}', file=sys.stderr)

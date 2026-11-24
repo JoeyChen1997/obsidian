@@ -100,7 +100,7 @@ class ResearchAgentTest(unittest.TestCase):
     def test_topic_with_no_query_reports_search_not_run(self):
         result = self.run_tool('brief', '未命中任何主题')
         self.assertFalse(result['retrieval']['queries'])
-        self.assertTrue(any('No search was run' in note for note in result['notes']))
+        self.assertTrue(any('No lexical search was run' in note for note in result['notes']))
 
     def test_named_paper_seeds_phrase_query_without_topic(self):
         result = self.run_tool('brief', '--anchor', 'moorthy-2023', '--intent', 'compare')

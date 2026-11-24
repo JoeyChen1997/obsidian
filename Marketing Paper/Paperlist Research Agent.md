@@ -24,26 +24,38 @@ aliases:
 | 追历史或两篇之间的联系 | 先查方向、年份和带证据的关系，再补搜跨分支的全文，以及向前、向后引用 | 基准、扩展、结论边界、仅引用与未核节点 |
 | 比模型或写 related literature | 对齐模型设定，核对 PDF 的模型、证明和发表信息 | 哪个原语变了，哪个命题随之改变；来源可回溯的精简综述 |
 
-## 工具与首版覆盖
+## 全库 RAG 和研究谱系
 
-以下命令从 vault 根目录运行。参数里的 `--term` 把多个词按 AND 查询，`--phrase` 查整个词组；两者都可重复。全文仍来自已有的 47,568 份 PDF 索引。图谱是独立、可维护的小层，目前种下的是**定向广告与定向定价**和**广告平台与隐私**，不代表各领域都已有谱系。
+第一层是可重建的**自动索引**：全文段落带 PDF 物理页及推断的章节；标题／逐页全文、章节段落 BM25 和本地论文向量合并排序。向量编码标题和识别出的摘要，没识别到摘要则用开篇文字；它负责找候选论文，不直接定位命题。第二层是**自动引用网络**：从参考文献用题名、相邻作者和年份识别本地原件，支持向前、向后、多跳和共同引用检索。第三层是**已审核研究图谱**：只记录 Agent 实际核了正文、知道改了什么假设和哪条结果改变的连接。这三层的覆盖率不能互相替代。
+
+此次全库自动索引：**47,568 份 PDF**，**918,124 个可检索来源页**，切成 **3,530,738 个正文段落**；识别 **219,911 条参考文献区内候选引用**和 **1,890 条未定位参考文献标题时的尾页候选**。有 30,643 个来源文件至少匹配到一条本地引用；一件无可检索正文。仍不是逐篇精读。检测到章节标题的文档有 37,890 份；检测不到时正文仍可搜，不要依赖严格章节过滤做穷尽排查。
+
+以下命令从 vault 根目录运行。`--term` 把多个词按 AND 查询；`--phrase` 查整个词组；`--semantic` 写一句英文描述来补候选。从图谱未覆盖的主题也可以直接开始。
 
 ```powershell
 $paperPython = "$env:USERPROFILE\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe"
 $researchTool = '.\Marketing Paper\research_agent.py'
-& $paperPython -B $researchTool topics
-& $paperPython -B $researchTool brief '定向广告与定向定价的研究脉络' --intent lineage --anchor targeting
-& $paperPython -B $researchTool brief '卖家为何选择代理模式' --intent discover --term 'agency selling platform' --phrase 'reselling versus agency selling' --phrase 'revenue sharing' --journal MKSC --journal MS
+& $paperPython -B $researchTool brief '定向广告与定向定价的研究脉络' --intent lineage --anchor targeting --semantic 'How firms jointly choose targeted advertising and personalized prices'
+& $paperPython -B $researchTool brief '卖家为何选择代理模式' --intent lineage --term 'agency selling platform' --phrase 'revenue sharing' --semantic 'When online retail platforms let sellers set prices versus buy goods and resell them' --journal MKSC --journal MS
 & $paperPython -B $researchTool trace --anchor moorthy-2023 --direction past
 & $paperPython -B $researchTool path iyer-2005 zhu-2025 --include-screened
 & $paperPython -B $researchTool evidence moorthy-2023 --section proof --page 21 --chars 12000
-& $paperPython -B $researchTool validate
+$corpusTool = '.\Marketing Paper\corpus_rag.py'
+& $paperPython -B $corpusTool status
+& $paperPython -B $corpusTool citations 24726 --direction future --depth 2
+& $paperPython -B $corpusTool context 24726 24343
+& $paperPython -B $corpusTool related 24726
+& $paperPython -B '.\Marketing Paper\corpus_vectors.py' status
 ```
 
-- `brief` 融合标题及逐页全文 BM25；排名不是结论，特别可能命中参考文献。日期和期刊筛选仅作用于候选检索，日期采用文件名提示。图谱使用另行核对的发表年，保留历史前驱。
-- `trace` 返回已核关系和待查关系两组。`path` 默认只沿已核查的语义边走；`--include-screened` 可查看带暂定环节的链。仅引用边不支持链路推导，路径也不等于因果证明。
+- `brief` 中 `corpus_rag.ranked_candidates` 列出融合排名和命中渠道；`passages` 提供候选篇章和原页；`dense` 披露实际向量覆盖，未启用或不可用会明确标记。`lineage`、`compare`、`write` 模式围绕候选和手动 `--citation-seed` 展开自动网络。日期和期刊筛选限制检索候选，不限制追溯前驱；自动层的年份来自文件名，不是正式引文年份。
+- `corpus_rag.py context` 给出参考文献证据和正文作者-年份命中。`related` 用共享参考文献找没有直接相互引用的近邻。两者都需要回原文才能判断理论关系。自动引用会漏掉题名异译、短题名、作者或年份不一致及未收录论文，并可能误连；默认不查低置信尾页，确有需要再加 `--include-tail`。
+- `trace`/`path` 只查审核图谱，与全库候选引用分开。`path --include-screened` 可以查看带暂定环节的审核图谱链。引用路径不等于因果证明或模型继承。
 - `evidence` 支持稳定的图谱论文 ID 或索引数字 ID。未知章节明确报错，仍可手动指定 PDF 页；章节定位目前仅为已核对论文的页范围，页与页之间可能跨节。公式、印刷页码和引文要查 PDF 原页。
-- 本版不是向量检索，没有全库章节自动识别、全库引文图、外部引文服务或模型微调。对图谱覆盖外的问题仍可检索全文与人工追读；以后是否加本地向量重排，应看真实问题中哪些关键论文被漏掉，再量化比较。
+
+## 更新本机索引
+
+新增文件后先按 [[Marketing Paper/Paperlist 研究知识库|底层文献库]] 的说明跑 `paperlist.py build` 和 `ocr`，再跑 `corpus_rag.py build` 及 `corpus_vectors.py build`。它们可续跑。普通构建处理新增和变化的文件；新论文也可能是过去的引用目标，运行 `corpus_rag.py build --refresh` 才会重扫旧 PDF 的参考文献。派生索引和本地模型在 `%LOCALAPPDATA%\PaperlistResearch`，无需放进 Git。原件不改动；未使用外部引文服务，也未上传或微调论文语料。
 
 ## 维护证据图谱
 
