@@ -210,6 +210,12 @@
   },
   "active": "d2e40da301c97e6a",
   "lastOpenFiles": [
+    "Marketing Paper/研究谱系/Paperlist 首批命题对照.md",
+    "Marketing Paper/文献卡/Zhu 等 2025 - 广告平台与隐私.md",
+    "Marketing Paper/文献卡/Xu 2009 - 渠道价格与质量.md",
+    "Marketing Paper/文献卡/Shi 等 2013 - 消费者异质性与渠道质量.md",
+    "Marketing Paper/文献卡/Jeuland 与 Shugan 1983 - 渠道协调.md",
+    "Marketing Paper/文献卡",
     "Marketing Paper/test_semantic_discovery.py",
     "Marketing Paper/citation_claims.py",
     "Marketing Paper/model_comparison.py",
@@ -219,8 +225,6 @@
     "Marketing Paper/corpus_semantics.py",
     "Marketing Paper/__pycache__/paperlist.cpython-312.pyc",
     "Marketing Paper/__pycache__/corpus_rag.cpython-312.pyc",
-    "Marketing Paper/__pycache__",
-    "Marketing Paper/research_concepts.json",
     "Marketing Paper/Paperlist 研究知识库.md",
     "Marketing Paper/研究谱系/定向广告与定向定价 - 研究谱系.md",
     "Marketing Paper/Paperlist Research Agent.md",
@@ -241,10 +245,6 @@
     "量化交易学习/151交易策略/151交易策略 - 第8章：外汇策略.md",
     "量化交易学习/151交易策略/151交易策略 - 第7章：波动率策略.md",
     "量化交易学习/151交易策略/151交易策略 - 第6章：指数策略.md",
-    "欢迎.md",
-    "量化交易学习/151交易策略/151交易策略 - 第5章：固定收益策略.md",
-    "量化交易学习/151交易策略/151交易策略 - 第2章：期权策略.md",
-    "量化交易学习/101公式化Alpha/101公式化Alpha - Alpha.md",
-    "量化交易学习/101公式化Alpha/101公式化Alpha - Alpha#1到#25.md"
+    "欢迎.md"
   ]
 }
