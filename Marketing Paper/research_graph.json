@@ -2,6 +2,13 @@
   "schema_version": 1,
   "topics": [
     {
+      "id": "platform-search-precision",
+      "title": "平台搜索精度与价格",
+      "aliases": ["搜索精度", "平台搜索", "search precision", "platform search design"],
+      "papers": ["zhong-2023-search", "zhou-et-al-2025-search"],
+      "queries": ["platform search design", "search precision", "price weighting search", "search algorithm consumer engagement"]
+    },
+    {
       "id": "targeting",
       "title": "定向广告与定向定价",
       "aliases": ["定向广告", "定向投放", "广告定向", "广告曝光", "定向定价", "个性化定价", "informative advertising", "advertising targeting", "targeted advertising", "targeted pricing", "imperfect targeting", "consumer addressability"],
@@ -24,6 +31,36 @@
     }
   ],
   "papers": [
+    {
+      "id": "zhong-2023-search",
+      "title": "Platform Search Design: The Roles of Precision and Price",
+      "authors": "Zemin (Zachary) Zhong",
+      "year": 2023,
+      "online_year": 2022,
+      "journal": "Marketing Science",
+      "doi": "10.1287/mksc.2022.1370",
+      "pdf": "MKSC/Zhong_2022_Platform Search Design The Roles of Precision and Price.pdf",
+      "aliases": ["Zhong 2023"],
+      "card": "Marketing Paper/文献卡/Zhong 2023 - 平台搜索精度与价格权重.md",
+      "reading_status": "core_read",
+      "reading_note": "核模型、价格与平台收益主要比较；复算 Lemma 1、Props. 1–2 与附录关键步骤，线上附录未核。",
+      "sections": {"introduction": [[1, 3]], "model": [[4, 5]], "results": [[5, 13]], "discussion": [[14, 15]], "proof": [[15, 17]]}
+    },
+    {
+      "id": "zhou-et-al-2025-search",
+      "title": "Higher Precision Is Not Always Better: Search Algorithm and Consumer Engagement",
+      "authors": "Wei Zhou, Mingfeng Lin, Mo Xiao, and Lu Fang",
+      "year": 2025,
+      "online_year": 2024,
+      "journal": "Management Science",
+      "doi": "10.1287/mnsc.2023.00478",
+      "pdf": "MS/Wei_2024_Higher Precision Is Not Always Better Search Algorithm and Consumer Engagement.pdf",
+      "aliases": ["Zhou et al 2025", "Zhou et al 2024"],
+      "card": "Marketing Paper/文献卡/Zhou 等 2025 - 搜索算法与消费者参与.md",
+      "reading_status": "core_read",
+      "reading_note": "核品类改版、DiD、事件研究与合成对照、转化与参与机制；未获得原数据或独立核对线上附录。",
+      "sections": {"introduction": [[1, 5]], "model": [[6, 9]], "results": [[10, 18]], "discussion": [[19, 20]]}
+    },
     {
       "id": "bergemann-bonatti-2011",
       "title": "Targeting in Advertising Markets: Implications for Offline versus Online Media",
@@ -228,6 +265,17 @@
     }
   ],
   "edges": [
+    {
+      "id": "zhong-zhou-search-precision-followup",
+      "from": "zhong-2023-search",
+      "to": "zhou-et-al-2025-search",
+      "type": "empirical_followup",
+      "review": "verified",
+      "claim": "Zhou 等明确把 Zhong 的搜索精度研究列作理论前驱，并从会话内转化和跨会话参与考察这一设计权衡。",
+      "changed": "理论中的相关性分位阈值与固定搜索成本，变成平台品类改版和实际搜索行为；主要结果从均衡价格变为会话转化、参与和相关类目消费。",
+      "limit": "共同问题的实证后续，不是对价格跳升、参与均衡或福利的检验。两篇精度变化和结果口径不同；Zhou 的次周参与不等同 Zhong 的单次继续搜索。",
+      "evidence": [{"paper": "zhong-2023-search", "page": 6, "printed": "298", "locator": "Lemma 1、Prop. 1，继续搜索与价格阈值"}, {"paper": "zhong-2023-search", "page": 7, "printed": "299", "locator": "Prop. 2，价格权重与流量"}, {"paper": "zhou-et-al-2025-search", "page": 5, "printed": "6208", "locator": "§2.1 明确比较 Yang 和 Zhong"}, {"paper": "zhou-et-al-2025-search", "page": 10, "printed": "6213", "locator": "表 2，会话转化与条件搜索强度"}, {"paper": "zhou-et-al-2025-search", "page": 16, "printed": "6219", "locator": "§7.1 和表 6，次周参与"}]
+    },
     {
       "id": "butters-bergemann-random-matching",
       "from": "butters-1977",

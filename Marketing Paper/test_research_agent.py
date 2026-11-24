@@ -80,6 +80,15 @@ class ResearchAgentTest(unittest.TestCase):
         self.assertNotIn('zhu-2025', {p['id'] for p in result['papers']})
         self.assertTrue(all(p['year'] <= 2023 for p in result['papers']))
 
+    def test_search_empirical_followup_uses_verified_years(self):
+        result = self.run_tool('trace', '平台搜索精度')
+        self.assertIn('platform-search-precision', result['topics'])
+        edge, = [e for e in result['relations'] if e['id'] == 'zhong-zhou-search-precision-followup']
+        self.assertEqual(edge['type'], 'empirical_followup')
+        years = {p['id']: p['year'] for p in result['papers']}
+        self.assertEqual((years[edge['from']], years[edge['to']]), (2023, 2025))
+        self.assertEqual({e['paper'] for e in edge['evidence']}, {edge['from'], edge['to']})
+
     def test_unknown_topic_uses_fts_with_phrase_and_filters(self):
         result = self.run_tool('brief', '卖家为什么采用代理模式', '--phrase', 'agency selling', '--journal', 'MS')
         self.assertEqual(result['graph']['anchors'], [])

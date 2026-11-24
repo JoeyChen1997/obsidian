@@ -21,7 +21,7 @@ HERE = Path(__file__).resolve().parent
 VAULT = HERE.parent
 DEFAULT_GRAPH = HERE / 'research_graph.json'
 EDGE_TYPES = {'introduces_component', 'extends_component', 'contrasts_assumptions',
-              'limits_result', 'endogenizes', 'cites'}
+              'limits_result', 'endogenizes', 'empirical_followup', 'cites'}
 READ_STATES = {'core_read', 'screened', 'queued', 'source_gap'}
 REVIEW_STATES = {'verified', 'screened', 'candidate'}
 IDENTIFIER = re.compile(r'[a-z][a-z0-9]*(?:-[a-z0-9]+)*\Z')
