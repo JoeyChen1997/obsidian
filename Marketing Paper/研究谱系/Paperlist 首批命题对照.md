@@ -49,6 +49,8 @@ Shi 等 Prop. 1(b) 用零售价 $v$ 作自变量，把 $\bar F(v)/\bar F(u(v))$ 
 
 ## 下一批与检索边界
 
+本轮检索回归：在两个主题的 `brief --intent lineage` 中，自动层找回了 Moorthy→Zhu 和 Jeuland–Shugan→Xu，但未返回 Xu→Shi；精读后将后者连同双边页码加入已审核图谱，两条审核路径均可用 `path` 找回。这三个定向样例用于查漏和防止回退，不代表全库召回率；下一批应留出未写入图谱的独立样例，先检索再揭晓。
+
 - 广告组：沿引用追 Butters（随机曝光）、Bergemann–Bonatti（内生广告费率，与 Zhu 的市场结构并不相同），再核 [[Marketing Paper/文献卡/Zhu 等 2025 - 广告平台与隐私|Zhu]] 的 Online Appendix 中 W2/C2/E1 及参数边界。Karle–Reisinger 的不完美定向是另一条分支，不直接等同于隐私。
 - 渠道组：候选 Jerath 等 *Product Quality in a Distribution Channel with Inventory Risk*，待核需求侧异质与库存风险是否为独立反转机制。Jeuland–Shugan 其余合同与竞争扩展、Xu 电子附录、Shi 等在线技术附录仍排队。
 - 本轮从 Paperlist 本地全文、向量和双向关系检索起步，重点筛 MKSC／MS／RAND，未做外部穷尽检索。全库去重版次台账尚未完成；本批已确认 Shi 等的 2012 网络首发／2013 卷期为同一篇。后续批次应记录缺附录、扫描件和重复版次，不能把未读文件自动标为完成。
