@@ -14,11 +14,12 @@ import unicodedata
 
 import corpus_rag
 import paperlist
+import semantic_context
 
 
-DEFAULT_DB = paperlist.DEFAULT_DB.with_name('research-semantics.sqlite3')
+DEFAULT_DB = paperlist.DEFAULT_DB.with_name('research-semantics-v2.sqlite3')
 VOCABULARY = Path(__file__).with_name('research_concepts.json')
-VERSION = '1'
+VERSION = '2'
 SCHEMA = '''
 CREATE TABLE IF NOT EXISTS config (key TEXT PRIMARY KEY, value TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS scanned (
@@ -38,7 +39,8 @@ CREATE TABLE IF NOT EXISTS relations (
  earlier INTEGER NOT NULL, later INTEGER NOT NULL, earlier_year INTEGER NOT NULL,
  later_year INTEGER NOT NULL, kind TEXT NOT NULL, passage INTEGER NOT NULL,
  page INTEGER NOT NULL, section TEXT NOT NULL, ref_page INTEGER NOT NULL,
- excerpt TEXT NOT NULL, PRIMARY KEY(later,earlier,kind));
+ excerpt TEXT NOT NULL, method TEXT NOT NULL, evidence_pieces TEXT NOT NULL,
+ PRIMARY KEY(later,earlier,kind));
 CREATE INDEX IF NOT EXISTS relation_forward ON relations(earlier,later);
 '''
 
@@ -72,8 +74,13 @@ YEAR = re.compile(r'\b(?:18|19|20)\d{2}[a-z]?\b', re.I)
 OTHER_CITATION = re.compile(r'\b[A-Z][A-Za-z-]{2,}(?:\s+et al\.)?\s*,?\s*\(?\s*(?:18|19|20)\d{2}[a-z]?\b')
 BASE_RANK = {'abstract': 1, 'introduction': 2, 'model': 5, 'results': 6,
              'discussion': 4, 'other': 3, 'unknown': 3, 'proof': 0}
-RELATION_NOTE = ('Earlier → later by filename year. Each edge is a machine candidate with an explicit '
-                 'body-text cue and indexed reference, not a verified comparison or causal claim.')
+RELATION_NOTE = ('Earlier → later by filename year. Edges use an indexed reference plus a same-sentence '
+                 'or scoped multi-sentence comparison. They are not verified claims or causal evidence.')
+MULTI_CUE = re.compile(r'\b(?:unlike|contrast|however|instead|whereas|conversely|interpretable|'
+                       r'endogen|exogen|generaliz|extend|relax|confirm|replicate|no longer|hold only|'
+                       r'depart|differs|adopt|build on)', re.I)
+RUNNING_FOOTER = re.compile(r'\b[A-Z][\w-]+(?:,\s+[A-Z][\w-]+){1,3},?\s+and\s+[A-Z][\w-]+:'
+                            r'\s+[^.!?]{5,115}\s+\d{2,6}\s+[^,]{5,55},\s+(?:18|19|20)\d\d,\s+vol\.')
 
 
 def normalized(text):
@@ -157,7 +164,7 @@ def citation_matcher(refs):
     coauthor = r"[A-Za-zÀ-ž][A-Za-zÀ-ž'’-]*"
     return re.compile(r'\b(?P<name>' + names + r')\b'
                       r'(?:\s+et al\.|(?:\s*,\s*' + coauthor + r'){0,2}\s*,?\s+(?:and|&)\s+' + coauthor + r')?'
-                      r'\s*,?\s*(?:\(\s*(?P<narrative>(?:18|19|20)\d{2})\s*\)|'
+                      r"(?:[’']s)?\s*,?\s*(?:\(\s*(?P<narrative>(?:18|19|20)\d{2})(?:\s*[,;]\s*(?:p{1,2}\.\s*)?\d+(?:[-–]\d+)?)?\s*\)|"
                       r'\s(?P<inline>(?:18|19|20)\d{2})(?![a-z0-9]|\s*[-/]\d))', re.I), owners
 
 
@@ -204,6 +211,12 @@ def extract_relations(text, matcher, owners, doc, passage, page, section):
             continue
         left, right = sentence_bounds(text, match.start(), match.end())
         before, after = text[left:match.start()], text[match.end():right]
+        # A flattened section header can repeat this exact citation before the body sentence.
+        repeated = next((m for m in reversed(matches) if left <= m.start() < match.start()), None)
+        if repeated and re.fullmatch(r'\s*Comparison with\s*', text[left:repeated.start()], re.I):
+            if repeated.groupdict() == match.groupdict():
+                left = repeated.end()
+                before = text[left:match.start()]
         if not CUE.search(before + after):
             continue
         if (any(m != match and left <= m.start() < right for m in matches)
@@ -218,6 +231,53 @@ def extract_relations(text, matcher, owners, doc, passage, page, section):
     return proposals, context, ambiguous
 
 
+def overlap(previous, current):
+    """Require actual shared text; do not stitch columns, pages or section boundaries blindly."""
+    prefix = current[:42]
+    if len(prefix) < 42:
+        return None
+    i = previous.rfind(prefix, max(0, len(previous)-240))
+    if i >= 0 and current.startswith(previous[i:]):
+        return i
+    return None
+
+
+def expanded_relations(current, prior, matcher, owners, doc):
+    passage, text, page, section, heading = current
+    if not matcher or not doc['year'] or section in ('proof', 'endmatter', 'references'):
+        return
+    parts = [(0, passage, text)]
+    if prior and prior[0]+1 == passage and prior[2:] == current[2:]:
+        if (i := overlap(prior[1], text)) is not None:
+            parts = [(0, prior[0], prior[1]), (i, passage, text)]
+    value = parts[0][2] if len(parts)==1 else parts[0][2][:parts[1][0]] + text
+    if not (MULTI_CUE.search(value) and YEAR.search(value)):
+        return
+    if (footer := RUNNING_FOOTER.search(value)) is not None:
+        value = value[:footer.start()].rstrip()
+    matches = list(matcher.finditer(value))
+    if not matches:
+        return
+    spans = list(semantic_context.BODY_CITE.finditer(value))
+    for m, kind, lo, hi, method in semantic_context.discourse_relations(value, matches, spans):
+        refs = owners.get((m['name'].casefold(), m['narrative'] or m['inline']), ())
+        eligible = [r for r in refs if page < r['page']]
+        if len(eligible) != 1 or eligible[0]['year'] > doc['year']:
+            continue
+        ref = eligible[0]
+        if hi-lo > 1450:
+            continue
+        base = next((p for p in reversed(parts) if p[0] <= lo and hi <= p[0]+len(p[2])), None)
+        if base:
+            evidence = [{'passage': base[1], 'page': page, 'excerpt': value[lo:hi].strip()}]
+        else:
+            cut = len(parts[0][2])
+            evidence = [{'passage': parts[0][1], 'page': page, 'excerpt': value[lo:cut].strip()},
+                        {'passage': passage, 'page': page, 'excerpt': value[cut:hi].strip()}]
+        yield (ref['id'], doc['id'], ref['year'], doc['year'], kind, evidence[0]['passage'],
+               page, section, ref['page'], value[lo:hi].strip(), method, json.dumps(evidence, ensure_ascii=False))
+
+
 def extract_paper(rag, dest, doc, refs, fingerprint, concepts):
     key = doc['id']
     for table in ('mentions', 'statements', 'relations'):
@@ -226,10 +286,14 @@ def extract_paper(rag, dest, doc, refs, fingerprint, concepts):
     matcher, owners = citation_matcher(refs)
     start = key * corpus_rag.PASSAGE_BASE
     count, unclear, contexts = 0, 0, set()
-    for passage, text, page, section in rag.execute('''SELECT rowid,text,page,section FROM passages
+    previous = None
+    for current in rag.execute('''SELECT rowid,text,page,section,heading FROM passages
                  WHERE rowid>=? AND rowid<? ORDER BY rowid''', (start, start + corpus_rag.PASSAGE_BASE)):
+        current = tuple(current)
+        passage, text, page, section, _ = current
         count += 1
         if section in ('references', 'endmatter'):
+            previous = None
             continue
         priority = BASE_RANK.get(section, 1)
         matches = concepts.iter(normalized(text))
@@ -261,17 +325,20 @@ def extract_paper(rag, dest, doc, refs, fingerprint, concepts):
         proposals, hits, ambiguous = extract_relations(text, matcher, owners, doc, passage, page, section)
         contexts.update(hits)
         unclear += ambiguous
-        for edge in proposals:
+        single = (e + ('explicit_single_sentence', json.dumps(
+            [{'passage': e[5], 'page': e[6], 'excerpt': e[9]}], ensure_ascii=False)) for e in proposals)
+        for edge in (*single, *expanded_relations(current, previous, matcher, owners, doc)):
             edge_id = edge[0], edge[4]
-            rank = (section in ('model', 'results', 'discussion'), len(edge[-1]))
+            rank = (edge[-2] == 'explicit_single_sentence', section in ('model', 'results', 'discussion'), len(edge[9]))
             if edge_id not in edges or rank > edges[edge_id][0]:
                 edges[edge_id] = (rank, edge)
+        previous = current
     dest.executemany('INSERT INTO mentions VALUES (?,?,?,?,?,?)', (row for _, row in seen.values()))
     ranked = sorted(claims.values(), key=lambda item: item[0], reverse=True)
     for assumption in (True, False):
         selected = [r for _, r in ranked if (r[1] == 'model_assumption') == assumption][: (8 if assumption else 30)]
         dest.executemany('INSERT INTO statements VALUES (?,?,?,?,?,?,?)', selected)
-    dest.executemany('INSERT INTO relations VALUES (?,?,?,?,?,?,?,?,?,?)', (row for _, row in edges.values()))
+    dest.executemany('INSERT INTO relations VALUES (?,?,?,?,?,?,?,?,?,?,?,?)', (row for _, row in edges.values()))
     dest.execute('INSERT OR REPLACE INTO scanned VALUES (?,?,?,?,?,?,?)',
                  (key, doc['stamp'], fingerprint, count, len(refs), len(contexts), unclear))
 
@@ -353,6 +420,7 @@ def status(con, rag):
     coverage['statement_candidates'] = dict(con.execute('SELECT kind,COUNT(*) FROM statements GROUP BY kind'))
     coverage['pdfs_with_statements'] = con.execute('SELECT COUNT(DISTINCT paper) FROM statements').fetchone()[0]
     coverage['semantic_relation_candidates'] = dict(con.execute('SELECT kind,COUNT(*) FROM relations GROUP BY kind'))
+    coverage['relation_extraction_methods'] = dict(con.execute('SELECT method,COUNT(*) FROM relations GROUP BY method'))
     coverage['distinct_relation_pairs'] = con.execute(
         'SELECT COUNT(*) FROM (SELECT DISTINCT earlier,later FROM relations)').fetchone()[0]
     coverage['note'] = 'Counts are machine candidates. A fresh index still has incomplete concept and relation recall.'
@@ -388,7 +456,7 @@ def edge_info(con, rag, row):
         return None
     return dict(row) | {'earlier_paper': public_doc(early), 'later_paper': public_doc(late),
                         'evidence_pdf': late['relpath'], 'state': 'machine_candidate',
-                        'method': 'reference_title_plus_body_author_year_and_explicit_cue'}
+                        'evidence_pieces': json.loads(row['evidence_pieces'])}
 
 
 def adjacent(con, node, direction, limit):

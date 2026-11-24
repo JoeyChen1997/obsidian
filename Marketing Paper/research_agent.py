@@ -13,6 +13,8 @@ import unicodedata
 import paperlist
 import corpus_rag
 import corpus_semantics
+import citation_claims
+import model_comparison
 
 
 HERE = Path(__file__).resolve().parent
@@ -295,6 +297,7 @@ def corpus_layer(source, args, traced, lexical, terms):
     if not path or not path.is_file():
         return {'available':False,'note':'Section/citation index not available for this catalog; used original page search.'}
     with closing(corpus_rag.connect(path)) as pre:
+        pre.execute('BEGIN')
         bound = pre.execute("SELECT value FROM config WHERE key='source'").fetchone()
         require(bound is not None and Path(bound[0]).resolve() == args.db.resolve(), 'RAG index belongs to another catalog.')
         passages = corpus_rag.passage_search(pre,terms,args.phrase,args.journal,args.section,args.limit,
@@ -338,6 +341,11 @@ def corpus_layer(source, args, traced, lexical, terms):
                          for side in ('past','future') if args.direction in (side,'both') and anchors}
         else:
             citations = {}
+        comparison = {'pairs': [], 'note': 'Use lineage or compare intent to expand model-assumption comparisons.'}
+        if args.intent in ('lineage', 'compare'):
+            comparison = model_comparison.compare(pre,
+                [*anchors, *[p['id'] for p in shortlist]], [*terms, *args.semantic],
+                args.journal, args.from_year, args.to_year, min(args.limit, 8))
         semantic_graph = {'available': False, 'note': 'Build the local semantic index with corpus_semantics.py build.'}
         semantic_path = args.semantic_db
         if semantic_path is None and args.db.resolve() == paperlist.DEFAULT_DB.resolve():
@@ -353,9 +361,25 @@ def corpus_layer(source, args, traced, lexical, terms):
                     semantic_graph['available'] = True
             except (ValueError, ImportError, OSError, sqlite3.Error) as err:
                 semantic_graph = {'available': False, 'note': str(err)}
+        attribution_graph = {'available': False, 'note': 'Use lineage, compare, or write with a built citation_claims index.'}
+        attribution_path = args.claims_db
+        if attribution_path is None and args.db.resolve() == paperlist.DEFAULT_DB.resolve():
+            attribution_path = citation_claims.DEFAULT_DB
+        if args.intent in ('lineage', 'compare', 'write') and attribution_path and attribution_path.is_file():
+            try:
+                with closing(citation_claims.connect(attribution_path)) as claims:
+                    claims.execute('BEGIN')
+                    citation_claims.check_binding(claims, pre, path)
+                    attribution_graph = citation_claims.search(
+                        claims, pre, [*anchors, *[p['id'] for p in shortlist[:6]]],
+                        [*terms, *args.semantic], args.direction, min(args.citation_limit, 18))
+                    attribution_graph['corpus_pdfs'] = pre.execute('SELECT COUNT(*) FROM docs').fetchone()[0]
+            except (ValueError, OSError, sqlite3.Error) as err:
+                attribution_graph = {'available': False, 'note': str(err)}
         coverage = dict(pre.execute('SELECT COUNT(*) AS documents,SUM(page_count) AS source_pages, SUM(page_count=0) AS no_text FROM docs').fetchone())
         return {'available':True,'coverage':coverage,'ranked_candidates':shortlist,'passages':passages,
                 'dense':dense,'citation_candidates':citations,'semantic_graph':semantic_graph,
+                'model_comparison_leads':comparison,'citation_attributions':attribution_graph,
                 'notes':['Section labels and citation matches are machine-generated leads, not independently checked facts.',
                          'Use corpus_rag.py context to locate actual discussion before upgrading a citation to a model relation.']}
 
@@ -412,6 +436,7 @@ def parser():
     p.add_argument('--corpus-db',type=Path,help='separate full-corpus sections and citation database')
     p.add_argument('--vector-db',type=Path,help='separate local dense index')
     p.add_argument('--semantic-db',type=Path,help='separate local semantic candidate graph')
+    p.add_argument('--claims-db',type=Path,help='separate local citation attribution index')
     sub = p.add_subparsers(dest='cmd', required=True)
     sub.add_parser('validate', help='verify graph schema and evidence pages against the local catalog')
     sub.add_parser('topics', help='list available graph topics and paper IDs')
