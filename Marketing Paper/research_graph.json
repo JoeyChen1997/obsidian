@@ -12,8 +12,15 @@
       "id": "sponsored-organic-listing",
       "title": "赞助竞价与自然排序",
       "aliases": ["赞助排序", "赞助竞价", "自然排序", "sponsored organic ranking", "strategic listing"],
-      "papers": ["berman-katona-2013-seo", "long-jerath-sarvary-2022-listing", "yang-et-al-2024-ad-information", "long-liu-2024-manipulation", "long-amaldoss-2024-self-preferencing"],
+      "papers": ["berman-katona-2013-seo", "long-jerath-sarvary-2022-listing", "yang-et-al-2024-ad-information", "long-liu-2024-manipulation", "long-amaldoss-2024-self-preferencing", "moshary-2025-sponsored-search"],
       "queries": ["sponsored advertising organic ranking", "strategic listing quality information", "paid placement sales commission"]
+    },
+    {
+      "id": "platform-self-preferencing",
+      "title": "平台自我优待与搜索中立",
+      "aliases": ["自我优待", "搜索中立", "自营品牌", "self-preferencing", "search neutrality", "private label ad slot"],
+      "papers": ["long-liu-2024-manipulation", "long-amaldoss-2024-self-preferencing", "zou-zhou-2025-search-neutrality"],
+      "queries": ["self preferencing search neutrality", "private label ad slot", "personalized ranking seller entry", "presearch price observability"]
     },
     {
       "id": "targeting",
@@ -124,6 +131,35 @@
       "reading_status": "core_read",
       "reading_note": "核 §§3–5、§6.5 与印刷附录；用正文收入与附录需求复算局部定价和参与约束，Eq. (2) 未获独立支持；在线闭式阈值、全局偏离证明及其他扩展未核。",
       "sections": {"introduction": [[1, 4]], "model": [[6, 9]], "results": [[9, 21]], "discussion": [[21, 22]], "proof": [[22, 26]]}
+    },
+    {
+      "id": "zou-zhou-2025-search-neutrality",
+      "title": "Self-Preferencing and Search Neutrality in Online Retail Platforms",
+      "authors": "Tianxin Zou and Bo Zhou",
+      "year": 2025,
+      "online_year": 2024,
+      "journal": "Management Science",
+      "doi": "10.1287/mnsc.2022.01795",
+      "pdf": "MS/Zou_2024_Self-Preferencing and Search Neutrality in Online Retail Platforms.pdf",
+      "aliases": ["Zou and Zhou 2025", "Zou Zhou 2024"],
+      "card": "Marketing Paper/文献卡/Zou 与 Zhou 2025 - 搜索中立与卖家进入.md",
+      "reading_status": "core_read",
+      "reading_note": "核顺序搜索、固定抽佣价格与内生抽佣进入模型、印刷附录；复算 Prop. 6 中间进入分支，未核在线附录的全局排序偏离及推广。",
+      "sections": {"introduction": [[1, 4]], "model": [[4, 6]], "results": [[7, 15]], "discussion": [[15, 17]], "proof": [[17, 19]]}
+    },
+    {
+      "id": "moshary-2025-sponsored-search",
+      "title": "Does Sponsored Search Advertising Augment Organic Search? Evidence from an E-Commerce Platform",
+      "authors": "Sarah Moshary",
+      "year": 2025,
+      "journal": "Management Science",
+      "doi": "10.1287/mnsc.2024.04792",
+      "pdf": "MS/Moshary_2025_Does Sponsored Search Advertising Augment Organic Search Evidence from an E-Commerce Platform.pdf",
+      "aliases": ["Moshary 2025", "ads off experiment"],
+      "card": "Marketing Paper/文献卡/Moshary 2025 - 赞助搜索与自然成交替代.md",
+      "reading_status": "core_read",
+      "reading_note": "核 cookie 随机资格、广告竞拍、总量和分组效果、去重与入组日期敏感性；未重估，区分平台收入与净利润。",
+      "sections": {"introduction": [[1, 3]], "model": [[3, 6]], "results": [[6, 14], [18, 21]], "discussion": [[14, 15]]}
     },
     {
       "id": "zhong-2023-search",
@@ -359,6 +395,39 @@
     }
   ],
   "edges": [
+    {
+      "id": "long-amaldoss-zou-zhou-neutrality-policy",
+      "from": "long-amaldoss-2024-self-preferencing",
+      "to": "zou-zhou-2025-search-neutrality",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "Zou–Zhou 明确区别赞助位让出与个性化搜索中立。两篇均研究自营收入和第三方抽佣的冲突，但位置、政策反事实和消费者搜索不同。",
+      "changed": "从平台先定自营或第三方占赞助位、位置改变考虑集，转为卖家先定价、排序随类型和价格决定，次位能用低价邀请付费搜索；长期可用抽佣阻止单一第三方进入。",
+      "limit": "固定抽佣时自占广告位的福利下降与自然排序中立可能降低福利不构成矛盾；两者不是同一干预或嵌套模型。",
+      "evidence": [{"paper": "long-amaldoss-2024-self-preferencing", "page": 8, "printed": "932", "locator": "Fig. 2，－先配置后竞争"}, {"paper": "long-amaldoss-2024-self-preferencing", "page": 15, "printed": "939", "locator": "Prop. 2，自占赞助位的福利反事实"}, {"paper": "zou-zhou-2025-search-neutrality", "page": 3, "printed": "4089", "locator": "§2 明确对照 Long–Amaldoss"}, {"paper": "zou-zhou-2025-search-neutrality", "page": 5, "printed": "4091", "locator": "§§3.2–3.3，政策与定价时序"}, {"paper": "zou-zhou-2025-search-neutrality", "page": 12, "printed": "4098", "locator": "Prop. 6，进入成本区间"}]
+    },
+    {
+      "id": "yang-moshary-ad-features-versus-slots",
+      "from": "yang-et-al-2024-ad-information",
+      "to": "moshary-2025-sponsored-search",
+      "type": "cites",
+      "review": "verified",
+      "claim": "Moshary 用 Yang 等作为自然排序可直接纳入卖家广告信息的例子；两篇实验处理对应不同的排序决策。",
+      "changed": "Yang 比较含不含历史广告特征的两种新品自然排序；Moshary 在不同平台随机改变 cookie 的赞助展示资格。",
+      "limit": "这是已核背景引用，不是共同样本、复现或对因果结果的反驳；自然排序可纳入广告信息不等于对照组被处理为无广告特征。",
+      "evidence": [{"paper": "yang-et-al-2024-ad-information", "page": 8, "printed": "367", "locator": "实验两套新品排序及新增广告特征"}, {"paper": "moshary-2025-sponsored-search", "page": 5, "printed": "9691", "locator": "§3，赞助开关及随机资格"}, {"paper": "moshary-2025-sponsored-search", "page": 22, "printed": "9708", "locator": "注 19，明确援引 Yang et al. 2023 在线版"}]
+    },
+    {
+      "id": "long-amaldoss-moshary-monetization-counterfactual",
+      "from": "long-amaldoss-2024-self-preferencing",
+      "to": "moshary-2025-sponsored-search",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "两篇都分开广告变现和成交收入，但一个比较赞助位给谁，另一个比较某些买家能否看到赞助搜索。",
+      "changed": "从自营与第三方竞争显眼位置、内生定价的理论，转为既有市场中 ads-off 小流量与 ads-on 资格的实验；结果分别是制度均衡和条件于市场环境的意向处理。",
+      "limit": "独立核过的反事实对照，不主张有引文继承。实验没有识别自营占位效应、最优抽佣、长期均衡或消费者剩余。",
+      "evidence": [{"paper": "long-amaldoss-2024-self-preferencing", "page": 12, "printed": "936", "locator": "Fig. 3，Concede 与 Contest 的比较"}, {"paper": "long-amaldoss-2024-self-preferencing", "page": 14, "printed": "938", "locator": "Prop. 1，收入权衡和让出门槛"}, {"paper": "moshary-2025-sponsored-search", "page": 5, "printed": "9691", "locator": "§3，少量流量的赞助开关"}, {"paper": "moshary-2025-sponsored-search", "page": 7, "printed": "9693", "locator": "表 2，交易支出和平台收入分别变化"}, {"paper": "moshary-2025-sponsored-search", "page": 14, "printed": "9700", "locator": "§7，作者对一般均衡效应的限制"}]
+    },
     {
       "id": "long-jerath-sarvary-long-amaldoss-ownership",
       "from": "long-jerath-sarvary-2022-listing",
