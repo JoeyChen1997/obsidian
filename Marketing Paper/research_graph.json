@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "topics": [
+    {
+      "id": "targeting",
+      "title": "定向广告与定向定价",
+      "aliases": ["定向广告", "定向投放", "广告定向", "广告曝光", "定向定价", "个性化定价", "informative advertising", "advertising targeting", "targeted advertising", "targeted pricing", "imperfect targeting", "consumer addressability"],
+      "papers": ["iyer-2005", "moorthy-2023"],
+      "queries": ["targeted advertising price discrimination", "consumer addressability", "informative advertising differentiated products", "targeting advertising competition"]
+    },
+    {
+      "id": "privacy-platforms",
+      "title": "广告平台与隐私限制",
+      "aliases": ["广告平台", "隐私与广告", "隐私限制", "advertising platforms", "privacy restrictions"],
+      "papers": ["zhu-2025"],
+      "queries": ["advertising privacy platform targeting", "privacy targeting consumer welfare", "endogenous advertising rates"]
+    }
+  ],
+  "papers": [
+    {
+      "id": "butters-1977",
+      "title": "Equilibrium Distributions of Sales and Advertising Prices",
+      "authors": "Gerard R. Butters",
+      "year": 1977,
+      "journal": "Review of Economic Studies",
+      "pdf": "RES/Butters_1977_Equilibrium Distributions of Sales and Advertising Prices.pdf",
+      "aliases": ["Butters 1977"],
+      "reading_status": "queued"
+    },
+    {
+      "id": "grossman-1984",
+      "title": "Informative Advertising with Differentiated Products",
+      "authors": "Gene M. Grossman and Carl Shapiro",
+      "year": 1984,
+      "journal": "Review of Economic Studies",
+      "pdf": "RES/Grossman_1984_Informative Advertising with Differentiated Products.pdf",
+      "aliases": ["Grossman and Shapiro 1984", "Grossman Shapiro 1984"],
+      "reading_status": "screened"
+    },
+    {
+      "id": "thisse-1988",
+      "title": "On the Strategic Choice of Spatial Price Policy",
+      "authors": "Jacques-François Thisse and Xavier Vives",
+      "year": 1988,
+      "journal": "American Economic Review",
+      "aliases": ["Thisse and Vives 1988", "Thisse Vives 1988"],
+      "reading_status": "source_gap"
+    },
+    {
+      "id": "chen-2002",
+      "title": "Consumer Addressability and Customized Pricing",
+      "authors": "Yuxin Chen and Ganesh Iyer",
+      "year": 2002,
+      "journal": "Marketing Science",
+      "pdf": "MKSC/Chen_2002_Research Note Consumer Addressability and Customized Pricing.pdf",
+      "aliases": ["Chen and Iyer 2002", "Chen 与 Iyer 2002", "顾客可触达性"],
+      "card": "Marketing Paper/文献卡/Chen 与 Iyer 2002 - 顾客可触达性与定制定价.md",
+      "reading_status": "core_read",
+      "reading_note": "上一轮台账记录正文及印刷附录；未重跑参数网格。文献卡如已移除，以原 PDF 为准。",
+      "sections": {"introduction": [[2, 4]], "model": [[4, 5]], "results": [[5, 10]], "discussion": [[10, 10]], "proof": [[11, 12]], "references": [[12, 12]]}
+    },
+    {
+      "id": "iyer-2005",
+      "title": "The Targeting of Advertising",
+      "authors": "Ganesh Iyer, David Soberman, and J. Miguel Villas-Boas",
+      "year": 2005,
+      "journal": "Marketing Science",
+      "doi": "10.1287/mksc.1050.0117",
+      "pdf": "MKSC/Iyer_2005_The Targeting of Advertising.pdf",
+      "aliases": ["Iyer et al 2005", "Iyer 等 2005", "Iyer 2005"],
+      "card": "Marketing Paper/文献卡/Iyer 等 2005 - 广告定向与定价.md",
+      "reading_status": "core_read",
+      "reading_note": "上一轮台账记录正文及印刷附录；早期工作论文未核。",
+      "sections": {"introduction": [[1, 4]], "model": [[4, 5]], "results": [[5, 12]], "discussion": [[12, 13]], "proof": [[13, 15]], "references": [[15, 16]]}
+    },
+    {
+      "id": "brahim-2011",
+      "title": "Is Targeted Advertising Always Beneficial?",
+      "authors": "Nadia Ben Elhadj-Brahim, Rim Lahmandi-Ayed, and Didier Laussel",
+      "year": 2011,
+      "journal": "International Journal of Industrial Organization",
+      "aliases": ["Brahim et al 2011", "Brahim 2011"],
+      "reading_status": "source_gap"
+    },
+    {
+      "id": "moorthy-2023",
+      "title": "Targeting Advertising Spending and Price on the Hotelling Line",
+      "authors": "Sridhar Moorthy and Shervin Shahrokhi Tehrani",
+      "year": 2023,
+      "journal": "Marketing Science",
+      "doi": "10.1287/mksc.2022.1422",
+      "pdf": "MKSC/Moorthy_2023_Targeting Advertising Spending and Price on the Hotelling Line.pdf",
+      "aliases": ["Moorthy and Shahrokhi Tehrani 2023", "Moorthy 2023", "Hotelling 定向投放"],
+      "card": "Marketing Paper/文献卡/Moorthy 与 Shahrokhi Tehrani 2023 - Hotelling 定向投放与定价.md",
+      "reading_status": "core_read",
+      "reading_note": "上一轮台账记录正文及印刷证明；独立在线附录未核。",
+      "sections": {"introduction": [[1, 4]], "model": [[4, 6]], "results": [[6, 17]], "discussion": [[16, 19]], "proof": [[19, 21]], "references": [[22, 23]]}
+    },
+    {
+      "id": "zhu-2025",
+      "title": "Advertising Platforms and Privacy",
+      "authors": "Ruizhi Zhu, Sridhar Moorthy, and Xianwen Shi",
+      "year": 2025,
+      "journal": "Marketing Science",
+      "doi": "10.1287/mksc.2024.0879",
+      "pdf": "MKSC/Ruizhi_2025_Advertising Platforms and Privacy.pdf",
+      "aliases": ["Zhu et al 2025", "Zhu 等 2025", "Zhu 2025"],
+      "reading_status": "screened",
+      "reading_note": "已核摘要和第 3 页与先前研究的比较；完整福利命题未核。"
+    },
+    {
+      "id": "karle-2025",
+      "title": "Imperfect Targeting and Advertising Strategies",
+      "authors": "Heiko Karle and Markus Reisinger",
+      "year": 2025,
+      "online_year": 2024,
+      "journal": "Management Science",
+      "doi": "10.1287/mnsc.2023.03632",
+      "pdf": "MS/Karle_2024_Imperfect Targeting and Advertising Strategies.pdf",
+      "aliases": ["Karle and Reisinger 2025", "Karle 2024", "Karle 2025"],
+      "reading_status": "screened",
+      "reading_note": "已核原版首页及第 3 页比较段；卷期为 2025，不用文件名年份替代。"
+    }
+  ],
+  "edges": [
+    {
+      "id": "butters-grossman-ad-awareness", "from": "butters-1977", "to": "grossman-1984",
+      "type": "extends_component", "review": "screened",
+      "claim": "Grossman 与 Shapiro 明确采用类似 Butters 的广告信息技术。",
+      "changed": "把产品信息触达用于环形差异化产品空间。",
+      "limit": "已核后文的自述，未比较两篇完整均衡或福利结果。",
+      "evidence": [{"paper": "grossman-1984", "page": 3, "locator": "关于 information technology similar to that in Butters (1977) 的段落"}]
+    },
+    {
+      "id": "grossman-moorthy-uniform-benchmark", "from": "grossman-1984", "to": "moorthy-2023",
+      "type": "extends_component", "review": "verified",
+      "claim": "2023 年论文 §3 明确以 Grossman–Shapiro 的统一投放为基准来引入位置定向。",
+      "changed": "统一产品价格下，允许广告触达水平随位置变化。",
+      "limit": "这是 2023 年对其局部基准的定位，不是两个完整模型的等价性。",
+      "evidence": [{"paper": "moorthy-2023", "page": 6, "printed": "1062", "locator": "§3 开头"}]
+    },
+    {
+      "id": "thisse-chen-complete-reach", "from": "thisse-1988", "to": "chen-2002",
+      "type": "extends_component", "review": "screened",
+      "claim": "Chen 与 Iyer 把完全触达时的局部价格竞争与 Thisse–Vives 联系起来。",
+      "changed": "引入不完全数据库覆盖及事前覆盖投资；另有对距离成本承担的建模区别。",
+      "limit": "原始 Thisse–Vives PDF 未定位；只核了后文自己的比较。",
+      "evidence": [{"paper": "chen-2002", "page": 11, "printed": "207", "locator": "Prop. 1 证明：a1=a2=1 的边界"}]
+    },
+    {
+      "id": "chen-iyer-literature-citation", "from": "chen-2002", "to": "iyer-2005",
+      "type": "cites", "review": "verified",
+      "claim": "Iyer 等回顾消费者不完全可触达性的研究时引用 Chen 与 Iyer。",
+      "changed": "从定制价格中的可触达性转向可针对偏好分组的投放。",
+      "limit": "背景引用，不是可直接复用的同一个模型。",
+      "evidence": [{"paper": "iyer-2005", "page": 4, "printed": "464", "locator": "§1 末：related work"}]
+    },
+    {
+      "id": "chen-moorthy-local-price", "from": "chen-2002", "to": "moorthy-2023",
+      "type": "extends_component", "review": "verified",
+      "claim": "2023 年论文继承固定触达后的局部混合定价组件。",
+      "changed": "覆盖投资先行且空间统一，改为广告触达可按位置变化、主模型广告与价格同时选择。",
+      "limit": "固定触达时的定价结构相近；第二阶段均衡不能直接替代同时博弈中评估偏离时的对手策略。",
+      "evidence": [{"paper": "chen-2002", "page": 11, "printed": "207", "locator": "Prop. 1 证明"}, {"paper": "moorthy-2023", "page": 19, "printed": "1075", "locator": "Prop. 2 证明、对前人工作的定位"}, {"paper": "moorthy-2023", "page": 22, "printed": "1078", "locator": "endnote 24：同时与先后选择"}]
+    },
+    {
+      "id": "brahim-moorthy-ad-only", "from": "brahim-2011", "to": "moorthy-2023",
+      "type": "extends_component", "review": "screened",
+      "claim": "Moorthy 与 Shahrokhi Tehrani 将 Brahim 等定位为只允许广告定向的直接前驱。",
+      "changed": "在该比较制度之外增加价格定向与完全定向。",
+      "limit": "Brahim 等原件尚未定位；暂不能逐条验证命题继承。",
+      "evidence": [{"paper": "moorthy-2023", "page": 4, "printed": "1060", "locator": "§1 对两种部分定向前驱的定位"}, {"paper": "moorthy-2023", "page": 7, "printed": "1063", "locator": "§3、Eq. (5)"}]
+    },
+    {
+      "id": "iyer-moorthy-conditional-profit", "from": "iyer-2005", "to": "moorthy-2023",
+      "type": "limits_result", "review": "verified",
+      "claim": "给定可定向广告，再加入价格定向总不改变利润，不是一般性结果。",
+      "changed": "可识别且不转换的忠诚群与离散群投放，改成连续偏好和不可观察的概率曝光。定向价格把竞争从边际位置移到位置内部。",
+      "limit": "两项以上原语同时变化；这是明确的模型对照，不是单因素识别或经验反驳。",
+      "evidence": [{"paper": "iyer-2005", "page": 8, "printed": "468", "locator": "Prop. 4 和与 Prop. 2 的比较"}, {"paper": "moorthy-2023", "page": 17, "printed": "1073", "locator": "Fig. 10（r=30）与 §8.1 开头"}, {"paper": "moorthy-2023", "page": 18, "printed": "1074", "locator": "§8.1：需求和供给两方面的差异"}]
+    },
+    {
+      "id": "moorthy-zhu-endogenous-rates", "from": "moorthy-2023", "to": "zhu-2025",
+      "type": "endogenizes", "review": "screened",
+      "claim": "Zhu 等明确以平台选择广告费率区别于先前的外生广告成本。",
+      "changed": "加入有市场势力的广告平台，使广告价格可随隐私制度变化。",
+      "limit": "只核对摘要和引用语境；未按参数检验后文福利结论，也不称其为原模型的一参数扩展。",
+      "evidence": [{"paper": "zhu-2025", "page": 3, "printed": "1383", "locator": "前文比较，In comparison, ad rates in our model ..."}]
+    },
+    {
+      "id": "iyer-karle-targeting-accuracy", "from": "iyer-2005", "to": "karle-2025",
+      "type": "contrasts_assumptions", "review": "screened",
+      "claim": "Karle 与 Reisinger 直接讨论 Iyer 等的定向收益，再研究不完美定向。",
+      "changed": "关注目标消费者的命中率与高、低估值群的争夺，而非只比较是否具备定向。",
+      "limit": "非单因素复现；仅核首页和文献比较，未复核利润阈值。",
+      "evidence": [{"paper": "karle-2025", "page": 1, "printed": "5106", "locator": "摘要与卷期年份"}, {"paper": "karle-2025", "page": 3, "printed": "5108", "locator": "Related literature 中 Iyer et al. 比较"}]
+    }
+  ]
+}
