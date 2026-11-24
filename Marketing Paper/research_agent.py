@@ -12,6 +12,7 @@ import unicodedata
 
 import paperlist
 import corpus_rag
+import corpus_semantics
 
 
 HERE = Path(__file__).resolve().parent
@@ -337,9 +338,24 @@ def corpus_layer(source, args, traced, lexical, terms):
                          for side in ('past','future') if args.direction in (side,'both') and anchors}
         else:
             citations = {}
+        semantic_graph = {'available': False, 'note': 'Build the local semantic index with corpus_semantics.py build.'}
+        semantic_path = args.semantic_db
+        if semantic_path is None and args.db.resolve() == paperlist.DEFAULT_DB.resolve():
+            semantic_path = corpus_semantics.DEFAULT_DB
+        if semantic_path and semantic_path.is_file():
+            try:
+                with closing(corpus_semantics.connect(semantic_path)) as semantic:
+                    semantic.execute('BEGIN')
+                    bound = corpus_semantics.check_bindings(semantic, pre, path, args.db)
+                    semantic_graph = corpus_semantics.contextualize(
+                        semantic, pre, bound, list(dict.fromkeys([*terms, *args.semantic])),
+                        anchors, args.direction, min(args.depth, 3), min(args.citation_limit, 24))
+                    semantic_graph['available'] = True
+            except (ValueError, ImportError, OSError, sqlite3.Error) as err:
+                semantic_graph = {'available': False, 'note': str(err)}
         coverage = dict(pre.execute('SELECT COUNT(*) AS documents,SUM(page_count) AS source_pages, SUM(page_count=0) AS no_text FROM docs').fetchone())
         return {'available':True,'coverage':coverage,'ranked_candidates':shortlist,'passages':passages,
-                'dense':dense,'citation_candidates':citations,
+                'dense':dense,'citation_candidates':citations,'semantic_graph':semantic_graph,
                 'notes':['Section labels and citation matches are machine-generated leads, not independently checked facts.',
                          'Use corpus_rag.py context to locate actual discussion before upgrading a citation to a model relation.']}
 
@@ -395,6 +411,7 @@ def parser():
     p.add_argument('--graph', type=Path, default=DEFAULT_GRAPH)
     p.add_argument('--corpus-db',type=Path,help='separate full-corpus sections and citation database')
     p.add_argument('--vector-db',type=Path,help='separate local dense index')
+    p.add_argument('--semantic-db',type=Path,help='separate local semantic candidate graph')
     sub = p.add_subparsers(dest='cmd', required=True)
     sub.add_parser('validate', help='verify graph schema and evidence pages against the local catalog')
     sub.add_parser('topics', help='list available graph topics and paper IDs')
