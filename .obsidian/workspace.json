@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Marketing Paper/Paperlist Research Agent.md",
+                "file": "Marketing Paper/文献卡/Jeuland 与 Shugan 1983 - 渠道协调.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Paperlist Research Agent"
+              "title": "Jeuland 与 Shugan 1983 - 渠道协调"
             }
           }
         ]
@@ -208,13 +208,18 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "d2e40da301c97e6a",
+  "active": "d7ca22333357553b",
   "lastOpenFiles": [
-    "Marketing Paper/研究谱系/Paperlist 首批命题对照.md",
     "Marketing Paper/文献卡/Zhu 等 2025 - 广告平台与隐私.md",
     "Marketing Paper/文献卡/Xu 2009 - 渠道价格与质量.md",
     "Marketing Paper/文献卡/Shi 等 2013 - 消费者异质性与渠道质量.md",
     "Marketing Paper/文献卡/Jeuland 与 Shugan 1983 - 渠道协调.md",
+    "Marketing Paper/研究谱系/定向广告与定向定价 - 研究谱系.md",
+    "Marketing Paper/Theory 文献卡模板.md",
+    "Marketing Paper/Paperlist Research Agent.md",
+    "Marketing Paper/Paperlist 研究知识库.md",
+    "Marketing Paper/研究谱系/Paperlist 首批命题对照.md",
+    "Marketing Paper/精读台账与研究流程.md",
     "Marketing Paper/文献卡",
     "Marketing Paper/test_semantic_discovery.py",
     "Marketing Paper/citation_claims.py",
@@ -225,14 +230,9 @@
     "Marketing Paper/corpus_semantics.py",
     "Marketing Paper/__pycache__/paperlist.cpython-312.pyc",
     "Marketing Paper/__pycache__/corpus_rag.cpython-312.pyc",
-    "Marketing Paper/Paperlist 研究知识库.md",
-    "Marketing Paper/研究谱系/定向广告与定向定价 - 研究谱系.md",
-    "Marketing Paper/Paperlist Research Agent.md",
     "Marketing Paper/文献卡/Moorthy 与 Shahrokhi Tehrani 2023 - Hotelling 定向投放与定价.md",
     "Marketing Paper/文献卡/Iyer 等 2005 - 广告定向与定价.md",
     "Marketing Paper/文献卡/Chen 与 Iyer 2002 - 顾客可触达性与定制定价.md",
-    "Marketing Paper/Theory 文献卡模板.md",
-    "Marketing Paper/精读台账与研究流程.md",
     "量化交易学习/101公式化Alpha/101公式化Alpha - 概述.md",
     "量化交易学习/101公式化Alpha/101公式化Alpha - Alpha#26到#50.md",
     "量化交易学习/151交易策略/151交易策略 - 第3章：股票策略.md",
