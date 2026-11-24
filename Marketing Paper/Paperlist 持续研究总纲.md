@@ -17,11 +17,11 @@ tags: [research, research/reading-ledger]
 | 批次 | 任务 | 状态／下一步 |
 | --- | --- | --- |
 | 01 | 定向广告与隐私福利；渠道定价与质量 | [[Marketing Paper/研究谱系/Paperlist 首批命题对照|已交付]]。 |
-| 02 | 竞争性媒体的费率形成；库存风险下的渠道质量 | 本轮查 Bergemann–Bonatti 与 Jerath–Kim–Swaminathan，核对直接连接及证明。 |
-| 03 | 随机触达的历史与价格分散；渠道库存风险边界 | 前者以 Butters、Stegeman、Grossman–Shapiro 为前驱，后者先追 Cachon，再找有无库存风险的可比极限、契约责任。 |
+| 02 | 竞争性媒体的费率形成；库存风险下的渠道质量 | [[Marketing Paper/研究谱系/Paperlist 第二批命题对照|已交付]]：Bergemann–Bonatti 与 Jerath–Kim–Swinney；补入两个经核关系。 |
+| 03 | 随机触达的历史与价格分散；渠道库存风险边界 | 已启动，未计精读。Butters 原件 ID 44391，Cachon ID 27268。库存风险盲查已记录：先核 Cachon 合同模型和 Jerath 对风险归属的引用，再读 Butters 模型与证明。 |
 | 04 | 未覆盖主题试读 | 以搜索排序／平台抽成、信息设计或进入机制为入口；选一条已知反例作为盲测。 |
 | 持续 | 来源台账、版次核查与覆盖审计 | 日常批次保有一个补充分支和一个覆盖缺口任务；以实际进展更新计划。 |
 
 每批记录：日期与范围、所用渠道、已增模型卡、双边证据、独立算例、未读或待核材料、下批的第一项可执行工作。已经读到一半的论文写下页码和停点，避免重复。默认按队列直接续做，不为常规顺序、检索词调整或发现反例征求确认。变更优先级时在此页记下证据和理由，不删除旧记录。只有论文库权限、对外传输或实质范围变化需要用户决定；局部缺件进入队列，不阻塞其他工作。
 
-续跑入口：[[Marketing Paper/精读台账与研究流程|精读台账]]、[[Marketing Paper/Paperlist Research Agent|Agent 指南]]。持续目标保存任务方向和状态；没有活动运行时不会在本机后台自行读 PDF。原件只读，不批量上传。
+续跑入口：[[Marketing Paper/精读台账与研究流程|精读台账]]、[[Marketing Paper/Paperlist 全库覆盖清单|覆盖清单]]、[[Marketing Paper/Paperlist Research Agent|Agent 指南]]。持续目标保存任务方向和状态；没有活动运行时不会在本机后台自行读 PDF。原件只读，不批量上传。

@@ -210,6 +210,11 @@
   },
   "active": "d2e40da301c97e6a",
   "lastOpenFiles": [
+    "Marketing Paper/文献卡/Cachon 2004 - 批发合同与库存风险归属.md",
+    "Marketing Paper/文献卡/Butters 1977 - 随机报价与价格分散.md",
+    "Marketing Paper/test_reading_coverage.py",
+    "Marketing Paper/Paperlist 全库覆盖清单.md",
+    "Marketing Paper/研究谱系/Paperlist 第二批命题对照.md",
     "Marketing Paper/文献卡/Jerath 等 2017 - 库存风险与渠道质量.md",
     "Marketing Paper/文献卡/Bergemann 与 Bonatti 2011 - 广告市场的定向与费率.md",
     "Marketing Paper/reading_coverage.py",
@@ -232,7 +237,6 @@
     "Marketing Paper/test_corpus_semantics.py",
     "Marketing Paper/__pycache__/corpus_semantics.cpython-312.pyc",
     "Marketing Paper/corpus_semantics.py",
-    "Marketing Paper/__pycache__/paperlist.cpython-312.pyc",
     "Marketing Paper/文献卡/Moorthy 与 Shahrokhi Tehrani 2023 - Hotelling 定向投放与定价.md",
     "Marketing Paper/文献卡/Iyer 等 2005 - 广告定向与定价.md",
     "Marketing Paper/文献卡/Chen 与 Iyer 2002 - 顾客可触达性与定制定价.md",
@@ -241,10 +245,6 @@
     "量化交易学习/151交易策略/151交易策略 - 第3章：股票策略.md",
     "量化交易学习/151交易策略/151交易策略 - 第4章：ETF策略.md",
     "量化交易学习/151交易策略/151交易策略 - 第1章：简介.md",
-    "量化交易学习/151交易策略/151交易策略 - 第10章：期货策略.md",
-    "量化交易学习/量化交易索引.md",
-    "量化交易学习/151交易策略/151交易策略 - 第11章及以后.md",
-    "量化交易学习/151交易策略/151交易策略 - 第9章：大宗商品策略.md",
-    "量化交易学习/151交易策略/151交易策略 - 第8章：外汇策略.md"
+    "量化交易学习/151交易策略/151交易策略 - 第10章：期货策略.md"
   ]
 }

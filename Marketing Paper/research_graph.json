@@ -12,18 +12,46 @@
       "id": "privacy-platforms",
       "title": "广告平台与隐私限制",
       "aliases": ["广告平台", "隐私与广告", "隐私限制", "advertising platforms", "privacy restrictions"],
-      "papers": ["zhu-2025"],
+      "papers": ["bergemann-bonatti-2011", "zhu-2025"],
       "queries": ["advertising privacy platform targeting", "privacy targeting consumer welfare", "endogenous advertising rates"]
     },
     {
       "id": "channel-quality",
       "title": "分销渠道与产品质量",
       "aliases": ["分销渠道与产品质量", "渠道分权", "渠道质量", "渠道定价与质量", "distribution channel product quality", "channel decentralization"],
-      "papers": ["xu-2009", "shi-liu-petruzzi-2013"],
+      "papers": ["xu-2009", "shi-liu-petruzzi-2013", "jerath-kim-swinney-2017"],
       "queries": ["distribution channel product quality", "channel decentralization product quality", "consumer heterogeneity channel", "wholesale retail price endogeneity"]
     }
   ],
   "papers": [
+    {
+      "id": "bergemann-bonatti-2011",
+      "title": "Targeting in Advertising Markets: Implications for Offline versus Online Media",
+      "authors": "Dirk Bergemann and Alessandro Bonatti",
+      "year": 2011,
+      "journal": "RAND Journal of Economics",
+      "doi": "10.1111/j.1756-2171.2011.00143.x",
+      "pdf": "RAND/Bergemann_2011_Targeting in advertising markets implications for offline versus online media.pdf",
+      "aliases": ["Bergemann and Bonatti 2011", "Bergemann Bonatti 2011"],
+      "card": "Marketing Paper/文献卡/Bergemann 与 Bonatti 2011 - 广告市场的定向与费率.md",
+      "reading_status": "core_read",
+      "reading_note": "核核心单市场和多市场模型与印刷证明；媒体竞争扩展未逐条复算。",
+      "sections": {"introduction": [[1, 4]], "model": [[4, 8]], "results": [[8, 22]], "proof": [[24, 26]]}
+    },
+    {
+      "id": "jerath-kim-swinney-2017",
+      "title": "Product Quality in a Distribution Channel with Inventory Risk",
+      "authors": "Kinshuk Jerath, Sang-Hyun Kim, and Robert Swinney",
+      "year": 2017,
+      "journal": "Marketing Science",
+      "doi": "10.1287/mksc.2017.1041",
+      "pdf": "MKSC/Jerath_2017_Product Quality in a Distribution Channel with Inventory Risk.pdf",
+      "aliases": ["Jerath et al 2017", "库存风险与渠道质量"],
+      "card": "Marketing Paper/文献卡/Jerath 等 2017 - 库存风险与渠道质量.md",
+      "reading_status": "core_read",
+      "reading_note": "核 Props. 1–3、核心印刷证明；独立复算均匀市场规模下的质量反转。高级契约在线详证未读。",
+      "sections": {"introduction": [[1, 3]], "model": [[3, 4]], "results": [[4, 9]], "discussion": [[9, 10]], "proof": [[10, 14]]}
+    },
     {
       "id": "butters-1977",
       "title": "Equilibrium Distributions of Sales and Advertising Prices",
@@ -173,6 +201,22 @@
     }
   ],
   "edges": [
+    {
+      "id": "bergemann-zhu-price-formation", "from": "bergemann-bonatti-2011", "to": "zhu-2025",
+      "type": "contrasts_assumptions", "review": "verified",
+      "claim": "已核两篇都采用随机广告触达且广告价内生，定价机制却分别是竞争性出清和垄断平台先定费率。",
+      "changed": "竞争广告市场及外生商品价格变成平台直接选费率、商品厂商随后定价和投放；定向精度变为隐私制度限制。",
+      "limit": "竞争市场的匹配量不是消费者剩余，Prop. 5 的广告价格阈值也不是 Zhu 模型的隐私阈值。",
+      "evidence": [{"paper": "bergemann-bonatti-2011", "page": 12, "printed": "428", "locator": "Eqs. (13)–(16)，广告市场出清"}, {"paper": "bergemann-bonatti-2011", "page": 13, "printed": "429", "locator": "Prop. 5"}, {"paper": "zhu-2025", "page": 3, "printed": "1383", "locator": "直接讨论 Bergemann–Bonatti 与两模型的差异"}, {"paper": "zhu-2025", "page": 6, "printed": "1386", "locator": "§3 定义 1，平台先定广告费率"}]
+    },
+    {
+      "id": "shi-jerath-inventory-risk", "from": "shi-liu-petruzzi-2013", "to": "jerath-kim-swinney-2017",
+      "type": "contrasts_assumptions", "review": "verified",
+      "claim": "分权升质在仅有纵向均匀估值时也可能发生：Jerath 等用市场规模随机及库存时序给出不同机制。",
+      "changed": "在单一均匀支付意愿之外引入厂商先选质量和批发价、零售商需求前订货及需求后定价；批发合同令厂商收益取决于订货而非成交。",
+      "limit": "这是两个各自模型的条件对照，不是单参数嵌套。结论允许升、平、降，不能据此断言更高质量或更优合同普遍成立。",
+      "evidence": [{"paper": "shi-liu-petruzzi-2013", "page": 5, "printed": "1165", "locator": "§2.1.1 纯纵向均匀估值基准"}, {"paper": "shi-liu-petruzzi-2013", "page": 6, "printed": "1166", "locator": "Prop. 1 条件；均匀分布不满足第二条件"}, {"paper": "jerath-kim-swinney-2017", "page": 3, "printed": "749", "locator": "§2 估值与库存、价格时序"}, {"paper": "jerath-kim-swinney-2017", "page": 6, "printed": "752", "locator": "Eq. (12)、Props. 2–3"}, {"paper": "jerath-kim-swinney-2017", "page": 7, "printed": "753", "locator": "Prop. 3 机制、对 Shi 等的明确对照与 Example 1"}]
+    },
     {
       "id": "butters-grossman-ad-awareness", "from": "butters-1977", "to": "grossman-1984",
       "type": "extends_component", "review": "screened",
