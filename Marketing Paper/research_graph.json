@@ -65,8 +65,15 @@
       "id": "platform-ranking-and-search",
       "title": "平台排序、搜索指数与在线成交",
       "aliases": ["平台排序", "在线排名", "搜索指数", "optimal rankings", "position effects", "ranking algorithms", "online search"],
-      "papers": ["weitzman-1979-pandora", "choi-dai-kim-2018-effective-values", "ursu-2018-ranking-search", "derakhshan-et-al-2022-product-ranking", "donnelly-kanodia-morozov-2023-personalized-rankings", "compiani-et-al-2024-optimal-rankings"],
+      "papers": ["weitzman-1979-pandora", "choi-dai-kim-2018-effective-values", "ursu-2018-ranking-search", "chu-nazerzadeh-zhang-2020-position-auctions", "derakhshan-et-al-2022-product-ranking", "donnelly-kanodia-morozov-2023-personalized-rankings", "compiani-et-al-2024-optimal-rankings", "qiu-et-al-2025-personalized-pricing"],
       "queries": ["ranking position search cost", "optimal product rankings consumer surplus", "random ranking booking conversion"]
+    },
+    {
+      "id": "ranking-price-feedback",
+      "title": "排序、价格反馈与位置拍卖",
+      "aliases": ["排名弹性", "排序价格反馈", "位置拍卖", "ranking mediated price elasticity", "surplus ordered ranking", "algorithmic pricing and search"],
+      "papers": ["weitzman-1979-pandora", "dinerstein-et-al-2018-search", "chu-nazerzadeh-zhang-2020-position-auctions", "donnelly-kanodia-morozov-2023-personalized-rankings", "qiu-et-al-2025-personalized-pricing"],
+      "queries": ["ranking mediated price elasticity", "position ranking auctions net surplus", "personalized ranking seller pricing"]
     },
     {
       "id": "targeting",
@@ -91,6 +98,34 @@
     }
   ],
   "papers": [
+    {
+      "id": "qiu-et-al-2025-personalized-pricing",
+      "title": "Personalization, Consumer Search, and Algorithmic Pricing",
+      "authors": "Liying Qiu, Yan Huang, Param Vir Singh, and Kannan Srinivasan",
+      "year": 2025,
+      "journal": "Marketing Science",
+      "doi": "10.1287/mksc.2023.0455",
+      "pdf": "MKSC/Qiu_2025_Personalization, Consumer Search, and Algorithmic Pricing.pdf",
+      "aliases": ["Qiu Huang Singh Srinivasan 2025", "Qiu 2025", "personalization consumer search algorithmic pricing"],
+      "card": "Marketing Paper/文献卡/Qiu 等 2025 - 个性化排序与算法定价.md",
+      "reading_status": "core_read",
+      "reading_note": "核顺序搜索、排名规则、Q-learning、单期与稳定价格、偏离和 Tables 1–8；复算统一排序切点及个性化首位比例，独立线上附录和数据未核。",
+      "sections": {"introduction": [[1, 4]], "model": [[4, 9]], "results": [[9, 20]], "discussion": [[19, 20]]}
+    },
+    {
+      "id": "chu-nazerzadeh-zhang-2020-position-auctions",
+      "title": "Position Ranking and Auctions for Online Marketplaces",
+      "authors": "Leon Yang Chu, Hamid Nazerzadeh, and Heng Zhang",
+      "year": 2020,
+      "journal": "Management Science",
+      "doi": "10.1287/mnsc.2019.3372",
+      "pdf": "MS/Chu_2020_Position Ranking and Auctions for Online Marketplaces.pdf",
+      "aliases": ["Chu Nazerzadeh Zhang 2020", "Chu 2020", "position ranking and auctions"],
+      "card": "Marketing Paper/文献卡/Chu 等 2020 - 排序与位置拍卖.md",
+      "reading_status": "core_read",
+      "reading_note": "核先行本 §§2–7 与印刷附录，复算排序交换和包络支付；e-companion 阈值及性能边界的详细证明未独立核。",
+      "sections": {"introduction": [[2, 6]], "model": [[6, 8], [14, 16]], "results": [[9, 13], [16, 17]], "proof": [[18, 18]], "discussion": [[17, 17]]}
+    },
     {
       "id": "donnelly-kanodia-morozov-2023-personalized-rankings",
       "title": "Welfare Effects of Personalized Rankings",
@@ -751,6 +786,50 @@
     }
   ],
   "edges": [
+    {
+      "id": "weitzman-chu-common-reservation-value",
+      "from": "weitzman-1979-pandora",
+      "to": "chu-nazerzadeh-zhang-2020-position-auctions",
+      "type": "extends_component",
+      "review": "verified",
+      "claim": "Chu 等明确以 Weitzman 顺序搜索为基础；在消费者把未查商品视作 i.i.d.、同成本时，沿平台列表查到首个超过共同保留值的商品即买。",
+      "changed": "将搜索者自主按保留值择序的基准，用作消费者停止决策组件；平台另按观察到的商品异质性和卖家申报安排外显顺序。",
+      "limit": "相同保留值来自消费者主观共同先验，不等于真实排序后的各位置效用也同分布；不由 Pandora 定理直接推出平台 SOR 收费。",
+      "evidence": [{"paper": "weitzman-1979-pandora", "page": 8, "printed": "647", "locator": "选择／停止规则及相同盒子的共同保留价"}, {"paper": "chu-nazerzadeh-zhang-2020-position-auctions", "page": 5, "printed": "4", "locator": "§1.8.2 明引 Weitzman"}, {"paper": "chu-nazerzadeh-zhang-2020-position-auctions", "page": 7, "printed": "6", "locator": "Eq. (1)，Lemma 1，共同保留值"}]
+    },
+    {
+      "id": "dinerstein-qiu-price-mediated-visibility",
+      "from": "dinerstein-et-al-2018-search",
+      "to": "qiu-et-al-2025-personalized-pricing",
+      "type": "extends_component",
+      "review": "verified",
+      "claim": "Qiu 等在设置质量与价格共同决定的统一排序时明确引 Dinerstein 等。共同机制是降价既能直接增加被选概率，也能改变被考虑的机会。",
+      "changed": "由 eBay 考虑概率与条件购买弹性及结构定价推断，转为公共名单换位或个体化首位份额变化、消费者顺序查验和重复报价模拟。",
+      "limit": "继承的是价格影响展示／考虑机会的组件，不是搜寻过程、考虑集估计、Nash 方程或现场因果效应；Qiu 的跨门槛有限差分不是 Dinerstein 的局部弹性。",
+      "evidence": [{"paper": "dinerstein-et-al-2018-search", "page": 23, "printed": "1842", "locator": "Eq. (14)，D=AQ 的考虑与选择弹性"}, {"paper": "qiu-et-al-2025-personalized-pricing", "page": 6, "printed": "1283", "locator": "§3.2.1 明引 Dinerstein；Eq. (10) 的定价质量得分"}, {"paper": "qiu-et-al-2025-personalized-pricing", "page": 15, "printed": "1292", "locator": "Figure 6，区分公共名单跳跃和个体渐变"}]
+    },
+    {
+      "id": "chu-qiu-slot-bid-versus-price-rank",
+      "from": "chu-nazerzadeh-zhang-2020-position-auctions",
+      "to": "qiu-et-al-2025-personalized-pricing",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "两篇均由位置影响购买，但 Chu 的卖家报私有售出收益竞逐位置，给定商品价格；Qiu 的卖家改商品价格，价格同时改变效用和名次。",
+      "changed": "从平台选择排位、设计付费且给定 p 的单参数问题，转为平台规则给定、卖家重复选择 p 的竞争反馈。",
+      "limit": "是双侧原文核过的机制对照，所核正文与参考文献未见直接继承；不把 SOR 的真实性、零尾部支付或剩余界搬到内生价格。",
+      "evidence": [{"paper": "chu-nazerzadeh-zhang-2020-position-auctions", "page": 6, "printed": "5", "locator": "§2.1.1，平台见价格及特征，θ 为私有每售收益"}, {"paper": "chu-nazerzadeh-zhang-2020-position-auctions", "page": 13, "printed": "12", "locator": "Theorem 4，位置分配和支付"}, {"paper": "qiu-et-al-2025-personalized-pricing", "page": 4, "printed": "1281", "locator": "§3，当期卖家报价先于平台按规则排序"}, {"paper": "qiu-et-al-2025-personalized-pricing", "page": 16, "printed": "1293", "locator": "Table 3，统一排名的降价跳位"}]
+    },
+    {
+      "id": "donnelly-qiu-personalization-supply-response",
+      "from": "donnelly-kanodia-morozov-2023-personalized-rankings",
+      "to": "qiu-et-al-2025-personalized-pricing",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "Donnelly 的床品类随机个性化实验识别行为，结构模型以所见价格环境估计剩余上升；Qiu 有重复价格反馈的模拟中，剩余下降。",
+      "changed": "从既有零售算法、观察价格及先选查验集合，转为第三方卖家重复定价、顺序搜索和真实个体效用排序的理想基准。",
+      "limit": "无直接继承证据。不是同一处理或同一总体上的冲突，不用均衡模拟推翻实地随机处理，不把新队列当长期留存。",
+      "evidence": [{"paper": "donnelly-kanodia-morozov-2023-personalized-rankings", "page": 6, "printed": "97", "locator": "Table 1，使用者随机处理与所购商品价格"}, {"paper": "donnelly-kanodia-morozov-2023-personalized-rankings", "page": 17, "printed": "108", "locator": "Eq. (13) 与 Table 4，结构剩余，不含卖家重新定价"}, {"paper": "qiu-et-al-2025-personalized-pricing", "page": 4, "printed": "1281", "locator": "每期新一批顾客与卖家报价"}, {"paper": "qiu-et-al-2025-personalized-pricing", "page": 9, "printed": "1286", "locator": "Table 1，稳定价格与消费者剩余"}]
+    },
     {
       "id": "compiani-donnelly-personalization-welfare",
       "from": "compiani-et-al-2024-optimal-rankings",

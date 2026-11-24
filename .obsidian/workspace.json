@@ -210,6 +210,13 @@
   },
   "active": "d7ca22333357553b",
   "lastOpenFiles": [
+    "Marketing Paper/文献卡/Chu 等 2020 - 排序与位置拍卖.md",
+    "Marketing Paper/文献卡/Qiu 等 2025 - 个性化排序与算法定价.md",
+    "Marketing Paper/__pycache__/research_agent.cpython-312.pyc",
+    "Marketing Paper/__pycache__/corpus_vectors.cpython-312.pyc",
+    "Marketing Paper/__pycache__/model_comparison.cpython-312.pyc",
+    "Marketing Paper/__pycache__/citation_claims.cpython-312.pyc",
+    "Marketing Paper/__pycache__/semantic_context.cpython-312.pyc",
     "Marketing Paper/研究谱系/Paperlist 第十九批命题对照.md",
     "Marketing Paper/文献卡/Derakhshan 等 2022 - 平台产品排序与逐位筛选.md",
     "Marketing Paper/文献卡/Donnelly 等 2023 - 个性化排序与福利.md",
@@ -234,17 +241,10 @@
     "Marketing Paper/研究谱系/Paperlist 第十二批命题对照.md",
     "Marketing Paper/文献卡/Zia 与 Kuksov 2025 - 搜索与产品线长度.md",
     "Marketing Paper/文献卡/Moraga-González 等 2017 - 搜索成本与参与选择.md",
-    "Marketing Paper/研究谱系/Paperlist 第十一批命题对照.md",
-    "Marketing Paper/文献卡/Choi 等 2018 - 顺序搜索与有效估值.md",
     "Marketing Paper/test_reading_coverage.py",
     "Marketing Paper/reading_coverage.py",
     "Marketing Paper/文献卡",
     "Marketing Paper/test_semantic_discovery.py",
-    "Marketing Paper/citation_claims.py",
-    "Marketing Paper/model_comparison.py",
-    "Marketing Paper/semantic_context.py",
-    "Marketing Paper/test_corpus_semantics.py",
-    "Marketing Paper/__pycache__/corpus_semantics.cpython-312.pyc",
-    "Marketing Paper/corpus_semantics.py"
+    "Marketing Paper/citation_claims.py"
   ]
 }
