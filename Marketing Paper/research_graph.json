@@ -58,8 +58,15 @@
       "id": "product-line-signals-and-platform-frictions",
       "title": "产品线信号与平台组合摩擦",
       "aliases": ["产品线信号", "情境推断", "组合扩张", "平台采用", "contextual inference", "assortment expansion", "platform adoption", "choice frictions"],
-      "papers": ["kamenica-2008-contextual-inference", "kuksov-villas-boas-2010-choice-overload", "nocke-rey-2024-steering", "natan-2025-assortment-frictions"],
+      "papers": ["kamenica-2008-contextual-inference", "kuksov-villas-boas-2010-choice-overload", "nocke-rey-2024-steering", "natan-2025-assortment-frictions", "compiani-et-al-2024-optimal-rankings"],
       "queries": ["product line informational content", "assortment expansion adoption churn", "choice overload returning customers"]
+    },
+    {
+      "id": "platform-ranking-and-search",
+      "title": "平台排序、搜索指数与在线成交",
+      "aliases": ["平台排序", "在线排名", "搜索指数", "optimal rankings", "position effects", "ranking algorithms", "online search"],
+      "papers": ["weitzman-1979-pandora", "choi-dai-kim-2018-effective-values", "ursu-2018-ranking-search", "compiani-et-al-2024-optimal-rankings"],
+      "queries": ["ranking position search cost", "optimal product rankings consumer surplus", "random ranking booking conversion"]
     },
     {
       "id": "targeting",
@@ -84,6 +91,35 @@
     }
   ],
   "papers": [
+    {
+      "id": "compiani-et-al-2024-optimal-rankings",
+      "title": "Online Search and Optimal Product Rankings: An Empirical Framework",
+      "authors": "Giovanni Compiani, Gregory Lewis, Sida Peng, and Peichun Wang",
+      "year": 2024,
+      "online_year": 2023,
+      "journal": "Marketing Science",
+      "doi": "10.1287/mksc.2022.0071",
+      "pdf": "MKSC/Compiani_2023_Online Search and Optimal Product Rankings An Empirical Framework.pdf",
+      "aliases": ["Compiani Lewis Peng Wang 2024", "Compiani 2023", "online search optimal product rankings", "diamond in the rough"],
+      "card": "Marketing Paper/文献卡/Compiani 等 2024 - 在线搜索与最优产品排序.md",
+      "reading_status": "core_read",
+      "reading_note": "核 Weitzman 型模型、Lemma 1、Props. 1–3、排序算法保证、Expedia 随机训练／算法测试设计、表 5–8；在线附录和原始数据未独立核。",
+      "sections": {"introduction": [[1, 4]], "model": [[5, 9]], "results": [[9, 13]], "discussion": [[13, 14]], "proof": [[8, 13]]}
+    },
+    {
+      "id": "ursu-2018-ranking-search",
+      "title": "The Power of Rankings: Quantifying the Effect of Rankings on Online Consumer Search and Purchase Decisions",
+      "authors": "Raluca M. Ursu",
+      "year": 2018,
+      "journal": "Marketing Science",
+      "doi": "10.1287/mksc.2017.1072",
+      "pdf": "MKSC/Ursu_2018_The Power of Rankings Quantifying the Effect of Rankings on Online Consumer Search and Purchase Decisions.pdf",
+      "aliases": ["Ursu 2018", "power of rankings", "ranking position effect Expedia"],
+      "card": "Marketing Paper/文献卡/Ursu 2018 - 排名与在线搜索购买.md",
+      "reading_status": "screened",
+      "reading_note": "核摘要、随机排名识别、数据口径、主估计和结论；本批不计核心核读，Online Appendix A–E 未独立核。",
+      "sections": {"introduction": [[1, 3]], "model": [[5, 11]], "results": [[17, 20]], "discussion": [[20, 21]]}
+    },
     {
       "id": "kamenica-2008-contextual-inference",
       "title": "Contextual Inference in Markets: On the Informational Content of Product Lines",
@@ -686,6 +722,39 @@
     }
   ],
   "edges": [
+    {
+      "id": "weitzman-compiani-ranking-index",
+      "from": "weitzman-1979-pandora",
+      "to": "compiani-et-al-2024-optimal-rankings",
+      "type": "extends_component",
+      "review": "verified",
+      "claim": "Compiani 等明确以 Weitzman 的顺序搜索为地面模型；将每个商品的保留值扩为受排名影响的 search index，并加入可在搜索后揭示的垂直质量。",
+      "changed": "由搜索者选择盒子、盒子收益分布外生，改为平台能通过 rank function 改变 search index、消费者仍可任意择序，平台再优化消费者剩余或收入。",
+      "limit": "仍依赖独立收益、可择序和模型化排名函数；不等于对任何推荐系统的结构识别，也未核在线附录的全部证明。",
+      "evidence": [{"paper": "weitzman-1979-pandora", "page": 7, "printed": "646", "locator": "Eq. (7)，保留值"}, {"paper": "weitzman-1979-pandora", "page": 8, "printed": "647", "locator": "排序与停止规则"}, {"paper": "compiani-et-al-2024-optimal-rankings", "page": 1, "printed": "615", "locator": "摘要，Weitzman 型顺序搜索与优化目标"}, {"paper": "compiani-et-al-2024-optimal-rankings", "page": 8, "printed": "622", "locator": "Lemma 1，有效指数"}]
+    },
+    {
+      "id": "choi-compiani-effective-index-ranking",
+      "from": "choi-dai-kim-2018-effective-values",
+      "to": "compiani-et-al-2024-optimal-rankings",
+      "type": "extends_component",
+      "review": "verified",
+      "claim": "Compiani 等明确以 Choi 等的最终购买表征为组件，把有效指数 min(search index, utility index) 嵌入平台排序优化。",
+      "changed": "从卖家竞争下的最终成交条件，改为平台改变位置引起 search index 变化，并分别最大化消费者剩余和静态收入。",
+      "limit": "排序算法还加入垂直质量与平台信息优势；不能把 Compiani 的消费者剩余结果解释成 Choi 的价格竞争比较静态。",
+      "evidence": [{"paper": "choi-dai-kim-2018-effective-values", "page": 8, "printed": "1264", "locator": "Theorem 1，有效购买指数"}, {"paper": "choi-dai-kim-2018-effective-values", "page": 9, "printed": "1265", "locator": "购买与搜索规则的边界"}, {"paper": "compiani-et-al-2024-optimal-rankings", "page": 4, "printed": "618", "locator": "Related literature，明确以 Choi 等为基础"}, {"paper": "compiani-et-al-2024-optimal-rankings", "page": 8, "printed": "622", "locator": "Lemma 1，max-min effective index"}]
+    },
+    {
+      "id": "ursu-compiani-random-ranking-to-optimization",
+      "from": "ursu-2018-ranking-search",
+      "to": "compiani-et-al-2024-optimal-rankings",
+      "type": "extends_component",
+      "review": "verified",
+      "claim": "Compiani 等明确使用与 Ursu 相同的 Expedia 排名数据环境，把随机排名识别的因果位置效应推进到双指数估计与最优排序反事实。",
+      "changed": "由随机排名下的 reduced-form／结构位置效应和 utility-based counterfactual，改为随机训练样本、算法排名测试样本，并同时优化消费者剩余和平台收入。",
+      "limit": "数据环境相同不代表样本完全相同；Compiani 的测试交易率与训练样本不同，反事实受模型与未核附录约束。",
+      "evidence": [{"paper": "ursu-2018-ranking-search", "page": 3, "printed": "532", "locator": "随机排名数据与研究贡献"}, {"paper": "ursu-2018-ranking-search", "page": 19, "printed": "548", "locator": "随机排名估计与 utility-based counterfactual"}, {"paper": "compiani-et-al-2024-optimal-rankings", "page": 4, "printed": "618", "locator": "Related literature，说明使用 Ursu 数据"}, {"paper": "compiani-et-al-2024-optimal-rankings", "page": 15, "printed": "629", "locator": "训练随机排名、测试 Expedia 排名"}, {"paper": "compiani-et-al-2024-optimal-rankings", "page": 22, "printed": "632", "locator": "表 6，排序反事实结果"}]
+    },
     {
       "id": "kamenica-kuksov-contextual-overload",
       "from": "kamenica-2008-contextual-inference",
