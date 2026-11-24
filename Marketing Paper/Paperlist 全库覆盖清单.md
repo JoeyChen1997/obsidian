@@ -32,6 +32,8 @@ tags: [research, research/reading-ledger]
 
 第十八批结账：44 个来源关联到 **43 个有本地来源的图谱作品**（39 篇核心核读，4 篇初筛）；9 份卷索引不变，**47,515 个来源身份仍待核**。新增 Compiani 等（23911，2024 卷期／2023 在线）并核 Ursu（25165）为交叉来源；Compiani 的 Online Appendix A–H、数据和代码，以及 Ursu 的 Online Appendix A–E 未在本地定位。Natan 的 OA／排名缺口继续保留，不把不可得材料当成未读正文。
 
+第十九批结账：46 个来源关联到 **45 个有本地来源的图谱作品**（41 篇核心核读，4 篇初筛）；9 份卷索引不变，**47,513 个来源身份仍待核**。Donnelly 等来源 23990 正式为 2024 卷期、2023 在线，Derakhshan 等来源 28554 为 2022 卷期；Donnelly 长期留存、Online Appendix A–G 和数据未定位，Derakhshan e-companion 未独立核。既有 Natan、Compiani 补充材料缺口不变。
+
 来源缺口核查：唯一完全无索引文本的来源 14679（JMR，文件名为 Oliver 1980 *A Cognitive Model of the Antecedents and Consequences of Satisfaction Decisions*）确实存在且未加密。Poppler 提取不到首页正文、渲染首页为空白，扫描图像对象时报内容流语法错误；独立 PDFium 逐页检查 11 页均无提取文本且未渲出可读正文。留作本地不可读；不把文件名当作已核作品身份，不把失败归成等候 OCR 的正常扫描件。下一步找可读取的同刊副本并核身份；原件未修改。
 
 第十六批补查：按同题名扫描本地目录仅定位到上述来源；[Crossref 注册](https://api.crossref.org/works/10.1177/002224378001700405)确认 Richard L. Oliver 的同名论文为 JMR 17(4), 460–469（DOI 10.1177/002224378001700405）。这是能用来找同刊副本的书目，未取得可核全文，也不证明损坏 PDF 的正文身份已确认。14679 继续留在本地不可读队列。
