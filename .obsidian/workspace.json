@@ -210,6 +210,7 @@
   },
   "active": "d2e40da301c97e6a",
   "lastOpenFiles": [
+    "Marketing Paper/test_corpus_semantics.py",
     "Marketing Paper/__pycache__/corpus_semantics.cpython-312.pyc",
     "Marketing Paper/corpus_semantics.py",
     "Marketing Paper/__pycache__/paperlist.cpython-312.pyc",
@@ -223,7 +224,6 @@
     "Marketing Paper/研究谱系/定向广告与定向定价 - 研究谱系.md",
     "Marketing Paper/test_research_agent.py",
     "Marketing Paper/Paperlist Research Agent.md",
-    "Marketing Paper/research_graph.json",
     "Marketing Paper/文献卡/Moorthy 与 Shahrokhi Tehrani 2023 - Hotelling 定向投放与定价.md",
     "Marketing Paper/文献卡/Iyer 等 2005 - 广告定向与定价.md",
     "Marketing Paper/文献卡/Chen 与 Iyer 2002 - 顾客可触达性与定制定价.md",

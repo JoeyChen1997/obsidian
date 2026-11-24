@@ -125,9 +125,12 @@ def connect(path, write=False):
 def check_bindings(con, rag, path, source=None):
     config = dict(con.execute('SELECT key,value FROM config'))
     names = dict(rag.execute('SELECT key,value FROM config'))
-    if (config.get('version') != VERSION or config.get('rag') != str(path.resolve())
-            or config.get('source') != names.get('source')
-            or (source is not None and config.get('source') != str(source.resolve()))):
+    if (config.get('version') != VERSION or not (recorded_rag := config.get('rag'))
+            or Path(recorded_rag).resolve() != path.resolve()
+            or not (recorded_source := config.get('source'))
+            or not (rag_source := names.get('source'))
+            or Path(recorded_source).resolve() != Path(rag_source).resolve()
+            or (source is not None and Path(recorded_source).resolve() != source.resolve())):
         raise ValueError('Semantic index is uninitialized or belongs to another corpus/version.')
     return config
 
@@ -292,48 +295,44 @@ def build_snapshot(args, rag, dest, source, start, topic_labels, concepts, diges
     # The upstream passages and links share one read snapshot throughout the pass.
     config = {'version': VERSION, 'rag': str(args.corpus_db.resolve()), 'source': source,
               'vocabulary': digest, 'concept_labels': json.dumps(topic_labels)}
-    scan_snapshot(args, rag, dest, start, config, topic_labels, concepts)
-
-
-def scan_snapshot(args, rag, dest, start, config, topic_labels, concepts):
-        previous = dict(dest.execute('SELECT key,value FROM config'))
-        if previous and previous != config:
-            raise ValueError('Corpus, schema or vocabulary changed. Build into a new --db file.')
-        docs = rag.execute('SELECT id,stamp,year FROM docs ORDER BY id').fetchall()
-        live = {r['id'] for r in docs}
-        prior = dict(dest.execute('SELECT paper,fingerprint FROM scanned'))
-        refs = defaultdict(list)
-        for row in rag.execute('''SELECT l.citing,l.page,d.id,d.author,d.year FROM links l
+    previous = dict(dest.execute('SELECT key,value FROM config'))
+    if previous and previous != config:
+        raise ValueError('Corpus, schema or vocabulary changed. Build into a new --db file.')
+    docs = rag.execute('SELECT id,stamp,year FROM docs ORDER BY id').fetchall()
+    live = {r['id'] for r in docs}
+    prior = dict(dest.execute('SELECT paper,fingerprint FROM scanned'))
+    refs = defaultdict(list)
+    for row in rag.execute('''SELECT l.citing,l.page,d.id,d.author,d.year FROM links l
                   JOIN docs d ON d.id=l.cited WHERE l.method='section_title_author_year'
                   ORDER BY l.citing,l.cited'''):
-            refs[row['citing']].append(row)
-        todo = []
-        for d in docs:
-            key = d['id']
-            fingerprint = hashlib.sha256(repr((d['stamp'], d['year'],
-                                              [tuple(r) for r in refs.get(key, ())])).encode()).hexdigest()
-            if args.refresh or prior.get(key) != fingerprint:
-                todo.append((d, fingerprint))
-        if args.limit:
-            todo = todo[:args.limit]
+        refs[row['citing']].append(row)
+    todo = []
+    for d in docs:
+        key = d['id']
+        fingerprint = hashlib.sha256(repr((d['stamp'], d['year'],
+                                          [tuple(r) for r in refs.get(key, ())])).encode()).hexdigest()
+        if args.refresh or prior.get(key) != fingerprint:
+            todo.append((d, fingerprint))
+    if args.limit:
+        todo = todo[:args.limit]
+    with dest:
+        dest.executemany('INSERT OR IGNORE INTO config VALUES (?,?)', config.items())
+        for dead in prior.keys() - live:
+            for table in ('mentions', 'statements', 'scanned'):
+                dest.execute(f'DELETE FROM {table} WHERE paper=?', (dead,))
+            dest.execute('DELETE FROM relations WHERE earlier=? OR later=?', (dead, dead))
+    print(f'{len(docs):,} corpus PDFs; {len(todo):,} queued; {len(topic_labels)} concepts', flush=True)
+    last = start
+    for offset in range(0, len(todo), 128):
+        batch = todo[offset:offset+128]
         with dest:
-            dest.executemany('INSERT OR IGNORE INTO config VALUES (?,?)', config.items())
-            for dead in prior.keys() - live:
-                for table in ('mentions', 'statements', 'scanned'):
-                    dest.execute(f'DELETE FROM {table} WHERE paper=?', (dead,))
-                dest.execute('DELETE FROM relations WHERE earlier=? OR later=?', (dead, dead))
-        print(f'{len(docs):,} corpus PDFs; {len(todo):,} queued; {len(topic_labels)} concepts', flush=True)
-        last = start
-        for offset in range(0, len(todo), 128):
-            batch = todo[offset:offset+128]
-            with dest:
-                for doc, fingerprint in batch:
-                    extract_paper(rag, dest, doc, refs.get(doc['id'], ()), fingerprint, concepts)
-            now = time.monotonic()
-            done = offset + len(batch)
-            if now - last >= 15 or done == len(todo):
-                print(f'{done:,}/{len(todo):,} PDFs; {now-start:.0f}s', flush=True)
-                last = now
+            for doc, fingerprint in batch:
+                extract_paper(rag, dest, doc, refs.get(doc['id'], ()), fingerprint, concepts)
+        now = time.monotonic()
+        done = offset + len(batch)
+        if now - last >= 15 or done == len(todo):
+            print(f'{done:,}/{len(todo):,} PDFs; {now-start:.0f}s', flush=True)
+            last = now
 
 
 def status(con, rag):
@@ -345,9 +344,9 @@ def status(con, rag):
         COALESCE(SUM(ambiguous_contexts),0) AS ambiguous_context_matches
         FROM scanned''').fetchone())
     coverage['corpus_pdfs'] = total
-    coverage['scans_missing_or_stale'] = sum(
-        stamp != known.get(key) for key, stamp in rag.execute('SELECT id,stamp FROM docs')
-    ) if (known := dict(con.execute('SELECT paper,stamp FROM scanned'))) else total
+    known = dict(con.execute('SELECT paper,stamp FROM scanned'))
+    coverage['scans_missing_or_stale_by_document_stamp'] = sum(
+        stamp != known.get(key) for key, stamp in rag.execute('SELECT id,stamp FROM docs'))
     coverage['concepts_seen'] = con.execute('SELECT COUNT(DISTINCT concept) FROM mentions').fetchone()[0]
     coverage['concept_paper_mentions'] = con.execute('SELECT COUNT(*) FROM mentions').fetchone()[0]
     coverage['pdfs_with_concepts'] = con.execute('SELECT COUNT(DISTINCT paper) FROM mentions').fetchone()[0]
@@ -493,6 +492,7 @@ def contextualize(con, rag, config, terms, seeds, direction, depth, limit):
     timeline.sort(key=lambda r: (r['paper']['filename_year'] is None, r['paper']['filename_year'] or 0, r['paper']['id']))
     return {'available': True, 'seeds': seeds, 'concepts': topic_data, 'timeline': timeline,
             'relation_candidates': edges, 'scanned_pdfs': con.execute('SELECT COUNT(*) FROM scanned').fetchone()[0],
+            'corpus_pdfs': rag.execute('SELECT COUNT(*) FROM docs').fetchone()[0],
             'note': RELATION_NOTE + ' Timeline covers the selected neighborhood; concept hits do not date invention.'}
 
 
