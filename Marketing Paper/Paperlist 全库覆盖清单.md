@@ -24,6 +24,8 @@ tags: [research, research/reading-ledger]
 
 第十四批结账：36 个来源关联到 **35 个有本地来源的图谱作品**（32 篇核心核读，3 篇初筛）；**47,532 个来源的作品身份待核**。来源 21262 的文件名 2023 不作发表年，正式为 2024；35609 本地先行版写 2017，DOI 注册正式卷期为 2018。保留本地所据的页码，不凭 DOI 登记把两个版本的页码混用；未找到独立附录及 Nocke–Rey 早稿，不计已核。既有两项缺原件和三张历史卡缺文件未变。
 
+第十五批结账：38 个来源关联到 **37 个有本地来源的图谱作品**（34 篇核心核读，3 篇初筛）；**9 个来源核为非研究卷索引**（JPE 126 卷及 Management Science 49–56 卷），**47,521 个来源身份仍待核**。卷索引以原 PDF 的目录页为证据、可按来源 ID 查询；不计入论文数，也未从原件或底层自动索引删除。核实卷索引不代表图谱中缺失原件已补齐。Jing 独立附录及 Villas-Boas 早稿未在本地定位；来源 24396 的第 16 页只是版权声明。
+
 来源缺口核查：唯一完全无索引文本的来源 14679（JMR，文件名为 Oliver 1980 *A Cognitive Model of the Antecedents and Consequences of Satisfaction Decisions*）确实存在且未加密。Poppler 提取不到首页正文、渲染首页为空白，扫描图像对象时报内容流语法错误；独立 PDFium 逐页检查 11 页均无提取文本且未渲出可读正文。留作本地不可读；不把文件名当作已核作品身份，不把失败归成等候 OCR 的正常扫描件。下一步找可读取的同刊副本并核身份；原件未修改。
 
 部分文本抽核：来源 5594（AER: Insights，Armstrong–Vickers 2019，DOI 10.1257/aeri.20180581）的索引有 15/16 页文本。PDF 15（刊页 271）包含结尾与参考文献；PDF 16 的证据接口无文本、Poppler 渲染为空白。首页刊期范围写 257–272，未用其他版本确认刊页 272 是否本应空白。第九批核读了可见正文和核心证明，保留末页的来源问题，并未把它计入已核内容。
@@ -36,6 +38,7 @@ $coverageTool = '.\Marketing Paper\reading_coverage.py'
 & $paperPython -B $coverageTool status
 & $paperPython -B $coverageTool queue --journal MKSC --state not_reviewed --limit 20
 & $paperPython -B $coverageTool queue --issues-only
+& $paperPython -B $coverageTool queue --state not_applicable
 & $paperPython -B $coverageTool versions 34637
 & $paperPython -B $coverageTool versions 24382
 ```

@@ -69,6 +69,7 @@ class Graph:
         self.papers = unique_items(data['papers'], 'paper')
         self.topics = unique_items(data['topics'], 'topic')
         self.edges = unique_items(data['edges'], 'edge')
+        self.source_exclusions = {}
         self.adjacent = defaultdict(list)
         files = set()
         for key, paper in self.papers.items():
@@ -96,6 +97,16 @@ class Graph:
                 for start, end in ranges:
                     require(type(start) is int and type(end) is int and 1 <= start <= end,
                             f'Invalid section range: {key}/{section}')
+        for item in data.get('source_exclusions', []):
+            source_id, pdf = item['source_id'], item['pdf']
+            pdf_relpath(pdf)
+            require(type(source_id) is int and source_id > 0 and source_id not in self.source_exclusions
+                    and pdf.casefold() not in files, f'Duplicate or invalid excluded source: {pdf}')
+            require(item['kind'] == 'volume_index' and type(item['page']) is int and item['page'] > 0
+                    and isinstance(item.get('locator'), str) and item['locator'].strip(),
+                    f'Excluded source needs original page evidence: {pdf}')
+            files.add(pdf.casefold())
+            self.source_exclusions[source_id] = item
         for key, topic in self.topics.items():
             require(topic['papers'] and set(topic['papers']) <= self.papers.keys(), f'Invalid topic papers: {key}')
             require(topic['queries'] and all(isinstance(q, str) and norm(q) for q in topic['queries']),
@@ -238,11 +249,20 @@ class Graph:
                                     (source['id'] * paperlist.PAGE_STRIDE + page,)).fetchone() is not None,
                         f"No indexed identity page: {variant['pdf']}:{page}")
                 variant_pages_checked += 1
+        for source_id, item in self.source_exclusions.items():
+            source = con.execute('SELECT relpath,pages,status FROM papers WHERE id=?', (source_id,)).fetchone()
+            require(source is not None and source['relpath'] == item['pdf'] and source['pages']
+                    and item['page'] <= source['pages'], f"Invalid exclusion source: {item['pdf']}")
+            if source['status'] != 'missing':
+                require(con.execute('SELECT 1 FROM page_index WHERE rowid=?',
+                                    (source_id * paperlist.PAGE_STRIDE + item['page'],)).fetchone() is not None,
+                        f"No indexed exclusion proof page: {item['pdf']}:{item['page']}")
         return {'papers': len(self.papers), 'topics': len(self.topics), 'edges': len(self.edges),
                 'reading_states': dict(Counter(p['reading_status'] for p in self.papers.values())),
                 'edge_review_states': dict(Counter(e['review'] for e in self.edges.values())),
                 'evidence_pages_checked': sum(len(pages) for pages in required.values()),
                 'variant_identity_pages_checked': variant_pages_checked,
+                'source_exclusion_records_checked': len(self.source_exclusions),
                 'missing_markdown_cards': missing_cards}
 
 
@@ -312,7 +332,7 @@ def retrieve(con, terms, args):
             'papers': [papers[k] | {'rank_score': round(scores[k], 5)} for k in selected]}
 
 
-def corpus_layer(source, args, traced, lexical, terms):
+def corpus_layer(source, args, traced, lexical, terms, source_exclusions):
     path = args.corpus_db
     if path is None and args.db.resolve() == paperlist.DEFAULT_DB.resolve():
         path = corpus_rag.DEFAULT_DB
@@ -346,18 +366,29 @@ def corpus_layer(source, args, traced, lexical, terms):
                 paper = hit[key]
                 ranks[paper] += weight / (20+rank)
                 channels[paper].append(name)
+        exclusions = {}
+        for source_id, item in source_exclusions.items():
+            row = source.execute('SELECT relpath FROM papers WHERE id=?', (source_id,)).fetchone()
+            if row and row['relpath'] == item['pdf']:
+                exclusions[source_id] = item
+        excluded_hits = []
         shortlist = []
-        for paper in sorted(ranks,key=lambda k:(-ranks[k],k))[:args.limit]:
+        for paper in sorted(ranks,key=lambda k:(-ranks[k],k)):
             row = source.execute('SELECT id,relpath,title_hint,author_hint,year,journal FROM papers WHERE id=?',(paper,)).fetchone()
             if row:
-                shortlist.append(dict(row) | {'channels':channels[paper], 'score':round(ranks[paper],6)})
+                hit = dict(row) | {'channels': channels[paper], 'score': round(ranks[paper], 6)}
+                if paper in exclusions:
+                    excluded_hits.append(hit | {'source_exclusion': exclusions[paper]})
+                elif len(shortlist) < args.limit:
+                    shortlist.append(hit)
         anchors = []
         for node in traced['papers']:
             if node['id'] in traced['anchors'] and node.get('pdf'):
                 item = pre.execute('SELECT id FROM docs WHERE relpath=?',(node['pdf'],)).fetchone()
                 if item:
                     anchors.append(item['id'])
-        anchors = list(dict.fromkeys([*anchors,*args.citation_seed,*[p['id'] for p in shortlist[:3]]]))[:8]
+        anchors = list(dict.fromkeys(p for p in [*anchors, *args.citation_seed, *[h['id'] for h in shortlist[:3]]]
+                                     if p not in exclusions))[:8]
         if args.intent in ('lineage','compare','write') or args.citation_seed:
             citations = {side:corpus_rag.neighborhood(pre,anchors,side,min(args.depth,3),args.citation_limit,args.include_tail)
                          for side in ('past','future') if args.direction in (side,'both') and anchors}
@@ -399,7 +430,8 @@ def corpus_layer(source, args, traced, lexical, terms):
             except (ValueError, OSError, sqlite3.Error) as err:
                 attribution_graph = {'available': False, 'note': str(err)}
         coverage = dict(pre.execute('SELECT COUNT(*) AS documents,SUM(page_count) AS source_pages, SUM(page_count=0) AS no_text FROM docs').fetchone())
-        return {'available':True,'coverage':coverage,'ranked_candidates':shortlist,'passages':passages,
+        return {'available':True,'coverage':coverage,'ranked_candidates':shortlist,
+                'excluded_nonresearch_hits':excluded_hits,'passages':passages,
                 'dense':dense,'citation_candidates':citations,'semantic_graph':semantic_graph,
                 'model_comparison_leads':comparison,'citation_attributions':attribution_graph,
                 'notes':['Section labels and citation matches are machine-generated leads, not independently checked facts.',
@@ -529,7 +561,8 @@ def run(args, graph):
             FROM papers WHERE status <> 'missing' ''').fetchone())
         lexical = retrieve(con, terms, args)
         return {'question': args.question, 'intent': args.intent, 'coverage': coverage,
-                'graph': traced, 'retrieval': lexical, 'corpus_rag':corpus_layer(con,args,traced,lexical,terms),
+                'graph': traced, 'retrieval': lexical,
+                'corpus_rag':corpus_layer(con,args,traced,lexical,terms,graph.source_exclusions),
                 'notes': ['Graph coverage is curated and incomplete; graph edges are not causal proof.',
                           'Journal/year filters apply to search, not historical graph neighbors. Search years come from filenames.',
                           'Semantic matches and automated citations supplement lexical evidence; no external citation database.',

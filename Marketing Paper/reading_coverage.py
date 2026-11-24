@@ -26,12 +26,16 @@ def coverage(con, graph):
         variant_key, variant = variants.get(path_key, (None, None))
         key = by_pdf.get(path_key) or variant_key
         node = graph.node(key) if key else {}
+        exclusion = graph.source_exclusions.get(row['id'])
+        if exclusion and (key or exclusion['pdf'] != row['relpath']):
+            raise ValueError(f"Exclusion conflicts with catalog identity for source {row['id']}")
         # A source-identity decision does not imply that this edition was read.
-        state = 'not_reviewed' if variant else node.get('reading_status', 'not_reviewed')
+        state = ('not_applicable' if exclusion else 'not_reviewed' if variant else
+                 node.get('reading_status', 'not_reviewed'))
         if key:
             registered.add(key)
         title = corpus_rag.normalized_title(row['title_hint'] or '')
-        if row['status'] != 'missing' and len(title) >= 16 and len(title.split()) >= 3:
+        if not exclusion and row['status'] != 'missing' and len(title) >= 16 and len(title.split()) >= 3:
             title_groups[title].append(row['id'])
         pages, text = row['pages'], row['text_pages']
         source_issue = (
@@ -40,7 +44,8 @@ def coverage(con, graph):
             'no_indexed_text' if not text else
             'partial_indexed_text' if pages and text < pages else None
         )
-        row.update(work_id=key, identity_state=('verified_variant' if variant else
+        row.update(work_id=key, identity_state=('verified_nonresearch' if exclusion else
+                                               'verified_variant' if variant else
                                                'registered_work' if key else 'unresolved'),
                    reading_state=state, source_issue=source_issue, doi=node.get('doi'),
                    publication_year=node.get('year'), reading_note=node.get('reading_note'),
@@ -48,6 +53,8 @@ def coverage(con, graph):
         if variant:
             row.update(doi=variant.get('doi'), variant_identity=variant,
                        work_reading_state=node.get('reading_status'), reading_note='Source identity checked only.')
+        if exclusion:
+            row['source_exclusion'] = exclusion
         source_rows.append(row)
     # Candidate families are for manual adjudication; not mergers or duplicate counts.
     groups = {i: members for i, members in enumerate(
@@ -66,7 +73,8 @@ def coverage(con, graph):
         'registered_graph_works': len(graph.papers),
         'present_registered_work_ids': len({x['work_id'] for x in live if x['work_id']}),
         'present_verified_variants': sum(x['identity_state'] == 'verified_variant' for x in live),
-        'present_unresolved_pdf_identities': sum(x['work_id'] is None for x in live),
+        'present_verified_nonresearch': sum(x['identity_state'] == 'verified_nonresearch' for x in live),
+        'present_unresolved_pdf_identities': sum(x['identity_state'] == 'unresolved' for x in live),
         'same_title_candidate_groups': len(groups),
         'pdfs_in_same_title_candidate_groups': len(candidate_by_id),
         'same_title_groups_identity_resolved': sum(
@@ -92,7 +100,7 @@ def main():
     sub.add_parser('status')
     q = sub.add_parser('queue')
     q.add_argument('--journal')
-    q.add_argument('--state', choices=['not_reviewed', 'queued', 'screened', 'core_read', 'source_gap'])
+    q.add_argument('--state', choices=['not_reviewed', 'queued', 'screened', 'core_read', 'source_gap', 'not_applicable'])
     q.add_argument('--issues-only', action='store_true')
     q.add_argument('--after', type=int, default=0)
     q.add_argument('--limit', type=int, default=20)

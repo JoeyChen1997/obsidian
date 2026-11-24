@@ -63,7 +63,7 @@ $semanticsTool = '.\Marketing Paper\corpus_semantics.py'
 & $paperPython -B $researchTool brief '分销渠道与价格内生性' --intent lineage --phrase 'distribution channel' --phrase 'price endogeneity' --term 'jeuland shugan channel profits' --semantic 'Pricing and product quality in a manufacturer retailer distribution channel when retail prices are endogenous'
 ```
 
-- `brief` 中 `corpus_rag.ranked_candidates` 列出融合排名和命中渠道；`passages` 提供候选篇章和原页；`dense` 披露实际向量覆盖，未启用或不可用会明确标记。`lineage`、`compare`、`write` 模式围绕候选和手动 `--citation-seed` 展开自动网络。日期和期刊筛选限制检索候选，不限制追溯前驱；自动层的年份来自文件名，不是正式引文年份。
+- `brief` 中 `corpus_rag.ranked_candidates` 列出融合排名和命中渠道；已经由原页确认的非研究来源另列 `excluded_nonresearch_hits`，不进入融合论文清单或用作自动扩图种子。原始 `passages`、向量等底层结果仍可见以便审计；未核文件不因题名被排除。`dense` 披露实际向量覆盖，未启用或不可用会明确标记。`lineage`、`compare`、`write` 模式围绕候选和手动 `--citation-seed` 展开自动网络。日期和期刊筛选限制检索候选，不限制追溯前驱；自动层的年份来自文件名，不是正式引文年份。
 - `corpus_rag.py context` 给出参考文献证据和正文作者-年份命中。`related` 用共享参考文献找没有直接相互引用的近邻。两者都需要回原文才能判断理论关系。自动引用会漏掉题名异译、短题名、作者或年份不一致及未收录论文，并可能误连；默认不查低置信尾页，确有需要再加 `--include-tail`。
 - `brief` 的 `corpus_rag.semantic_graph` 返回当前检索邻域的时间线、概念命中、假设／命题线索，以及带证据页的关系候选。用 `--citation-seed` 加入已知论文的数字 ID，再用 `corpus_semantics.py path` 查两个数字 ID 之间的多跳候选路径。时间线使用文件名年份，引用写作时以原刊为准。查不到路径时，结合全文、引用上下文和同义词继续检索。
 - `citation_attributions` 给出后文怎样描述前文及其原页；若有 `cited_source_leads`，同时给出在前文中检索到的相关页，不能据此认定原命题成立。

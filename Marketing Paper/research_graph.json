@@ -1,5 +1,16 @@
 {
   "schema_version": 1,
+  "source_exclusions": [
+    {"source_id": 19235, "pdf": "JPE/Heckman_2018_Index to Volume 126.pdf", "kind": "volume_index", "page": 1, "locator": "Index to Volume 126；Articles and Notes，条目为作者、题名和页码"},
+    {"source_id": 36286, "pdf": "MS/anonymous_2003_Index to Volume 49.pdf", "kind": "volume_index", "page": 2, "locator": "Index to Volume 49；Authors，按作者列篇目和页码"},
+    {"source_id": 36287, "pdf": "MS/anonymous_2004_Index to Volume 50.pdf", "kind": "volume_index", "page": 2, "locator": "Index to Volume 50；Authors，按作者列篇目和页码"},
+    {"source_id": 36288, "pdf": "MS/anonymous_2005_Index to Volume 51.pdf", "kind": "volume_index", "page": 2, "locator": "Index to Volume 51；Authors，按作者列篇目和页码"},
+    {"source_id": 36289, "pdf": "MS/anonymous_2006_Index to Volume 52.pdf", "kind": "volume_index", "page": 2, "locator": "Index to Volume 52；Authors，按作者列篇目和页码"},
+    {"source_id": 36290, "pdf": "MS/anonymous_2007_Index to Volume 53.pdf", "kind": "volume_index", "page": 2, "locator": "Index to Volume 53；Authors，按作者列篇目和页码"},
+    {"source_id": 36292, "pdf": "MS/anonymous_2008_Index to Volume 54.pdf", "kind": "volume_index", "page": 2, "locator": "Index to Volume 54；Authors，按作者列篇目和页码"},
+    {"source_id": 36293, "pdf": "MS/anonymous_2009_Index to Volume 55.pdf", "kind": "volume_index", "page": 2, "locator": "Index to Volume 55；Authors；正文只是篇目索引，不是其中被列出的 Villas-Boas 论文"},
+    {"source_id": 36294, "pdf": "MS/anonymous_2010_Index to Volume 56.pdf", "kind": "volume_index", "page": 2, "locator": "Index to Volume 56；Authors，按作者列篇目和页码"}
+  ],
   "topics": [
     {
       "id": "platform-search-precision",
@@ -33,14 +44,14 @@
       "id": "search-variety-participation",
       "title": "搜索参与、匹配分布与产品线",
       "aliases": ["搜索参与", "产品线", "品种福利", "product line length", "heterogeneous search costs", "market participation", "excessive variety"],
-      "papers": ["wolinsky-1984-variety", "wolinsky-1986-random-search", "cachon-terwiesch-xu-2008-assortment", "liu-dukes-2013-evaluation-costs", "moraga-sandor-wildenbeest-2017-search-cost", "wang-sahin-2018-search-assortment", "nocke-rey-2024-steering", "zia-kuksov-2025-product-line"],
+      "papers": ["wolinsky-1984-variety", "wolinsky-1986-random-search", "cachon-terwiesch-xu-2008-assortment", "villas-boas-2009-evaluation-hold-up", "liu-dukes-2013-evaluation-costs", "moraga-sandor-wildenbeest-2017-search-cost", "wang-sahin-2018-search-assortment", "nocke-rey-2024-steering", "zia-kuksov-2025-product-line"],
       "queries": ["search costs product line length", "heterogeneous search costs participation", "match value hazard rate"]
     },
     {
       "id": "within-store-steering-consideration",
       "title": "店内搜索引导、考虑集与选择过载",
       "aliases": ["选择过载", "店内搜索", "事前考虑集", "组合定价", "choice overload", "within-firm search", "search steering", "consider-then-choose"],
-      "papers": ["armstrong-vickers-zhou-2009-prominence", "liu-dukes-2013-evaluation-costs", "wang-sahin-2018-search-assortment", "nocke-rey-2024-steering"],
+      "papers": ["armstrong-vickers-zhou-2009-prominence", "villas-boas-2009-evaluation-hold-up", "liu-dukes-2013-evaluation-costs", "jing-2016-learning-investment", "wang-sahin-2018-search-assortment", "nocke-rey-2024-steering"],
       "queries": ["choice overload noisy positioning", "search cost assortment planning pricing", "within firm consideration set"]
     },
     {
@@ -66,6 +77,35 @@
     }
   ],
   "papers": [
+    {
+      "id": "villas-boas-2009-evaluation-hold-up",
+      "title": "Product Variety and Endogenous Pricing with Evaluation Costs",
+      "authors": "J. Miguel Villas-Boas",
+      "year": 2009,
+      "journal": "Management Science",
+      "doi": "10.1287/mnsc.1090.1024",
+      "pdf": "MS/VillasBoas_2009_Product Variety and Endogenous Pricing with Evaluation Costs.pdf",
+      "aliases": ["Villas-Boas 2009", "Information Overload with Endogenous Pricing", "evaluation costs hold-up"],
+      "card": "Marketing Paper/文献卡/Villas-Boas 2009 - 一次性评估与产品线承诺.md",
+      "reading_status": "core_read",
+      "reading_note": "核正文和印刷 Props. 1–3；重从参与式推导斜率差、核均匀分布算例，印刷 Prop. 1 导数疑点单列；未另证非对称偏离或核早期稿。",
+      "sections": {"introduction": [[2, 5]], "model": [[5, 6]], "results": [[6, 8]], "discussion": [[8, 9]], "proof": [[9, 9]]}
+    },
+    {
+      "id": "jing-2016-learning-investment",
+      "title": "Lowering Customer Evaluation Costs, Product Differentiation, and Price Competition",
+      "authors": "Bing Jing",
+      "year": 2016,
+      "online_year": 2015,
+      "journal": "Marketing Science",
+      "doi": "10.1287/mksc.2015.0918",
+      "pdf": "MKSC/Jing_2015_Lowering Customer Evaluation Costs, Product Differentiation, and Price Competition.pdf",
+      "aliases": ["Bing Jing 2016", "Jing 2015", "customer learning investment", "evaluation-cost reduction"],
+      "card": "Marketing Paper/文献卡/Jing 2016 - 评估成本投资与质量价格竞争.md",
+      "reading_status": "core_read",
+      "reading_note": "核 Weitzman 指数、覆盖/不覆盖的核心定价与印刷 Props. 2–6；复算同/不同投资的价格结果，独立附录的精确分区及等质混合定价完整证明未核。",
+      "sections": {"introduction": [[1, 4]], "model": [[4, 6]], "results": [[6, 13]], "discussion": [[13, 14]], "proof": [[14, 14]]}
+    },
     {
       "id": "wang-sahin-2018-search-assortment",
       "title": "The Impact of Consumer Search Cost on Assortment Planning and Pricing",
@@ -581,6 +621,50 @@
     }
   ],
   "edges": [
+    {
+      "id": "villas-boas-nocke-rey-distinct-overload",
+      "from": "villas-boas-2009-evaluation-hold-up",
+      "to": "nocke-rey-2024-steering",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "Nocke–Rey 明确对照 Villas-Boas 的一次性评估和隐价后的剩余攫取；逐件搜索的随机摆位即使固定统一垄断价也会降低扩品后的参与。",
+      "changed": "从一笔费用揭露全组合、价格与自身位置，转为每件查验、位置隐藏和按历史更新；卖家可用尾区块引导，最优统一价 steering 在无上架成本时保留全部产品。",
+      "limit": "不是相同价格制度或严格嵌套；只有 Nocke–Rey 的指定全随机续局给扩品降低起搜阈值，只有 Villas-Boas 的在位价格和参与共同决定缩线。",
+      "evidence": [{"paper": "villas-boas-2009-evaluation-hold-up", "page": 5, "printed": "1341", "locator": "§2 一次性发现所有产品、价格和买家位置"}, {"paper": "villas-boas-2009-evaluation-hold-up", "page": 7, "printed": "1343", "locator": "Props. 1–2，正评估成本下的产品线上界"}, {"paper": "nocke-rey-2024-steering", "page": 8, "printed": "1691", "locator": "明确讨论 Villas-Boas (2009)"}, {"paper": "nocke-rey-2024-steering", "page": 16, "printed": "1699", "locator": "Cor. 2 全随机摆位参与阈值"}, {"paper": "nocke-rey-2024-steering", "page": 23, "printed": "1706", "locator": "Prop. 5 最优引导全上架"}]
+    },
+    {
+      "id": "villas-boas-jing-evaluation-cost-and-observability",
+      "from": "villas-boas-2009-evaluation-hold-up",
+      "to": "jing-2016-learning-investment",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "Jing 将 Villas-Boas 放在组合与评估成本文献中，另研究竞争企业的质量与顾客学习投资，而非由隐藏价格控制同一厂商产品线。",
+      "changed": "评估前价格由只知均衡预期变为可观察实际价格；事后发现整套的垄断商改为两家各一件、投资降低各自评估成本，首访顺序取决于顾客类型。",
+      "limit": "Jing 的主模型全覆盖，不能估计原模型因预期高价而退出的边际，也不视 Jing 的非覆盖扩展为只改变一个参数。",
+      "evidence": [{"paper": "villas-boas-2009-evaluation-hold-up", "page": 5, "printed": "1341", "locator": "§2 消费者须先付费才知全部价格"}, {"paper": "jing-2016-learning-investment", "page": 3, "printed": "115", "locator": "Literature Review 把 Villas-Boas (2009) 列为组合文献"}, {"paper": "jing-2016-learning-investment", "page": 5, "printed": "117", "locator": "企业先定质量和 CLI、后报价，消费者查询前观察"}, {"paper": "jing-2016-learning-investment", "page": 7, "printed": "119", "locator": "Prop. 1，完全覆盖仍可重新分配需求"}]
+    },
+    {
+      "id": "liu-dukes-jing-evaluation-cost-control",
+      "from": "liu-dukes-2013-evaluation-costs",
+      "to": "jing-2016-learning-investment",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "Jing 明确把 Liu–Dukes 归为考虑集文献；对比其两层平行搜索，Jing 转向卖家通过固定投资降低自身查验成本、在已知价格下竞争首访。",
+      "changed": "店数与店内深度为事前选择，且厂商不能定制顾客的评估成本；Jing 则让消费者按产品的保留值顺序查验，让不同 CLI 通过相对优势改价格和质量。",
+      "limit": "Liu–Dukes 的同店/跨店成本区分不等于 Jing 的双寡头相对投入；无严格嵌套。",
+      "evidence": [{"paper": "liu-dukes-2013-evaluation-costs", "page": 5, "printed": "1874", "locator": "§2 与注 2，不能直接操纵考虑集"}, {"paper": "liu-dukes-2013-evaluation-costs", "page": 6, "printed": "1875", "locator": "Eq. (3)，预先选择两层评估量"}, {"paper": "jing-2016-learning-investment", "page": 3, "printed": "115", "locator": "Literature Review 将 Liu–Dukes 归入考虑集文献"}, {"paper": "jing-2016-learning-investment", "page": 8, "printed": "120", "locator": "Props. 2–4，学习投资与质量竞争"}]
+    },
+    {
+      "id": "armstrong-jing-first-inspection-price-boundary",
+      "from": "armstrong-vickers-zhou-2009-prominence",
+      "to": "jing-2016-learning-investment",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "更多首访不是降价的通用结论：Armstrong 等的同质成本、指定首位和付费见价基准令显眼店降价；Jing 的全覆盖支路，固定质量且实际价格可见，用相对 CLI 获得首访反而伴随本店提价。",
+      "changed": "由显眼位置外定、先搜后见价，改为成本优势影响事前保留值，首访受报价与顾客偏好共同决定。Jing 价格是相对无投资基准，非单纯比较高低端的价格水平。",
+      "limit": "独立机制对照，未确认直接引用或一项原语足以翻转结果；不能将结果外推至相同质量或不覆盖。",
+      "evidence": [{"paper": "armstrong-vickers-zhou-2009-prominence", "page": 5, "printed": "213", "locator": "§2 明示搜索顺序与付费揭示"}, {"paper": "armstrong-vickers-zhou-2009-prominence", "page": 11, "printed": "219", "locator": "Prop. 1，显眼首位附近的价格排序"}, {"paper": "jing-2016-learning-investment", "page": 6, "printed": "118", "locator": "Eq. (5)，类型依赖的首访阈值"}, {"paper": "jing-2016-learning-investment", "page": 7, "printed": "119", "locator": "Eqs. (8)–(11) 与 Prop. 1，相对 CLI 抬高本店均衡价"}]
+    },
     {
       "id": "liu-dukes-wang-sahin-parallel-consideration-and-prices",
       "from": "liu-dukes-2013-evaluation-costs",

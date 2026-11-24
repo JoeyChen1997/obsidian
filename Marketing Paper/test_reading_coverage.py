@@ -7,6 +7,7 @@ from reading_coverage import coverage
 
 
 class FixtureGraph:
+    source_exclusions = {}
     papers = {
         'registered': {'pdf': 'MS/a.pdf', 'reading_status': 'core_read',
                        'title': 'Comparative Statics of Distribution Channels', 'year': 2013},
@@ -18,6 +19,29 @@ class FixtureGraph:
 
 
 class CoverageTest(unittest.TestCase):
+    def test_reviewed_nonresearch_is_auditable_and_not_a_work(self):
+        con = sqlite3.connect(':memory:')
+        self.addCleanup(con.close)
+        con.row_factory = sqlite3.Row
+        con.execute('CREATE TABLE papers(id,relpath,journal,year,title_hint,author_hint,status,pages,text_pages)')
+        con.executemany('INSERT INTO papers VALUES (?,?,?,?,?,?,?,?,?)', [
+            (10, 'MS/index.pdf', 'MS', 2009, 'Index to Volume 55', '', 'indexed', 8, 8),
+            (11, 'MS/unreviewed.pdf', 'MS', 2009, 'Index to Volume 55', '', 'indexed', 8, 8),
+        ])
+        graph = FixtureGraph()
+        graph.source_exclusions = {10: {'pdf': 'MS/index.pdf', 'kind': 'volume_index', 'page': 2}}
+        stats, rows, groups = coverage(con, graph)
+        self.assertEqual(stats['present_verified_nonresearch'], 1)
+        self.assertEqual(stats['present_unresolved_pdf_identities'], 1)
+        self.assertEqual(stats['present_registered_work_ids'], 0)
+        self.assertEqual(rows[0]['reading_state'], 'not_applicable')
+        self.assertEqual(rows[0]['source_exclusion']['page'], 2)
+        self.assertEqual(rows[1]['reading_state'], 'not_reviewed')
+        self.assertFalse(groups)
+        graph.source_exclusions[10]['pdf'] = 'MS/other.pdf'
+        with self.assertRaises(ValueError):
+            coverage(con, graph)
+
     def test_verified_edition_shares_work_not_reading_state(self):
         con = sqlite3.connect(':memory:')
         self.addCleanup(con.close)
