@@ -32,7 +32,9 @@ aliases:
 
 此次全库自动索引：**47,568 份 PDF**，**918,124 个可检索来源页**，切成 **3,530,738 个正文段落**；生成 **47,567 个论文级向量**，剩下一件无可检索正文。识别 **219,911 条参考文献区内候选引用**和 **1,890 条未定位参考文献标题时的尾页候选**。有 30,643 个来源文件至少匹配到一条本地引用。仍不是逐篇精读。检测到章节标题的文档有 37,890 份；检测不到时正文仍可搜，不要依赖严格章节过滤做穷尽排查。
 
-语义层完成了 **47,568 份 PDF** 的规则扫描，命中 **156,364 组论文—概念**、**144,083 条陈述候选**（其中 **37,729 条编号命题候选**），以及 **860 条有正文语境的关系候选，涉及 847 对论文**。概念命中可来自背景段落，方法沿用可来自实证论文。规则会漏掉跨页、需要结合上下段才能确认的关系，尤其是同一句列举多篇的情形。按题检索时结合正文和引用网络，关键连接仍需对照两篇论文的模型和结果。
+两项规则扫描均覆盖 **47,568 份 PDF**。时序语义层有 **963 条关系候选，涉及 947 对论文**，包括 63 条根据跨句上下文定位的关系；另有 **3,059 条引用归因，涉及 2,983 对论文**，指后文明确描述前文的假设、模型或结果，不表示理论继承。两类有 50 对重叠，合计 **3,880 对有正文线索的论文**。概念和陈述索引仍有 **156,364 组论文—概念**及 **144,083 条陈述候选**。这些数字是自动扫描结果，不是精读覆盖。
+
+跨句关系要求可定位的引用及明确的语境，例如前句列出两篇、下句的 “The first” 指回第一篇，或 “These papers” 指回上一句明确列出的论文。它仍会漏掉跨页或需要对照模型、符号及证明才看得出的联系。遇到无直接引用索引的论文，模型比较另外给出双侧原文，作为待核对照，不写入时序图。
 
 以下命令从 vault 根目录运行。`--term` 把多个词按 AND 查询；`--phrase` 查整个词组；`--semantic` 写一句英文描述来补候选。从图谱未覆盖的主题也可以直接开始。
 
@@ -53,12 +55,17 @@ $corpusTool = '.\Marketing Paper\corpus_rag.py'
 $semanticsTool = '.\Marketing Paper\corpus_semantics.py'
 & $paperPython -B $semanticsTool status
 & $paperPython -B $semanticsTool path 44977 43712
+& $paperPython -B $semanticsTool path 23839 24931
+& $paperPython -B '.\Marketing Paper\citation_claims.py' status
+& $paperPython -B $researchTool brief '广告费率外生还是内生' --intent compare --phrase 'advertising rates' --phrase 'advertising exposure' --citation-seed 24931 --semantic 'When a platform sets advertising rates in the model and when those rates are taken as given'
 & $paperPython -B $researchTool brief '分销渠道与价格内生性' --intent lineage --phrase 'distribution channel' --phrase 'price endogeneity' --term 'jeuland shugan channel profits' --semantic 'Pricing and product quality in a manufacturer retailer distribution channel when retail prices are endogenous'
 ```
 
 - `brief` 中 `corpus_rag.ranked_candidates` 列出融合排名和命中渠道；`passages` 提供候选篇章和原页；`dense` 披露实际向量覆盖，未启用或不可用会明确标记。`lineage`、`compare`、`write` 模式围绕候选和手动 `--citation-seed` 展开自动网络。日期和期刊筛选限制检索候选，不限制追溯前驱；自动层的年份来自文件名，不是正式引文年份。
 - `corpus_rag.py context` 给出参考文献证据和正文作者-年份命中。`related` 用共享参考文献找没有直接相互引用的近邻。两者都需要回原文才能判断理论关系。自动引用会漏掉题名异译、短题名、作者或年份不一致及未收录论文，并可能误连；默认不查低置信尾页，确有需要再加 `--include-tail`。
 - `brief` 的 `corpus_rag.semantic_graph` 返回当前检索邻域的时间线、概念命中、假设／命题线索，以及带证据页的关系候选。用 `--citation-seed` 加入已知论文的数字 ID，再用 `corpus_semantics.py path` 查两个数字 ID 之间的多跳候选路径。时间线使用文件名年份，引用写作时以原刊为准。查不到路径时，结合全文、引用上下文和同义词继续检索。
+- `citation_attributions` 给出后文怎样描述前文及其原页；若有 `cited_source_leads`，同时给出在前文中检索到的相关页，不能据此认定原命题成立。
+- `model_comparison_leads` 在 `lineage` 和 `compare` 模式下自动补搜同一模型要素，例如 `advertising rates`、`advertising exposure` 或 `wholesale prices`。结果给出两篇的原句、页码和差异维度，区分条件陈述和模型设定候选。它只说明本地索引未检出直接引用，不能证明两篇互不引用或存在继承。词表以外的要素仍可走全文和向量搜索。
 - `trace`/`path` 只查审核图谱，与全库候选引用分开。`path --include-screened` 可以查看带暂定环节的审核图谱链。引用路径不等于因果证明或模型继承。
 - `evidence` 支持稳定的图谱论文 ID 或索引数字 ID。未知章节明确报错，仍可手动指定 PDF 页；章节定位目前仅为已核对论文的页范围，页与页之间可能跨节。公式、印刷页码和引文要查 PDF 原页。
 
@@ -66,11 +73,12 @@ $semanticsTool = '.\Marketing Paper\corpus_semantics.py'
 
 - **分销渠道**的查询在没有已审核主题节点时，找到了 Jeuland 与 Shugan（1983）至 Xu（2009）的假设对比。Xu 的 PDF 第 6 页（刊页 1351）引入价格内生性，并在命题 2 区分质量不足、相等或过度提供的情形。三种情况取决于需求弹性结构。数字 ID 为 `24379 → 35942`。
 - **信息商品捆绑**的查询找到了 Hitt 与 Chen（2005）至 Wu 等（2008）的扩展。Wu 等在 PDF 第 4 页（刊页 610）说明如何用非线性混合整数规划研究定制捆绑，以容纳更多估值及消费者异质性设定。数字 ID 为 `30628 → 35885`。
-- **定向广告**的查询找到了 Iyer 等（2005）至 Moorthy 与 Shahrokhi Tehrani（2023）的曝光假设变化，证据在后者 PDF 第 3 页（刊页 1059）。Zhu 等（2025）引入平台内生广告费率的分支可由已审核图谱的初筛记录及原文追查，自动语义路径目前漏掉这一环。
+- **定向广告**：Moorthy 与 Shahrokhi Tehrani（2023）PDF 第 3 页（刊页 1059）明确说明 Chen 与 Iyer（2002）的可触达性设定如何对应其顺序博弈中的局部定价情形，也对比了 Iyer 等（2005）的确定性曝光与其概率性曝光。Zhu 等（2025）PDF 第 16 页（刊页 1396）把 Moorthy 与 Shahrokhi Tehrani 的设定放在无平台、广告费率外生的组内作对比，再讨论设定费率的中间平台。现在能返回 `23839 → 24726 → 24931` 的候选路径。
+- **跨分支对照**：同一查询在无直接引用索引的例子中找到 Wang、Zhou 与 Joshi（2024）PDF 第 17 页（刊页 174）的外生广告费率假设，与 Zhu 等（2025）PDF 第 2 页（刊页 1382）将广告费率对隐私制度的响应作为其消费者隐私获益的必要条件相对照。两篇研究的结果变量和制度设定不同，这不是同一个福利命题。
 
 ## 更新本机索引
 
-新增文件后先按底层文献库说明跑 `paperlist.py build` 和 `ocr`，再跑 `corpus_rag.py build`。最后运行 `corpus_vectors.py build` 和 `corpus_semantics.py build`。各层可续跑。`corpus_rag.py build --refresh` 会重扫旧论文的参考文献，发现以新入库论文为目标的旧引用。语义层基于正文及候选引用变化增量更新。修改概念词表后可用 `corpus_semantics.py --db <新文件> build` 重建，并给 `research_agent.py` 指定同一 `--semantic-db`。派生索引和本地模型保存在 `%LOCALAPPDATA%\PaperlistResearch`。[[Marketing Paper/Paperlist 研究知识库|底层文献库]]
+新增文件后先按底层文献库说明跑 `paperlist.py build` 和 `ocr`，再跑 `corpus_rag.py build`。最后运行 `corpus_vectors.py build`、`corpus_semantics.py build` 和 `citation_claims.py build`。各层可续跑。`corpus_rag.py build --refresh` 会重扫旧论文的参考文献，发现以新入库论文为目标的旧引用。语义层和归因层基于正文及候选引用变化增量更新。修改概念词表后可用 `corpus_semantics.py --db <新文件> build` 重建，并给 `research_agent.py` 指定同一 `--semantic-db`。派生索引和本地模型保存在 `%LOCALAPPDATA%\PaperlistResearch`。[[Marketing Paper/Paperlist 研究知识库|底层文献库]]
 
 在新机器上重建需要 Python 3.10+、SQLite FTS5，以及 `pyahocorasick`（构建引用网络）、`numpy`／`onnxruntime`／`tokenizers`（向量层）。这些依赖可装在环境中或放到 `%LOCALAPPDATA%\PaperlistResearch\rag-deps`。将 [固定版本的 MiniLM](https://huggingface.co/Xenova/all-MiniLM-L6-v2/tree/751bff37182d3f1213fa05d7196b954e230abad9) 的 `tokenizer.json` 和 `onnx/model_quantized.onnx` 放进同目录下的 `minilm-v1`，保留两个文件名。只有模型权重下载需要联网，构建与检索在本机运行。
 
