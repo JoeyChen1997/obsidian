@@ -79,7 +79,7 @@
       "id": "algorithmic-pricing-deviation",
       "title": "算法定价、探索与偏离诊断",
       "aliases": ["算法合谋", "算法定价", "表观合谋", "algorithmic collusion", "reinforcement learning with prices", "off path exploration"],
-      "papers": ["calvano-et-al-2020-algorithmic-pricing", "abada-lambin-2023-seeming-collusion", "qiu-et-al-2025-personalized-pricing"],
+      "papers": ["maskin-tirole-1988-price-competition", "calvano-et-al-2020-algorithmic-pricing", "klein-2021-sequential-pricing", "abada-lambin-2023-seeming-collusion", "qiu-et-al-2025-personalized-pricing"],
       "queries": ["algorithmic pricing collusion", "reinforcement learning forced deviation", "imperfect monitoring off path exploration"]
     },
     {
@@ -105,6 +105,35 @@
     }
   ],
   "papers": [
+    {
+      "id": "maskin-tirole-1988-price-competition",
+      "title": "A Theory of Dynamic Oligopoly, II: Price Competition, Kinked Demand Curves, and Edgeworth Cycles",
+      "authors": "Eric Maskin and Jean Tirole",
+      "year": 1988,
+      "journal": "Econometrica",
+      "doi": "10.2307/1911701",
+      "pdf": "ECMA/Maskin_1988_A Theory of Dynamic Oligopoly, II Price Competition, Kinked Demand Curves, and Edgeworth Cycles.pdf",
+      "verified_variants": [{"pdf": "ECMA/Maskin_1989_A Theory of Dynamic Oligopoly, II.pdf", "kind": "erratum", "doi": "10.2307/1913726", "identity_page": 2, "identity_note": "Econometrica 57(6), 1501 (1989)；ERRATUM 给 1988 Part II 的刊页 592、§10 补一行；非重刊或独立模型。"}],
+      "aliases": ["Maskin Tirole 1988 II", "dynamic oligopoly part II", "kinked demand Edgeworth cycles"],
+      "card": "Marketing Paper/文献卡/Maskin 与 Tirole 1988 - 动态寡头与 Edgeworth 周期.md",
+      "reading_status": "core_read",
+      "reading_note": "核交替承诺、Tables I–II、焦点、周期与内生时序的主文和印刷证明；复算 Table II 低价无差异及七状态偏离。Props. 3–4/7 的独立工作稿详证未核。",
+      "sections": {"introduction": [[2, 4]], "model": [[4, 5], [21, 23]], "results": [[5, 23]], "proof": [[9, 20], [25, 29]], "discussion": [[20, 25]], "references": [[29, 30]]}
+    },
+    {
+      "id": "klein-2021-sequential-pricing",
+      "title": "Autonomous Algorithmic Collusion: Q-learning under Sequential Pricing",
+      "authors": "Timo Klein",
+      "year": 2021,
+      "journal": "RAND Journal of Economics",
+      "doi": "10.1111/1756-2171.12383",
+      "pdf": "RAND/Klein_2021_Autonomous algorithmic collusion Qlearning under sequential pricing.pdf",
+      "aliases": ["Klein 2021", "Q-learning under sequential pricing", "alternating prices algorithmic cycles"],
+      "card": "Marketing Paper/文献卡/Klein 2021 - 序贯定价与算法周期.md",
+      "reading_status": "core_read",
+      "reading_note": "据本地先行本核两期更新、最优性指标、基准和细网格周期、241 次偏离子样本与自身价格进状态；未重跑或独立核复现材料。",
+      "sections": {"introduction": [[1, 3]], "model": [[5, 10]], "results": [[10, 18]], "discussion": [[16, 19]], "references": [[20, 21]]}
+    },
     {
       "id": "calvano-et-al-2020-algorithmic-pricing",
       "title": "Artificial Intelligence, Algorithmic Pricing, and Collusion",
@@ -821,6 +850,28 @@
     }
   ],
   "edges": [
+    {
+      "id": "maskin-klein-two-period-price-commitment",
+      "from": "maskin-tirole-1988-price-competition",
+      "to": "klein-2021-sequential-pricing",
+      "type": "extends_component",
+      "review": "verified",
+      "claim": "Klein 明说沿用 Maskin–Tirole 的轮流行动环境和七价格例；消去原模型对手行动期的价值 W 可得 Klein 的两期 Bellman，再用样本反应更新 Q。",
+      "changed": "由允许混合的最优反应改为纯贪心策略与衰减随机探索；k=24 的锯齿由同一家确定性重启。",
+      "limit": "方程的经济时序相同，不证明学习策略为 MPE。Klein 的确定性周期不是 Table II 的混合均衡；价格轨迹像锯齿不足以证明均衡。",
+      "evidence": [{"paper": "maskin-tirole-1988-price-competition", "page": 5, "printed": "574", "locator": "Eqs. (2)–(3)，V/W 两阶段递推及七价格例"}, {"paper": "maskin-tirole-1988-price-competition", "page": 7, "printed": "576", "locator": "Table II 与 Claim 2，低价处混合重启"}, {"paper": "klein-2021-sequential-pricing", "page": 6, "printed": "6", "locator": "明引 Maskin–Tirole 与 Eq. (4)"}, {"paper": "klein-2021-sequential-pricing", "page": 7, "printed": "7", "locator": "Eq. (5)，两期状态与利润"}, {"paper": "klein-2021-sequential-pricing", "page": 14, "printed": "14", "locator": "§5，确定性重置者与混合周期的区别"}]
+    },
+    {
+      "id": "calvano-klein-deviation-under-alternation",
+      "from": "calvano-et-al-2020-algorithmic-pricing",
+      "to": "klein-2021-sequential-pricing",
+      "type": "extends_component",
+      "review": "verified",
+      "claim": "Klein 明引并移植 Calvano 的训练后强制偏离诊断；Calvano 比较同时报价下的折现偏离利润，Klein 对 241 个联合利润最大化的 Nash 运行试轮流报价的降价响应。",
+      "changed": "从差异化 logit、同时报价和双价历史，改为同质线性需求、对手报价承诺两期；自身价格留作附加状态试验。",
+      "limit": "比较不是一次只改变时序的实验；两篇的偏离子样本、训练过程及最优性分子不同。Klein 的平均恢复有平滑效应，不是单次都渐进。",
+      "evidence": [{"paper": "calvano-et-al-2020-algorithmic-pricing", "page": 7, "printed": "3273", "locator": "§II，logit 与同时行动"}, {"paper": "calvano-et-al-2020-algorithmic-pricing", "page": 16, "printed": "3282", "locator": "Figure 4，外生降价反应"}, {"paper": "klein-2021-sequential-pricing", "page": 10, "printed": "10", "locator": "§4 明引诊断及 241 个运行的选择"}, {"paper": "klein-2021-sequential-pricing", "page": 12, "printed": "12", "locator": "Figure 3，偏离轨迹样本条件"}, {"paper": "klein-2021-sequential-pricing", "page": 15, "printed": "15", "locator": "自身价格进入状态与 Calvano 的直接对照"}]
+    },
     {
       "id": "calvano-qiu-logit-ranking-feedback",
       "from": "calvano-et-al-2020-algorithmic-pricing",

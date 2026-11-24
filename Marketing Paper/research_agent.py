@@ -84,7 +84,7 @@ class Graph:
                 pdf_relpath(pdf)
                 require(pdf.casefold() not in files, f'Duplicate PDF path: {pdf}')
                 files.add(pdf.casefold())
-                require(variant['kind'] in {'reprint', 'working_paper', 'supplement', 'same_edition_copy'},
+                require(variant['kind'] in {'reprint', 'working_paper', 'supplement', 'same_edition_copy', 'erratum'},
                         f'Invalid source role: {key}')
                 require(type(variant['identity_page']) is int and variant['identity_page'] >= 1
                         and isinstance(variant['identity_note'], str) and variant['identity_note'].strip(),

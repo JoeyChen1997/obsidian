@@ -96,6 +96,16 @@ class ResearchAgentTest(unittest.TestCase):
         self.assertFalse(self.run_tool('path', 'dinerstein-et-al-2018-search',
                                        'zhou-et-al-2025-search')['paths'])
 
+    def test_price_cycle_erratum_is_linked_without_a_second_work(self):
+        original = 'maskin-tirole-1988-price-competition'
+        correction, = self.graph.papers[original]['verified_variants']
+        self.assertEqual((correction['kind'], correction['identity_page']), ('erratum', 2))
+        self.assertFalse(any(p.get('pdf') == correction['pdf'] for p in self.graph.papers.values()))
+        path, = self.run_tool('path', original, 'klein-2021-sequential-pricing')['paths']
+        edge, = path['relations']
+        self.assertEqual(edge['review'], 'verified')
+        self.assertEqual({e['paper'] for e in edge['evidence']}, {original, 'klein-2021-sequential-pricing'})
+
     def test_unknown_topic_uses_fts_with_phrase_and_filters(self):
         result = self.run_tool('brief', '卖家为什么采用代理模式', '--phrase', 'agency selling', '--journal', 'MS')
         self.assertEqual(result['graph']['anchors'], [])
