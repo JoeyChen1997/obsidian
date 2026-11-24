@@ -72,8 +72,15 @@
       "id": "ranking-price-feedback",
       "title": "排序、价格反馈与位置拍卖",
       "aliases": ["排名弹性", "排序价格反馈", "位置拍卖", "ranking mediated price elasticity", "surplus ordered ranking", "algorithmic pricing and search"],
-      "papers": ["weitzman-1979-pandora", "dinerstein-et-al-2018-search", "chu-nazerzadeh-zhang-2020-position-auctions", "donnelly-kanodia-morozov-2023-personalized-rankings", "qiu-et-al-2025-personalized-pricing"],
+      "papers": ["weitzman-1979-pandora", "dinerstein-et-al-2018-search", "chu-nazerzadeh-zhang-2020-position-auctions", "calvano-et-al-2020-algorithmic-pricing", "donnelly-kanodia-morozov-2023-personalized-rankings", "qiu-et-al-2025-personalized-pricing"],
       "queries": ["ranking mediated price elasticity", "position ranking auctions net surplus", "personalized ranking seller pricing"]
+    },
+    {
+      "id": "algorithmic-pricing-deviation",
+      "title": "算法定价、探索与偏离诊断",
+      "aliases": ["算法合谋", "算法定价", "表观合谋", "algorithmic collusion", "reinforcement learning with prices", "off path exploration"],
+      "papers": ["calvano-et-al-2020-algorithmic-pricing", "abada-lambin-2023-seeming-collusion", "qiu-et-al-2025-personalized-pricing"],
+      "queries": ["algorithmic pricing collusion", "reinforcement learning forced deviation", "imperfect monitoring off path exploration"]
     },
     {
       "id": "targeting",
@@ -98,6 +105,34 @@
     }
   ],
   "papers": [
+    {
+      "id": "calvano-et-al-2020-algorithmic-pricing",
+      "title": "Artificial Intelligence, Algorithmic Pricing, and Collusion",
+      "authors": "Emilio Calvano, Giacomo Calzolari, Vincenzo Denicolò, and Sergio Pastorello",
+      "year": 2020,
+      "journal": "American Economic Review",
+      "doi": "10.1257/aer.20190623",
+      "pdf": "AER/Calvano_2020_Artificial Intelligence, Algorithmic Pricing, and Collusion.pdf",
+      "aliases": ["Calvano et al 2020 AER", "Calvano Calzolari Denicolo Pastorello 2020", "algorithmic pricing and collusion"],
+      "card": "Marketing Paper/文献卡/Calvano 等 2020 - 重复定价与 Q-learning.md",
+      "reading_status": "core_read",
+      "reading_note": "核重复 Bertrand、有限监控记忆、训练稳定、路径最优诊断、偏离收益和稳健性；附录全表和复现数据代码未独立核。",
+      "sections": {"introduction": [[1, 4]], "model": [[4, 9]], "results": [[9, 28]], "discussion": [[26, 30]], "references": [[30, 31]]}
+    },
+    {
+      "id": "abada-lambin-2023-seeming-collusion",
+      "title": "Artificial Intelligence: Can Seemingly Collusive Outcomes Be Avoided?",
+      "authors": "Ibrahim Abada and Xavier Lambin",
+      "year": 2023,
+      "journal": "Management Science",
+      "doi": "10.1287/mnsc.2022.4623",
+      "pdf": "MS/Abada_2023_Artificial Intelligence Can Seemingly Collusive Outcomes Be Avoided.pdf",
+      "aliases": ["Abada Lambin 2023", "seemingly collusive outcomes", "battery storage Q learning"],
+      "card": "Marketing Paper/文献卡/Abada 与 Lambin 2023 - 储能学习与表观合谋.md",
+      "reading_status": "core_read",
+      "reading_note": "核库存与只见公共价格、均衡基准、双向偏离、定向探索干预及印刷附录的机制诊断；未独立核校准数据和重跑。",
+      "sections": {"introduction": [[1, 4]], "model": [[4, 8], [16, 18]], "results": [[8, 15], [19, 21]], "discussion": [[15, 16]]}
+    },
     {
       "id": "qiu-et-al-2025-personalized-pricing",
       "title": "Personalization, Consumer Search, and Algorithmic Pricing",
@@ -786,6 +821,39 @@
     }
   ],
   "edges": [
+    {
+      "id": "calvano-qiu-logit-ranking-feedback",
+      "from": "calvano-et-al-2020-algorithmic-pricing",
+      "to": "qiu-et-al-2025-personalized-pricing",
+      "type": "extends_component",
+      "review": "verified",
+      "claim": "Qiu 等明引 Calvano 的重复定价 Q-learning 架构。完美个性化在 IID 同尺度 Gumbel（含外部选项）、首件免费及价格系数为 1 时，需求可独立复算为 Calvano 的全选择 logit。",
+      "changed": "由始终全选择的需求改为平台展示、动态查验和购买决定的回报；免费的完美首位恢复全选择，而统一或有误排序不保证恢复。",
+      "limit": "需求的条件等价不等于行动网格、探索、市场结构或稳定价格等价。表 2 核算支持保留外部冲击，不是原代码复现。",
+      "evidence": [{"paper": "calvano-et-al-2020-algorithmic-pricing", "page": 7, "printed": "3273", "locator": "Eq. (5)，含外部选项的 logit"}, {"paper": "qiu-et-al-2025-personalized-pricing", "page": 4, "printed": "1281", "locator": "Eq. (1) 与文本给出 Gumbel 效用及外部选项"}, {"paper": "qiu-et-al-2025-personalized-pricing", "page": 7, "printed": "1284", "locator": "Eq. (13) 的全选择及 §3.3 对 Calvano 的直接引用"}, {"paper": "qiu-et-al-2025-personalized-pricing", "page": 15, "printed": "1292", "locator": "Table 2，两价格对的完整需求分量用于独立复算"}]
+    },
+    {
+      "id": "calvano-abada-post-training-perturbation",
+      "from": "calvano-et-al-2020-algorithmic-pricing",
+      "to": "abada-lambin-2023-seeming-collusion",
+      "type": "extends_component",
+      "review": "verified",
+      "claim": "Abada–Lambin 明引 Calvano AER（其 2020a）的训练后外生偏离；把一期降价与折现利润诊断扩展为电池在一天内的双向充放电偏离与当日利润差。",
+      "changed": "从能观测各家价格的重复报价转为只看市场价格的数量选择，保留容量、功率和库存的物理状态。",
+      "limit": "不是在相同环境下反证 Calvano；物理约束与信息同时改变。Abada 的 2020b（Science）是另一篇，不把所有 Calvano 引文自动归到本作品。",
+      "evidence": [{"paper": "calvano-et-al-2020-algorithmic-pricing", "page": 16, "printed": "3282", "locator": "Figure 4，训练后一期外生降价到静态最优响应"}, {"paper": "abada-lambin-2023-seeming-collusion", "page": 4, "printed": "5045", "locator": "Eqs. (3)–(7)，动态储能的可行集"}, {"paper": "abada-lambin-2023-seeming-collusion", "page": 11, "printed": "5052", "locator": "明引 Calvano 2020a，Figure 4 使用单边双向偏离"}, {"paper": "abada-lambin-2023-seeming-collusion", "page": 17, "printed": "5058", "locator": "Appendix C.2，只观察价格而非竞对行动"}]
+    },
+    {
+      "id": "abada-qiu-deviation-diagnostic-boundary",
+      "from": "abada-lambin-2023-seeming-collusion",
+      "to": "qiu-et-al-2025-personalized-pricing",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "Qiu 的文献节引 Abada–Lambin；前者的核心证据是公共排名改变降价收益，后者显示在储能仿真中两方向偏离都可能亏损，低访问的状态提供另一种解释。",
+      "changed": "方向、被改变的状态与证据设计不同：库存／市场价与双向访问记录，对照商品价／名次与换位反事实。",
+      "limit": "引用是背景，非储能机制继承。不能由此断言 Qiu 观察到的价格反应来自欠探索，也不能从单向偏离一项确定所有状态下的惩罚最优性。",
+      "evidence": [{"paper": "abada-lambin-2023-seeming-collusion", "page": 12, "printed": "5053", "locator": "§5.1 双向偏离与训练中额外探索"}, {"paper": "abada-lambin-2023-seeming-collusion", "page": 19, "printed": "5060", "locator": "Appendix E，Figure E.1 路径访问次数"}, {"paper": "qiu-et-al-2025-personalized-pricing", "page": 3, "printed": "1280", "locator": "文献段明引 Abada–Lambin"}, {"paper": "qiu-et-al-2025-personalized-pricing", "page": 14, "printed": "1291", "locator": "Figure 5，同参照价的偏离和惩罚利润"}, {"paper": "qiu-et-al-2025-personalized-pricing", "page": 15, "printed": "1292", "locator": "Figure 6，价格变动、排名与需求"}]
+    },
     {
       "id": "weitzman-chu-common-reservation-value",
       "from": "weitzman-1979-pandora",
