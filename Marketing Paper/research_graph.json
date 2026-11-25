@@ -113,6 +113,20 @@
   ],
   "papers": [
     {
+      "id": "brown-mackay-2023-pricing-algorithms",
+      "title": "Competition in Pricing Algorithms",
+      "authors": "Zach Y. Brown and Alexander MacKay",
+      "year": 2023,
+      "journal": "American Economic Journal: Microeconomics",
+      "doi": "10.1257/mic.20210158",
+      "pdf": "AEJ_Micro/Brown_2023_Competition in Pricing Algorithms.pdf",
+      "aliases": ["Brown MacKay 2023", "competition in pricing algorithms"],
+      "card": "Marketing Paper/文献卡/Brown 与 MacKay 2023 - 定价算法竞争.md",
+      "reading_status": "core_read",
+      "reading_note": "核频率和规则承诺、主命题证明、固定点选择与校准反事实；复算线性份额下的加价，在线补件未独立核。",
+      "sections": {"model": [[16, 33]], "results": [[7, 16], [34, 40]], "proof": [[20, 23], [30, 31], [42, 46]], "discussion": [[40, 42]]}
+    },
+    {
       "id": "assad-et-al-2024-gasoline-adoption",
       "title": "Algorithmic Pricing and Competition: Empirical Evidence from the German Retail Gasoline Market",
       "authors": "Stephanie Assad, Robert Clark, Daniel Ershov, and Lei Xu",

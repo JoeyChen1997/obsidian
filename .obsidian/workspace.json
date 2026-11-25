@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Marketing Paper/研究谱系/Paperlist 第四批命题对照.md",
+                "file": "Marketing Paper/文献卡/Wolinsky 1986 - 随机搜索与垄断竞争.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Paperlist 第四批命题对照"
+              "title": "Wolinsky 1986 - 随机搜索与垄断竞争"
             }
           }
         ]
@@ -208,8 +208,12 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "d7ca22333357553b",
+  "active": "d2e40da301c97e6a",
   "lastOpenFiles": [
+    "Marketing Paper/逐篇核读批次队列.md",
+    "Marketing Paper/文献卡/Brown 与 MacKay 2023 - 定价算法竞争.md",
+    "Marketing Paper/文献卡/Zou 与 Zhou 2025 - 搜索中立与卖家进入.md",
+    "Marketing Paper/研究谱系/Paperlist 第四批命题对照.md",
     "Marketing Paper/文献卡/Zhou 等 2025 - 搜索算法与消费者参与.md",
     "Marketing Paper/研究谱系/Paperlist 第八批命题对照.md",
     "Marketing Paper/研究谱系/Paperlist 第二十四批命题对照.md",
@@ -237,10 +241,6 @@
     "Marketing Paper/文献卡/Donnelly 等 2023 - 个性化排序与福利.md",
     "Marketing Paper/研究谱系/Paperlist 第十八批命题对照.md",
     "Marketing Paper/文献卡/Ursu 2018 - 排名与在线搜索购买.md",
-    "Marketing Paper/文献卡/Compiani 等 2024 - 在线搜索与最优产品排序.md",
-    "Marketing Paper/研究谱系/Paperlist 第十七批命题对照.md",
-    "Marketing Paper/文献卡/Natan 2025 - 大型组合的选择摩擦.md",
-    "Marketing Paper/文献卡/Kamenica 2008 - 产品线的情境推断与选择过载.md",
     "Marketing Paper/test_reading_coverage.py",
     "Marketing Paper/reading_coverage.py",
     "Marketing Paper/文献卡",
