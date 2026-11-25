@@ -119,6 +119,21 @@
   ],
   "papers": [
     {
+      "id": "agastya-bag-chakraborty-2014-authority",
+      "title": "Communication and authority with a partially informed expert",
+      "authors": "Murali Agastya, Parimal Kanti Bag, and Indranil Chakraborty",
+      "year": 2014,
+      "journal": "RAND",
+      "doi": "10.1111/1756-2171.12047",
+      "pdf": "RAND/Agastya_2014_Communication and authority with a partially informed expert.pdf",
+      "source_id": 41974,
+      "card": "Marketing Paper/文献卡/Agastya 等 2014 - 部分知情专家的沟通与授权.md",
+      "reading_status": "core_read",
+      "reading_note": "核有效偏误、分割均衡及授权，复算式 (9)，记录 Props. 6、7、9、10 的证明边界；2013 工作稿未取。",
+      "read_scope": "PDF 1–22 含印刷附录；PDF 13、20–21 回查原图。",
+      "sections": {"introduction": [[1, 5]], "model": [[5, 8]], "results": [[7, 15]], "discussion": [[15, 16]], "proof": [[17, 21]], "references": [[21, 22]]}
+    },
+    {
       "id": "abel-1981-investment-utilization",
       "title": "A Dynamic Model of Investment and Capacity Utilization",
       "authors": "Andrew B. Abel",
