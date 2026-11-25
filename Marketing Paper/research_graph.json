@@ -166,6 +166,25 @@
       }
     },
     {
+      "id": "abbott-1905-unskilled-wages",
+      "title": "The Wages of Unskilled Labor in the United States 1850–1900",
+      "authors": "Edith Abbott",
+      "year": 1905,
+      "journal": "JPE",
+      "pdf": "JPE/Abbott_1905_The Wages of Unskilled Labor in the United States 1850-1900.pdf",
+      "source_id": 15992,
+      "card": "Marketing Paper/文献卡/Abbott 1905 - 美国非熟练工工资与样本构成.md",
+      "reading_status": "core_read",
+      "reading_note": "核工资报价的雇员权重、厂样本筛选和跨序列结论，原图核两套基期及 1890–1900 端点。底表未重建。",
+      "read_scope": "PDF 1–12、19–47 的书目、方法、核心结果和表；原图核 PDF 45–47。",
+      "sections": {
+        "introduction": [[1, 6]],
+        "model": [[25, 38]],
+        "results": [[38, 39], [41, 47]],
+        "discussion": [[39, 40]]
+      }
+    },
+    {
       "id": "abadie-athey-imbens-wooldridge-2020-design-uncertainty",
       "title": "Sampling-Based versus Design-Based Uncertainty in Regression Analysis",
       "authors": "Alberto Abadie, Susan Athey, Guido W. Imbens, and Jeffrey M. Wooldridge",
