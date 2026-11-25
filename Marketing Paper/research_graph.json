@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
   "source_exclusions": [
+    {"source_id": 11780, "pdf": "JMR/Aaker_1972_Inadequate Solution.pdf", "kind": "book_review", "page": 2, "locator": "刊页 115 New Books in Review 栏，右栏 Inadequate solution，David A. Aaker 署名评 Bo W:son Schyberger 的 Media Selection: Efficient Procedures of Press Media Allocation；档案封页也标为 Review。"},
     {"source_id": 15989, "pdf": "JPE/Abbott_1904_Trade Unionism and British Industry . Edwin A. Pratt.pdf", "kind": "book_review", "page": 1, "locator": "原图刊页 129 的 Book Reviews 栏始于页尾，评介 Edwin A. Pratt 的同名书；PDF 4 刊页 132 署名 Edith Abbott。索引文本只有下载页脚。"},
     {"source_id": 11778, "pdf": "JMR/Aaker_1971_On Experimental Design One in Historical and One in Critical Perspective.pdf", "kind": "book_review", "page": 2, "locator": "刊页 395–396 的 New Books in Review 栏，评介 Frank Yates 与 P. Ottestad 的两本书；PDF 3 署名 David A. Aaker"},
     {"source_id": 15986, "pdf": "JPE/A_1906_Family Monographs . Elsa G. Herzfeld.pdf", "kind": "book_review", "page": 1, "locator": "刊页 255：Book Reviews 栏；E. A. 署名评介 Elsa G. Herzfeld 的 1905 年书 Family Monographs；同页另有其他书评与新书目录"},
@@ -116,6 +117,54 @@
     }
   ],
   "papers": [
+    {
+      "id": "abaluck-gruber-2011-part-d-inconsistencies",
+      "title": "Choice Inconsistencies among the Elderly: Evidence from Plan Choice in the Medicare Part D Program",
+      "authors": "Jason Abaluck and Jonathan Gruber",
+      "year": 2011,
+      "journal": "American Economic Review",
+      "doi": "10.1257/aer.101.4.1180",
+      "pdf": "AER/Abaluck_2011_Choice Inconsistencies among the Elderly Evidence from Plan Choice in the Medicare Part D Program.pdf",
+      "source_id": 766,
+      "aliases": ["Abaluck Gruber 2011", "Medicare Part D choice inconsistencies", "premium salience versus out-of-pocket costs", "financial plan characteristics", "donut hole coverage", "normative partial equilibrium welfare"],
+      "card": "Marketing Paper/文献卡/Abaluck 与 Gruber 2011 - 医保药品计划选择与保费显著性.md",
+      "reading_status": "core_read",
+      "reading_note": "核匹配、预算计量、CARA、保费系数、风险敏感性及规范福利；复算并留原公式和表注疑点。",
+      "read_scope": "PDF 1–31，原图回查 14、18、24；未核线上 A–D 附录、成本计算器输入及数据。",
+      "sections": {"introduction": [[1, 6]], "model": [[6, 16]], "results": [[11, 13], [16, 29]], "discussion": [[27, 30]], "references": [[30, 31]]}
+    },
+    {
+      "id": "acquisti-varian-2005-purchase-history-pricing",
+      "title": "Conditioning Prices on Purchase History",
+      "authors": "Alessandro Acquisti and Hal R. Varian",
+      "year": 2005,
+      "journal": "Marketing Science",
+      "doi": "10.1287/mksc.1040.0103",
+      "pdf": "MKSC/Acquisti_2005_Conditioning Prices on Purchase History.pdf",
+      "source_id": 23580,
+      "aliases": ["Acquisti Varian 2005", "purchase history pricing", "behavior based price discrimination", "anonymity vs delay", "personalized enhanced service", "partial lock-in"],
+      "card": "Marketing Paper/文献卡/Acquisti 与 Varian 2005 - 购买历史定价与个性化服务.md",
+      "reading_status": "core_read",
+      "reading_note": "核承诺、历史伪装、服务效用、福利与锁定；复推总价、重置阈值和竞争参与边界。",
+      "read_scope": "PDF 1–15 主文和参考文献，9、13 原图及 16 版权；Acquisti 2003 详证未核。",
+      "sections": {"introduction": [[1, 3]], "model": [[5, 11], [12, 13]], "results": [[6, 14]], "proof": [[7, 9], [12, 13]], "discussion": [[10, 12], [14, 15]], "references": [[15, 15]]}
+    },
+    {
+      "id": "acharya-ortner-2022-paths-frontier",
+      "title": "Paths to the Frontier",
+      "authors": "Avidit Acharya and Juan Ortner",
+      "year": 2022,
+      "journal": "American Economic Journal: Microeconomics",
+      "doi": "10.1257/mic.20190125",
+      "pdf": "AEJ_Micro/Acharya_2022_Paths to the Frontier.pdf",
+      "source_id": 5,
+      "aliases": ["Acharya Ortner 2022", "collective search endogenous status quo", "acceptance cone bargaining", "recursive Markovian equilibrium", "Raiffa path", "cycling bargaining deadline"],
+      "card": "Marketing Paper/文献卡/Acharya 与 Ortner 2022 - 集体搜索与通向帕累托前沿的路径.md",
+      "reading_status": "core_read",
+      "reading_note": "核随机提案、RME、锥嵌套、耐心极限与非平稳周期；复算周期，补记 Prop. 4 归一化误差边界。",
+      "read_scope": "PDF 1–31 主文、印刷附录与参考文献；原页核 18、29。线上 Lemma 1、§III–IV 证明未取。",
+      "sections": {"introduction": [[1, 5]], "model": [[5, 8], [14, 15], [20, 21]], "results": [[8, 20]], "discussion": [[20, 21]], "proof": [[21, 29]], "references": [[30, 31]]}
+    },
     {
       "id": "adams-jaffe-1996-rd-dilution",
       "title": "Bounding the Effects of R&D: An Investigation Using Matched Establishment-Firm Data",
