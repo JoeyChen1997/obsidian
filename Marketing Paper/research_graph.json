@@ -120,6 +120,68 @@
   ],
   "papers": [
     {
+      "id": "abaluck-gruber-2016-evolving-choice",
+      "title": "Evolving Choice Inconsistencies in Choice of Prescription Drug Insurance",
+      "authors": "Jason Abaluck and Jonathan Gruber",
+      "year": 2016,
+      "journal": "AER",
+      "pdf": "AER/Abaluck_2016_Evolving Choice Inconsistencies in Choice of Prescription Drug Insurance.pdf",
+      "source_id": 768,
+      "doi": "10.1257/aer.20130778",
+      "card": "Marketing Paper/文献卡/Abaluck 与 Gruber 2016 - Part D 选择不一致与福利分解.md",
+      "reading_status": "core_read",
+      "reading_note": "核 CMS 样本、计划成本模拟、条件 logit、品牌敏感性及菜单和选择函数的福利分解。复算 CARA 成本等价量与分解，记录印刷符号及分母差异。原始申报和计算器代码未取。",
+      "read_scope": "PDF 1–40（刊页 2145–2184），回查 PDF 12、13、15、17、20、26、28、30、31、36、37 原图。",
+      "sections": {
+        "introduction": [
+          [
+            1,
+            6
+          ]
+        ],
+        "model": [
+          [
+            6,
+            8
+          ],
+          [
+            12,
+            19
+          ],
+          [
+            33,
+            36
+          ]
+        ],
+        "results": [
+          [
+            9,
+            12
+          ],
+          [
+            19,
+            32
+          ],
+          [
+            37,
+            39
+          ]
+        ],
+        "discussion": [
+          [
+            32,
+            33
+          ]
+        ],
+        "references": [
+          [
+            40,
+            40
+          ]
+        ]
+      }
+    },
+    {
       "id": "aaker-1975-admod",
       "title": "ADMOD: An Advertising Decision Model",
       "authors": "David A. Aaker",
