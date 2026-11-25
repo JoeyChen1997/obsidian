@@ -119,6 +119,115 @@
   ],
   "papers": [
     {
+      "id": "abel-1981-investment-utilization",
+      "title": "A Dynamic Model of Investment and Capacity Utilization",
+      "authors": "Andrew B. Abel",
+      "year": 1981,
+      "journal": "QJE",
+      "pdf": "QJE/Abel_1981_A Dynamic Model of Investment and Capacity Utilization.pdf",
+      "source_id": 36386,
+      "aliases": [
+        "Abel 1981 capacity utilization",
+        "quasi-fixed factor utilization"
+      ],
+      "card": "Marketing Paper/文献卡/Abel 1981 - 投资与产能利用的动态模型.md",
+      "reading_status": "core_read",
+      "reading_note": "核资本与劳动的影子价格、稳态和冲击时利用率；复核局部稳定与冲击一阶条件。",
+      "read_scope": "PDF 1–26，重点为 §§II–VII、式 (III.3)、(VI.2)–(VI.4) 及 Figs. IV–V。",
+      "sections": {
+        "introduction": [
+          [
+            2,
+            4
+          ]
+        ],
+        "model": [
+          [
+            4,
+            12
+          ]
+        ],
+        "results": [
+          [
+            9,
+            25
+          ]
+        ],
+        "discussion": [
+          [
+            24,
+            26
+          ]
+        ],
+        "proof": [
+          [
+            18,
+            21
+          ],
+          [
+            23,
+            23
+          ]
+        ],
+        "references": [
+          [
+            26,
+            26
+          ]
+        ]
+      }
+    },
+    {
+      "id": "abarbanell-park-2016-bright-line",
+      "title": "Do Bright-Line Earnings Surprises Really Affect Stock Price Reactions?",
+      "authors": "Jeffery Abarbanell and Hyungshin Park",
+      "year": 2016,
+      "journal": "MS",
+      "doi": "10.1287/mnsc.2015.2376",
+      "pdf": "MS/Abarbanell_2016_Do Bright-Line Earnings Surprises Really Affect Stock Price Reactions.pdf",
+      "source_id": 25364,
+      "aliases": [
+        "Abarbanell Park",
+        "earnings surprise bright line"
+      ],
+      "card": "Marketing Paper/文献卡/Abarbanell 与 Park 2016 - 盈利意外与股价阈值.md",
+      "reading_status": "core_read",
+      "reading_note": "按本地 2016 先行本核预期偏差、样本、收益阈值与伪阈值；未核正式卷期及底层数据。",
+      "read_scope": "PDF 1–23，重点为 §2–5、Tables 4–7 和印刷附录 A.1。",
+      "sections": {
+        "introduction": [
+          [
+            2,
+            5
+          ]
+        ],
+        "model": [
+          [
+            6,
+            9
+          ]
+        ],
+        "results": [
+          [
+            9,
+            22
+          ]
+        ],
+        "discussion": [
+          [
+            22,
+            22
+          ]
+        ],
+        "references": [
+          [
+            23,
+            24
+          ]
+        ]
+      }
+    },
+    {
       "id": "alipour-lindlacher-2025-voting-costs",
       "title": "No Surprises, Please: Voting Costs and Electoral Turnout",
       "authors": "Jean-Victor Alipour and Valentin Lindlacher",
