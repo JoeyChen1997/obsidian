@@ -166,6 +166,27 @@
       }
     },
     {
+      "id": "alos-ferrer-garagnani-2024-risky-choice-response-times",
+      "title": "Improving Risky-Choice Predictions Using Response Times",
+      "authors": "Carlos Alós-Ferrer and Michele Garagnani",
+      "year": 2024,
+      "journal": "JPE_MICRO",
+      "doi": "10.1086/728666",
+      "pdf": "JPE_MICRO/AlosFerrer_2023_Improving Risky-Choice Predictions Using Response Times.pdf",
+      "source_id": 23458,
+      "card": "Marketing Paper/文献卡/Alós-Ferrer 与 Garagnani 2024 - 反应时间与风险选择预测.md",
+      "reading_status": "core_read",
+      "reading_note": "核对称噪声下共同参照的偏好识别、Fechner 选择频率预测、两组留出分母与误差；复推条件分位和正差分支，外置补件未取。",
+      "read_scope": "PDF 1–17 核书目、主文及核心结果，18–20 定位参考文献；原图核 PDF 7–9、13–16。",
+      "sections": {
+        "introduction": [[1, 5]],
+        "model": [[5, 11], [14, 15]],
+        "results": [[12, 16]],
+        "discussion": [[17, 17]],
+        "references": [[18, 20]]
+      }
+    },
+    {
       "id": "abbott-1905-unskilled-wages",
       "title": "The Wages of Unskilled Labor in the United States 1850–1900",
       "authors": "Edith Abbott",
