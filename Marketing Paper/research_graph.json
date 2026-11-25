@@ -120,6 +120,27 @@
   ],
   "papers": [
     {
+      "id": "adams-williams-2019-zone-pricing",
+      "title": "Zone Pricing in Retail Oligopoly",
+      "authors": "Brian Adams and Kevin R. Williams",
+      "year": 2019,
+      "journal": "AEJ_Micro",
+      "doi": "10.1257/mic.20170130",
+      "pdf": "AEJ_Micro/Adams_2017_Zone Pricing in Retail Oligopoly.pdf",
+      "source_id": 7,
+      "card": "Marketing Paper/文献卡/Adams 与 Williams 2019 - 零售寡头的价区与福利.md",
+      "reading_status": "core_read",
+      "reading_note": "核样本分母、需求 IV、价区定价子博弈、福利和成本附录；复算福利、单边偏离与菜单成本条件，记录表文差异。原始数据、代码及独立在线材料未取。",
+      "read_scope": "PDF 1–33（刊页 124–156），原图回查 PDF 12、14–15、17、23–27、30–31。",
+      "sections": {
+        "introduction": [[1, 4]],
+        "model": [[13, 16], [25, 26]],
+        "results": [[16, 29]],
+        "discussion": [[29, 30], [30, 32]],
+        "references": [[32, 33]]
+      }
+    },
+    {
       "id": "abel-1983-market-structure-durability",
       "title": "Market Structure and the Durability of Goods",
       "authors": "Andrew B. Abel",
