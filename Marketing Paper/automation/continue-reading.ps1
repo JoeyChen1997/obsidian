@@ -34,6 +34,22 @@ function Write-RunLog([string]$Message) {
     Add-Content -Encoding UTF8 -LiteralPath $log -Value ('{0:o} {1}' -f (Get-Date), $Message)
 }
 
+function Get-CodexLoginExit([string]$CliPath) {
+    # Windows PowerShell 5.1 can turn native stderr into a terminating
+    # RemoteException under Stop, even when the streams are redirected.
+    $ErrorActionPreference = 'Continue'
+    & $CliPath login status *> $null
+    return $LASTEXITCODE
+}
+
+function Invoke-Reading([string]$CliPath, [string]$InputPrompt, [string]$Workspace) {
+    $ErrorActionPreference = 'Continue'
+    $InputPrompt | & $CliPath -a never exec --ignore-user-config --ephemeral --skip-git-repo-check `
+        -C $Workspace -s workspace-write -c 'sandbox_workspace_write.network_access=false' `
+        --color never - 2>&1 | ForEach-Object { $null = $_ }
+    return $LASTEXITCODE
+}
+
 $mutex = [Threading.Mutex]::new($false, 'Local\PaperlistResearch.ContinueReading')
 $locked = $false
 try {
@@ -56,8 +72,7 @@ try {
         Write-RunLog 'blocked source folder missing'
         exit 3
     }
-    & $cli login status *> $null
-    if ($LASTEXITCODE -ne 0) {
+    if ((Get-CodexLoginExit $cli) -ne 0) {
         Write-RunLog 'blocked Codex CLI not signed in; run codex login in a local terminal'
         exit 2
     }
@@ -78,10 +93,7 @@ try {
     # Model calls use the signed-in account. Model-generated commands have
     # workspace write access, no direct network, and cannot ask for escalation.
     # Do not log tool payloads, source excerpts, or authentication data.
-    $prompt | & $cli -a never exec --ignore-user-config --ephemeral --skip-git-repo-check `
-        -C $project -s workspace-write -c 'sandbox_workspace_write.network_access=false' `
-        --color never - 2>&1 | ForEach-Object { $null = $_ }
-    $codexExit = $LASTEXITCODE
+    $codexExit = Invoke-Reading $cli $prompt $project
     $after = Read-GraphStatus
     Write-RunLog ('finished codex_exit={0} core_read={1} exclusions={2} variants={3}' -f `
         $codexExit, (Get-CoreCount $after), $after.source_exclusion_records_checked, $after.variant_identity_pages_checked)

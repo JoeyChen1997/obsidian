@@ -53,4 +53,4 @@ tags: [research, research/reading-ledger]
 
 进度随每篇写入 vault 的文献卡和队列。对话中只发简短、不中断运行的进度或重要缺口提示；批次只是台账分段，不作为停点或审批点。
 
-续跑入口：[[Marketing Paper/精读台账与研究流程|精读台账]]、[[Marketing Paper/Paperlist 全库覆盖清单|覆盖清单]]、[[Marketing Paper/Paperlist Research Agent|Agent 指南]]。持续目标保存任务方向和状态；没有活动运行时不会在本机后台自行读 PDF。原件只读，不批量上传。
+续跑入口：[[Marketing Paper/精读台账与研究流程|精读台账]]、[[Marketing Paper/Paperlist 全库覆盖清单|覆盖清单]]、[[Marketing Paper/Paperlist Research Agent|Agent 指南]]。对话持续目标仅保存方向和状态；会话外由独立的 Windows 计划任务接手，需本机 Codex CLI 登录，运行条件及启停见 [[Marketing Paper/Paperlist 自动续读|自动续读]]。原件只读，不批量上传。自动任务和手工核读不同时改同一队列。
