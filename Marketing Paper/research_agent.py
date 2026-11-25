@@ -24,6 +24,7 @@ EDGE_TYPES = {'introduces_component', 'extends_component', 'contrasts_assumption
               'limits_result', 'endogenizes', 'empirical_followup', 'cites'}
 READ_STATES = {'core_read', 'screened', 'queued', 'source_gap'}
 REVIEW_STATES = {'verified', 'screened', 'candidate'}
+EXCLUDED_SOURCE_KINDS = {'volume_index', 'book_review'}
 IDENTIFIER = re.compile(r'[a-z][a-z0-9]*(?:-[a-z0-9]+)*\Z')
 WORD = re.compile(r'[^\W_]+')
 SECTIONS = {'introduction', 'model', 'results', 'discussion', 'proof', 'references'}
@@ -102,7 +103,7 @@ class Graph:
             pdf_relpath(pdf)
             require(type(source_id) is int and source_id > 0 and source_id not in self.source_exclusions
                     and pdf.casefold() not in files, f'Duplicate or invalid excluded source: {pdf}')
-            require(item['kind'] == 'volume_index' and type(item['page']) is int and item['page'] > 0
+            require(item['kind'] in EXCLUDED_SOURCE_KINDS and type(item['page']) is int and item['page'] > 0
                     and isinstance(item.get('locator'), str) and item['locator'].strip(),
                     f'Excluded source needs original page evidence: {pdf}')
             files.add(pdf.casefold())

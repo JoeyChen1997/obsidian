@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
   "source_exclusions": [
+    {"source_id": 11775, "pdf": "JMR/Aaker_1969_Promotional Decisions Using Mathematical Models.pdf", "kind": "book_review", "page": 2, "locator": "New Books in Review；评介 Frank、Massy 与 Morrison 的同名书，不是该书的原始研究；作者署名在 PDF 3"},
     {"source_id": 19235, "pdf": "JPE/Heckman_2018_Index to Volume 126.pdf", "kind": "volume_index", "page": 1, "locator": "Index to Volume 126；Articles and Notes，条目为作者、题名和页码"},
     {"source_id": 36286, "pdf": "MS/anonymous_2003_Index to Volume 49.pdf", "kind": "volume_index", "page": 2, "locator": "Index to Volume 49；Authors，按作者列篇目和页码"},
     {"source_id": 36287, "pdf": "MS/anonymous_2004_Index to Volume 50.pdf", "kind": "volume_index", "page": 2, "locator": "Index to Volume 50；Authors，按作者列篇目和页码"},
@@ -113,6 +114,22 @@
   ],
   "papers": [
     {
+      "id": "abe-1995-brand-choice-kernel",
+      "title": "A Nonparametric Density Estimation Method for Brand Choice Using Scanner Data",
+      "authors": "Makoto Abe",
+      "year": 1995,
+      "journal": "Marketing Science",
+      "doi": "10.1287/mksc.14.3.300",
+      "pdf": "MKSC/Abe_1995_A Nonparametric Density Estimation Method for Brand Choice Using Scanner Data.pdf",
+      "source_id": 23575,
+      "aliases": ["Abe 1995", "nonparametric density estimation brand choice", "scanner data kernel brand choice", "品牌选择核密度"],
+      "card": "Marketing Paper/文献卡/Abe 1995 - 非参数核密度与品牌选择.md",
+      "reading_status": "core_read",
+      "reading_note": "核 Bayes 与核平滑、品牌选择样本、相关误差仿真、Table 7 留出拟合、Tables 8–10 促销响应与修订 MNL；无数据或代码复现。",
+      "read_scope": "PDF 1–26，刊页 300–325；扫描版 OCR 加原页回查；PDF 27 为版权页。",
+      "sections": {"introduction": [[1, 3]], "model": [[3, 8], [12, 13]], "results": [[9, 21]], "discussion": [[21, 23]], "proof": [[24, 25]]}
+    },
+    {
       "id": "montag-sagimuldina-winter-2026-mpd",
       "title": "When Does Mandatory Price Disclosure Lower Prices? Evidence from the German Fuel Market",
       "authors": "Felix Montag, Alina Sagimuldina, and Christoph Winter",
@@ -120,12 +137,14 @@
       "online_year": 2025,
       "journal": "Journal of Political Economy: Microeconomics",
       "doi": "10.1086/734145",
+      "source_id": 23553,
       "pdf": "JPE_MICRO/Montag_2024_When Does Mandatory Price Disclosure Lower Prices Evidence from the German Fuel Market.pdf",
       "aliases": ["Montag Sagimuldina Winter 2026", "mandatory price disclosure German fuel", "MPD German gasoline"],
       "card": "Marketing Paper/文献卡/Montag 等 2026 - 强制价格披露与德国燃料市场.md",
       "reading_status": "core_read",
-      "reading_note": "核信息 clearinghouse 模型、Predictions 1–4、德国 2013 MPD、法国控制、SDID/DiD、市场和广播异质性；Dataverse 与外置附录未重跑。",
-      "sections": {"introduction": [[2, 6]], "model": [[7, 12]], "results": [[18, 22], [30, 38]], "discussion": [[39, 40]], "proof": [[7, 12]]}
+      "reading_note": "核 clearinghouse 模型与 Predictions 1–4：在事前知情份额超过 VOI 最大点时，边际降信息成本降低 VOI、平均价比最低价降得更多。核德法 SDID、市场及非随机广播异质性；未重跑。",
+      "read_scope": "PDF 1–41 对应刊页 106–146；Dataverse 及外置附录未核。",
+      "sections": {"introduction": [[1, 7]], "model": [[7, 12]], "results": [[18, 22], [30, 35]], "discussion": [[35, 39]], "references": [[40, 41]]}
     },
     {
       "id": "brown-mackay-2023-pricing-algorithms",
