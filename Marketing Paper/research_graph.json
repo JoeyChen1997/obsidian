@@ -119,6 +119,21 @@
   ],
   "papers": [
     {
+      "id": "adams-2020-mutual-demand-consistency",
+      "title": "Mutually Consistent Revealed Preference Demand Predictions",
+      "authors": "Abi Adams",
+      "year": 2020,
+      "journal": "AEJ_Micro",
+      "doi": "10.1257/mic.20150216",
+      "pdf": "AEJ_Micro/AdamsPrassl_2020_Mutually Consistent Revealed Preference Demand Predictions.pdf",
+      "source_id": 6,
+      "card": "Marketing Paper/文献卡/Adams 2020 - 多预算需求预测的显示偏好一致性.md",
+      "reading_status": "core_read",
+      "reading_note": "核单预算与联合 GARP、非凸性、MILP、核重加权和表列分母，独立构造非凸例；代码、数据与外置材料未取。",
+      "read_scope": "PDF 1–31 含印刷附录，原图核 PDF 10、13、16、18–19、21、26–27、29。",
+      "sections": {"introduction": [[1, 3]], "model": [[3, 19]], "results": [[21, 26]], "discussion": [[25, 27]], "proof": [[27, 30]]}
+    },
+    {
       "id": "abebe-et-al-2020-anonymity-distance",
       "title": "Anonymity or Distance? Job Search and Labour Market Exclusion in a Growing African City",
       "authors": "Girum Abebe, Stefano Caria, Marcel Fafchamps, Paolo Falco, Simon Franklin, and Simon Quinn",
