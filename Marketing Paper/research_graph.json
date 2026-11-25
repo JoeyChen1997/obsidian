@@ -120,6 +120,27 @@
   ],
   "papers": [
     {
+      "id": "aghamolla-corona-zheng-2021",
+      "title": "No reliance on guidance: counter-signaling in management forecasts",
+      "authors": "Cyrus Aghamolla, Carlos Corona, and Ronghuo Zheng",
+      "year": 2021,
+      "journal": "RAND",
+      "pdf": "RAND/Aghamolla_2021_No reliance on guidance countersignaling in management forecasts.pdf",
+      "source_id": 41975,
+      "card": "Marketing Paper/文献卡/Aghamolla 等 2021 - 盈利指引中的反信号.md",
+      "reading_status": "core_read",
+      "reading_note": "核裁量、披露时序、后验定价、纯策略命题、印刷证明及表 1 样本口径。保留命题 1 条件 (iv) 的印刷疑点，未重跑数据。",
+      "read_scope": "PDF 1–26 主文、27–38 印刷证明及 38–39 参考文献定位；回查 PDF 14、20–23 原图。",
+      "sections": {
+        "introduction": [[1, 6]],
+        "model": [[6, 10]],
+        "results": [[10, 17], [21, 26]],
+        "discussion": [[17, 22], [26, 27]],
+        "proof": [[27, 38]],
+        "references": [[38, 39]]
+      }
+    },
+    {
       "id": "abel-1983-tax-neutrality-adjustment-costs",
       "title": "Tax Neutrality in the Presence of Adjustment Costs",
       "authors": "Andrew B. Abel",
