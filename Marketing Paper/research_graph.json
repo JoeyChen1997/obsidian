@@ -113,6 +113,21 @@
   ],
   "papers": [
     {
+      "id": "montag-sagimuldina-winter-2026-mpd",
+      "title": "When Does Mandatory Price Disclosure Lower Prices? Evidence from the German Fuel Market",
+      "authors": "Felix Montag, Alina Sagimuldina, and Christoph Winter",
+      "year": 2026,
+      "online_year": 2025,
+      "journal": "Journal of Political Economy: Microeconomics",
+      "doi": "10.1086/734145",
+      "pdf": "JPE_MICRO/Montag_2024_When Does Mandatory Price Disclosure Lower Prices Evidence from the German Fuel Market.pdf",
+      "aliases": ["Montag Sagimuldina Winter 2026", "mandatory price disclosure German fuel", "MPD German gasoline"],
+      "card": "Marketing Paper/文献卡/Montag 等 2026 - 强制价格披露与德国燃料市场.md",
+      "reading_status": "core_read",
+      "reading_note": "核信息 clearinghouse 模型、Predictions 1–4、德国 2013 MPD、法国控制、SDID/DiD、市场和广播异质性；Dataverse 与外置附录未重跑。",
+      "sections": {"introduction": [[2, 6]], "model": [[7, 12]], "results": [[18, 22], [30, 38]], "discussion": [[39, 40]], "proof": [[7, 12]]}
+    },
+    {
       "id": "brown-mackay-2023-pricing-algorithms",
       "title": "Competition in Pricing Algorithms",
       "authors": "Zach Y. Brown and Alexander MacKay",
