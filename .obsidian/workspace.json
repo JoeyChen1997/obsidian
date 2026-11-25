@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Marketing Paper/文献卡/Wolinsky 1986 - 随机搜索与垄断竞争.md",
+                "file": "Marketing Paper/文献卡/Zou 与 Zhou 2025 - 搜索中立与卖家进入.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Wolinsky 1986 - 随机搜索与垄断竞争"
+              "title": "Zou 与 Zhou 2025 - 搜索中立与卖家进入"
             }
           }
         ]
@@ -208,8 +208,11 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "d2e40da301c97e6a",
+  "active": "d7ca22333357553b",
   "lastOpenFiles": [
+    "Marketing Paper/文献卡/Zia 与 Kuksov 2025 - 搜索与产品线长度.md",
+    "Marketing Paper/文献卡/Qiu 等 2025 - 个性化排序与算法定价.md",
+    "Marketing Paper/文献卡/Wolinsky 1986 - 随机搜索与垄断竞争.md",
     "Marketing Paper/逐篇核读批次队列.md",
     "Marketing Paper/文献卡/Brown 与 MacKay 2023 - 定价算法竞争.md",
     "Marketing Paper/文献卡/Zou 与 Zhou 2025 - 搜索中立与卖家进入.md",
@@ -230,7 +233,6 @@
     "Marketing Paper/文献卡/Calvano 等 2020 - 重复定价与 Q-learning.md",
     "Marketing Paper/研究谱系/Paperlist 第二十批命题对照.md",
     "Marketing Paper/文献卡/Chu 等 2020 - 排序与位置拍卖.md",
-    "Marketing Paper/文献卡/Qiu 等 2025 - 个性化排序与算法定价.md",
     "Marketing Paper/__pycache__/research_agent.cpython-312.pyc",
     "Marketing Paper/__pycache__/corpus_vectors.cpython-312.pyc",
     "Marketing Paper/__pycache__/model_comparison.cpython-312.pyc",
@@ -239,8 +241,6 @@
     "Marketing Paper/研究谱系/Paperlist 第十九批命题对照.md",
     "Marketing Paper/文献卡/Derakhshan 等 2022 - 平台产品排序与逐位筛选.md",
     "Marketing Paper/文献卡/Donnelly 等 2023 - 个性化排序与福利.md",
-    "Marketing Paper/研究谱系/Paperlist 第十八批命题对照.md",
-    "Marketing Paper/文献卡/Ursu 2018 - 排名与在线搜索购买.md",
     "Marketing Paper/test_reading_coverage.py",
     "Marketing Paper/reading_coverage.py",
     "Marketing Paper/文献卡",
