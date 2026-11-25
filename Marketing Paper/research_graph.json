@@ -119,6 +119,21 @@
   ],
   "papers": [
     {
+      "id": "abebe-et-al-2020-anonymity-distance",
+      "title": "Anonymity or Distance? Job Search and Labour Market Exclusion in a Growing African City",
+      "authors": "Girum Abebe, Stefano Caria, Marcel Fafchamps, Paolo Falco, Simon Franklin, and Simon Quinn",
+      "year": 2020,
+      "journal": "RES",
+      "doi": "10.1093/restud/rdaa057",
+      "pdf": "RES/Abebe_2020_Anonymity or Distance Job Search and Labour Market Exclusion in a Growing African City.pdf",
+      "source_id": 43610,
+      "card": "Marketing Paper/文献卡/Abebe 等 2020 - 求职交通成本与技能信号.md",
+      "reading_status": "core_read",
+      "reading_note": "以本地 2020 先行版为准；核两臂 ITT、匹配机制、随件 A.4 及外推，记录地理簇及技能使用口径差异；数据未重跑。",
+      "read_scope": "PDF 1–33、42–45、87–93，原图核 PDF 42–44、88–90。",
+      "sections": {"introduction": [[1, 6]], "model": [[11, 14], [87, 93]], "results": [[19, 29], [42, 45]], "discussion": [[30, 33]], "proof": [[88, 92]]}
+    },
+    {
       "id": "agastya-bag-chakraborty-2014-authority",
       "title": "Communication and authority with a partially informed expert",
       "authors": "Murali Agastya, Parimal Kanti Bag, and Indranil Chakraborty",
