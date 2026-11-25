@@ -120,6 +120,117 @@
   ],
   "papers": [
     {
+      "id": "abel-1983-tax-neutrality-adjustment-costs",
+      "title": "Tax Neutrality in the Presence of Adjustment Costs",
+      "authors": "Andrew B. Abel",
+      "year": 1983,
+      "journal": "QJE",
+      "pdf": "QJE/Abel_1983_Tax Neutrality in the Presence of Adjustment Costs.pdf",
+      "source_id": 36387,
+      "card": "Marketing Paper/文献卡/Abel 1983 - 调整成本下的投资税收中性.md",
+      "reading_status": "core_read",
+      "reading_note": "核 Hamiltonian、Gould 与 Lucas 技术差别及平均 q 的比例证明，独立复推税项抵消和计税基数。原件未载 DOI。",
+      "read_scope": "PDF 1–8（刊页 705–712），原图回查 PDF 3–6 的公式和证明。",
+      "sections": {
+        "introduction": [
+          [
+            1,
+            2
+          ]
+        ],
+        "model": [
+          [
+            2,
+            5
+          ]
+        ],
+        "proof": [
+          [
+            3,
+            7
+          ]
+        ],
+        "results": [
+          [
+            4,
+            7
+          ]
+        ],
+        "discussion": [
+          [
+            7,
+            7
+          ]
+        ],
+        "references": [
+          [
+            7,
+            8
+          ]
+        ]
+      }
+    },
+    {
+      "id": "abbas-budescu-gu-2010-isoprobability-contours",
+      "title": "Assessing Joint Distributions with Isoprobability Contours",
+      "authors": "Ali E. Abbas, David V. Budescu, and Yuhong (Rola) Gu",
+      "year": 2010,
+      "journal": "MS",
+      "doi": "10.1287/mnsc.1100.1161",
+      "pdf": "MS/Abbas_2010_Assessing Joint Distributions with Isoprobability Contours.pdf",
+      "source_id": 25365,
+      "card": "Marketing Paper/文献卡/Abbas 等 2010 - 等概率线与联合分布.md",
+      "reading_status": "core_read",
+      "reading_note": "核边界识别、两组诱导程序、原表与 copula 拟合。逐人原始选择和总体基准分布未取得。",
+      "read_scope": "PDF 2–15 主文，16 定位参考文献，原图回查 PDF 4、8–9、11–14。",
+      "sections": {
+        "introduction": [
+          [
+            2,
+            3
+          ]
+        ],
+        "model": [
+          [
+            3,
+            6
+          ],
+          [
+            10,
+            14
+          ]
+        ],
+        "proof": [
+          [
+            4,
+            4
+          ],
+          [
+            6,
+            6
+          ]
+        ],
+        "results": [
+          [
+            8,
+            14
+          ]
+        ],
+        "discussion": [
+          [
+            14,
+            15
+          ]
+        ],
+        "references": [
+          [
+            15,
+            16
+          ]
+        ]
+      }
+    },
+    {
       "id": "abaluck-gruber-2011-choice-heterogeneity",
       "title": "Heterogeneity in Choice Inconsistencies among the Elderly: Evidence from Prescription Drug Plan Choice",
       "authors": "Jason Abaluck and Jonathan Gruber",
