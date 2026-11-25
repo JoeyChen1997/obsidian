@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
   "source_exclusions": [
+    {"source_id": 11778, "pdf": "JMR/Aaker_1971_On Experimental Design One in Historical and One in Critical Perspective.pdf", "kind": "book_review", "page": 2, "locator": "刊页 395–396 的 New Books in Review 栏，评介 Frank Yates 与 P. Ottestad 的两本书；PDF 3 署名 David A. Aaker"},
     {"source_id": 15986, "pdf": "JPE/A_1906_Family Monographs . Elsa G. Herzfeld.pdf", "kind": "book_review", "page": 1, "locator": "刊页 255：Book Reviews 栏；E. A. 署名评介 Elsa G. Herzfeld 的 1905 年书 Family Monographs；同页另有其他书评与新书目录"},
     {"source_id": 11775, "pdf": "JMR/Aaker_1969_Promotional Decisions Using Mathematical Models.pdf", "kind": "book_review", "page": 2, "locator": "New Books in Review；评介 Frank、Massy 与 Morrison 的同名书，不是该书的原始研究；作者署名在 PDF 3"},
     {"source_id": 19235, "pdf": "JPE/Heckman_2018_Index to Volume 126.pdf", "kind": "volume_index", "page": 1, "locator": "Index to Volume 126；Articles and Notes，条目为作者、题名和页码"},
@@ -114,6 +115,54 @@
     }
   ],
   "papers": [
+    {
+      "id": "abramitzky-et-al-2024-immigrant-incarceration",
+      "title": "Law-Abiding Immigrants: The Incarceration Gap between Immigrants and the US-Born, 1870–2020",
+      "authors": "Ran Abramitzky, Leah Boustan, Elisa Jácome, Santiago Pérez, and Juan David Torres",
+      "year": 2024,
+      "journal": "American Economic Review: Insights",
+      "doi": "10.1257/aeri.20230459",
+      "pdf": "AER_insight/Abramitzky_2024_Law-Abiding Immigrants The Incarceration Gap between Immigrants and the US-Born, 18702020.pdf",
+      "source_id": 5565,
+      "aliases": ["Abramitzky Boustan Jacome Perez Torres 2024", "immigrant incarceration gap", "historical census incarceration stock", "group quarters proxy", "immigration detention sensitivity"],
+      "card": "Marketing Paper/文献卡/Abramitzky 等 2024 - 移民监禁差距与长时段测量.md",
+      "reading_status": "core_read",
+      "reading_note": "核历史分母、监禁存量、按期回归与解释限制；复算相对差与百分点，线上附表未独立核。",
+      "read_scope": "PDF 1–16 正文，16–19 参考文献；回查 Figures 1、4 原页；未复跑数据或独立核线上 Appendix A/B。",
+      "sections": {"introduction": [[1, 4]], "model": [[4, 6], [8, 9]], "results": [[6, 15]], "discussion": [[11, 16]], "references": [[16, 19]]}
+    },
+    {
+      "id": "abadie-gardeazabal-2003-basque-synthetic-control",
+      "title": "The Economic Costs of Conflict: A Case Study of the Basque Country",
+      "authors": "Alberto Abadie and Javier Gardeazabal",
+      "year": 2003,
+      "journal": "American Economic Review",
+      "doi": "10.1257/000282803321455188",
+      "pdf": "AER/Abadie_2003_The Economic Costs of Conflict A Case Study of the Basque Country.pdf",
+      "source_id": 764,
+      "aliases": ["Abadie Gardeazabal 2003", "Basque Country synthetic control", "convex donor weights", "single-treated-region counterfactual", "truce stock returns"],
+      "card": "Marketing Paper/文献卡/Abadie 与 Gardeazabal 2003 - 合成对照与巴斯克冲突的经济成本.md",
+      "reading_status": "core_read",
+      "reading_note": "核两层优化、donor 凸包和单安慰剂；核组合事件研究并复算 ADL 与窗口复利；未重跑底层数据。",
+      "read_scope": "PDF 1–16 正文，16–19 印刷附录 A/B，19–20 参考文献；回核 PDF 5、12、18 原页。",
+      "sections": {"introduction": [[1, 2]], "model": [[4, 5], [10, 12], [16, 19]], "results": [[5, 9], [12, 15]], "discussion": [[8, 9], [14, 16]], "references": [[19, 20]]}
+    },
+    {
+      "id": "abraham-lodish-1987-promoter",
+      "title": "Promoter: An Automated Promotion Evaluation System",
+      "authors": "Magid M. Abraham and Leonard M. Lodish",
+      "year": 1987,
+      "journal": "Marketing Science",
+      "doi": "10.1287/mksc.6.2.101",
+      "pdf": "MKSC/Abraham_1987_Promoter An Automated Promotion Evaluation System.pdf",
+      "source_id": 23578,
+      "aliases": ["Abraham Lodish 1987", "PROMOTER trade promotion", "retailer forward buying", "factory shipment baseline", "promotional sell-through", "weighted median baseline"],
+      "card": "Marketing Paper/文献卡/Abraham 与 Lodish 1987 - 促销基线与零售商提前进货.md",
+      "reading_status": "core_read",
+      "reading_note": "核正常期外推、提前进货偏差和三例验证；复算出货偏差例及 Table 1 均值差，终端 Appendix I 未获。",
+      "read_scope": "PDF 1–22 正文，22–23 参考文献，24 版权；核 Eqs. (1)–(6) 和 Table 1 印刷原图。",
+      "sections": {"introduction": [[1, 5]], "model": [[5, 18]], "results": [[19, 21]], "discussion": [[20, 22]], "references": [[22, 23]]}
+    },
     {
       "id": "acemoglu-bimpikis-ozdaglar-2011-patent-experimentation",
       "title": "Experimentation, Patents, and Innovation",
