@@ -115,6 +115,22 @@
   ],
   "papers": [
     {
+      "id": "afrouzi-arteaga-weisburst-2024-message-messenger",
+      "title": "Is It the Message or the Messenger? Examining Movement in Immigration Beliefs",
+      "authors": "Hassan Afrouzi, Carolina Arteaga, and Emily Weisburst",
+      "year": 2024,
+      "journal": "Journal of Political Economy Microeconomics",
+      "doi": "10.1086/728365",
+      "pdf": "JPE_MICRO/Afrouzi_2023_Is It the Message or the Messenger Examining Movement in Immigration Beliefs.pdf",
+      "source_id": 23452,
+      "aliases": ["Afrouzi Arteaga Weisburst 2024", "message or messenger", "source persuasion source priming", "source identity surprise reliability"],
+      "card": "Marketing Paper/文献卡/Afrouzi 等 2024 - 消息内容与来源身份.md",
+      "reading_status": "core_read",
+      "reading_note": "核分层随机的两种比较、匿名内容及来源增量、Bayes 惊讶×相对信息含义、Tables 1–5/A1–A2；复算两组份额，线上 B/S 和复制包未重跑。",
+      "read_scope": "PDF 1–43 主文、44–50 印刷附录 A；参考文献续至 PDF 54。",
+      "sections": {"introduction": [[1, 7]], "model": [[13, 20]], "proof": [[15, 19]], "results": [[28, 42], [44, 50]], "discussion": [[42, 43]], "references": [[51, 54]]}
+    },
+    {
       "id": "aaron-mcguire-1970-public-goods-incidence",
       "title": "Public Goods and Income Distribution",
       "authors": "Henry Aaron and Martin McGuire",
