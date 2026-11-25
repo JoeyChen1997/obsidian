@@ -166,6 +166,28 @@
       }
     },
     {
+      "id": "abadie-athey-imbens-wooldridge-2020-design-uncertainty",
+      "title": "Sampling-Based versus Design-Based Uncertainty in Regression Analysis",
+      "authors": "Alberto Abadie, Susan Athey, Guido W. Imbens, and Jeffrey M. Wooldridge",
+      "year": 2020,
+      "journal": "ECMA",
+      "doi": "10.3982/ECTA12675",
+      "pdf": "ECMA/Abadie_2020_SamplingBased versus DesignBased Uncertainty in Regression Analysis.pdf",
+      "source_id": 5795,
+      "card": "Marketing Paper/文献卡/Abadie 等 2020 - 回归中的抽样与设计不确定性.md",
+      "reading_status": "core_read",
+      "reading_note": "核三个目标、分配与抽样、夹心方差和 Table IV；复算 Table III 和模拟矩，印刷附录残差下标疑点已记。Lemma 1 外置证明未取。",
+      "read_scope": "PDF 1–30 与 31 的补件书目；原图核 PDF 10、14–15、20–21、26、29。",
+      "sections": {
+        "introduction": [[1, 4]],
+        "model": [[4, 13]],
+        "results": [[6, 8], [13, 21]],
+        "discussion": [[16, 16], [21, 24]],
+        "proof": [[24, 30]],
+        "references": [[30, 32]]
+      }
+    },
+    {
       "id": "acemoglu-et-al-2025-behavioral-manipulation",
       "title": "When Big Data Enables Behavioral Manipulation",
       "authors": "Daron Acemoglu, Ali Makhdoumi, Azarakhsh Malekian, and Asuman Ozdaglar",
