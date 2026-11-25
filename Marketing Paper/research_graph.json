@@ -118,6 +118,22 @@
   ],
   "papers": [
     {
+      "id": "acemoglu-lensman-2024-transformative-tech-regulation",
+      "title": "Regulating Transformative Technologies",
+      "authors": "Daron Acemoglu and Todd Lensman",
+      "year": 2024,
+      "journal": "American Economic Review: Insights",
+      "doi": "10.1257/aeri.20230353",
+      "pdf": "AER_insight/Acemoglu_2024_Regulating Transformative Technologies.pdf",
+      "source_id": 5567,
+      "aliases": ["Acemoglu Lensman 2024", "transformative technology adoption", "irreversibility damages passive learning", "endogenous hazard versus passive Bayesian update", "sectoral use tax regulatory sandbox"],
+      "card": "Marketing Paper/文献卡/Acemoglu 与 Lensman 2024 - 变革技术的逐步采用与监管.md",
+      "reading_status": "core_read",
+      "reading_note": "核被动学习、锁定、增长与排序、分部门/统一监管；复算扩散时间、曲率和税收边界。",
+      "read_scope": "PDF 1–18，原图回查 9、13；不包括线上附录和复制代码。",
+      "sections": {"introduction": [[1, 3]], "model": [[3, 8], [11, 12]], "results": [[6, 15]], "proof": [[6, 7], [13, 14]], "discussion": [[15, 17]], "references": [[17, 18]]}
+    },
+    {
       "id": "abaluck-gruber-2011-part-d-inconsistencies",
       "title": "Choice Inconsistencies among the Elderly: Evidence from Plan Choice in the Medicare Part D Program",
       "authors": "Jason Abaluck and Jonathan Gruber",
