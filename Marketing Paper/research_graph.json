@@ -120,6 +120,27 @@
   ],
   "papers": [
     {
+      "id": "abel-1983-market-structure-durability",
+      "title": "Market Structure and the Durability of Goods",
+      "authors": "Andrew B. Abel",
+      "year": 1983,
+      "journal": "RES",
+      "pdf": "RES/Abel_1983_Market Structure and the Durability of Goods.pdf",
+      "source_id": 43611,
+      "card": "Marketing Paper/文献卡/Abel 1983 - 市场结构与耐用品寿命.md",
+      "reading_status": "core_read",
+      "reading_note": "核出租时序、稳态与进入、四项命题及印刷证明，复算固定服务现值成本条件与外部成本项。原件未列 DOI。",
+      "read_scope": "PDF 1–13（刊页 625–637），原图回查 PDF 6–11。",
+      "sections": {
+        "introduction": [[1, 2]],
+        "model": [[2, 4], [7, 8]],
+        "results": [[4, 10]],
+        "discussion": [[10, 10]],
+        "proof": [[9, 13]],
+        "references": [[13, 13]]
+      }
+    },
+    {
       "id": "aghamolla-corona-zheng-2021",
       "title": "No reliance on guidance: counter-signaling in management forecasts",
       "authors": "Cyrus Aghamolla, Carlos Corona, and Ronghuo Zheng",
