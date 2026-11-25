@@ -166,6 +166,28 @@
       }
     },
     {
+      "id": "acemoglu-et-al-2025-behavioral-manipulation",
+      "title": "When Big Data Enables Behavioral Manipulation",
+      "authors": "Daron Acemoglu, Ali Makhdoumi, Azarakhsh Malekian, and Asuman Ozdaglar",
+      "year": 2025,
+      "journal": "AER_insight",
+      "doi": "10.1257/aeri.20230589",
+      "pdf": "AER_insight/Acemoglu_2025_When Big Data Enables Behavioral Manipulation.pdf",
+      "source_id": 5568,
+      "card": "Marketing Paper/文献卡/Acemoglu 等 2025 - 光鲜度与平台操纵.md",
+      "reading_status": "core_read",
+      "reading_note": "核双重信念、逐次排序及福利阈值；独立复算零消退极限的新增品福利，记录印刷证明方向疑点。外置附录未取。",
+      "read_scope": "PDF 1–20；原图核 PDF 12、16–17。",
+      "sections": {
+        "introduction": [[1, 4]],
+        "model": [[5, 11]],
+        "results": [[10, 17]],
+        "proof": [[10, 10], [12, 17]],
+        "discussion": [[17, 18]],
+        "references": [[18, 20]]
+      }
+    },
+    {
       "id": "adalja-et-al-2023-gmo-labeling",
       "title": "GMO and Non-GMO Labeling Effects: Evidence from a Quasi-Natural Experiment",
       "authors": "Aaron Adalja, Jūra Liaukonytė, Emily Wang, and Xinrong Zhu",
