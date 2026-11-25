@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
   "source_exclusions": [
+    {"source_id": 15986, "pdf": "JPE/A_1906_Family Monographs . Elsa G. Herzfeld.pdf", "kind": "book_review", "page": 1, "locator": "刊页 255：Book Reviews 栏；E. A. 署名评介 Elsa G. Herzfeld 的 1905 年书 Family Monographs；同页另有其他书评与新书目录"},
     {"source_id": 11775, "pdf": "JMR/Aaker_1969_Promotional Decisions Using Mathematical Models.pdf", "kind": "book_review", "page": 2, "locator": "New Books in Review；评介 Frank、Massy 与 Morrison 的同名书，不是该书的原始研究；作者署名在 PDF 3"},
     {"source_id": 19235, "pdf": "JPE/Heckman_2018_Index to Volume 126.pdf", "kind": "volume_index", "page": 1, "locator": "Index to Volume 126；Articles and Notes，条目为作者、题名和页码"},
     {"source_id": 36286, "pdf": "MS/anonymous_2003_Index to Volume 49.pdf", "kind": "volume_index", "page": 2, "locator": "Index to Volume 49；Authors，按作者列篇目和页码"},
@@ -113,6 +114,54 @@
     }
   ],
   "papers": [
+    {
+      "id": "aaron-mcguire-1970-public-goods-incidence",
+      "title": "Public Goods and Income Distribution",
+      "authors": "Henry Aaron and Martin McGuire",
+      "year": 1970,
+      "journal": "Econometrica",
+      "doi": "10.2307/1909699",
+      "pdf": "ECMA/Aaron_1970_Public Goods and Income Distribution.pdf",
+      "source_id": 5789,
+      "aliases": ["Aaron McGuire 1970", "public goods income distribution", "Lindahl shadow prices fiscal incidence"],
+      "card": "Marketing Paper/文献卡/Aaron 与 McGuire 1970 - 公共品影子价格与收入归宿.md",
+      "reading_status": "core_read",
+      "reading_note": "核公共品归宿会计、Lindahl 与实际净税价之别、Eqs. 11–13 逆边际效用权重和 1961 年敏感度；复算两户分配，未重构原始数据。",
+      "read_scope": "PDF 2–15，刊页 907–920，§§1–4；PDF 1 为 JSTOR 封面。",
+      "sections": {"introduction": [[2, 3]], "model": [[3, 9]], "proof": [[7, 9]], "results": [[9, 14]], "discussion": [[13, 15]], "references": [[15, 15]]}
+    },
+    {
+      "id": "abadie-2020-statistical-nonsignificance",
+      "title": "Statistical Nonsignificance in Empirical Economics",
+      "authors": "Alberto Abadie",
+      "year": 2020,
+      "journal": "American Economic Review: Insights",
+      "doi": "10.1257/aeri.20190252",
+      "pdf": "AER_insight/Abadie_2020_Statistical Nonsignificance in Empirical Economics.pdf",
+      "source_id": 5562,
+      "aliases": ["Abadie 2020", "statistical nonsignificance", "limited information Bayesian posterior", "publication bias insignificant results"],
+      "card": "Marketing Paper/文献卡/Abadie 2020 - 不显著结果的信息含量.md",
+      "reading_status": "core_read",
+      "reading_note": "核有限信息后验、Eq. 5 与全变差距离、连续与带点原子先验的大样本条件；复算校准拒绝率与赔率，未复跑数据或核线上附录。",
+      "read_scope": "PDF 1–14（刊页 193–206），正文 §§I–IV；参考文献续至 PDF 16。",
+      "sections": {"introduction": [[1, 3]], "model": [[3, 8]], "proof": [[7, 11]], "results": [[7, 14]], "discussion": [[13, 14]], "references": [[14, 16]]}
+    },
+    {
+      "id": "aaronson-agarwal-french-2012-minimum-wage-spending",
+      "title": "The Spending and Debt Response to Minimum Wage Hikes",
+      "authors": "Daniel Aaronson, Sumit Agarwal, and Eric French",
+      "year": 2012,
+      "journal": "American Economic Review",
+      "doi": "10.1257/aer.102.7.3111",
+      "pdf": "AER/Aaronson_2012_The Spending and Debt Response to Minimum Wage Hikes.pdf",
+      "source_id": 761,
+      "aliases": ["Aaronson Agarwal French 2012", "minimum wage spending debt", "durable goods collateral down payment"],
+      "card": "Marketing Paper/文献卡/Aaronson 等 2012 - 最低工资与耐用品抵押融资.md",
+      "reading_status": "core_read",
+      "reading_note": "核固定效应识别、支出与债务的不同分母、Tables 1–8、生命周期抵押约束及耐用品调整成本；复算绑定约束的 Eq. 12，未重跑数据、线上附录或校准。",
+      "read_scope": "PDF 1–28，刊页 3111–3138，正文 §§I–IV；参考文献续至 PDF 29。",
+      "sections": {"introduction": [[1, 3]], "model": [[17, 23], [26, 27]], "results": [[6, 16], [21, 27]], "discussion": [[27, 28]], "references": [[28, 29]]}
+    },
     {
       "id": "abe-1995-brand-choice-kernel",
       "title": "A Nonparametric Density Estimation Method for Brand Choice Using Scanner Data",
