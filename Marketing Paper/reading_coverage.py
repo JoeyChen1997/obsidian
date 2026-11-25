@@ -30,8 +30,8 @@ def coverage(con, graph):
         if exclusion and (key or exclusion['pdf'] != row['relpath']):
             raise ValueError(f"Exclusion conflicts with catalog identity for source {row['id']}")
         # A source-identity decision does not imply that this edition was read.
-        state = ('not_applicable' if exclusion else 'not_reviewed' if variant else
-                 node.get('reading_status', 'not_reviewed'))
+        state = ('not_applicable' if exclusion else
+                 (variant or node).get('reading_status', 'not_reviewed'))
         if key:
             registered.add(key)
         title = corpus_rag.normalized_title(row['title_hint'] or '')
@@ -52,7 +52,8 @@ def coverage(con, graph):
                    card=node.get('card'), card_available=node.get('card_available'))
         if variant:
             row.update(doi=variant.get('doi'), variant_identity=variant,
-                       work_reading_state=node.get('reading_status'), reading_note='Source identity checked only.')
+                       work_reading_state=node.get('reading_status'),
+                       reading_note=variant.get('reading_note', 'Source identity checked only.'))
         if exclusion:
             row['source_exclusion'] = exclusion
         source_rows.append(row)

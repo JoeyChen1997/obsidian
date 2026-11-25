@@ -90,6 +90,10 @@ class Graph:
                 require(type(variant['identity_page']) is int and variant['identity_page'] >= 1
                         and isinstance(variant['identity_note'], str) and variant['identity_note'].strip(),
                         f'Variant lacks identity evidence: {key}')
+                if 'reading_status' in variant:
+                    require(variant['reading_status'] == 'core_read'
+                            and isinstance(variant.get('reading_note'), str) and variant['reading_note'].strip(),
+                            f'Variant review needs a source-specific reading note: {key}')
             if paper.get('card'):
                 card = (VAULT / paper['card']).resolve()
                 require(card.is_relative_to(VAULT) and card.suffix == '.md', f'Invalid card path: {key}')

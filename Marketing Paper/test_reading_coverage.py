@@ -62,6 +62,12 @@ class CoverageTest(unittest.TestCase):
         self.assertEqual(stats['same_title_groups_identity_resolved'], 1)
         self.assertEqual(rows[1]['reading_state'], 'not_reviewed')
         self.assertEqual(rows[1]['work_reading_state'], 'core_read')
+        graph.papers['registered']['verified_variants'][0].update(
+            reading_status='core_read', reading_note='Independently checked PDF 1–7.')
+        stats, rows, _ = coverage(con, graph)
+        self.assertEqual(stats['present_registered_work_ids'], 1)
+        self.assertEqual(stats['present_by_reading_state'], {'core_read': 2})
+        self.assertEqual(rows[1]['reading_note'], 'Independently checked PDF 1–7.')
 
     def test_candidates_do_not_inherit_reading_status(self):
         con = sqlite3.connect(':memory:')
