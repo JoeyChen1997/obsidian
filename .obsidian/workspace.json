@@ -233,8 +233,10 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "20c1dca6f0782d32",
+  "active": "d2e40da301c97e6a",
   "lastOpenFiles": [
+    "Marketing Paper/alipour.txt",
+    "Marketing Paper/automation/run-configured-codex.py",
     "Marketing Paper/文献卡/Moraga-González 等 2017 - 搜索成本与参与选择.md",
     "Marketing Paper/Paperlist 自动续读.md",
     "Marketing Paper/automation/continue-reading.ps1",
@@ -262,14 +264,12 @@
     "Marketing Paper/文献卡/Aaltonen 与 Wattal 2026 - 拒绝通知的信息量与贡献者留存.md",
     "Marketing Paper/文献卡/Ajzenman 等 2026 - 真人咨询与规则聊天机器人.md",
     "Marketing Paper/文献卡/Abadie 与 Imbens 2006 - 固定近邻匹配的偏差与方差.md",
-    "Marketing Paper/文献卡/Abramitzky 等 2024 - 移民监禁差距与长时段测量.md",
     "Marketing Paper/__pycache__/research_agent.cpython-312.pyc",
     "Marketing Paper/__pycache__/corpus_vectors.cpython-312.pyc",
     "Marketing Paper/__pycache__/model_comparison.cpython-312.pyc",
     "Marketing Paper/__pycache__/citation_claims.cpython-312.pyc",
     "Marketing Paper/__pycache__/semantic_context.cpython-312.pyc",
     "Marketing Paper/test_reading_coverage.py",
-    "Marketing Paper/reading_coverage.py",
-    "Marketing Paper/文献卡"
+    "Marketing Paper/reading_coverage.py"
   ]
 }

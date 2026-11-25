@@ -1,0 +1,1712 @@
+No Surprises, Please: Voting Costs
+and Electoral Turnout
+
+
+
+
+Jean-Victor Alipour
+Ludwig Maximilian University Munich and ifo Institute for Economic Research
+
+
+
+Valentin Lindlacher
+TUD Dresden University of Technology, ifo Institute for Economic Research, and CESifo
+
+
+
+
+       Can well-intentioned policies create barriers to voting? Election admin-
+       istrators in Munich (Germany) recruit new polling places and control
+       precinct sizes to improve voting accessibility, creating variation in the as-
+       signment of citizens to polling locations. Event study estimates suggest
+       that polling place reassignments cause a persistent shift from in-person
+       to mail-in voting and a transitory drop in total turnout of 0.4 percent-
+       age points (0.6%). The results are consistent with inattention to reas-
+       signments, causing some voters to miss requesting mail-in ballots and
+       temporarily abstain from voting. Reassignments depress turnout more
+       in elderly-heavy precincts and when distance to the polling location
+       increases.
+
+
+
+I. Introduction
+Organizing elections that foster trust in the electoral process and encour-
+age voter participation is a key challenge for modern democracies. In
+recent years, a number of controversies have brought the importance of
+
+   For suggestions that have improved this article, we thank the editor Anna Dreber
+Almenberg and two anonymous reviewers. We greatly benefited from comments and discus-
+sions with Enrico Cantoni, Sascha O. Becker, Clémence Tricaud, Claudia Steinwender, Oliver
+Falck, Niklas Potrafke, Anna Kerkhof, Thomas Fackler, Jan Schymik, Jerome Schäfer, Marcel
+Garz, Jon Fiva, Vassilis Sarantides, Ramon Paul Degennaro, Christoph Vanberg, Sebastian
+
+Electronically published December 3, 2024
+Journal of Political Economy Microeconomics, volume 3, number 1, February 2025.
+© 2024 The University of Chicago. All rights reserved. Published by The University of Chicago Press.
+https://doi.org/10.1086/732243
+
+
+
+                                                        59
+60                         journal of political economy microeconomics
+electoral administration into the public spotlight. Leading up to the 2020
+presidential election, reforms at the US Postal Service led former President
+Obama to accuse then-President Trump of attempting to “actively knee-
+cap” the Postal Service to sway voter turnout in his favor. In Germany,
+the 2021 Berlin Marathon impeded the accessibility of polling places to
+the extent that the Constitutional Court decided that the entire state elec-
+tion must be repeated.1 But while large-scale controversies quickly become
+the subject of public scrutiny, supposedly benign or well-intentioned poli-
+cies can pose an overlooked barrier to democratic participation.
+   This article studies the consequences of a seemingly innocuous practice
+for voter participation: the relocation of polling places. We analyze a nat-
+ural experiment in Munich (Germany), where election administrators
+aim to “facilitate [voting] as much as possible” (Federal Election Code,
+sec. 12:2). Upholding this objective involves recruiting new polling places
+with barrier-free access and controlling precinct sizes to prevent conges-
+tion at polling locations. A by-product of these policies is that some eligi-
+ble citizens are assigned to vote at a different polling location than before.
+Observable voting costs are only marginally affected by this practice: 90%
+of reassignments between 2013 and 2020 changed citizens’ walking dis-
+tance to their polling location by less than 1 kilometer.
+   Given the insignificance of any single vote for the election outcome, clas-
+sical voting theory suggests that even small shocks to voting costs may heavily
+impact turnout (Downs 1957), either positively (e.g., due to shorter travel
+distance or better accessibility of the building) or negatively (e.g., due to un-
+familiarity with the new polling place or longer travels). More recent voting
+literature contrasts this view by highlighting the significance of expressive
+reasons for voting, such as a sense of civic duty, self-expression, ethics, or
+social pressure (Funk 2010; Ali and Lin 2013; Dellavigna et al. 2017; Pons
+and Tricaud 2018). Given the importance of these motives, small voting
+costs are typically considered negligible for voter turnout. And thus, mov-
+ing polling places may produce null effects. We contribute to this debate by
+estimating the causal impact of polling place reassignments on the evolu-
+tion of electoral turnout and the mode of voting.
+
+
+Schirner, Felix Rösel, Oliver Herrmann, Shane Mahen, Anna Hasselqvist, and participants at
+the Econometric Society European Winter Meeting, the Royal Economic Society Annual
+Conference, the Annual Meeting of the Public Choice Society, and seminars at the University
+of Cambridge and the University of Munich. We are thankful to Ingrid Kreuzmair, Janette
+Lorch, and Heiko Flehmig for sharing data and information about the administration of
+elections in Munich. We also thank Emil Phillip for excellent research assistance. Jean-Victor
+Alipour gratefully acknowledges funding by the Society for the Promotion of Economic Re-
+search (ifo Freundesgesellschaft e.V.).
+  1
+    Reportedly, the Berlin Marathon was only one of several complications, including a re-
+duced number of voting booths at polling locations, wrong ballot papers, and irregular open-
+ing hours of polling places, leading to “chaotic conditions” and “completely overloaded”
+polling places according to the Berlin Constitutional Court.
+voting costs and electoral turnout                                                          61
+   We find a persistent shift from in-person to mail-in voting and a transi-
+tory decline in total turnout after a polling place relocation. The turnout
+recovery is consistent with inattention to reassignment, causing some vot-
+ers to postpone the switch to mail-in voting to the subsequent election and
+temporarily abstain. Because reassignments are not geographically con-
+centrated and voters are not heavily segregated in Munich, no party signif-
+icantly gains or loses from this practice, although relocations could be
+pivotal in close single-member constituency elections, where residents di-
+rectly elect their representative.
+   Understanding the determinants of voter turnout has engaged a vast
+literature, which has increasingly focused on the role of electoral institu-
+tions.2 Given the importance of voting in person in most democracies, pro-
+visions governing voting at the polling place are surprisingly understudied.
+While observational research suggests that polling place accessibility
+(e.g., in terms of proximity) can be relevant for turnout, few studies estab-
+lish causality, and nearly all examine settings in the United States. Notably,
+Cantoni (2020) uses a regression discontinuity design at precinct bound-
+aries in Minnesota and Massachusetts and finds that turnout is 2.5–7 per-
+centage points lower per kilometer from the polling place.3 Using the
+same identification strategy, Bagwe, Margitic, and Stashko (2022) docu-
+ment heterogeneous turnout effects, with smaller estimates in Pennsylva-
+nia (0.6–0.8 percentage point lower turnout per kilometer) and zero ef-
+fects in Georgia. The authors attribute much of the heterogeneity to the
+convenience of using absentee voting. Tomkins et al. (2023) extend the re-
+gression discontinuity framework to ten US states. The results largely re-
+veal no turnout differences across precinct borders as individuals living
+farther from their polling location use more early-voting options.
+   Moving a polling location is an active intervention and thus requires
+particular scrutiny, especially where election laws and administration are
+politically charged. In the United States, the closing of polling sites fre-
+quently raises concerns over partisan efforts to reduce voting access for
+certain groups, particularly racial minorities (Amos, Smith, and Ste. Claire
+
+
+  2
+     For instance, studies have evaluated the role of personal characteristics (e.g., education,
+religiosity, overconfidence) (Milligan, Moretti, and Oreopoulos 2004; Ortoleva and Snowberg
+2015; Gerber, Gruber, and Hungerman 2016) or contextual factors (Cantoni and Pons 2022),
+and specifically electoral institutions including ID laws (Cantoni and Pons 2021), registration
+procedures (Braconnier, Dormagen, and Pons 2017), voting technology (Fujiwara 2015), or
+compulsory voting regimes (Hoffman, León, and Lombardi 2017; Bechtel, Hangartner, and
+Schmid 2018).
+  3
+     Cantoni’s results are consistent with observational research (Gimpel and Schuknecht
+2003; Dyck and Gimpel 2005; Haspel and Knotts 2005; McNulty, Dowling, and Ariotti 2009;
+Bhatti 2012; Gibson et al. 2013; Fauvelle-Aymar and François 2018). However, these studies
+do not account for potential endogeneity, leaving room for biased estimates due to unob-
+served confounders or selection problems. Other studies have investigated the turnout ef-
+fects of polling place opening hours (Garmann 2017; Potrafke and Roesel 2020).
+62                     journal of political economy microeconomics
+2017; Curiel and Clark 2021; Chen et al. 2022). Partisan motives and other
+unobserved determinants of polling place relocations pose a key chal-
+lenge to establishing causal effects. Indeed, Brady and McNulty (2011)
+show that the precinct consolidations in Los Angeles County preceding
+California’s 2003 gubernatorial recall election caused nonrandom polling
+place reassignments. Using matching techniques to compare voters whose
+polling location moved farther away with those without a change, they
+document a 1.8 percentage point turnout decline among reassigned indi-
+viduals. Further results suggest that most of the effect comes from the
+move itself rather than the increased distance. Tomkins et al. (2023) com-
+pare turnout across precinct boundaries in six US states and find that early
+voting fully offsets lower turnout at the polls among registrants whose poll-
+ing location moved. However, the authors note that causality is difficult to
+establish due to correlation of relocations with underlying population
+characteristics (p. 178). Clinton et al. (2021) provide correlational evi-
+dence that moving polling places in North Carolina produced null effects
+across two presidential elections, as affected voters switched to early vot-
+ing. Using the same data with a longer time frame, Yoder (2019) estimates
+a 1–2 percentage point turnout decline.
+   In sum, the literature to date has focused on turnout responses to
+changing polling locations in the United States, but estimates vary greatly,
+and no consensus has been reached. Moreover, evidence exists only on in-
+stantaneous turnout effects, leaving unanswered the question of longer-
+term consequences of this practice. For instance, it is unclear whether
+turnout effects are persistent or revert (e.g., if voters familiarize themselves
+with their new polling place). Evolving turnout differences could also re-
+flect gradual adjustments in voting behavior or a new voting habit in re-
+sponse to a reassignment shock (Fujiwara, Meng, and Vogl 2016). Thus,
+a comprehensive empirical framework requires a dynamic perspective.
+   We depart from the existing literature in four important ways. First, our
+empirical framework significantly improves on the identification of turn-
+out effects of reassignments. We study a panel covering the eight elections
+held between 2013 and 2020 and demonstrate that polling place reassign-
+ments occur “as good as randomly.” Specifically, we show that (i) current
+turnout (by mail, in-person, and overall) is unrelated to reassignments in
+future elections conditional on election and precinct fixed effects (parallel
+pretrends), (ii) the timing of reassignments is uncorrelated with changes
+in observable precinct characteristics, and (iii) reassignments do not sys-
+tematically skew toward increasing or decreasing the distance to the poll-
+ing location. A second key novelty is the evaluation of effect persistence
+by analyzing turnout up to three elections after a reassignment. Third,
+the panel structure also allows us to shed light on a much-debated deter-
+minant of voting: habit formation. Habitual voting implies that the act
+of voting itself increases its consumption value and thereby the likelihood
+voting costs and electoral turnout                                                       63
+of voting in the future (Fujiwara, Meng, and Vogl 2016). While scholars
+have long been aware that turnout differences tend to be persistent (e.g.,
+Brody and Sniderman 1977; Green and Shachar 2000; Plutzer 2002), causal
+evidence for habit formation has proved inconclusive.4 Fourth, this is the
+first study to estimate the causal impact of reassignments and distance to
+the polling location outside the United States and in the context of a mul-
+tiparty system with proportional representation. This is partly motivated
+by the mixed findings on how turnout is affected by distance and reloca-
+tions, along with recent evidence highlighting the importance of place-
+specific factors for turnout (Cantoni and Pons 2022; Chyn and Haggag
+2023). We use aggregate party votes to estimate the partisan consequences
+of moving polling locations, an aspect lacking in the existing literature.
+Election administration in Germany is not politically charged and reas-
+signments are noncontroversial. Moreover, the country counts among the
+few democracies to offer universal access to mail-in voting. Thus, our setting
+is well suited to test the importance of convenient alternatives to voting at
+the polling place.5
+   To fix ideas, we present a simple rational choice model of voting that
+combines three key ingredients. First, polling place reassignments alter
+the cost of voting in person by changing the distance to the polling loca-
+tion; second, reassignments always generate a disutility from engaging with
+an unfamiliar environment, independent of distance. Third, we allow for
+inattention to reassignments as citizens in Munich, unlike in the United
+States, are not explicitly informed of changes to their polling location. This
+raises the possibility that a fraction of voters are surprised by a reassign-
+ment or do not notice the change at all. The model delivers three key pre-
+dictions. First, reassignments generate asymmetric turnout effects by dis-
+tance: Increasing distance always reduces turnout at the polling place by
+making it less attractive relative to mail-in voting and abstention; however,
+decreasing distance does not raise polling place turnout, unless it is
+enough to compensate for the reassignment disutility. Second, inattention
+amplifies the shift toward abstention when reassignments make poll voting
+
+   4
+     Meredith (2009) demonstrates that voters who had just turned 18 at the time of the
+2000 US general election are also more likely to cast their ballot in the subsequent election
+than their peers who fell short of the age threshold. Gerber, Green, and Shachar (2003)
+provide evidence suggesting that get-out-the-vote campaigns increase turnout in subse-
+quent elections. Fujiwara, Meng, and Vogl (2016) propose election-day rainfall as an exog-
+enous and transitory shock to voting costs and find that the decrease in turnout induced by
+rainfall also reduces turnout in subsequent US presidential elections. By contrast, compul-
+sory voting in Switzerland and Austria showed no persistent effects on turnout after its ab-
+olition (Bechtel, Hangartner, and Schmid 2018; Gaebler, Potrafke, and Roesel 2020). Sim-
+ilarly, Potrafke and Roesel (2020) find that longer opening hours of polling places increase
+contemporaneous turnout but do not affect turnout in subsequent elections.
+   5
+     Only 6% of countries globally and 29% of OECD countries (including Germany, parts
+of the United States, Canada, and the United Kingdom) offer access to mail-in voting for
+all eligible voters (International Institute for Democracy and Electoral Assistance).
+64                     journal of political economy microeconomics
+more costly. This is due to inattentive poll voters who are surprised by
+reassignments after the deadline for requesting mail-in ballots. Some inat-
+tentive voters (who would have switched to mail-in voting) end up abstain-
+ing from turning out, leading to higher turnout losses relative to a scenario
+without inattention. Third, inattention attenuates turnout gains when
+reassignments reduce travel distance. Intuitively, inattention creates iner-
+tia among abstainers who do not notice reassignments at all.
+   Our empirical results suggest sizable and persistent effects of polling
+place relocations. We use an event study design that focuses on turnout
+dynamics around the time that a precinct is assigned to a different polling
+place. On average, reassignments cause a persistent substitution between
+the modes of voting: Turnout at the polling place falls by 1.0 percentage
+points immediately after the change, mirrored by an increase in mail-in
+turnout. Remarkably, the substitution is only partial in the first post-
+reassignment election, causing total turnout to fall temporarily by 0.4 per-
+centage points. Given the policy’s good intentions and the minor changes
+in proximity to the polling place, a declining turnout is notable. The mag-
+nitude of the drop is comparable to reducing the number of early (in-
+person) voting days in the United States by 2 (Kaplan and Yuan 2020),
+and would be enough to offset the positive turnout effect of an additional
+newspaper during the turn of the twentieth century in the United States
+(Gentzkow, Shapiro, and Sinkinson 2011). The drop also contrasts the lack
+of participation effects estimated by Clinton et al. (2021) and Tomkins et al.
+(2023).
+   Next, we examine a key dimension of reassignment heterogeneity:
+changes in proximity to the polling location. We estimate differential treat-
+ment effects for reassignments that increased versus decreased distance to
+the polling place. In line with our model, we find strikingly asymmetric pat-
+terns. When distance increases, the shift toward mail-in voting and the tem-
+porary drop in total turnout are amplified. By contrast, distance reductions
+generate no statistically significant turnout effects, on average. Our model
+suggests that reassignment disutility may offset lower voting costs from a
+closer polling location. We estimate that distance needs to be halved, on av-
+erage, to compensate for the shock of the move itself and prevent a drop in
+total turnout. We find only weak evidence of increases in overall participa-
+tion in extreme cases of distance declines. This result is consistent with
+inattentive abstainers, who remain abstainers even when their polling loca-
+tion moves very close. However, we cannot rule out alternative explanations
+for the lack of positive participation effects. Overall, changes in distance ac-
+count for less than 40% of the turnout effects, highlighting the relocation
+itself as a barrier to voting overlooked by election administrators.
+   We explore the mechanism explaining the drop and subsequent recov-
+ery of voter participation. Results show that the recovery is entirely ex-
+plained by an increase in mail-in rather than polling place turnout. This
+voting costs and electoral turnout                                           65
+is at odds with the hypothesis that abstainers return to vote in person after
+familiarizing themselves with their new polling place. Instead, the pat-
+tern is consistent with inattention to reassignments. Inattentive poll voters
+are surprised by reassignments after the deadline for requesting mail-in
+ballots. Consequently, some inattentive voters abstain in the first post-
+reassignment election and turn to mail-in voting only in the subsequent
+election. This channel highlights the importance of offering access to
+mail-in voting to prevent a persistent decline in participation. The result
+speaks to previous research suggesting that the availability of convenience
+voting systems can increase participation rates (Gerber, Huber, and Hill
+2013; Hodler, Luechinger, and Stutzer 2015; Barber and Holbein 2020;
+Kaplan and Yuan 2020; Thompson et al. 2020). Moreover, the fact that
+turnout losses are recovered is incompatible with the hypothesis that vot-
+ing (or abstaining) is habit forming. Instead, the dynamics are consistent
+with rational behavior in response to a positive shock to voting costs that is
+temporarily amplified by inattention. The mechanism implies that in-
+creasing the salience of reassignments ahead of election day to remedy in-
+attention (e.g., by explicitly notifying affected citizens) could alleviate det-
+rimental turnout effects.
+   Our baseline estimates obscure a great amount of heterogeneity. In
+particular, we find that turnout effects vary significantly by the age com-
+position of the local electorate. We estimate a triple-difference model that
+traces the differential turnout trend among treated precincts with a
+higher share of elderly eligible voters before and after the reassignment.
+A primary reason for polling place turnover during our observation period
+is the city council’s resolution to recruit new barrier-free venues to im-
+prove access for elderly voters and citizens with physical impairments.
+However, our estimates suggest that total turnout drops more in elderly-
+heavy precincts after reassignment and does not fully recover in subsequent
+elections. Using a similar estimation strategy, we find that the shift from
+in-person to mail-in voting is significantly weaker in precincts with a
+higher fraction of Germans with migration background; yet, the change
+in total turnout is not statistically different. We find no evidence that re-
+assignments affect turnout differently in less affluent precincts (measured
+by the average quoted rent) or in precincts with a higher share of house-
+holds with children, who may also benefit from barrier-free access.
+   The presence of heterogeneous treatment effects may undermine the
+representativeness of the electoral outcome. Our results suggest that it
+does not. Turnout effects are similar across the six largest parties, and
+party vote shares do not change significantly after a reassignment. This
+finding is likely explained by the lack of heavy spatial segregation along
+party lines in Munich, ensuring that polling place relocations are not con-
+centrated among a particular party’s supporters. However, small changes
+in voter participation could matter in close constituency elections during
+66                       journal of political economy microeconomics
+state and federal elections, where voters directly elect their representative
+on a plurality rule.
+   The next section describes the institutional setting. Section III de-
+scribes how we build our estimation panel and outlines our empirical
+strategy. We present our main results in section IV. Section V analyzes het-
+erogeneous effects across precinct characteristics and explores partisan
+consequences of reassignments. Section VI concludes.
+
+II. Institutional Background: Elections
+    and Polling Place Reassignments
+A.   Elections in Munich
+Our panel covers the eight elections held in Munich between 2013 and
+2020. These include elections to four legislative bodies reflecting the fed-
+eral system in Germany: the Bundestag (federal parliament), which consti-
+tutes the main body of the central government, the Bavarian Landtag
+(state parliament), the Stadtrat (Munich city council), which governs the
+city alongside the mayor, and the European Parliament, which effectively
+exercises some of the power of the federal government since Germany is
+a member of the European Union. All elections follow the principles of
+proportional representation but differ in electoral rules. In appendix A
+(apps. A–E are available online), we describe key features of the different
+electoral processes. We also compare Munich’s population to the German
+average and the 20 largest cities in the country in table E.1 (tables C.1–C.7
+and E.1–E.9 are available online). While voter turnout is close to the na-
+tional average, Munich stands out regarding income and the share of
+high-skilled residents. This makes the city broadly representative of the ur-
+ban, more affluent population.
+   Eligible voters are automatically registered on the electoral roll. Voting
+is not compulsory and mail-in voting is open to all without excuse or sep-
+arate photo identification.6 Registered citizens receive an election notifi-
+cation via mail no later than 21 days before the election. The letter in-
+cludes the election date, the location and opening hours of the polling
+place, and whether it offers barrier-free access. There is no explicit infor-
+mation about changes to the polling location in the letter or a separate
+notification. This contrasts with the United States, where such changes
+typically trigger the requirement to notify affected voters (Cantoni 2020;
+Clinton et al. 2021; Tomkins et al. 2023). Eligible voters may vote in person
+
+
+
+  6
+    Voting by mail was introduced in West Germany in 1957, and since 2008, it can be re-
+quested without providing a reason. Mail-in ballots can be submitted to any mailbox with-
+out postage.
+voting costs and electoral turnout                                                             67
+
+
+
+
+   F IG . 1.—Timeline and turnout of elections held between 2013 and 2020. The figure pre-
+sents the number of eligible voters (vertical bars), total turnout, defined as the percentage of
+eligible voters who cast a vote (triangles), and the percentage of polling place votes (solid line)
+for the eight elections included in our sample. The shading of the bars reflects the different
+election types. Between 2013 and 2020, two state elections, two federal elections, two Euro-
+pean elections, and two municipal elections were held in Munich. The data are from the Mu-
+nich Election Office (Wahlamt).
+
+
+
+at their assigned polling place on election day. In this case, they must pre-
+sent their election notification and a photo ID at the voting station. Those
+who wish to vote by mail must request a “polling card” (Wahlschein) by re-
+turning a form included in the election notification at least 2 days before
+the election.7
+   Figure 1 illustrates the election timeline in our panel. Two elections
+were held in 2013 and 2014 (but not on the same day), and one was held
+every year between 2017 and 2020. The vertical bars illustrate the number
+of eligible voters (left axis). The triangles and the solid line trace the evo-
+lution of total turnout and the share of votes cast at the polling place, re-
+spectively (right axis). The number of eligible voters is distinctively higher
+in municipal elections, in which EU foreigners living in Munich are also
+entitled to vote.8 Total turnout increases over time when comparing the
+
+
+
+
+   7
+     In principle, the polling card also entitles one to vote at another polling place in the
+city; however, typically, more than 98% of ballots cast using polling cards are mail-in votes.
+And more than 90% of voters requesting a polling card actually cast a vote.
+   8
+     For instance, in the 2020 municipal election, 17.5% of eligible voters were foreign EU
+citizens. Foreign EU citizens who wish to vote in European elections in Munich instead of
+their country of origin must lodge a registration request.
+68                         journal of political economy microeconomics
+same election type; the share of votes cast in person typically lies between
+50% and 60% and declines slightly over time.9
+
+B. Polling Place Reassignments
+Elections are organized by the Munich Election Office (Wahlamt). The
+employees are nonpartisan civil servants and have no direct incentives
+to manipulate the electoral process. In every election, the electorate is
+geographically partitioned into more than 600 voting precincts based
+on eligible citizens’ home addresses.10 Precincts constitute the smallest ad-
+ministrative unit and serve to enable a manageable election process. We
+use official electoral rolls to georeference polling locations and residen-
+tial addresses.11 Figure 2 depicts a typical electoral map. Thin boundaries
+delineate the 618 precincts; thick lines delineate the 25 city districts. Each
+precinct is assigned one polling place, marked by black stars, and it is not
+uncommon that one venue accommodates the polling places of several
+neighboring precincts located in the same district. Gray lines indicate
+the assignment of home addresses to polling places.
+   Recruitment of polling locations.—One source of variation in polling place
+assignments is turnover in the venues used to host them. Polling places are
+typically located in public properties, usually schools (71% of all venues),
+but also church-affiliated facilities (11%) and retirement homes (5%).12
+In each election year, district inspectors (Bezirksinspektoren) are charged
+with recruiting potential locations and verifying that they meet the re-
+quired standards. While recruitment usually focuses on venues that were
+used in the past, new polling place requirements, competing events on
+election day, building closures, or ongoing construction work may leave
+some locations unavailable. There is no documentation of why venues be-
+come inactive or new venues are recruited. Correspondence with the elec-
+tion office suggests two main drivers of turnover in polling locations dur-
+ing our observation period. First, following a resolution of the city council
+(Stadtrat), the election office prioritized recruiting locations with barrier-free
+access for elderly people and voters with physical impairments after 2014.13
+
+   9
+      With more than half of all votes cast by mail, the 2020 municipal election held during
+the COVID-19 pandemic marks an exception.
+   10
+      By law, citizens must notify the city’s registration office (Meldeamt) within 2 weeks of
+moving into a new residence. This also applies to moves within a municipality.
+   11
+      We identify 156,261 residential addresses from the 2018 electoral roll. We successfully
+geolocate 153,938 (98.5%) and are able to match 150,779 to a unique precinct in every elec-
+tion (97.9% of all geolocated addresses). We use geocoding services provided by OpenCage
+(Zeigermann 2018), which uses OpenStreetMap to generate the addresses’ coordinates.
+   12
+      See fig. D.1 (figs. B.1–D.15 are available online) for an overview of venue types.
+   13
+      Specifically, the resolution mandated that the number of barrier-free polling places be
+doubled between 2014 and 2017 and that a share of at least 75% be reached by 2020. In-
+ternal documents provided by the election office suggest that 80% of polling places were
+barrier-free by 2018.
+voting costs and electoral turnout                                                            69
+
+
+
+
+  F IG . 2.—Electoral map of Munich for the 2018 state election. The map shows the delin-
+eations of the 25 city districts (thick lines) and the 618 voting precincts (thin lines) in Munich
+for the 2018 state election. Black stars mark the locations of polling places. Gray lines connect
+the addresses of eligible voters to their assigned polling place. The data are from the official
+electoral rolls provided by the Munich Election Office (Wahlamt).
+
+
+
+Second, the extensive renovations under Munich’s school construction
+program (Schulbauoffensive), which began in 2016 with over 3.8 billion euros
+allocated to refurbishing educational facilities, led to prolonged closures of
+school buildings. Our review of public documents on the investment plans
+revealed that in 61% of the cases in which schools no longer hosted polling
+places, the election date collided with a construction period. We observe
+293 distinct venues used in at least one election between 2013 and 2020.
+The number of active venues is typically around 200 in any given election.
+Figure D.2 illustrates their activity status over time.
+70                         journal of political economy microeconomics
+
+
+
+
+  F IG . 3.—Illustration of two instances of polling place reassignments between the 2014 Eu-
+ropean election and the 2017 federal election. Dark (light) gray lines connect the residential
+addresses of eligible voters to their 2017 (2014) polling location. In panel A, the precinct was
+reassigned to a different polling place (black star) as the old polling location became inactive
+(white circle). Panel B illustrates a precinct reconfiguration. Black borders delineate a newly
+created precinct that was spun off from a larger precinct. Citizens living within the black bor-
+ders were thus reassigned from the polling place in the north to the location in the northwest
+of the map. Both locations were active in 2014 and 2017.
+
+
+   Precinct reconfigurations.—The second source of polling place reassign-
+ments is reconfigurations of precinct boundaries and the allocation of
+existing polling places. The law requires that precincts be drawn so that
+“participation in the election is facilitated as much as possible” (Federal
+Election Code, sec. 12:2). Besides monitoring proximity to polling loca-
+tions and recruiting barrier-free venues, the election office’s main objec-
+tive is to minimize congestion risk. In practice, this involves controlling
+precinct sizes and adjusting the number of polling places hosted by the
+same venue in cases in which it serves multiple precincts.14 Consequently,
+precincts may be merged, split, or entirely assigned to another (existing)
+polling place.
+   We illustrate two instances of polling place reassignments between 2014
+and 2017 in figure 3. The black borders delineate precincts as of 2017.
+The shaded areas highlight precincts as of 2014. The dark (light) gray
+
+   14
+      The law specifies that precincts must not be larger than 2,500 eligible voters. The elec-
+tion office aims at an average size of 1,500 eligible voters per precinct. See fig. D.3 for a
+density plot of precinct size across all elections.
+voting costs and electoral turnout                                                           71
+
+
+
+
+   F IG . 4.—Share of residential addresses assigned to different polling place relative to pre-
+vious election. The election preceding the 2013 state election is the 2009 federal election
+(not shown). Reassignment can be due to the reconfiguration of precincts or due to the re-
+cruitment of a different polling venue.
+
+
+lines connect eligible voters’ addresses to their assigned polling place in
+2017 (2014). In panel A, the pub that hosted the precinct’s polling place
+in 2014 was not recruited in 2017. Instead, the precinct was assigned an-
+other polling place (a public school) about 9 walking minutes west of
+the old location. In the example, the relocation led to an increase in
+the average distance to the polling place. Panel B illustrates an instance
+in which a precinct’s boundaries were redrawn. A new precinct (black bor-
+ders) was carved out from the original precinct (shaded area). Residents of
+the newly created precinct were consequently reassigned from the polling
+place at the top of the map to the location further south. Unlike in the
+preceding example, both polling places remained in operation in 2017.
+   Figure 4 documents the fraction of residential addresses reassigned to a
+different polling place relative to the previous election.15 There were no
+reassignments in the 2013 federal election and the 2014 European elec-
+tion, as other elections were held earlier in the same year. Before 2017,
+changes in precinct size were addressed by adjusting the number of on-
+site poll workers, thus limiting the number of reassignments caused by
+precinct reconfigurations. In 2017, 41% of home addresses were assigned
+to a different polling place. The main drivers were a major consolidation of
+precincts facilitated by the introduction of new urban planning technology
+and the new focus on recruiting barrier-free polling places.16 Munich’s
+school construction program contributed to the turnover of polling venues
+
+   15
+      Reassignments in the 2013 state election are determined relative to polling place as-
+signments in the 2009 federal election.
+   16
+      The redivision of the city caused a significant reduction in the variance of precinct sizes
+(fig. D.3).
+72                         journal of political economy microeconomics
+
+
+
+
+  F IG . 5.—Density of walking distance and change in proximity to the polling place. The
+panels present density plots of the walking distance between residential addresses of eligible
+voters and their assigned polling places (A; N 5 1,206,232) and the change in distance con-
+ditional on assignment to a different polling place relative to the previous election (B; N 5
+147,874). The sample covers the eight elections held between 2013 and 2020. Vertical lines
+highlight the mean of the distribution.
+
+
+starting in 2017. In 2020, reassignments were mainly the result of an in-
+creased number of precincts and the recruitment of suitable venues to
+meet social distancing provisions during the COVID-19 pandemic. Over-
+all, 43% of all addresses are never reassigned between 2013 and 2020,
+26% are reassigned once, and 24% twice (fig. D.4).17 elections.
+   Figure 5 plots the distribution of walking distances between home ad-
+dresses and polling places (A), and the distribution of distance changes
+conditional on reassignment across all elections (B).18 Negative values in-
+dicate that the new polling place moved closer (relative to the previous
+election); positive values correspond to a relocation further away. We dis-
+tinguish between changes due to recruitment of polling locations and due
+to precinct reconfigurations. For 90% of residential addresses, proximity
+to the polling place is below 1.4 kilometers, equivalent to an 18-minute
+walk (median: 0.74 km, mean: 0.82 km). The distribution of distance
+changes is closely centered around zero (median: 10.04 km, mean:
+10.05 km) and approximately symmetric (skewness: 0.08), indicating that
+polling places are not systematically located closer or farther away after re-
+assignment. Splitting by reason of reassignment leaves the moments of
+the two distributions nearly unchanged; 90% of reassignments change the
+
+
+
+  17
+     When an address is reassigned more than once, the median period between the first
+and second reassignment is three elections.
+  18
+     We use the “osrmtime” package (Huber and Rust 2016), which makes use of Open
+Source Routing Machine and OpenStreetMap, to calculate walking distances, defined as
+the shortest walking distance between two points using the public road network.
+voting costs and electoral turnout                                                     73
+walking distance by less than 0.87 km (or 10 walking minutes). Hence, the
+practice generates only marginal shocks to observable voting costs.
+
+III. Empirical Strategy
+A.   A Precinct-Level Panel
+We use official election results and electoral rolls provided by the Munich
+Election Office in the empirical analysis. One limitation is that the finest
+resolution available for turnout data is at the precinct level. Thus, we ag-
+gregate reassignments and distance from the polling location from the ad-
+dress level to precinct delineations. To obtain a constant unit of observa-
+tion, we impose time-invariant precinct borders corresponding to the
+2018 configuration for aggregation. Because voter turnout is recorded
+at election-specific precinct configurations, we also harmonize turnout
+to the 2018 delineations. The number of precincts in 2018 was small com-
+pared to other years. In this way, harmonization mostly involves aggregat-
+ing turnout to larger units. For the remaining cases, we use conversion
+weights based on the number of eligible voters, provided by the election
+office. This leaves us with a panel of 618 precincts with consistent bound-
+aries, which we observe over eight elections between 2013 and 2020. To
+ensure that treatment effects do not merely pick up measurement error
+created by harmonization, we perform robustness tests using precincts
+where polling place changes did not coincide with boundary changes
+(app. C). We also obtain data on time-varying structural indicators, includ-
+ing information on the local population (size, age, marital status, migrant
+status, citizenship, duration of residence, households with children, mi-
+gration across and within precinct boundaries) and average housing
+cost.19 Another limitation is the missing information on the number of
+residents per address. This can create potential distortions of the average
+distance to the polling place or the share of reassigned individuals if hous-
+ing types within precincts vary a lot. We argue that concerns over such
+measurement error are limited. First, we focus on the model case, in
+which an entire precinct is treated in the causal analysis. Second, since
+precincts are relatively small (1,500 eligible voters per precinct, on aver-
+age), the risk of within-precinct heterogeneity in housing types affecting
+our measure is limited. Additionally, our preferred specification includes
+electiondistrict fixed effects. This ensures that we compare turnout dy-
+namics among close precincts, limiting the risk of between-precinct
+
+  19
+     Information on local rents is from the RWI Leibniz Institute for Economic Research.
+All other data are provided by the Munich Statistical Office and are available for download
+from the city’s election review website (Wahlatlas; https://www.muenchen.de/rathaus
+/Stadtinfos/Statistik/Wahlen.html). Migration data were specially prepared and are avail-
+able upon request.
+74                         journal of political economy microeconomics
+heterogeneity distorting our estimates. We turn to the details of the em-
+pirical strategy in section III.C. Table E.2 reports summary statistics of our
+precinct-level variables.
+
+B. Conceptual Framework: Voting Costs, Inattention,
+   and Turnout
+To fix ideas, we develop a simple rational choice model of voting. We sum-
+marize the key intuitions here and relegate the details to appendix B. The
+model combines three main ingredients: First, reassigning individuals to a
+different polling place raises or reduces the cost of voting in person by
+moving the polling location closer or farther away. Second, reassignments
+always generate a disutility from engaging with an unfamiliar environ-
+ment, independent of distance.20 Third, we allow for inattention to
+reassignments. Unlike in the United States, citizens in Munich are not ex-
+plicitly informed of changes to their polling location. To notice a reassign-
+ment, they must review their polling place’s address stated in the election
+notification, mailed a few weeks before the election.21
+   Thus, reassignments may go unnoticed by some. We model inattention
+by imposing that a fraction of poll voters are surprised by reassignments
+after the deadline to request mail-in ballots. Since the election notification
+must be presented to officials on-site, inattentive poll voters realize that the
+polling location moved only shortly before going to vote. We also allow for
+inattentive abstainers, who do not notice reassignments at all. Finally, we
+assume no inattention among mail-in voters because mail-in ballots must
+be requested by returning a form enclosed in the election notification.
+   The model delivers three key predictions. First, reassignments generate
+asymmetric turnout effects by distance: Increasing distance always reduces
+turnout at the polling place by making it less attractive relative to mail-in
+voting and abstention; however, decreasing distance does not raise polling
+place turnout, unless it is enough to compensate for the reassignment dis-
+utility. Second, inattention amplifies the shift toward abstention when
+reassignments make voting in person more costly. This is due to inatten-
+tive poll voters, who are surprised by reassignments. Some inattentive vot-
+ers, who would have switched to mail-in voting, end up abstaining, leading
+to higher turnout losses relative to a scenario without inattention. Third,
+inattention attenuates turnout gains when reassignments reduce distance.
+Intuitively, inattention creates inertia among abstainers who remain un-
+aware of reassignments.
+  20
+     In the model proposed by Brady and McNulty (2011), the reassignment disutility
+would capture what the authors label “search costs,” i.e., a positive shock to the cost of vot-
+ing in person, independent of distance changes. They do not formally distinguish between
+search costs and distance costs; thus, our model extends their conceptual framework.
+  21
+     Individuals are rational, conditional on inattention; however, the attention choice it-
+self may or may not be optimal (Maćkowiak, Matějka, and Wiederholt 2023).
+voting costs and electoral turnout                                                      75
+C. Main Specification: An Event Study Design
+We use an event study framework to trace out changes in voting behavior
+around polling place relocations. In the baseline, we define the event as
+the first election in which the entire electorate in a precinct is assigned
+to a different polling place. Reassignment of the entire precinct is the
+modal case, with 41% of all instances where at least some home addresses
+are reassigned;22 280 of the 618 precincts are classified as treated using
+this definition. We also trim precinct time series after a second reassign-
+ment to capture the effects of a single reassignment rather than multiple
+changes.23 We test the sensitivity to alternative assumptions, including dif-
+ferent binary and continuous treatment definitions, in appendix C.
+   Let Ep ∈ f1, 2, ::: , 8g denote the election in which precinct p is fully
+reassigned for the first time (the event), and t ; t 2 Ep denote time rel-
+ative to the event. Then, our preferred specification is given by
+
+                  Ypt 5 o mk 1(t 5 k) 1 X 0pt f 1 dp 1 dd(p)t 1 εpt ,                   (1)
+                          k≠21
+
+
+where an outcome Ypt (e.g., turnout at the polling place, via mail, and over-
+all) in precinct p and election t is regressed on election indicators relative
+to the event and a series of control variables and fixed effects. Specifically,
+we include precinct effects dp, which absorb any time-invariant factors that
+influence the outcome, and election fixed effects dd(p)t, which we allow to
+be district-specific. Election fixed effects account for common shocks,
+such as differences in voting propensity across elections or the weather
+on election day. Interacting election with district fixed effects accounts
+for different electoral conditions across districts: Unlike precincts, dis-
+tricts are directly contested in some elections. At the state and federal
+level, the 25 districts are combined into single-member constituencies,
+where residents directly elect their representatives. In municipal elec-
+tions, citizens also elect their local district committee. Thus, there may
+be systematic differences in voting incentives across districts if, for exam-
+ple, close races are anticipated in some constituencies (Bursztyn et al.
+2024). Moreover, polling place recruitment is done by district inspectors.
+Thus, electiondistrict fixed effects can also account for systematic dif-
+ferences in recruitment practices by comparing outcomes only within
+district-election cells. The vector X comprises a set of time-varying covari-
+ates: precinct size (log of the number of residents and the share of resi-
+dents eligible to vote), the age structure of the electorate (share of eligible
+voters aged 18–24, 25–34, 35–44, and 45–59), the share of EU foreigners
+in the electorate, the average duration of residence (in years), the share
+
+
+  22
+       We report density plots of the share of reassigned home addresses in fig. D.5.
+  23
+       Out of 280 treated precincts, 150 (54%) are treated exactly once (fig. D.6).
+76                      journal of political economy microeconomics
+of households with children, the average quoted rent per square meter,
+and the shares of native German residents, nonnative German residents,
+single residents, and married residents. We discuss sensitivity to excluding
+covariates and replacing them with time-invariant controls interacted with
+election fixed effects in appendix C.2.
+   The error εpt captures unobserved precinctelection shocks to the out-
+come that are assumed to be uncorrelated with the regressors of interest.
+Then, the event-time coefficients m  ^k trace the differential time path of the
+outcome in treated relative to untreated precincts before and after the re-
+assignment. Specifically, estimates m ^k,t≥0 deliver the average effect of reas-
+signment on treated units in election t 5 k after the event.
+   The two identifying assumptions for a causal interpretation are (i) that
+polling place reassignments and changes in distance are unrelated to
+other determinants of voting behavior (that are not accounted for by
+fixed effects), and (ii) parallel trends. For instance, a violation occurs if
+the expectation of turnout changes influences polling place reassign-
+ments—for example, if the election office consolidated precincts expect-
+ing high mail-in turnout to save costs of operating polling places.24
+   Although these assumptions cannot be tested directly, we present several
+indirect tests: (i) a balancing exercise that examines the co-occurrence
+of changes in precinct characteristics and reassignments, (ii) an analysis of
+pretrends, and (iii) bounds on treatment effects under the assumption of
+parallel trend violations, proposed by Rambachan and Roth (2023). Ram-
+bachan and Roth formalize the idea that pretreatment deviations from
+parallel trends inform unobserved violations after treatment adoption.
+They provide different approaches to formalize this intuition, taking into
+account the statistical uncertainty in estimating event study coefficients.
+   A few final estimation details. First, we determine polling place changes
+between two consecutive elections throughout the paper. This implicitly
+assumes that treatment effects are mainly driven by regular voters, who
+participate in all types of elections. Our panel length somewhat limits ex-
+ploring different treatment definitions across election types. Thus, we aim
+to absorb the influence of varying electoral conditions on voting propen-
+sity via electiondistrict fixed effects and leave heterogeneity across elec-
+tion types to future research. Second, because votes by mail are recorded
+only at the district level, we are confined to relying on requested polling
+cards as a proxy for mail-in votes. About 90% of requested cards are re-
+turned as ballots, and more than 98% of these ballots are mail-in votes.
+Third, since not all event-time indicators are identified, we choose the
+election before the reassignment t 5 21 as our reference period and
+
+
+  24
+     The election office asserts that past and expected turnout is not considered when
+redrawing precinct boundaries.
+voting costs and electoral turnout                                                 77
+normalize m1 to zero. We then estimate the whole range of event-time in-
+dicators and report the coefficients for the four elections before and three
+elections after reassignment. Fourth, we cluster standard errors at the pre-
+cinct level to account for the correlation of model errors over time. We test
+the sensitivity to alternative assumptions about the variance-covariance
+matrix in appendix C. Fourth, specifications are weighted by precinct
+size (number of eligible voters) to improve precision and the representa-
+tiveness of the effect estimates. Finally, we estimate equation (1) using OLS
+to produce our baseline results. As recently shown, OLS two-way fixed ef-
+fect (TWFE) estimates may yield biased results with staggered treatment
+and heterogeneous effects across treatment cohorts.25 The reason is that
+the TWFE estimator uses “forbidden” comparisons between already-treated
+precincts and newly treated precincts, thereby violating the parallel
+trend assumption in the presence of effect heterogeneity. The treatment
+timing in our setting is illustrated in figure D.6. Of 618 precincts, 338 are
+never treated, and most of the treated precincts had their polling location
+changed in the 2017 federal election (62%).26 To account for the stag-
+gered treatment timing, we also estimate the event study using the estima-
+tors proposed by de Chaisemartin and D’Haultfoeuille (2020), Callaway
+and Sant’Anna (2021), Sun and Abraham (2021), and Borusyak, Jaravel,
+and Spiess (2024). A discussion of the different estimators and their un-
+derlying assumptions is beyond the scope of this paper. For recent reviews,
+see de Chaisemartin and D’Haultfoeuille (2023) and Roth et al. (2023).
+
+D. Reassignment Timing
+Under our identifying assumptions, the timing of reassignments is uncor-
+related with other determinants of turnout. One approach to assess this
+assumption’s plausibility is to examine whether precinct characteristics
+are balanced conditional on election and precinct fixed effects. Since
+the fixed effects account for time-invariant factors, the residual correla-
+tion reflects the association between treatment timing and changes in pre-
+cinct characteristics. We present the results in figure 6.
+   Figure 6A shows estimates and 95% confidence bands from univariate
+OLS regressions of a dummy identifying reassignments that changed the
+polling location of the entire precinct on precinct characteristics, condi-
+tional on election and precinct fixed effects. Each estimate comes from
+a separate regression. Independent variables are standardized to have
+
+
+  25
+     See, e.g., de Chaisemartin and D’Haultfoeuille (2020), Goodman-Bacon (2021), Sun
+and Abraham (2021), Athey and Imbens (2022), and Borusyak, Jaravel, and Spiess (2024).
+  26
+     In the 2020 municipal election (2018 state election), 14% (13%) of precincts have
+their polling place moved, and the remainder are treated in other elections. Figure D.7
+maps the spatial distribution of polling place relocations.
+78                          journal of political economy microeconomics
+
+
+
+
+   F IG . 6.—Reassignment timing and changes in precinct characteristics. The panels report
+OLS estimates from separate univariate regressions on standardized (mean zero, unitary
+standard deviation) precinct characteristics conditional on election and precinct fixed ef-
+fects. The dependent variables are an indicator identifying full reassignments to a different
+polling place (A) and the log average walking distance to the polling location (B). Migra-
+tion variables refer to the number of moves within and across precinct boundaries. Confi-
+dence intervals are drawn at the 95% level using standard errors clustered at the precinct
+level. F-tests cannot reject the null hypothesis that coefficients are jointly equal to zero in
+any panel. The coefficients and test statistics are reported in table E.3. Estimation results with
+nonstandardized precinct characteristics are shown in table E.4. Information on local rents is
+from the RWI Leibniz Institute for Economic Research. All other precinct characteristics are
+from the Munich Statistical Office.
+
+
+mean zero and unitary standard deviation. The estimates are near zero
+and insignificant, suggesting that treatment timing is uncorrelated with
+observable changes in precinct characteristics. The dependent variable
+in figure 6B is the log average walking distance. Out of 20 estimates, only
+one is statistically significant at the 5% level. Still, F-tests cannot reject
+the null that the coefficients are jointly zero in any panel. Coefficients
+and test statistics are reported in table E.3, which also includes results
+for reassignments due to polling location recruitment and precinct recon-
+figurations, separately. Again, we find no evidence that changes in observ-
+able precinct characteristics co-occur with polling place relocations.
+
+
+IV. Main Results
+A.    Average Effects on Turnout and the Mode of Voting
+We start by pooling all polling place reassignments to estimate the average
+treatment effects on treated precincts. Figure 7 plots event-time estimates
+based on equation (1) using different outcomes in panels A–D. Panel A
+illustrates the average treatment intensity by using the share of reassigned
+addresses and the change in proximity to the polling location (relative to
+the preceding election) as dependent variables. Since reassignments at in-
+tensities below 100% are allowed to occur before and after the event, the
+voting costs and electoral turnout                                                          79
+
+
+
+
+  F IG . 7.—The effect of reassignments on turnout and the mode of voting. The figure pre-
+sents event study results based on equation (1). The event is defined as the first time in which
+the entire precinct is reassigned to a different polling place. All specifications include time-
+varying covariates listed in section III.C. Regressions are weighted by the number of eligible
+voters. Confidence intervals are drawn at the 95% level using standard errors clustered at the
+precinct level. The point estimates and standard errors underlying the results in panels C and
+D appear in column 2 of table C.1.
+
+
+
+coefficients in t ≠ 0 are not precisely equal to zero, and the coefficient in
+t 5 0 is less than 1 (left axis). Importantly, the design captures a sharp re-
+assignment shock relative to the baseline. The coefficients on the change
+in distance (right axis) suggest that reassignments increase the distance to
+the polling location by 0.12 kilometers, on average. This represents a mod-
+erately larger increase compared to the overall distribution of proximity
+changes caused by reassignments presented in figure 5.
+   Coefficients preceding the reassignment are close to zero and insignif-
+icant in panels B–D of figure 7. The absence of pretrends supports the va-
+lidity of the identifying assumption; trends in outcomes across compari-
+son groups evolve in parallel except through the treatment. By contrast,
+we observe a sharp and persistent increase of 0.94 percentage points in
+the share of votes cast by mail immediately after reassignment (B). The re-
+sults in panel C show that this jump can only be partly explained by sub-
+stitution between modes of voting: In-person turnout falls by 1.0 percent-
+age points immediately after reassignment (equivalent to 3.0% at the
+mean), while mail-in turnout increases by only 0.61 percentage points
+(2.1%). Thus, the initial shift to mail-in voting is not large enough to offset
+80                    journal of political economy microeconomics
+votes lost at the polls, generating a decline in total turnout of 0.39 percent-
+age points (0.6%) in panel D. This result is consistent with a positive shock
+to the cost of voting in person on average, making mail-in voting relatively
+more attractive and inducing some voters to abstain from turning out.
+   The shift from poll voting to mail-in voting is persistent, suggesting a
+lasting shock to voting costs. By contrast, the decline in total turnout com-
+pletely recovers in the subsequent election. A possible explanation is that
+the initial shock to voting costs wanes over time. For example, abstainers
+may familiarize themselves with their new polling place and return to
+vote there after one election. An alternative explanation is inattention
+to reassignments. Inattentive poll voters are surprised by the reassignment
+after the deadline for requesting a mail-in ballot. Among those who would
+have switched to mail-in voting, some abstain and turn to mail-in voting
+only in the subsequent election, thus producing a transitory drop in turn-
+out. In section IV.C, we make the case that the transitory decline is consis-
+tent with inattention and incompatible with the waning cost hypothesis.
+The argument is that the recovery is entirely driven by an increase in
+mail-in turnout, not in-person turnout.
+   Albeit transitory, the turnout decline caused by changing polling places
+is sizable. The average decline is roughly equivalent to reducing the num-
+ber of early (in-person) voting days in the United States by 2 (Kaplan
+and Yuan 2020). Moving a polling place would also be enough to offset
+the positive turnout effect of an additional newspaper around the turn
+of the twentieth century in the United States (Gentzkow, Shapiro, and Sin-
+kinson 2011). The drop contrasts the absence of instantaneous participa-
+tion effects of moving a polling place estimated by Clinton et al. (2021)
+and Tomkins et al. (2023), and appears in line with turnout decline found
+by Brady and McNulty (2011). However, the inattention channel is likely
+prevented in the United States by informing affected voters of changes to
+their polling location. Thus, the findings are not necessarily contradic-
+tory, especially since Brady and McNulty (2011) study a setting in which
+distance increased for nearly all voters whose polling place changed. We
+explore the role of distance changes in the next section.
+   A key insight of figure 7 is that the estimates do not substantiate the hy-
+pothesis that (non)voting is habit forming. If abstaining were habit form-
+ing by increasing its consumption value, the initial decline in turnout
+would carry over to subsequent elections. This would be true even if vot-
+ing costs were entirely restored to pretreatment levels. The full turnout
+recovery is inconsistent with this implication. This result contrasts with
+Fujiwara, Meng, and Vogl (2016), who find that a decline in past turnout
+due to rainfall on election day also reduces current turnout, and is in line
+with Bechtel, Hangartner, and Schmid (2018), who show that compulsory
+voting in Switzerland did not instill a voting habit by generating persis-
+tently higher turnout after its abolition. Importantly, we cannot rule out
+voting costs and electoral turnout                                          81
+that habit formation contributes to the observed persistence in the mode
+of voting. A sharp test would require a scenario in which shocks to vot-
+ing costs are truly transitory. Then, any persistence must be driven by
+habit. If one is willing to assume that a second reassignment back to the
+original polling location does not create new costs, such cases could be
+exploited to test the hypothesis. However, the assumption is hard to de-
+fend, and temporary relocations are too rare in our data to deliver credi-
+ble estimates.
+   Point estimates based on equation (1) appear in table C.1 of appendix C.
+The section also presents several robustness checks: We show that the esti-
+mates are robust (i) to replacing electiondistrict fixed effects with election
+fixed effects, (ii) to using unweighted regressions, (iii) to not trimming the
+time series once a second reassignment occurs, (iv) to limiting the sample
+to treated precincts with exactly one (full) reassignment and control pre-
+cincts with zero (partial) reassignments, (v) to using a balanced panel
+around the 2017 federal election and the 2018 state election, where most
+reassignments occurred, and (vi) to removing treated precincts where
+the reassignment coincided with a change to precinct boundaries. We dem-
+onstrate that TWFE-OLS estimates are very similar to those produced by
+difference-in-differences estimators that account for potential effect het-
+erogeneity across treatment cohorts (fig. C.1). We show robustness to al-
+ternative assumptions about the variance-covariance matrix in table C.2
+and test whether the different reasons for reassignments (polling location
+recruitment vs. precinct reconfiguration) carry different turnout effects.
+We find they do not (fig. C.2). Our treatment estimates also hold when al-
+lowing for linear violations of the parallel trend assumption using the meth-
+odology by Rambachan and Roth (2023). Finally, we show robustness to dif-
+ferent matching procedures and to excluding time-varying covariates.
+
+B. The Role of Distance to the Polling Location
+The baseline estimates are informative about the effects of an average re-
+assignment. However, they mask a key dimension of reassignment hetero-
+geneity: the change in distance to the polling location. As noted, 90% of
+reassignments change the walking distance by less than 1 kilometer. In this
+section, we analyze whether even such small changes to voting costs matter
+and can help explain the underlying changes in voting behavior. To this
+end, we estimate two modified versions of equation (1).
+   Effect heterogeneity by change in distance.—First, we allow for different
+treatment effects between reassignments that increased versus decreased
+distance to the polling place. One limitation is that we can relate out-
+comes only to average distance changes at the precinct level. Aggregate
+changes obscure heterogeneity among individuals within a precinct, for
+example, when some individuals are closer and some farther away from
+82                         journal of political economy microeconomics
+the new polling location. We address this below by limiting the analysis to
+cases where within-precinct heterogeneity is as small as possible.
+  Formally, let Dp1 be an indicator equal to 1 for precincts where reassign-
+ment caused an increase in average distance to the polling location. Dp2
+denotes the analogous indicator for cases in which distance decreased.
+Then, the modified event study specification takes the following form:
+
+     Ypt 5 Dp1  o bk 1(t 5 k) 1 Dp2  o ak 1(t 5 k) 1 X 0pt f 1 dp
+                   k≠21                           k≠21
+                                                                                           (2)
+           1 dd(p)t 1 εpt ,
+where the coefficients b^k and a
+                               ^ k trace the differential time path of turn-
+out separately for the two groups defined by Dp1 and Dp2 . Note that since
+we do not condition on distance in equation (1), the baseline estimates m  ^k
+correspond to a weighted average of b   ^ and a
+                                          k
+                                                ^ . Again, the specification
+                                                 k
+
+includes electiondistrict fixed effects, precinct fixed effects, and time-
+varying controls.
+  The results are presented in figure 8. Panel A shows that distance in-
+creases by 330 meters (or about 4 walking minutes), on average, when
+
+
+
+
+   F IG . 8.—Effect heterogeneity by change in proximity to the polling location. The figure
+presents event study results based on equation (2). Each panel reports estimates on interac-
+tion terms between event-time indicators and a dummy identifying reassignments that gen-
+erated an average increase and decrease to the polling location, respectively. The event is de-
+fined as the first time in which the entire precinct is reassigned to a different polling place.
+Regressions are weighted by the number of eligible voters. Confidence intervals are drawn at
+the 95% level using standard errors clustered at the precinct level. Point estimates and stan-
+dard errors are reported in table C.3.
+voting costs and electoral turnout                                                        83
+the new polling location is moved further away. When the new polling
+place is moved closer, the reduction is about 240 meters (3 walking
+minutes). Consistent with our model, turnout effects are strikingly asym-
+metric: Reassignments that increase distance cause a sharp and persistent
+decline in polling place turnout (B). The estimate on the immediate ef-
+fect is 21.89 (p < :001), which is equivalent to a 5.6% decline at the mean
+and nearly double the average effect. By contrast, when reassignments re-
+duce the distance to the polling place, in-person turnout tends to rise
+slightly, albeit not statistically significantly. Panels C and D show a similar
+picture. The impact on mail-in turnout is negative but insignificant when
+the new polling location is closer and strongly positive when relocated far-
+ther away. Overall, participation declines only in precincts in which dis-
+tance increases. The drop amounts to 0.63 percentage points, which is
+62% greater than the average effect. Our model proposes that reassign-
+ments always cause a disutility from engaging with an unfamiliar environ-
+ment. The results suggest that the reassignment disutility and distance de-
+cline offset each other when the polling location moves closer, on average.
+Consequently, we find minimal substitution between the modes of voting.
+By contrast, the reassignment disutility is compounded by additional travel
+costs when the new polling location is farther away. This generates a sig-
+nificant shift from in-person to mail-in voting and a sizable drop in overall
+participation. The point estimates and results based on a balanced panel
+and other robustness checks are reported in table C.3 and further dis-
+cussed in appendix C.
+   We also estimate a version of equation (2) in which we allow treatment
+effects to vary by three reassignment types in figure 9: those that produce a
+“large” distance decrease, “little” distance change, and a “large” distance
+increase. While the shift from polling place to mail-in voting is visibly
+attenuated when distance barely changes, the decline in total remains
+comparable to reassignments that strongly increased distance (fig. 9D).
+This pattern bolsters the case that the reassignment disutility alone bur-
+dens voters beyond proximity changes. By contrast, when the new polling
+place is relocated significantly closer to voters, substitution is reversed;
+mail-in turnout declines (albeit not statistically significantly), mirrored
+by a significant and permanent increase in polling place turnout. Total
+participation increases slightly; however, the estimate is not statistically
+significant.27
+
+   27
+      In fig. D.8, we estimate treatment effects by four reassignment types: those that pro-
+duced a small distance reduction, a large reduction, a small increase, and a large increase.
+The results paint a similar picture: Large distance reductions generate substitution away
+from mail-in toward poll voting; yet, the effect on total turnout is insignificant. Small dis-
+tance reductions are insufficient to compensate for reassignment disutility, resulting in a
+decline in polling place turnout. Finally, relocations farther away always cause a shift away
+from in-person to mail-in voting and abstention.
+84                         journal of political economy microeconomics
+
+
+
+
+  F IG . 9.—Effect heterogeneity by change in proximity to the polling location. The figure
+presents event study results based on a version of equation (2) in which event-time dummies
+are interacted separately with three mutually exclusive indicators for average distance in-
+crease, little average distance change, and average distance decrease due to reassignment.
+The event is defined as the first time in which the entire precinct is reassigned to a different
+polling place. Regressions are weighted by the number of eligible voters. Confidence inter-
+vals are drawn at the 95% level using standard errors clustered at the precinct level. Point
+estimates and standard errors are reported in table C.4.
+
+
+   We also estimate treatment effects on a sample that minimizes cases
+with ambiguous distance changes within precincts. Specifically, we restrict
+the treatment group to three cases: precincts where the reassignment con-
+sistently increased (respectively, decreased) the distance to the polling
+place for at least 90% of home addresses, and to precincts where the poll-
+ing place moved only “a little,” that is, less than 800 meters from the old
+location.28 The estimates in figure D.9 confirm the previous conclusions:
+We find an amplified shift from in-person to mail-in voting when distance
+increases for nearly all citizens. The pattern is reversed when distance de-
+creases. Here, the estimates show an uptick in total turnout coming from
+increased participation at the polling place. This suggests that former
+abstainers can be incentivized to turn out, highlighting the sensitivity of
+voting behavior to seemingly minor reductions in voting costs. When dis-
+tance changes only slightly for all citizens, we again find a transitory drop in
+total turnout, consistent with a disutility from reassignments. We also esti-
+mate treatment effects for four (equal-size) groups determined by the share
+
+  28
+     We choose 800 meters because this corresponds to the median change in distance be-
+tween new and old polling locations.
+voting costs and electoral turnout                                                       85
+of addresses that experienced a distance increase in figure D.10. When
+within-precinct heterogeneity is high, that is, distance changes in opposite
+directions, the average distance change is closer to zero and the substitution
+between mail-in and in-person voting is attenuated in the aggregate. How-
+ever, we still find a distinct (transitory) drop in total turnout, supporting the
+importance of reassignment disutility.
+  Decomposition exercise: distance and reassignment disutility.—In our second
+exercise, we introduce the log average walking distance to the polling lo-
+cation as a covariate in our dynamic event study specification (eq. [1]):
+
+   Ypt 5 o mk 1(t 5 k) 1 l log distancept 1 X 0pt f 1 dp 1 dd(p)t 1 εpt :               (3)
+          k≠21
+
+
+Since the specification includes precinct fixed effects, the parameter l is
+identified from variation in distance within precincts, which is driven by
+polling place reassignments only. Thus, we can interpret the residual turn-
+out effects, captured in mk, as the impact of reassignments per se. In our
+model, reassignments always cause a disutility, raising the costs of voting
+at the polling place.29 The relative reduction of mk caused by including
+the distance control gives us a sense of the importance of distance changes
+versus the reassignment disutility for turnout effects.
+   The results are presented in table 1. The outcomes are turnout at the
+polling place (cols. 1 and 2), turnout by mail (cols. 3 and 4), and total
+turnout (cols. 5 and 6). Odd columns use electiondistrict fixed effects;
+even columns use election fixed effects. Absorbing the distance effect at-
+tenuates the event-time estimates relative to the baseline results (cols. 2
+and 4, table C.1). However, the estimates remain mostly statistically signif-
+icant, consistent with the notion that reassignments induce a disutility be-
+yond the change in travel distance. The estimate on log distance is nega-
+tive and statistically significant in columns 1 and 2: Polling place turnout
+falls by 0.34 percentage points when distance increases by 10%. Increasing
+distance has the opposite effect on mail-in turnout (cols. 3 and 4); how-
+ever, the effect size does not completely offset the negative impact on
+in-person turnout: Increasing distance by 10% reduces total turnout by
+0.08 percentage points (cols. 5 and 6). Thus, to offset the turnout drop
+at the polling place due to reassignment disutility, the polling location
+would have to move 17%–19% or about 130 meters closer to voters, on av-
+erage.30 To avoid a decline in total participation, the polling location would
+have to move 37%–53%, or about 260–380 meters closer to voters. Interest-
+ingly, the immediate impact on mail-in turnout becomes insignificant,
+
+  29
+     Reassignment disutility is conceptually similar to what Brady and McNulty (2011) la-
+bel “search costs,” i.e., the costs that arise on top of increased travel distance due to the
+time of looking up and going to the new polling location.
+  30
+     Note that the compensating effect comes partly from fewer voters switching away from
+in-person voting and more mail-in voters turning to vote at the polling place.
+86                         journal of political economy microeconomics
+                                    TABLE 1
+           Event Study Estimates Conditional on Log Walking Distance
+                                   Turnout at the          Turnout by
+                                    Polling Place             Mail           Total Turnout
+                                    (1)         (2)        (3)       (4)       (5)       (6)
+Log walking distance              23.39*** 23.43*** 2.61*** 2.62*** 2.78*** 2.81***
+                                   (.25)    (.26)   (.25)   (.26)   (.22)   (.24)
+Reassignment:
+  t24                               .01       2.15      2.23   2.08         2.22       2.23
+                                   (.17)      (.19)     (.16)   (.17)       (.17)      (.17)
+  t23                              2.10       2.10       .04   2.07         2.06       2.17
+                                   (.17)      (.20)     (.15)   (.20)       (.16)      (.17)
+  t22                               .02        .16      2.07   2.17         2.05       2.01
+                                   (.12)      (.14)     (.12)   (.14)       (.13)      (.15)
+  t10                              2.58**     2.66**     .29     .23        2.29       2.43**
+                                   (.21)      (.22)     (.20)   (.23)       (.16)      (.17)
+  t11                              2.63**     2.64**     .70*** .69**        .07        .05
+                                   (.20)      (.23)     (.20)   (.22)       (.20)      (.20)
+  t12                              2.43       2.44       .80*** .77**        .37        .33
+                                   (.23)      (.24)     (.24)   (.26)       (.23)      (.24)
+ 2
+R                                   .98        .97       .96     .95         .99        .99
+Fraction of treatment effect
+    explained by distance           .38         .34       .33       .33       .25       .18
+Observations                       4,666       4,666      4,666     4,666     4,666     4,666
+Precinct fixed effects              Yes         Yes        Yes       Yes       Yes       Yes
+Electiondistrict fixed effects     Yes                    Yes                 Yes
+Election fixed effects                          Yes                  Yes                 Yes
+   Note.—The table presents event study results based on eq. (3). The dependent variables
+are voter turnout (0–100) at the polling place (cols. 1 and 2), by mail (cols. 3 and 4), and
+overall (cols. 5 and 6). Odd columns use electiondistrict fixed effects; even columns use
+election fixed effects. The fraction of the effect explained by distance corresponds to the rel-
+ative decrease of the point estimates m  ^k when controlling for log distance. We report the av-
+erage over the three post-reassignment elections for in-person and mail-in turnout and in the
+first-reassignment election for total turnout. The event is defined as the first time in which
+the entire precinct is reassigned to a different polling place. All specifications include
+time-varying covariates listed in sec. III.C. Regressions are weighted by the number of eligible
+voters. Standard errors are clustered at the precinct level and reported in parentheses.
+   ** p < .01.
+   *** p < .001.
+
+
+but it more than doubles and turns significant in the subsequent election.
+Again, this pattern is consistent with inattentive voters delaying the switch
+to mail-in voting because they missed the opportunity to request a mail-in
+ballot. We corroborate the inattention hypothesis in the next section.
+   The change in point estimates m   ^k suggests that relocations per se are
+the primary driver of changes in voting behavior: Distance explains 34%–
+38% of the treatment effects on in-person turnout (across the three post-
+reassignment elections), and 18%–25% of the drop in total turnout in the
+first election after reassignment. The insight is important. Election officials
+monitor the proximity of polling locations; yet, the voting barrier created
+by merely changing these places has so far been overlooked. Causal estimates
+voting costs and electoral turnout                                         87
+of the turnout effects of distance to the polling location use cross-sectional
+variation near precinct borders in a regression discontinuity design (Can-
+toni 2020; Bagwe, Margitic, and Stashko 2022; Tomkins et al. 2023). Based
+on the negative impact of greater distance, it is tempting to prescribe a pol-
+icy of simply moving polling places closer to voters to boost turnout. Our
+results highlight that this may deliver unexpected outcomes as distance re-
+ductions come at the cost of changing familiar polling locations.
+   In appendix C.5, we perform an alternative decomposition approach
+using a triple-difference framework. Instead of including distance as a co-
+variate, we estimate the differential turnout trend among treated units in-
+duced by moving the polling place by an additional kilometer. We also al-
+low the impact of distance to differ depending on whether the new polling
+place is closer or farther away. The results corroborate our findings quan-
+titatively. Moreover, we reject the hypothesis that distance generates dif-
+ferent turnout effects (in absolute terms) in cases that increase versus de-
+crease distance.
+
+C. Mechanism: What Drives the Recovery
+   in Total Turnout?
+Perhaps intriguingly, the decline in total turnout is recovered after one
+election, even when reassignments strongly increase the distance to the
+polling place. This pattern could be explained by inattention to reassign-
+ments. As formalized in our model (see app. B), inattention implies that
+some voters delay switching to mail-in voting by one election and instead
+temporarily abstain from turning out. The reason is that they are sur-
+prised by the reassignment after the deadline for requesting mail-in bal-
+lots has passed. However, an alternative explanation could be the waning
+of the initial shock to voting costs. Waning costs imply that voters tempo-
+rarily abstain from turning out and return to voting in person, for instance,
+because they familiarized themselves with their new polling place. Thus,
+while inattention implies that the recovery in the subsequent election is
+driven by an increase in mail-in voting, waning costs imply that the recovery
+is driven by an increase in turnout at the polling place.
+   A visual inspection of the baseline estimates in figure 7C lends some
+support for the inattention hypothesis as the effect size estimates on
+mail-in turnout further increase between the first and the second post-
+reassignment election. This pattern is even more pronounced for esti-
+mates on reassignments that caused an increase in distance to the polling
+location (figs. 8B and 8C ). Polling place turnout, on the other hand, tends
+to decline between the first and second postevent election, inconsistent
+with the waning-cost hypothesis.
+   Formally, we test whether the event-time indicators in the first and second
+election after reassignment differ, and whether the sign of the difference
+88                     journal of political economy microeconomics
+implies an increase in mail-in or in-person turnout, respectively. We use
+estimates restricted to cases that generated a greater distance to the poll-
+ing location (i.e., b^1 2 b^0 from eq. [2]) to rule out ambiguity due to cases
+where voting costs declined. Indeed, we find that the difference for mail-
+in turnout is positive and statistically significant (0.56, p < :01). The differ-
+ence for in-person turnout is negative, albeit not statistically significant
+(20.07, p > :1). Another approach is to test the difference of the event-
+time coefficients holding distance to the polling location constant as pro-
+posed in the previous section (eq. [3]). In this specification, event-time
+dummies capture turnout effects that are driven by the reassignment dis-
+utility. Again, the test suggests that mail-in turnout further increases in the
+second election after reassignment (0.41, p < :05), while polling place
+turnout, if anything, marginally decreases (20.04, p > :1). Hence, the re-
+sults strongly support the hypothesis that the recovery in total turnout is
+driven by inattentive voters switching from nonvoting to mail-in voting,
+and are inconsistent with the waning-cost hypothesis.
+   We replicate the tests using the novel difference-in-differences estima-
+tors that account for heterogeneous treatment effects and staggered treat-
+ment timing. The event study results are plotted in figure D.11 for speci-
+fications using a restricted sample excluding reassignments that caused a
+distance decrease, and in figure D.12 for specifications controlling for the
+log walking distance. Table E.5 reports the difference between the first
+and second post-reassignment coefficients. The results support the con-
+clusion that the transitory decline in turnout is driven by inattention to
+reassignments: All estimators show that mail-in turnout further increases
+in the second postevent election; the difference is statistically significant
+in seven out of ten cases. Instead, there is no evidence that in-person turn-
+out drives the recovery. Most estimated differences are negative, and none
+are statistically significant.
+   Our model also considers inattention to reassignments among abstain-
+ers (e.g., because they do not open the election notification). Here, inat-
+tention attenuates turnout gains when reassignments reduce the distance
+to the polling location. Intuitively, some individuals would have turned
+out at their new (closer) polling location if informed but, instead, remain
+abstainers. Empirically identifying this type of inattention is challenging
+because we cannot determine when the decreased travel distance is suffi-
+cient to make poll voting attractive to abstainers.
+
+V. Effect Heterogeneity and Partisan Consequences
+   of Reassignments
+Our estimates deliver average turnout effects among treated precincts. Yet,
+the effects may mask heterogeneity across different voter groups. Uncover-
+ing heterogeneity is important. First, policymakers may be concerned
+voting costs and electoral turnout                                          89
+about reassignments imposing a disproportional burden on minorities,
+the elderly, or disadvantaged people. In fact, one motive for recruiting
+new polling places was to assure barrier-free access for voters with physical
+impairments. Second, if some groups are more likely to be discouraged
+from turning out, reassignments could compromise the representative-
+ness of the electoral outcome. Thus, we devote this section to analyzing
+heterogeneity, starting with differences across demographic groups fol-
+lowed by partisan consequences of reassignments.
+
+
+A.   Heterogeneity across Precinct Characteristics
+Who responds to reassignment shocks? To explore heterogeneity across
+voter groups, we extend the standard difference in differences (eq. [1])
+to include a set of interaction terms between event-time indicators and
+a variable Zp along which we allow for heterogeneity. Zp is measured at
+the precinct level and chosen to be time invariant. Then, the modified
+specification corresponds to a triple-difference estimator that introduces
+a comparison among treated groups to the base comparison of treated
+and untreated units:
+
+Ypt 5 o gk ½Zp  1(t 5 k) 1 o vk 1(t 5 k) 1 X 0pt h 1 pp 1 pd(p)t 1 ept , (4)
+      k≠21                      k≠21
+
+
+where vk capture the base effect of the standard double difference, X is a
+vector of time-varying covariates, and pp and pd(p)t denote precinct and
+electiondistrict fixed effects, respectively. For intuition, suppose that
+Zp is a dummy identifying precincts with an above-average share of elderly
+eligible voters. Then, the estimates g  ^k trace the differential turnout trend
+in “old” relative to “young” treated precincts before and after the polling
+place relocation. Note that all first- and second-order interaction terms re-
+quired for identification of the triple-difference estimator are included in
+the specification or absorbed by the fixed effects.
+   In practice, we estimate equation (4) separately for different Zp’s. Char-
+acteristics are standardized (i.e., unitary standard deviation and mean
+zero) and measured in 2013 (the first year in our panel). Hence, the triple-
+difference estimates reflect the differential turnout trend among treated
+units when Zp is increased by 1 standard deviation. Note that since Zp is
+standardized, the base effects vk correspond to the average treatment ef-
+fects on the treated shown in figure 7. We thus restrict the output to the
+triple-difference estimates.
+   The results appear in figure 10. In each panel, the outcomes in the left
+plot are turnout at the polling place and via mail. The effect on total turn-
+out is reported in the right plot. The main conclusions are that precincts
+with a higher share of elderly eligible voters show a greater decline in poll-
+ing place turnout and a weaker shift to mail-in voting when reassigned.
+90                         journal of political economy microeconomics
+
+
+
+
+   F IG . 10.—Effect heterogeneity by precinct characteristics (triple-difference estimates).
+The figure presents event study results based on the triple-difference estimator introduced
+in equation (4). Each panel uses a different heterogeneity dimension Zp and plots the triple-
+                        ^k for the three outcomes: polling place turnout, mail-in turnout, and
+difference coefficients g
+total turnout. The event is defined as the first time in which the entire precinct is reassigned
+to a different polling place. Regressions are weighted by the number of eligible voters. Con-
+fidence intervals are drawn at the 95% level using standard errors clustered at the precinct
+level. Point estimates and standard errors are reported in table E.6.
+
+
+This results in a stronger drop in total turnout (A). The effects on total
+turnout are statistically significant and persistently negative, suggesting
+that participation rates among elderly voters are permanently depressed.
+Indeed, an F-test that the overall effect on total turnout is equal to zero in
+the two subsequent elections (H0 : g  ^1 1 ^v1 5 ^v2 1 g
+                                                       ^2 5 0) is rejected at
+voting costs and electoral turnout                                                    91
+the 5% level (F 5 3:58, p 5 :03). Given that recruiting barrier-free ven-
+ues to improve access for voters is a main driver of polling place changes,
+this result is important. It suggests that the burden of reassignments out-
+weighs the potential benefits of better access to the buildings. In panel B,
+the positive (negative) estimates on in-person (mail-in) turnout suggest
+that the effects are attenuated in precincts with a higher share of younger
+eligible voters. This is unsurprising, given that a greater share of first-time
+voters implies more individuals who do not experience reassignments. We
+find no measurable treatment effect differences for precincts with a
+higher fraction of households with children, who may also benefit from
+barrier-free access (C ). Effects are also not different in precincts where
+housing is more expensive (D). Panel E shows that the substitution between
+modes of voting is weaker in precincts with a higher fraction of Germans
+with a migrant background; yet, total turnout appears not statistically dif-
+ferent. This finding might reflect that migrants are unfamiliar with mail-
+in voting from their country of origin or the process of requesting a mail-
+in ballot (e.g., due to language barriers).31 These results contrast with
+Cantoni (2020), who finds that a greater distance to the polling location
+reduces turnout stronger in areas with higher minority and low-income
+presence.
+   Two remarks are in place. First, since inference is not based on
+(quasi-)random variation, the heterogeneity analysis provides only sug-
+gestive evidence of the mechanisms driving differential turnout trends.
+For instance, other characteristics correlated with Zp (e.g., unobserved
+aspects of voters’ socioeconomic status) could be the actual cause of het-
+erogeneity. We report summary statistics and correlations among the
+heterogeneity dimensions in table E.7, showing that they are indeed inter-
+related. Second, we did not account for the change in distance to the poll-
+ing location generated by reassignments. To rule out that differential
+trends are merely the result of correlation between Zp and proximity to the
+polling place, we reestimate all specifications conditional on the log walk-
+ing distance. Figure D.13 shows that the conclusions still hold.
+
+
+B. Partisan Consequences of Reassignments
+Next, we examine the partisan consequences of reassignments. One lim-
+itation is that we observe precinct-level party outcomes only for votes
+cast in person. Party votes from mail-in ballots are recorded at the district
+level. As there are only 25 districts, estimates based on district-level obser-
+vations are likely underpowered. Consequently, we first analyze party re-
+sults using our precinct panel. The results help us understand whether
+
+  31
+     For instance, election notifications, which include information on requesting polling
+cards to vote by mail, are only sent out in German.
+92                          journal of political economy microeconomics
+
+
+
+
+  F IG . 11.—Effects of reassignments on party outcomes at the polling place. The figure
+presents event study results based on equation (1). The outcomes are party turnout (A)
+and party vote shares (B) at the polling place. Party turnout is defined as the number of votes
+relative to the number of eligible voters for left-wing and right-wing parties. Party vote share is
+defined as the number of votes relative to total votes for left-wing and right-wing parties. Left-
+wing parties include SPD, Grüne, and Die Linke; right-wing parties include CSU, Freie Wähler,
+and FDP. The right plot in each panel presents estimates and confidence bands for the dif-
+ference between event-time indicators in each period. The event is defined as the first time in
+which the entire precinct is reassigned to a different polling place. Regressions are weighted
+by the number of eligible voters. Confidence intervals are drawn at the 95% level using stan-
+dard errors clustered at the precinct level.
+
+
+reassignments disproportionately dissuade specific party supporters from
+turning out at the polling place. Next, we verify whether the conclusions
+hold in the district-level panel using party outcomes from mail-in ballots.
+   We estimate equation (1) for two outcomes: party turnout, defined as
+the number of party votes relative to the number of eligible voters, and
+party vote share, defined as the number of party votes relative to the num-
+ber of total votes. For expositional convenience, we group the outcomes
+of the six largest parties that were on the ballot in every election during
+our observation period into a “left-wing” and a “right-wing” cluster accord-
+ing to the parties’ platforms.32
+   The results presented in figure 11 suggest that in-person turnout de-
+clines slightly more for right-wing parties after reassignment (left plot,
+  32
+     We use the left-right categorization suggested by ParlGov (https://parlgov.org) to
+group parties. Left-wing parties include the Social Democratic Party of Germany (SPD),
+Grüne, and Die Linke; right-wing parties include the Christian Social Union in Bavaria
+(CSU), Freie Wähler, and the Free Democratic Party (FDP).
+voting costs and electoral turnout                                         93
+panel A); however, the effects are not statistically different from each
+other in any period (right plot, panel A). Panel B presents the results for
+party vote shares, which is the relevant metric for the composition of par-
+liament. None of the event-time indicators are statistically significant
+from zero (left plot, panel B) or statistically different from each other in
+any period (right plot, panel B). Thus, assuming that voters who switch
+to voting by mail do not simultaneously change their party preference
+because of reassignment, the results suggest negligible partisan conse-
+quences. We present the results for all parties individually in figure D.14.
+Again, the estimates do not suggest that any party particularly gains or loses
+from reassignments. We also find null effects when estimating a modified
+event study specification using a district-level panel and party outcomes
+from mail-in votes, corroborating the results (fig. D.15).
+   The null effects on the electoral outcomes are reassuring from an ad-
+ministrator’s perspective. Polling place relocations are not notably con-
+centrated geographically (fig. D.7). In addition, the absence of significant
+spatial segregation along party lines in Munich ensures that polling place
+relocations are not particularly targeted at a particular party’s supporters.
+However, small changes in voter participation could matter in close con-
+stituency elections during state and federal elections, where voters directly
+elect their representative on a plurality rule. The vulnerability to adverse
+effects is also markedly higher for democracies with two-party systems and
+strong partisan segregation. Thus, our results should not imply that elec-
+toral consequences of polling place relocations are universally benign.
+
+VI.   Conclusion
+Voting is the backbone of democracy. Yet, the likelihood of a pivotal vote is
+negligible, raising the possibility that seemingly innocuous changes to vot-
+ing costs affect electoral turnout. Election officials in Munich recruit new
+polling places to improve their accessibility and control precinct sizes to
+prevent congestion, producing plausibly exogenous variation in the as-
+signment of polling places. We study the turnout effects of relocating poll-
+ing places using an event study design. Results suggest that polling place
+reassignments induce a persistent substitution away from in-person voting
+toward mail-in voting and a transitory decline in total turnout by 0.4 per-
+centage points (0.6%). The effects are amplified when the polling place is
+moved farther away and insignificant, on average, when reassignments re-
+duce the distance to the polling location. Our findings suggest that changes
+in turnout are mostly driven to the relocation itself rather than changes in
+proximity to the polling place, similar to the findings by Brady and McNulty
+(2011). This result cautions about targeting distance to the polling place as
+the sole accessibility factor (Cantoni 2020), as distance reductions come at
+the cost of relocation.
+94                        journal of political economy microeconomics
+   We identify inattention to reassignments as the likely channel behind
+the drop and subsequent recovery in total turnout. Inattentive voters
+are surprised by reassignments after the deadline for requesting mail-in
+ballots. Among those who would have switched to voting by mail, some ab-
+stain and turn to mail-in voting only in the subsequent election. Thus, in-
+creasing the salience of polling place relocation could effectively prevent
+turnout losses by mitigating inattention. Our results complement correla-
+tional evidence suggesting no participation declines after relocations in
+the United States, where voters are typically informed of changes to their
+polling location ahead of election day (Clinton et al. 2021; Tomkins et al.
+2023). Moreover, the full turnout recovery is incompatible with the hy-
+pothesis that voting is habit forming.
+   Heterogeneity analyses suggest that reassignments cause a stronger and
+persistent turnout decline in precincts with more elderly eligible voters.
+The result is intriguing, given that recruiting barrier-free locations was a
+primary reason for polling place reassignments. Thus, our findings high-
+light that a well-intentioned policy can have unintended consequences
+when small changes in voting costs are overlooked. We find no evidence
+that moving polling locations adversely affected the electoral outcome
+by altering party shares. However, democracies characterized by spatial
+voter segregation along party lines and two-party systems may be more
+vulnerable to partisan consequences, justifying particular scrutiny of this
+practice.
+   Finally, our results highlight the role of mail-in voting in compensating
+for turnout losses at the polls and preventing a persistent drop in participa-
+tion. Other convenience voting arrangements, such as in-person early vot-
+ing at predefined locations, could similarly cushion the negative conse-
+quences of moving polling places. For instance, voters may opt to vote at
+a familiar or nearby early-voting site after noticing that their election-day
+polling location has moved.33 But access to alternative voting options is
+not common: Mail-in voting is available to all eligible voters only in 6% of
+countries globally (15% of EU member states and 29% of OECD coun-
+tries). Early voting is offered by 8% globally, and 11% offer at least one al-
+ternative to election-day poll voting, according to the International Insti-
+tute for Democracy and Electoral Assistance.34 Thus, in contexts where
+the substitution between modes of voting is limited, negative turnout effects
+of moving polling locations are likely larger and more persistent, under-
+scoring the importance of monitoring this practice outside of Germany.
+
+
+   33
+      Additionally, early voting may mitigate losses coming from inattention by providing an
+alternative to voters who notice the reassignment too late to request a mail-in ballot but
+before election day. Early voting itself can also boost participation (Kaplan and Yuan 2020).
+   34
+      See https://www.idea.int/data-tools/tools/special-voting-arrangements/postal-in
+-country.
+voting costs and electoral turnout                                                95
+Data Availability
+Code and data for replicating the tables and figures in this article can
+be found in Alipour and Lindlacher (2024) in the Harvard Dataverse,
+https://doi.org/10.7910/DVN/MHHNJV. The replication package also
+contains a README file with further information.
+
+
+References
+Ali, S. N., and C. Lin. 2013. “Why People Vote: Ethical Motives and Social Incen-
+  tives.” American Econ. J. Microeconomics 5 (2): 73–98.
+Alipour, J.-V., and V. Lindlacher. 2024. “Replication Data for: ‘No Surprises, Please:
+  Voting Costs and Electoral Turnout.’” Harvard Dataverse, https://doi.org/10
+  .7910/DVN/MHHNJV.
+Amos, B., D. A. Smith, and C. Ste. Claire. 2017. “Reprecincting and Voting Behav-
+  ior.” Polit. Behavior 39 (1): 133–56.
+Athey, S., and G. W. Imbens. 2022. “Design-Based Analysis in Difference-in-
+  Differences Settings with Staggered Adoption.” J. Econometrics 226 (1): 62–79.
+Bagwe, G., J. Margitic, and A. Stashko. 2022. “Polling Place Location and the Costs
+  of Voting.” Working paper, David Eccles School Bus., Univ. Utah.
+Barber, M., and J. B. Holbein. 2020. “The Participatory and Partisan Impacts of
+  Mandatory Vote-by-Mail.” Sci. Advances 6 (35): eabc7685.
+Bechtel, M. M., D. Hangartner, and L. Schmid. 2018. “Compulsory Voting, Habit
+  Formation, and Political Participation.” Rev. Econ. and Statis. 100 (3): 467–76.
+Bhatti, Y. 2012. “Distance and Voting: Evidence from Danish Municipalities.” Scan-
+  dinavian Polit. Studies 35 (2): 141–58.
+Borusyak, K., X. Jaravel, and J. Spiess. 2024. “Revisiting Event Study Designs: Ro-
+  bust and Efficient Estimation.” Rev. Econ. Studies 91 (6): 3253–85.
+Braconnier, C., J.-Y. Dormagen, and V. Pons. 2017. “Voter Registration Costs and
+  Disenfranchisement: Experimental Evidence from France.” American Polit. Sci.
+  Rev. 111 (3): 584–604.
+Brady, H. E., and J. E. McNulty. 2011. “Turning Out to Vote: The Costs of Finding
+  and Getting to the Polling Place.” American Polit. Sci. Rev. 105 (1): 115–34.
+Brody, R. A., and P. M. Sniderman. 1977. “From Life Space to Polling Place: The
+  Relevance of Personal Concerns for Voting Behavior.” British J. Polit. Sci. 7 (3):
+  337–60.
+Bursztyn, L., D. Cantoni, P. Funk, F. Schönenberger, and N. Yuchtman. 2024.
+  “Identifying the Effect of Election Closeness on Voter Turnout: Evidence from
+  Swiss Referenda.” J. European Econ. Assoc. 22 (2): 876–914.
+Callaway, B., and P. H. Sant’Anna. 2021. “Difference-in-Differences with Multiple
+  Time Periods.” J. Econometrics 225 (2): 200–230.
+Cantoni, E. 2020. “A Precinct Too Far: Turnout and Voting Costs.” American Econ. J.
+  Appl. Econ. 12 (1): 61–85.
+Cantoni, E., and V. Pons. 2021. “Strict ID Laws Don’t Stop Voters: Evidence from
+  a U.S. Nationwide Panel, 2008–2018.” Q.J.E. 136 (4): 2615–60.
+———. 2022. “Does Context Outweigh Individual Characteristics in Driving
+  Voting Behavior? Evidence from Relocations within the United States.” A.E.R.
+  112 (4): 1226–72.
+Chen, M. K., K. Haggag, D. G. Pope, and R. Rohla. 2022. “Racial Disparities in Vot-
+  ing Wait Times: Evidence from Smartphone Data.” Rev. Econ. and Statis. 104 (6):
+  1341–50.
+96                      journal of political economy microeconomics
+Chyn, E., and K. Haggag. 2023. “Moved to Vote: The Long-Run Effects of Neigh-
+  borhoods on Political Participation.” Rev. Econ. and Statis. 105 (6): 1596–605.
+Clinton, J. D., N. Eubank, A. Fresh, and M. E. Shepherd. 2021. “Polling Place
+  Changes and Political Participation: Evidence from North Carolina Presidential
+  Elections, 2008–2016.” Polit. Sci. Res. and Methods 9 (4): 800–817.
+Curiel, J. A., and J. T. Clark. 2021. “Disparities in Poll Closures in the Age of
+  Covid-19: A Case Study of Wisconsin.” Election Law J. Rules, Politics, and Policy
+  20 (4): 345–63.
+de Chaisemartin, C., and X. D’Haultfœuille. 2020. “Two-Way Fixed Effects Estima-
+  tors with Heterogeneous Treatment Effects.” A.E.R. 110 (9): 2964–96.
+———. 2023. “Two-Way Fixed Effects and Differences-in-Differences with Hetero-
+  geneous Treatment Effects: A Survey.” Econometrics J. 26 (3): C1–C30.
+Dellavigna, S., J. A. List, U. Malmendier, and G. Rao. 2017. “Voting to Tell Others.”
+  Rev. Econ. Studies 84 (1): 143–81.
+Downs, A. 1957. “An Economic Theory of Political Action in a Democracy.” J.P.E.
+  65 (2): 135–50.
+Dyck, J. J., and J. G. Gimpel. 2005. “Distance, Turnout, and the Convenience of
+  Voting.” Social Sci. Q. 86 (3): 531–48.
+Fauvelle-Aymar, C., and A. François. 2018. “Place of Registration and Place of Res-
+  idence: The Non-Linear Detrimental Impact of Transportation Cost on Elec-
+  toral Participation.” Public Choice 176 (3): 405–40.
+Fujiwara, T. 2015. “Voting Technology, Political Responsiveness, and Infant
+  Health: Evidence from Brazil.” Econometrica 83 (2): 423–64.
+Fujiwara, T., K. Meng, and T. Vogl. 2016. “Habit Formation in Voting: Evidence
+  from Rainy Elections.” American Econ. J. Appl. Econ. 8 (4): 160–88.
+Funk, P. 2010. “Social Incentives and Voter Turnout: Evidence from the Swiss Mail
+  Ballot System.” J. European Econ. Assoc. 8 (5): 1077–103.
+Gaebler, S., N. Potrafke, and F. Roesel. 2020. “Compulsory Voting and Political
+  Participation: Empirical Evidence from Austria.” Regional Sci. and Urban Econ.
+  81:103499.
+Garmann, S. 2017. “The Effect of a Reduction in the Opening Hours of Polling
+  Stations on Turnout.” Public Choice 171 (1–2): 99–117.
+Gentzkow, M., J. M. Shapiro, and M. Sinkinson. 2011. “The Effect of Newspaper
+  Entry and Exit on Electoral Politics.” A.E.R. 101 (7): 2980–3018.
+Gerber, A. S., D. P. Green, and R. Shachar. 2003. “Voting May Be Habit-Forming:
+  Evidence from a Randomized Field Experiment.” American J. Polit. Sci. 47 (3):
+  540–50.
+Gerber, A. S., J. Gruber, and D. M. Hungerman. 2016. “Does Church Attendance
+  Cause People to Vote? Using Blue Laws’ Repeal to Estimate the Effect of Religi-
+  osity on Voter Turnout.” British J. Polit. Sci. 46 (3): 481–500.
+Gerber, A. S., G. A. Huber, and S. J. Hill. 2013. “Identifying the Effect of All-
+  Mail Elections on Turnout: Staggered Reform in the Evergreen State.” Polit.
+  Sci. Res. and Methods 1 (1): 91–116.
+Gibson, J., B. Kim, S. Stillman, and G. Boe-Gibson. 2013. “Time to Vote?” Public
+  Choice 156 (3–4): 517–36.
+Gimpel, J., and J. Schuknecht. 2003. “Political Participation and the Accessibility
+  of the Ballot Box.” Polit. Geography 22 (5): 471–88.
+Goodman-Bacon, A. 2021. “Difference-in-Differences with Variation in Treatment
+  Timing.” J. Econometrics 225 (2): 254–77.
+Green, D. P., and R. Shachar. 2000. “Habit Formation and Political Behaviour: Ev-
+  idence of Consuetude in Voter Turnout.” British J. Polit. Sci. 30 (4): 561–73.
+Haspel, M., and H. G. Knotts. 2005. “Location, Location, Location: Precinct Place-
+  ment and the Costs of Voting.” J. Politics 67 (2): 560–73.
+voting costs and electoral turnout                                               97
+Hodler, R., S. Luechinger, and A. Stutzer. 2015. “The Effects of Voting Costs on the
+  Democratic Process and Public Finances.” American Econ. J. Econ. Policy 7 (1):
+  141–71.
+Hoffman, M., G. León, and M. Lombardi. 2017. “Compulsory Voting, Turnout,
+  and Government Spending: Evidence from Austria.” J. Public Econ. 145:103–15.
+Huber, S., and C. Rust. 2016. “Calculate Travel Time and Distance with Open-
+  streetmap Data Using the Open Source Routing Machine (OSRM).” Stata J.
+  16 (2): 416–23.
+Kaplan, E., and H. Yuan. 2020. “Early Voting Laws, Voter Turnout, and Partisan Vote
+  Composition: Evidence from Ohio.” American Econ. J. Appl. Econ. 12 (1): 32–60.
+Maćkowiak, B., E. Matějka, and M. Wiederholt. 2023. “Rational Inattention: A Re-
+  view.” J. Econ. Literature 61 (1): 226–73.
+McNulty, J. E., C. M. Dowling, and M. H. Ariotti. 2009. “Driving Saints to Sin: How
+  Increasing the Difficulty of Voting Dissuades Even the Most Motivated Voters.”
+  Polit. Analysis 17 (4): 435–55.
+Meredith, M. 2009. “Persistence in Political Participation.” Q. J. Polit. Sci. 4 (3):
+  187–209.
+Milligan, K., E. Moretti, and P. Oreopoulos. 2004. “Does Education Improve Cit-
+  izenship? Evidence from the United States and the United Kingdom.” J. Public
+  Econ. 88 (9): 1667–95.
+Ortoleva, P., and E. Snowberg. 2015. “Overconfidence in Political Behavior.”
+  A.E.R. 105 (2): 504–35.
+Plutzer, E. 2002. “Becoming a Habitual Voter: Inertia, Resources, and Growth in
+  Young Adulthood.” American Polit. Sci. Rev. 96 (1): 41–56.
+Pons, V., and C. Tricaud. 2018. “Expressive Voting and Its Cost: Evidence from
+  Runoffs with Two or Three Candidates.” Econometrica 86 (5): 1621–49.
+Potrafke, N., and F. Roesel. 2020. “Opening Hours of Polling Stations and Voter
+  Turnout: Evidence from a Natural Experiment.” Rev. Internat. Org. 15 (1): 133–63.
+Rambachan, A., and J. Roth. 2023. “A More Credible Approach to Parallel
+  Trends.” Rev. Econ. Studies 90 (5): 2555–91.
+Roth, J., P. H. C. Sant’Anna, A. Bilinski, and J. Poe. 2023. “What’s Trending in
+  Difference-in-Differences? A Synthesis of the Recent Econometrics Literature.”
+  J. Econometrics 235 (2): 2218–44.
+Sun, L., and S. Abraham. 2021. “Estimating Dynamic Treatment Effects in Event
+  Studies with Heterogeneous Treatment Effects.” J. Econometrics 225 (2): 175–99.
+Thompson, D. M., J. A. Wu, J. Yoder, and A. B. Hall. 2020. “Universal Vote-by-Mail
+  Has No Impact on Partisan Turnout or Vote Share.” Proc. Nat. Acad. Sci. USA
+  117 (25): 14052–56.
+Tomkins, S., K. Yao, J. Gaebler, T. Konitzer, D. Rothschild, M. Meredith, and S.
+  Goel. 2023. “Blocks as Geographic Discontinuities: The Effect of Polling-Place
+  Assignment on Voting.” Politi. Analysis 31 (2): 165–80.
+Yoder, J. 2019. “How Polling Place Changes Reduce Turnout: Evidence from Ad-
+  ministrative Data in North Carolina.” Working paper, Dept. Polit. Sci., Stan-
+  ford Univ.
+Zeigermann, L. 2018. Opencagegeo: Stata Module for Forward and Reverse
+  Geocoding Using the OpenCage Geocoder API.” Manuscript, Düsseldorf Inst.
+  Competition Econ.
+
