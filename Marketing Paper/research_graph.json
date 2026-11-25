@@ -120,6 +120,26 @@
   ],
   "papers": [
     {
+      "id": "aaker-1975-admod",
+      "title": "ADMOD: An Advertising Decision Model",
+      "authors": "David A. Aaker",
+      "year": 1975,
+      "journal": "JMR",
+      "pdf": "JMR/Aaker_1975_ADMOD An Advertising Decision Model.pdf",
+      "source_id": 11782,
+      "card": "Marketing Paper/文献卡/Aaker 1975 - ADMOD 广告预算与媒体排期.md",
+      "reading_status": "core_read",
+      "reading_note": "核曝光、重复响应、分群加权、预算启发式和敏感性表。复算独立曝光生成函数与基准排期成本，记录式 (1) 极限及式 (2) 零分母边界。底表与原程序未取得。",
+      "read_scope": "PDF 1–9（刊页 37–45），回查 PDF 4–8 原图。",
+      "sections": {
+        "introduction": [[1, 2]],
+        "model": [[2, 7]],
+        "results": [[7, 9]],
+        "discussion": [[9, 9]],
+        "references": [[9, 9]]
+      }
+    },
+    {
       "id": "agrawal-1996-brand-loyalty-promotions",
       "title": "Effect of Brand Loyalty on Advertising and Trade Promotions: A Game Theoretic Analysis with Empirical Evidence",
       "authors": "Deepak Agrawal",
