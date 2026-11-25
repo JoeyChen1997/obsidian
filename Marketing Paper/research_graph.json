@@ -79,14 +79,14 @@
       "id": "algorithmic-pricing-deviation",
       "title": "算法定价、探索与偏离诊断",
       "aliases": ["算法合谋", "算法定价", "表观合谋", "algorithmic collusion", "reinforcement learning with prices", "off path exploration"],
-      "papers": ["maskin-tirole-1988-price-competition", "wang-2009-gasoline-timing", "calvano-et-al-2020-algorithmic-pricing", "klein-2021-sequential-pricing", "abada-lambin-2023-seeming-collusion", "qiu-et-al-2025-personalized-pricing"],
+      "papers": ["maskin-tirole-1988-price-competition", "wang-2009-gasoline-timing", "calvano-et-al-2020-algorithmic-pricing", "klein-2021-sequential-pricing", "abada-lambin-2023-seeming-collusion", "assad-et-al-2024-gasoline-adoption", "byrne-et-al-2025-asymmetric-information", "qiu-et-al-2025-personalized-pricing"],
       "queries": ["algorithmic pricing collusion", "reinforcement learning forced deviation", "imperfect monitoring off path exploration"]
     },
     {
       "id": "dynamic-commitment-timing",
       "title": "行动承诺、时序与价格领先",
       "aliases": ["数量承诺", "轮流调价", "价格领先", "调价时序规制", "price leadership", "endogenous timing", "price commitment", "Edgeworth cycles"],
-      "papers": ["maskin-tirole-1988-quantity-competition", "maskin-tirole-1988-price-competition", "wang-2009-gasoline-timing", "klein-2021-sequential-pricing"],
+      "papers": ["maskin-tirole-1988-quantity-competition", "maskin-tirole-1988-price-competition", "wang-2009-gasoline-timing", "klein-2021-sequential-pricing", "byrne-et-al-2025-asymmetric-information"],
       "queries": ["gasoline price cycles timing regulation", "mixed strategy price leadership relenting", "alternating moves endogenous timing capacity"]
     },
     {
@@ -112,6 +112,34 @@
     }
   ],
   "papers": [
+    {
+      "id": "assad-et-al-2024-gasoline-adoption",
+      "title": "Algorithmic Pricing and Competition: Empirical Evidence from the German Retail Gasoline Market",
+      "authors": "Stephanie Assad, Robert Clark, Daniel Ershov, and Lei Xu",
+      "year": 2024,
+      "journal": "Journal of Political Economy",
+      "doi": "10.1086/726906",
+      "pdf": "JPE/Assad_2023_Algorithmic Pricing and Competition Empirical Evidence from the German Retail Gasoline Market.pdf",
+      "aliases": ["Assad et al 2024", "Assad Clark Ershov Xu 2024", "German gasoline algorithmic pricing"],
+      "card": "Marketing Paper/文献卡/Assad 等 2024 - 算法定价采用与竞争.md",
+      "reading_status": "core_read",
+      "reading_note": "核采用分类、站点和市场 IV、价差与竞争结构及调价反应，区别印刷表与机制解释；附录 C–G 和专有资料未独立核。",
+      "sections": {"introduction": [[1, 8]], "model": [[13, 20], [23, 28], [35, 36]], "results": [[28, 42], [44, 46]], "discussion": [[42, 44]]}
+    },
+    {
+      "id": "byrne-et-al-2025-asymmetric-information",
+      "title": "Asymmetric Information Sharing in Oligopoly: A Natural Experiment in Retail Gasoline",
+      "authors": "David P. Byrne, Nicolas de Roos, Matthew S. Lewis, Leslie M. Marx, and Xiaosong Wu",
+      "year": 2025,
+      "journal": "Journal of Political Economy",
+      "doi": "10.1086/734872",
+      "pdf": "JPE/Byrne_2025_Asymmetric Information Sharing in Oligopoly A Natural Experiment in Retail Gasoline.pdf",
+      "aliases": ["Byrne et al 2025", "Coles Informed Sources", "asymmetric information sharing gasoline"],
+      "card": "Marketing Paper/文献卡/Byrne 等 2025 - 不对称价格信息共享.md",
+      "reading_status": "core_read",
+      "reading_note": "核退出冲击、Hotelling 模型、周期分段、调价反应与路线 logit 的结构利润；保留主文日期冲突及外置材料缺口。",
+      "sections": {"introduction": [[1, 8]], "model": [[11, 19], [25, 30], [42, 49]], "results": [[30, 52]], "discussion": [[52, 54]]}
+    },
     {
       "id": "maskin-tirole-1988-quantity-competition",
       "title": "A Theory of Dynamic Oligopoly, I: Overview and Quantity Competition with Large Fixed Costs",
@@ -885,6 +913,39 @@
     }
   ],
   "edges": [
+    {
+      "id": "calvano-assad-delayed-adoption-response",
+      "from": "calvano-et-al-2020-algorithmic-pricing",
+      "to": "assad-et-al-2024-gasoline-adoption",
+      "type": "empirical_followup",
+      "review": "verified",
+      "claim": "Assad 等明引 Calvano 的学习过渡和偏离响应，检查德国市场在全采用后价差是否逐渐上升、是否更快跟随降价而非涨价。",
+      "changed": "由可冻结并施加外生降价的 Q 表实验，转为以行为断点推定采用、用品牌其他站份额作工具的观察数据。",
+      "limit": "反应和过渡方向相符，不等于观测到 Q 表、惩罚最优、共同供应商或合谋意图；德国部分采用不显著也不是证明效应为零。",
+      "evidence": [{"paper": "calvano-et-al-2020-algorithmic-pricing", "page": 16, "printed": "3282", "locator": "Figure 4，外生降价后的已学响应"}, {"paper": "calvano-et-al-2020-algorithmic-pricing", "page": 27, "printed": "3293", "locator": "Figure 10，训练过渡期的模拟利润"}, {"paper": "assad-et-al-2024-gasoline-adoption", "page": 39, "printed": "761", "locator": "Table 10，市场全采用后的不同时间段"}, {"paper": "assad-et-al-2024-gasoline-adoption", "page": 40, "printed": "762", "locator": "§VI 与注 76 直接比较 Calvano 的过渡期"}]
+    },
+    {
+      "id": "assad-byrne-rival-matching-and-distinct-mechanisms",
+      "from": "assad-et-al-2024-gasoline-adoption",
+      "to": "byrne-et-al-2025-asymmetric-information",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "Byrne 等明引 Assad 的 1 公里近邻配对作为响应证据，但德国试图测算法采用后的跟随降价，墨尔本测一家退出高频供数后调价联动减弱。",
+      "changed": "从行为推定的采用及市场采用份额，转为可核日期的单方信息退出；用战略互补和慢反应解释价格承诺，不需要重复学习惩罚。",
+      "limit": "共享配对组件不等于共享估计量：德国为分钟级同向跟价，墨尔本为站点日差关联，且成本指标、币种和利润分母不同。后者不反证德国机制。",
+      "evidence": [{"paper": "assad-et-al-2024-gasoline-adoption", "page": 16, "printed": "738", "locator": "近邻异品牌对手的 1 公里配对"}, {"paper": "assad-et-al-2024-gasoline-adoption", "page": 41, "printed": "763", "locator": "五分钟跟随降价与跟随涨价"}, {"paper": "byrne-et-al-2025-asymmetric-information", "page": 17, "printed": "2047", "locator": "信息劣势与顺序报价模型"}, {"paper": "byrne-et-al-2025-asymmetric-information", "page": 36, "printed": "2066", "locator": "明引 Assad 的邻站选择，Eq. (2) 回归响应"}, {"paper": "byrne-et-al-2025-asymmetric-information", "page": 53, "printed": "2083", "locator": "区别价格承诺和算法合谋机制"}]
+    },
+    {
+      "id": "wang-byrne-commitment-policy-versus-information",
+      "from": "wang-2009-gasoline-timing",
+      "to": "byrne-et-al-2025-asymmetric-information",
+      "type": "contrasts_assumptions",
+      "review": "verified",
+      "claim": "Wang 的珀斯法对所有站规定次日申报和全天维持；Byrne 的墨尔本和解令单家相对迟钝，对手仍能监控它。两者均涉及承诺，但约束的来源、对称性与对象不同。",
+      "changed": "从普遍锁价与重启者分配，转为单方观测更慢、跟随者能快速反应；在较晚样本的珀斯，FuelWatch 是对照背景而不是相同处理。",
+      "limit": "为双侧已核的机制对照，不声称直接扩展；不能把两地不同时段的价差结果解释成同一干预效果，亦不能识别哪种制度一般更优。",
+      "evidence": [{"paper": "wang-2009-gasoline-timing", "page": 3, "printed": "989", "locator": "每天同时申报，价格至少维持全天"}, {"paper": "wang-2009-gasoline-timing", "page": 20, "printed": "1006", "locator": "周期领涨者及共同领涨"}, {"paper": "byrne-et-al-2025-asymmetric-information", "page": 11, "printed": "2041", "locator": "分开 Coles 退出与其他方的继续共享"}, {"paper": "byrne-et-al-2025-asymmetric-information", "page": 34, "printed": "2064", "locator": "珀斯为无同期信息冲击的对照"}]
+    },
     {
       "id": "maskin-quantity-price-shared-commitment",
       "from": "maskin-tirole-1988-quantity-competition",
