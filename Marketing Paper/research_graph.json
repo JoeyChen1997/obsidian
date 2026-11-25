@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
   "source_exclusions": [
+    {"source_id": 15991, "pdf": "JPE/Abbott_1905_Labor Organization among Women . Belva Mary Herron.pdf", "kind": "book_review", "page": 1, "locator": "PDF 1 刊页 605 的 BOOK REVIEWS 栏页尾起，评介 Belva Mary Herron 的 1905 年专著；PDF 3 刊页 607 署名 Edith Abbott。"},
     {"source_id": 11780, "pdf": "JMR/Aaker_1972_Inadequate Solution.pdf", "kind": "book_review", "page": 2, "locator": "刊页 115 New Books in Review 栏，右栏 Inadequate solution，David A. Aaker 署名评 Bo W:son Schyberger 的 Media Selection: Efficient Procedures of Press Media Allocation；档案封页也标为 Review。"},
     {"source_id": 15989, "pdf": "JPE/Abbott_1904_Trade Unionism and British Industry . Edwin A. Pratt.pdf", "kind": "book_review", "page": 1, "locator": "原图刊页 129 的 Book Reviews 栏始于页尾，评介 Edwin A. Pratt 的同名书；PDF 4 刊页 132 署名 Edith Abbott。索引文本只有下载页脚。"},
     {"source_id": 11778, "pdf": "JMR/Aaker_1971_On Experimental Design One in Historical and One in Critical Perspective.pdf", "kind": "book_review", "page": 2, "locator": "刊页 395–396 的 New Books in Review 栏，评介 Frank Yates 与 P. Ottestad 的两本书；PDF 3 署名 David A. Aaker"},
@@ -117,6 +118,57 @@
     }
   ],
   "papers": [
+    {
+      "id": "alipour-lindlacher-2025-voting-costs",
+      "title": "No Surprises, Please: Voting Costs and Electoral Turnout",
+      "authors": "Jean-Victor Alipour and Valentin Lindlacher",
+      "year": 2025,
+      "journal": "JPE_MICRO",
+      "doi": "10.1086/732243",
+      "pdf": "JPE_MICRO/Alipour_2024_No Surprises, Please Voting Costs and Electoral Turnout.pdf",
+      "source_id": 23457,
+      "aliases": [
+        "Alipour Lindlacher 2025",
+        "polling place reassignment",
+        "voting costs electoral turnout"
+      ],
+      "card": "Marketing Paper/文献卡/Alipour 与 Lindlacher 2025 - 投票地点重分配与选举参与.md",
+      "reading_status": "core_read",
+      "reading_note": "核重分配自然实验、注意力模型、事件研究与异质性结果；未重跑面板及外置附录。",
+      "read_scope": "PDF 1–6、15–22、28–37 的书目、核心识别、模型、估计和讨论。",
+      "sections": {
+        "introduction": [
+          [
+            1,
+            6
+          ]
+        ],
+        "model": [
+          [
+            16,
+            16
+          ]
+        ],
+        "results": [
+          [
+            20,
+            35
+          ]
+        ],
+        "discussion": [
+          [
+            35,
+            36
+          ]
+        ],
+        "references": [
+          [
+            37,
+            39
+          ]
+        ]
+      }
+    },
     {
       "id": "abadie-imbens-2016-estimated-propensity-score",
       "title": "Matching on the Estimated Propensity Score",

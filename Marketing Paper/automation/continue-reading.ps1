@@ -63,22 +63,33 @@ try {
         return ($report | Out-String | ConvertFrom-Json)
     }
     function Get-CoreCount($Report) { return [int]$Report.reading_states.core_read }
+    function Get-CursorLine($Path) {
+        $marker = [string]::new([char[]](0x5F53,0x524D,0x5165,0x53E3))
+        $line = @(Get-Content -Encoding UTF8 -LiteralPath $Path | Where-Object { $_.StartsWith('- **' + $marker) })
+        if ($line.Count -ne 1) { throw 'Reading queue cursor missing or ambiguous' }
+        return $line[0]
+    }
 
     # Decode the native validator's JSON as UTF-8.
     $OutputEncoding = [Console]::OutputEncoding = [Text.UTF8Encoding]::new($false)
     $before = Read-GraphStatus
     Write-RunLog ('started core_read={0}' -f (Get-CoreCount $before))
-    $beforeQueue = (Get-FileHash -LiteralPath $queue -Algorithm SHA256).Hash
+    $beforeCursor = Get-CursorLine $queue
     $runnerSummary = & $python -B -X utf8 $configuredRunner
     $codexExit = $LASTEXITCODE
     if ($runnerSummary -match '^cli_exit=-?\d+ completed=[01] commands=\d+ command_errors=\d+ patches=\d+ clues=[a-z+]+$') {
         Write-RunLog $runnerSummary
     }
     $after = Read-GraphStatus
-    $queueChanged = $beforeQueue -ne (Get-FileHash -LiteralPath $queue -Algorithm SHA256).Hash
+    $queueChanged = $beforeCursor -ne (Get-CursorLine $queue)
+    $newMissing = @($after.missing_markdown_cards | Where-Object { $_ -notin @($before.missing_markdown_cards) })
     Write-RunLog ('finished runner_exit={0} core_read={1} exclusions={2} variants={3} queue_changed={4}' -f `
         $codexExit, (Get-CoreCount $after), $after.source_exclusion_records_checked, $after.variant_identity_pages_checked, $queueChanged)
     if ($codexExit -ne 0) { exit 4 }
+    if ($newMissing.Count) {
+        Write-RunLog 'validation incomplete: new graph entries lack their markdown cards'
+        exit 11
+    }
     if (-not $queueChanged) { exit 10 }
     exit 0
 } catch {
