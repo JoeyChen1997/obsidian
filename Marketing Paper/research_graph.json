@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
   "source_exclusions": [
+    {"source_id":11781,"pdf":"JMR/Aaker_1974_Multivariate Analysis in Marketing, Theory and Application.pdf","kind":"book_review","page":2,"locator":"PDF 1 封页标 Review，JSTOR 3151160；PDF 2 刊页 346 为 New Books in Review，Patrick J. Robinson 署名后列 David A. Aaker 编的 1971 年同名文集。"},
     {"source_id": 15991, "pdf": "JPE/Abbott_1905_Labor Organization among Women . Belva Mary Herron.pdf", "kind": "book_review", "page": 1, "locator": "PDF 1 刊页 605 的 BOOK REVIEWS 栏页尾起，评介 Belva Mary Herron 的 1905 年专著；PDF 3 刊页 607 署名 Edith Abbott。"},
     {"source_id": 11780, "pdf": "JMR/Aaker_1972_Inadequate Solution.pdf", "kind": "book_review", "page": 2, "locator": "刊页 115 New Books in Review 栏，右栏 Inadequate solution，David A. Aaker 署名评 Bo W:son Schyberger 的 Media Selection: Efficient Procedures of Press Media Allocation；档案封页也标为 Review。"},
     {"source_id": 15989, "pdf": "JPE/Abbott_1904_Trade Unionism and British Industry . Edwin A. Pratt.pdf", "kind": "book_review", "page": 1, "locator": "原图刊页 129 的 Book Reviews 栏始于页尾，评介 Edwin A. Pratt 的同名书；PDF 4 刊页 132 署名 Edith Abbott。索引文本只有下载页脚。"},
@@ -118,6 +119,96 @@
     }
   ],
   "papers": [
+    {
+      "id": "abaluck-gruber-2011-choice-heterogeneity",
+      "title": "Heterogeneity in Choice Inconsistencies among the Elderly: Evidence from Prescription Drug Plan Choice",
+      "authors": "Jason Abaluck and Jonathan Gruber",
+      "year": 2011,
+      "journal": "AER",
+      "doi": "10.1257/aer.101.3.377",
+      "pdf": "AER/Abaluck_2011_Heterogeneity in Choice Inconsistencies among the Elderly Evidence from Prescription Drug Plan Choice.pdf",
+      "source_id": 767,
+      "card": "Marketing Paper/文献卡/Abaluck 与 Gruber 2011 - 医保选择不一致的异质性.md",
+      "reading_status": "core_read",
+      "reading_note": "独立 P&P 短文；核选择集、风险受限成本前沿、条件 logit、亚组与州模拟，复算原表并记口径差异。未重跑数据。",
+      "read_scope": "PDF 1–5（刊页 377–381），原图核 PDF 2–5。",
+      "sections": {
+        "introduction": [
+          [
+            1,
+            2
+          ]
+        ],
+        "model": [
+          [
+            2,
+            3
+          ]
+        ],
+        "results": [
+          [
+            2,
+            5
+          ]
+        ],
+        "discussion": [
+          [
+            4,
+            5
+          ]
+        ],
+        "references": [
+          [
+            5,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "id": "adalja-et-al-2023-gmo-labeling",
+      "title": "GMO and Non-GMO Labeling Effects: Evidence from a Quasi-Natural Experiment",
+      "authors": "Aaron Adalja, Jūra Liaukonytė, Emily Wang, and Xinrong Zhu",
+      "year": 2023,
+      "journal": "MKSC",
+      "doi": "10.1287/mksc.2022.1375",
+      "pdf": "MKSC/Adalja_2022_GMO and Non-GMO Labeling Effects Evidence from a Quasi-Natural Experiment.pdf",
+      "source_id": 23581,
+      "card": "Marketing Paper/文献卡/Adalja 等 2023 - 强制标签与自愿标签的需求效应.md",
+      "reading_status": "core_read",
+      "reading_note": "核全国新品、Vermont 合成对照、DMA 边界与生效增量，复算 36% 分母。在线附录及数据未核。",
+      "read_scope": "PDF 1–17；原图核 PDF 8–10、12–15。",
+      "sections": {
+        "introduction": [
+          [
+            1,
+            3
+          ]
+        ],
+        "model": [
+          [
+            4,
+            9
+          ],
+          [
+            11,
+            14
+          ]
+        ],
+        "results": [
+          [
+            9,
+            15
+          ]
+        ],
+        "discussion": [
+          [
+            16,
+            17
+          ]
+        ]
+      }
+    },
     {
       "id": "adams-2020-mutual-demand-consistency",
       "title": "Mutually Consistent Revealed Preference Demand Predictions",
