@@ -118,6 +118,22 @@
   ],
   "papers": [
     {
+      "id": "abadie-imbens-2016-estimated-propensity-score",
+      "title": "Matching on the Estimated Propensity Score",
+      "authors": "Alberto Abadie and Guido W. Imbens",
+      "year": 2016,
+      "journal": "Econometrica",
+      "doi": "10.3982/ECTA11293",
+      "pdf": "ECMA/Abadie_2016_Matching on the Estimated Propensity Score.pdf",
+      "source_id": 5794,
+      "aliases": ["Abadie Imbens 2016", "estimated propensity score matching", "fixed nearest neighbors first step variance", "ATE versus ATET variance correction", "Le Cam discretization matching"],
+      "card": "Marketing Paper/文献卡/Abadie 与 Imbens 2016 - 估计倾向得分匹配的方差修正.md",
+      "reading_status": "core_read",
+      "reading_note": "核固定 M、两参数的一阶方差修正和局部实验；复推 ATET 导数及印刷举例边界，线上详证未取。",
+      "read_scope": "PDF 1–27，回查 12–14 原图及 19 的 ATET 导数；未核独立补件。",
+      "sections": {"introduction": [[1, 2]], "model": [[2, 10]], "results": [[6, 6], [11, 19]], "proof": [[11, 14], [20, 26]], "discussion": [[19, 20]], "references": [[26, 27]]}
+    },
+    {
       "id": "acemoglu-lensman-2024-transformative-tech-regulation",
       "title": "Regulating Transformative Technologies",
       "authors": "Daron Acemoglu and Todd Lensman",
