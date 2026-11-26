@@ -120,6 +120,35 @@
   ],
   "papers": [
     {
+      "id": "abadir-rockinger-1997-devils-horns",
+      "title": "The “Devil’s Horns” Problem of Inverting Confluent Characteristic Functions",
+      "authors": "Karim M. Abadir and Michael Rockinger",
+      "year": 1997,
+      "journal": "ECMA",
+      "pdf": "ECMA/Abadir_1997_The Devil's Horns Problem of Inverting Confluent Characteristic Functions.pdf",
+      "source_id": 5796,
+      "card": "Marketing Paper/文献卡/Abadir 与 Rockinger 1997 - 特征函数反演的伪尖峰.md",
+      "reading_status": "core_read",
+      "reading_note": "核二元特征函数反演、AR(1) 行列式及重根条件，复算异根极限。外引路径证明和数值实例未独立核验。",
+      "read_scope": "PDF 1–6，回查 PDF 2–5 原图。封页 JSTOR 2171886。",
+      "sections": {"introduction": [[2,3]], "model": [[2,4]], "proof": [[4,5]], "results": [[4,5]], "discussion": [[5,5]], "references": [[6,6]]}
+    },
+    {
+      "id": "adams-et-al-2022-financial-assistance",
+      "title": "The Impact of Financial Assistance Programs on Health Care Utilization: Evidence from Kaiser Permanente",
+      "authors": "Alyce Adams, Raymond Kluender, Neale Mahoney, Jinglin Wang, Francis Wong, and Wesley Yin",
+      "year": 2022,
+      "journal": "AER_insight",
+      "pdf": "AER_insight/Adams_2022_The Impact of Financial Assistance Programs on Health Care Utilization Evidence from Kaiser Permanente.pdf",
+      "source_id": 5569,
+      "doi": "10.1257/aeri.20210515",
+      "card": "Marketing Paper/文献卡/Adams 等 2022 - 医疗财务援助与就医利用.md",
+      "reading_status": "core_read",
+      "reading_note": "核收入资格的模糊断点、样本分母、逐季就医与筛查，复算图 2 的 Wald 量级。线上附录、复制包和原始数据未取。",
+      "read_scope": "PDF 1–19，回查 PDF 9–11、13、15 原图。",
+      "sections": {"introduction": [[1,4]], "model": [[5,10]], "results": [[10,16]], "discussion": [[16,17]], "references": [[17,19]]}
+    },
+    {
       "id": "abaluck-gruber-2016-evolving-choice",
       "title": "Evolving Choice Inconsistencies in Choice of Prescription Drug Insurance",
       "authors": "Jason Abaluck and Jonathan Gruber",
