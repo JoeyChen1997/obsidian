@@ -71,6 +71,8 @@ tags: [research, research/reading-ledger]
 | 52 | 续第八轮期刊轮换 | RAND 41976 核心核读，见 [[Marketing Paper/文献卡/Aghion 等 2008 - 学术自由与研发控制权]]。续 RES 43612。 |
 | 53 | 续第八轮期刊轮换 | RES 43612 核心核读，见 [[Marketing Paper/文献卡/Abel 1985 - 缺货与生产平滑]]。续 AEJ_Micro 8。 |
 | 54 | 第八轮期刊轮换收尾 | AEJ_Micro 8 核心核读，见 [[Marketing Paper/文献卡/Agastya 与 Birulin 2023 - 隐藏行动与任务排序]]。续第九轮 MKSC 23583。 |
+| 55 | 第九轮期刊轮换 | MKSC 23583 核心核读，见 [[Marketing Paper/文献卡/Aguiar 2026 - 影评性别差距与购票验证]]。续 JMR 11783。 |
+| 56 | 续第九轮期刊轮换 | JMR 11783 原图核为 David A. Aaker 的书评。续 AER 769。 |
 
 每批记录：处理的来源 ID、核读状态、原 PDF 页、已入库卡和缺件、下一批首个入口；未完成时保留具体停点。暂不要求逐批比较，比较轮才追加双侧证据。在 [[Marketing Paper/逐篇核读批次队列|逐篇核读批次队列]] 留进度与切换顺序。默认直接续做；变更优先级时留理由，不删除旧记录。只有论文库权限、对外传输或实质范围变化需要用户决定；局部缺件不阻塞。
 

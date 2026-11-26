@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
   "source_exclusions": [
+    {"source_id":11783,"pdf":"JMR/Aaker_1976_Design and Analysis A Researcher's Handbook.pdf","kind":"book_review","page":2,"locator":"PDF 1 档案封页标 Review，JSTOR 3150757。PDF 2 为 JMR 13(3)，1976 年 8 月，刊页 318 右栏，David A. Aaker 署名评 Geoffrey Keppel 1973 年的 Design and Analysis: A Researcher's Handbook。"},
     {"source_id":15993,"pdf":"JPE/Abbott_1905_Women in the Printing Trades A Sociological Study . J. Ramsay MacDonald.pdf","kind":"book_review","page":1,"locator":"原图 PDF 1–5（刊页 299–303）为 BOOK REVIEWS 栏，页 299 底起评介 J. Ramsay MacDonald 编、1904 年出版的 Women in the Printing Trades: A Sociological Study；页 303 署名 Edith Abbott（University of Chicago）。文字层仅有档案页脚，原页未载卷期年或 DOI。"},
     {"source_id":11781,"pdf":"JMR/Aaker_1974_Multivariate Analysis in Marketing, Theory and Application.pdf","kind":"book_review","page":2,"locator":"PDF 1 封页标 Review，JSTOR 3151160；PDF 2 刊页 346 为 New Books in Review，Patrick J. Robinson 署名后列 David A. Aaker 编的 1971 年同名文集。"},
     {"source_id": 15991, "pdf": "JPE/Abbott_1905_Labor Organization among Women . Belva Mary Herron.pdf", "kind": "book_review", "page": 1, "locator": "PDF 1 刊页 605 的 BOOK REVIEWS 栏页尾起，评介 Belva Mary Herron 的 1905 年专著；PDF 3 刊页 607 署名 Edith Abbott。"},
@@ -316,6 +317,27 @@
         "results": [[7, 9]],
         "discussion": [[9, 9]],
         "references": [[9, 9]]
+      }
+    },
+    {
+      "id": "aguiar-2026-bad-apples",
+      "title": "Bad Apples on Rotten Tomatoes: Critics, Crowds, and Gender Bias in Product Ratings",
+      "authors": "Luis Aguiar",
+      "year": 2026,
+      "journal": "MKSC",
+      "doi": "10.1287/mksc.2023.0236",
+      "pdf": "MKSC/Aguiar_2024_Bad Apples on Rotten Tomatoes Critics, Crowds, and Gender Bias in Product Ratings.pdf",
+      "source_id": 23583,
+      "card": "Marketing Paper/文献卡/Aguiar 2026 - 影评性别差距与购票验证.md",
+      "reading_status": "core_read",
+      "reading_note": "核评分级分母、影片和评价者效应、购票验证后分组，复算表 3 与表 5；验证自选，独立附录和数据未取。",
+      "read_scope": "PDF 1–17（刊页 63–79），回查 PDF 4、7、8、11、12、14 原图；PDF 18 为版权页。",
+      "sections": {
+        "introduction": [[1, 2]],
+        "model": [[3, 6]],
+        "results": [[6, 14]],
+        "discussion": [[13, 15]],
+        "references": [[17, 17]]
       }
     },
     {
