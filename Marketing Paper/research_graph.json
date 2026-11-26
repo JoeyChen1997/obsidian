@@ -321,6 +321,34 @@
       "sections": {"introduction": [[1,3]], "model": [[3,5],[20,21]], "results": [[5,23],[25,26]], "discussion": [[23,27]], "references": [[25,27]]}
     },
     {
+      "id": "abbott-1906-martineau-employment",
+      "title": "Harriet Martineau and the Employment of Women in 1836",
+      "authors": "Edith Abbott",
+      "year": 1906,
+      "journal": "JPE",
+      "pdf": "JPE/Abbott_1906_Harriet Martineau and the Employment of Women in 1836.pdf",
+      "source_id": 15995,
+      "card": "Marketing Paper/文献卡/Abbott 1906 - 1836 年女性工业就业的历史证据.md",
+      "reading_status": "core_read",
+      "reading_note": "核三组工业史料、职业覆盖、棉纺率分母及家庭计件与厂工的可比性，未重建逐厂底表。",
+      "read_scope": "PDF 1–13（刊页 614–626），原图回查 PDF 1、7–9、12–13。",
+      "sections": {"introduction": [[1,3]], "model": [[3,4]], "results": [[4,12]], "discussion": [[12,13]], "references": [[3,13]]}
+    },
+    {
+      "id": "abadir-et-al-1999-var-dimensions",
+      "title": "The Influence of VAR Dimensions on Estimator Biases",
+      "authors": "Karim M. Abadir, Kaddour Hadri, and Elias Tzavalis",
+      "year": 1999,
+      "journal": "ECMA",
+      "pdf": "ECMA/Abadir_1999_The Influence of VAR Dimensions on Estimator Biases.pdf",
+      "source_id": 5798,
+      "card": "Marketing Paper/文献卡/Abadir 等 1999 - VAR 维度与估计偏差.md",
+      "reading_status": "core_read",
+      "reading_note": "核无约束 VAR、随机游走维度偏差、协整分块和附录证明；复算符号不变性及表 I，保留公式与括号值差异。未重跑模拟。",
+      "read_scope": "PDF 1–19（刊页 163–181），原图回查 PDF 4、7–9、11–17。",
+      "sections": {"introduction": [[1,2]], "model": [[1,2],[6,7]], "results": [[3,8]], "discussion": [[8,10]], "proof": [[10,17]], "references": [[18,19]]}
+    },
+    {
       "id": "abadir-paruolo-1997-mixed-normal",
       "title": "Two Mixed Normal Densities from Cointegration Analysis",
       "authors": "Karim M. Abadir and Paolo Paruolo",
