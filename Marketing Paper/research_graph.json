@@ -122,6 +122,21 @@
   ],
   "papers": [
     {
+      "id": "abbe-khandani-lo-2012-privacy-preserving",
+      "title": "Privacy-Preserving Methods for Sharing Financial Risk Exposures",
+      "authors": "Emmanuel A. Abbe, Amir E. Khandani, and Andrew W. Lo",
+      "year": 2012,
+      "journal": "AER",
+      "doi": "10.1257/aer.102.3.65",
+      "pdf": "AER/Abbe_2012_Privacy-Preserving Methods for Sharing Financial Risk Exposures.pdf",
+      "source_id": 770,
+      "card": "Marketing Paper/文献卡/Abbe 等 2012 - 金融风险敞口的隐私保护汇总.md",
+      "reading_status": "core_read",
+      "reading_note": "核安全求和、量化内积的逐方视图条件及三家银行演示，复算模和及交叉项，记录图轴与脚注的疑点。2011 年长稿、外置材料和作图数据未取。",
+      "read_scope": "物理 PDF 1–6，原图回查 PDF 2–5。",
+      "sections": {"introduction": [[1,2]], "model": [[2,4]], "results": [[3,5]], "proof": [[3,3]], "discussion": [[4,6]], "references": [[6,6]]}
+    },
+    {
       "id": "aaker-bagozzi-1979-unobservable-variables",
       "title": "Unobservable Variables in Structural Equation Models with an Application in Industrial Selling",
       "authors": "David A. Aaker and Richard P. Bagozzi",
