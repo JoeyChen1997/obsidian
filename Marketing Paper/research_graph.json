@@ -122,6 +122,21 @@
   ],
   "papers": [
     {
+      "id": "aoyagi-ito-2025-coexisting-exchanges",
+      "title": "Coexisting Exchange Platforms: Limit Order Books and Automated Market Makers",
+      "authors": "Jun Aoyagi and Yuki Ito",
+      "year": 2025,
+      "journal": "JPE_MICRO",
+      "doi": "10.1086/732831",
+      "pdf": "JPE_MICRO/Aoyagi_2024_Coexisting Exchange Platforms Limit Order Books and Automated Market Makers.pdf",
+      "source_id": 23461,
+      "card": "Marketing Paper/文献卡/Aoyagi 与 Ito 2025 - 订单簿与自动做市的流动性溢出.md",
+      "reading_status": "core_read",
+      "reading_note": "核场所选择、流动性溢出、供给零利润、波动率算例及集中流动性范围；复算边际价导数与噪声交易费用，线上附录未取。",
+      "read_scope": "PDF 1–38（刊页 611–648），原图回查 PDF 14、16、18、22–24、28、33–34。",
+      "sections": {"introduction": [[1,7]], "model": [[8,17]], "results": [[17,26],[28,29],[33,34]], "discussion": [[26,36]], "references": [[36,38]]}
+    },
+    {
       "id": "agan-et-al-2024-felony-reductions",
       "title": "The Labor Market Impacts of Reducing Felony Convictions",
       "authors": "Amanda Agan, Andrew Garin, Dmitri Koustas, Alexandre Mas, and Crystal S. Yang",
