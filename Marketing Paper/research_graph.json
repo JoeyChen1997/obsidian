@@ -122,6 +122,20 @@
   ],
   "papers": [
     {
+      "id": "abowd-lemieux-1993-foreign-competition",
+      "title": "The Effects of Product Market Competition on Collective Bargaining Agreements: The Case of Foreign Competition in Canada",
+      "authors": "John A. Abowd and Thomas Lemieux",
+      "year": 1993,
+      "journal": "QJE",
+      "pdf": "QJE/Abowd_1993_The Effects of Product Market Competition on Collective Bargaining Agreements The Case of Foreign Competition in Canada.pdf",
+      "source_id": 36389,
+      "card": "Marketing Paper/文献卡/Abowd 与 Lemieux 1993 - 外国竞争与集体议价.md",
+      "reading_status": "core_read",
+      "reading_note": "核 Nash 议价、贸易价格工具、合同与企业分母及回归结果。复推强有效解并复算工资溢价，未重跑数据。",
+      "read_scope": "PDF 1–33，正文刊页 983–1014，回查 PDF 5、20–21、25 原图。",
+      "sections": {"introduction": [[2,4]], "model": [[4,17]], "results": [[17,26]], "discussion": [[26,26]], "references": [[32,33]]}
+    },
+    {
       "id": "abbink-dong-huang-2022-team-cooperation",
       "title": "Talking Behind Your Back: Communication and Team Cooperation",
       "authors": "Klaus Abbink, Lu Dong, and Lingbo Huang",
