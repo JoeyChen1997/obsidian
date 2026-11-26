@@ -122,6 +122,21 @@
   ],
   "papers": [
     {
+      "id": "abaluck-et-al-2016-medical-testing",
+      "title": "The Determinants of Productivity in Medical Testing: Intensity and Allocation of Care",
+      "authors": "Jason Abaluck, Leila Agha, Chris Kabrhel, Ali Raja, and Arjun Venkatesh",
+      "year": 2016,
+      "journal": "AER",
+      "pdf": "AER/Abaluck_2016_The Determinants of Productivity in Medical Testing Intensity and Allocation of Care.pdf",
+      "source_id": 769,
+      "doi": "10.1257/aer.20140260",
+      "card": "Marketing Paper/文献卡/Abaluck 等 2016 - 医疗检查阈值与风险权重.md",
+      "reading_status": "core_read",
+      "reading_note": "核急诊样本、边际受检者的阈值识别、混合信号选择修正、表 2–5 与两种福利反事实。外置附录和底层数据未取。",
+      "read_scope": "PDF 1–35，回查 PDF 13、15–16、18–19、21、26–28、31 原图。",
+      "sections": {"introduction": [[1,4]], "model": [[12,19]], "results": [[19,32]], "discussion": [[32,33]], "references": [[33,35]]}
+    },
+    {
       "id": "agastya-birulin-2023-task-scheduling",
       "title": "Optimal Task Scheduling under Adverse Selection and Hidden Actions",
       "authors": "Murali Agastya and Oleksii Birulin",
