@@ -122,6 +122,21 @@
   ],
   "papers": [
     {
+      "id": "mehrez-gafni-1987-treatment-timing",
+      "title": "The Optimal Treatment Strategy—A Patient’s Perspective",
+      "authors": "A. Mehrez and A. Gafni",
+      "year": 1987,
+      "journal": "MS",
+      "doi": "10.1287/mnsc.33.12.1602",
+      "pdf": "MS/Abdellaoui_1987_The Optimal Treatment StrategyA Patient's Perspective.pdf",
+      "source_id": 25368,
+      "card": "Marketing Paper/文献卡/Mehrez 与 Gafni 1987 - 治疗时机与新技术等待.md",
+      "reading_status": "core_read",
+      "reading_note": "按原图核治疗时点、风险率条件、寿命扩展及新技术等待，复算失败前累积效用，1985 年工作稿未取。",
+      "read_scope": "PDF 2–12（刊页 1602–1612）逐页原图，PDF 1 档案封页已前轮核对。",
+      "sections": {"introduction": [[2,3]], "model": [[3,5],[7,8]], "results": [[4,9]], "discussion": [[9,10]], "proof": [[11,11]], "references": [[11,12]]}
+    },
+    {
       "id": "aoyagi-ito-2025-coexisting-exchanges",
       "title": "Coexisting Exchange Platforms: Limit Order Books and Automated Market Makers",
       "authors": "Jun Aoyagi and Yuki Ito",
