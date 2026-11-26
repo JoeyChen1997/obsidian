@@ -4,8 +4,8 @@
   "title": "确认现在能否开始工作",
   "titleGenerationStatus": "success",
   "createdAt": 1795440794370,
-  "updatedAt": 1795623244218,
-  "lastResponseAt": 1795623244218,
+  "updatedAt": 1795664787372,
+  "lastResponseAt": 1795664787372,
   "sessionId": "01a2089e-d5fe-7ab1-b51d-2a88e6a35c48",
   "providerState": {
     "threadId": "01a2089e-d5fe-7ab1-b51d-2a88e6a35c48",
@@ -13,12 +13,12 @@
     "transcriptRootPath": "C:\\Users\\Joey Cheun\\.codex\\sessions"
   },
   "usage": {
-    "inputTokens": 388986,
+    "inputTokens": 391744,
     "cacheCreationInputTokens": 0,
-    "cacheReadInputTokens": 387968,
+    "cacheReadInputTokens": 389760,
     "contextWindow": 475000,
     "contextWindowIsAuthoritative": true,
-    "contextTokens": 388986,
+    "contextTokens": 391744,
     "percentage": 82,
     "model": "gpt-6.2-sol"
   }
