@@ -84,6 +84,7 @@ tags: [research, research/reading-ledger]
 | 65 | 续第九轮期刊轮换 | RES 43613 核心核读，见 [[Marketing Paper/文献卡/Abel 等 1989 - 随机经济的动态效率与现金流]]。本地 PDF 止于刊页 19。续 AEJ_Micro 9。 |
 | 66 | 第九轮期刊轮换收尾 | AEJ_Micro 9 核心核读，见 [[Marketing Paper/文献卡/Aghion 与 Jackson 2016 - 风险决策与任期限制]]。外置附录未取。续第十轮 MKSC 23584。 |
 | 67 | 第十轮期刊轮换 | MKSC 23584 核心核读，见 [[Marketing Paper/文献卡/Ahmadi 与 Yang 2000 - 平行进口与跨国定价]]。续 JMR 11784。 |
+| 68 | 续第十轮期刊轮换 | JMR 11784 核心核读，见 [[Marketing Paper/文献卡/Aaker 与 Bagozzi 1979 - 多指标结构方程与工业销售]]。续 AER 770。 |
 
 每批记录：处理的来源 ID、核读状态、原 PDF 页、已入库卡和缺件、下一批首个入口；未完成时保留具体停点。暂不要求逐批比较，比较轮才追加双侧证据。在 [[Marketing Paper/逐篇核读批次队列|逐篇核读批次队列]] 留进度与切换顺序。默认直接续做；变更优先级时留理由，不删除旧记录。只有论文库权限、对外传输或实质范围变化需要用户决定；局部缺件不阻塞。
 

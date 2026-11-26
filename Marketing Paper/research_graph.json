@@ -122,6 +122,20 @@
   ],
   "papers": [
     {
+      "id": "aaker-bagozzi-1979-unobservable-variables",
+      "title": "Unobservable Variables in Structural Equation Models with an Application in Industrial Selling",
+      "authors": "David A. Aaker and Richard P. Bagozzi",
+      "year": 1979,
+      "journal": "JMR",
+      "pdf": "JMR/Aaker_1979_Unobservable Variables in Structural Equation Models with an Application in Industrial Selling.pdf",
+      "source_id": 11784,
+      "card": "Marketing Paper/文献卡/Aaker 与 Bagozzi 1979 - 多指标结构方程与工业销售.md",
+      "reading_status": "core_read",
+      "reading_note": "核 106 名销售员的样本、测量方程与结构路径、识别、LISREL 嵌套检验和误差相关。复算三指标载荷及卡方差，记录图文印刷差异；个体记录和 LISREL 输入未取。",
+      "read_scope": "物理 PDF 1–12，原图回查 PDF 5–10、12。",
+      "sections": {"introduction": [[1,1]], "model": [[2,7]], "results": [[4,6],[8,10],[12,12]], "discussion": [[8,11]], "references": [[11,12]]}
+    },
+    {
       "id": "ahmadi-yang-2000-parallel-imports",
       "title": "Parallel Imports: Challenges from Unauthorized Distribution Channels",
       "authors": "Reza Ahmadi and B. Rachel Yang",
