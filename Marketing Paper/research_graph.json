@@ -122,6 +122,21 @@
   ],
   "papers": [
     {
+      "id": "andreyeva-etal-2024-hospital-corporatization",
+      "title": "The Corporatization of Independent Hospitals",
+      "authors": "Elena Andreyeva, Atul Gupta, Catherine Ishitani, Malgorzata Sylwestrzak, and Benjamin Ukert",
+      "year": 2024,
+      "journal": "JPE_MICRO",
+      "doi": "10.1086/730454",
+      "pdf": "JPE_MICRO/Andreyeva_2024_The Corporatization of Independent Hospitals.pdf",
+      "source_id": 23460,
+      "card": "Marketing Paper/文献卡/Andreyeva 等 2024 - 独立医院入系的价格成本与质量.md",
+      "reading_status": "core_read",
+      "reading_note": "核匹配样本、交错双重差分、商业险住院价格和每床成本、跨支付方再入院与传导边界。复算比例和利润量级。在线附录及数据代码未取。",
+      "read_scope": "PDF 1、11–12、14–57，回查 22、28、35、45、51–52 原图。",
+      "sections": {"introduction": [[2,9]], "model": [[11,12],[14,25]], "results": [[26,55]], "discussion": [[55,57]]}
+    },
+    {
       "id": "abbott-breckinridge-1906-womens-employment",
       "title": "Employment of Women in Industries: Twelfth Census Statistics",
       "authors": "Edith Abbott and Sophonisba P. Breckinridge",
