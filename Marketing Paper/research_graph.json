@@ -121,6 +121,21 @@
   ],
   "papers": [
     {
+      "id": "agastya-birulin-2023-task-scheduling",
+      "title": "Optimal Task Scheduling under Adverse Selection and Hidden Actions",
+      "authors": "Murali Agastya and Oleksii Birulin",
+      "year": 2023,
+      "journal": "AEJ_Micro",
+      "doi": "10.1257/mic.20210126",
+      "pdf": "AEJ_Micro/Agastya_2023_Optimal Task Scheduling under Adverse Selection and Hidden Actions.pdf",
+      "source_id": 8,
+      "card": "Marketing Paper/文献卡/Agastya 与 Birulin 2023 - 隐藏行动与任务排序.md",
+      "reading_status": "core_read",
+      "reading_note": "核逐项努力、停止、虚拟成本排序、阈值支付与印刷证明，复推相邻交换和支付式，记录命题 2 的零开工边界。",
+      "read_scope": "物理 PDF 1–39，刊页 660–698。回查 PDF 9、15、17、19、31 原图，额外材料未取。",
+      "sections": {"introduction": [[1,6]], "model": [[6,10],[14,15]], "results": [[10,19],[20,25]], "discussion": [[20,26]], "proof": [[27,37]], "references": [[37,39]]}
+    },
+    {
       "id": "abel-1985-inventories-stock-outs",
       "title": "Inventories, Stock-Outs and Production Smoothing",
       "authors": "Andrew B. Abel",
