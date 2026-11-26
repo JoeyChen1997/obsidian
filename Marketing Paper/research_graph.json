@@ -122,6 +122,20 @@
   ],
   "papers": [
     {
+      "id": "abbott-breckinridge-1906-womens-employment",
+      "title": "Employment of Women in Industries: Twelfth Census Statistics",
+      "authors": "Edith Abbott and Sophonisba P. Breckinridge",
+      "year": 1906,
+      "journal": "JPE",
+      "pdf": "JPE/Abbott_1906_Employment of Women in Industries Twelfth Census Statistics.pdf",
+      "source_id": 15994,
+      "card": "Marketing Paper/文献卡/Abbott 与 Breckinridge 1906 - 女性就业普查分母与工序.md",
+      "reading_status": "core_read",
+      "reading_note": "核两期普查分母、五类职业与制衣分项、工序重叠的样本限制。复算就业率与原表异文，未重建底表。",
+      "read_scope": "PDF 1–27（刊页 14–40），回查 PDF 5、12–13、19、21–22、25 原图。",
+      "sections": {"introduction": [[1,3]], "model": [[3,5],[20,21]], "results": [[5,23],[25,26]], "discussion": [[23,27]], "references": [[25,27]]}
+    },
+    {
       "id": "abadir-paruolo-1997-mixed-normal",
       "title": "Two Mixed Normal Densities from Cointegration Analysis",
       "authors": "Karim M. Abadir and Paolo Paruolo",

@@ -76,6 +76,7 @@ tags: [research, research/reading-ledger]
 | 57 | 续第九轮期刊轮换 | AER 769 核心核读，见 [[Marketing Paper/文献卡/Abaluck 等 2016 - 医疗检查阈值与风险权重]]。续 AER_insight 5570。 |
 | 58 | 续第九轮期刊轮换 | AER_insight 5570 核心核读，见 [[Marketing Paper/文献卡/Adams 等 2024 - 租金指数口径与通胀]]。续 ECMA 5797。 |
 | 59 | 续第九轮期刊轮换 | ECMA 5797 核心核读，见 [[Marketing Paper/文献卡/Abadir 与 Paruolo 1997 - 协整估计量的混合正态密度]]。续 JPE 15994。 |
+| 60 | 续第九轮期刊轮换 | JPE 15994 核心核读，见 [[Marketing Paper/文献卡/Abbott 与 Breckinridge 1906 - 女性就业普查分母与工序]]。续 JPE_MICRO 23460。 |
 
 每批记录：处理的来源 ID、核读状态、原 PDF 页、已入库卡和缺件、下一批首个入口；未完成时保留具体停点。暂不要求逐批比较，比较轮才追加双侧证据。在 [[Marketing Paper/逐篇核读批次队列|逐篇核读批次队列]] 留进度与切换顺序。默认直接续做；变更优先级时留理由，不删除旧记录。只有论文库权限、对外传输或实质范围变化需要用户决定；局部缺件不阻塞。
 
