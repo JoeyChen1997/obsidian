@@ -122,6 +122,20 @@
   ],
   "papers": [
     {
+      "id": "ahmadi-yang-2000-parallel-imports",
+      "title": "Parallel Imports: Challenges from Unauthorized Distribution Channels",
+      "authors": "Reza Ahmadi and B. Rachel Yang",
+      "year": 2000,
+      "journal": "MKSC",
+      "pdf": "MKSC/Ahmadi_2000_Parallel Imports Challenges from Unauthorized Distribution Channels.pdf",
+      "source_id": 23584,
+      "card": "Marketing Paper/文献卡/Ahmadi 与 Yang 2000 - 平行进口与跨国定价.md",
+      "reading_status": "core_read",
+      "reading_note": "核三阶段定价、进口门槛、分流利润、容纳与阻止、Cournot 和非价格控制。复算进口量并记录表 1 容纳栏量式与式 (17) 差异，印刷附录略写命题 7–8 证明。",
+      "read_scope": "物理 PDF 1–16，以本地 OCR 和原图核读，回查 PDF 6、8–10、12、15 等页。",
+      "sections": {"introduction": [[2,4]], "model": [[4,7],[9,12]], "results": [[6,12]], "discussion": [[12,14]], "proof": [[14,15]], "references": [[15,16]]}
+    },
+    {
       "id": "aghion-jackson-2016-risky-decisions",
       "title": "Inducing Leaders to Take Risky Decisions: Dismissal, Tenure, and Term Limits",
       "authors": "Philippe Aghion and Matthew O. Jackson",
