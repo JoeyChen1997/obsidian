@@ -8,30 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "d7ca22333357553b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Marketing Paper/文献卡/Moraga-González 等 2017 - 搜索成本与参与选择.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Moraga-González 等 2017 - 搜索成本与参与选择"
-            }
-          },
-          {
             "id": "20c1dca6f0782d32",
             "type": "leaf",
             "state": {
@@ -55,8 +31,7 @@
               "title": "Paperlist 自动续读"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -235,6 +210,15 @@
   },
   "active": "d2e40da301c97e6a",
   "lastOpenFiles": [
+    "Marketing Paper/automation/render/23583-e0ca5114421c48b6a41c428f3de7641d/14.png",
+    "Marketing Paper/automation/render/23583-e0ca5114421c48b6a41c428f3de7641d/12.png",
+    "Marketing Paper/automation/render/23583-e0ca5114421c48b6a41c428f3de7641d/11.png",
+    "Marketing Paper/automation/render/23583-e0ca5114421c48b6a41c428f3de7641d/8.png",
+    "Marketing Paper/automation/render/23583-e0ca5114421c48b6a41c428f3de7641d/7.png",
+    "Marketing Paper/automation/render/23583-e0ca5114421c48b6a41c428f3de7641d/4.png",
+    "Marketing Paper/automation/render/23583-e0ca5114421c48b6a41c428f3de7641d",
+    "Marketing Paper/文献卡/Moraga-González 等 2017 - 搜索成本与参与选择.md",
+    "Marketing Paper/Paperlist 自动续读.md",
     "Marketing Paper/文献卡/Agastya 与 Birulin 2023 - 隐藏行动与任务排序.md",
     "Marketing Paper/automation/render/codex-aej8-20261125-31.png",
     "Marketing Paper/automation/render/codex-aej8-20261125-19.png",
@@ -242,12 +226,7 @@
     "Marketing Paper/automation/render/codex-aej8-20261125-15.png",
     "Marketing Paper/automation/render/codex-aej8-20261125-9.png",
     "Marketing Paper/文献卡/Abel 1985 - 缺货与生产平滑.md",
-    "Marketing Paper/automation/render/abel43612-run53-07.png",
-    "Marketing Paper/automation/render/abel43612-run53-06.png",
-    "Marketing Paper/automation/render/abel43612-run53-05.png",
-    "Marketing Paper/automation/render/abel43612-run53-04.png",
     "Marketing Paper/文献卡/Aghion 等 2008 - 学术自由与研发控制权.md",
-    "Marketing Paper/automation/render/run-01c90de670d3478eb38e3864408f234e-18.png",
     "Marketing Paper/文献卡/Abel 等 1996 - 资本调整期权与投资.md",
     "Marketing Paper/automation/render/qje36388-check",
     "Marketing Paper/文献卡/Abbassi 等 2025 - 银行资产质量审查与风险转移.md",
@@ -276,10 +255,6 @@
     "Marketing Paper/文献卡/Abaluck 与 Gruber 2011 - 医保选择不一致的异质性.md",
     "Marketing Paper/文献卡/Adalja 等 2023 - 强制标签与自愿标签的需求效应.md",
     "Marketing Paper/automation/render/reading-ad67c71db4a3463dba42290b5f8af78c",
-    "Marketing Paper/文献卡/Adams 2020 - 多预算需求预测的显示偏好一致性.md",
-    "Marketing Paper/automation/render/run6-d41b681872f841b1a7f621762bb83025",
-    "Marketing Paper/文献卡/Abebe 等 2020 - 求职交通成本与技能信号.md",
-    "Marketing Paper/文献卡/Agastya 等 2014 - 部分知情专家的沟通与授权.md",
-    "Marketing Paper/文献卡/Abel 1981 - 投资与产能利用的动态模型.md"
+    "Marketing Paper/文献卡/Adams 2020 - 多预算需求预测的显示偏好一致性.md"
   ]
 }
