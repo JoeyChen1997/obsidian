@@ -121,6 +121,21 @@
   ],
   "papers": [
     {
+      "id": "abbassi-et-al-2025-stressed-banks",
+      "title": "Stressed Banks? Evidence from the Largest-Ever Supervisory Review",
+      "authors": "Puriya Abbassi, Rajkamal Iyer, José-Luis Peydró, and Paul E. Soto",
+      "year": 2025,
+      "journal": "MS",
+      "pdf": "MS/Abbassi_2025_Stressed Banks Evidence from the Largest-Ever Supervisory Review.pdf",
+      "source_id": 25366,
+      "doi": "10.1287/mnsc.2020.01714",
+      "card": "Marketing Paper/文献卡/Abbassi 等 2025 - 银行资产质量审查与风险转移.md",
+      "reading_status": "core_read",
+      "reading_note": "核审查时点、德国登记样本和三重差分，比较证券回补与信贷持续性，复算量级及企业销售的组别差分。外置附录与数据未取得。",
+      "read_scope": "PDF 1–23 主文及参考文献，PDF 24 为版权声明。原图回查 PDF 7、10、13、15、18–19。",
+      "sections": {"introduction": [[1,4]], "model": [[4,6],[9,9],[12,14],[17,17]], "results": [[6,19]], "discussion": [[19,20]], "references": [[21,23]]}
+    },
+    {
       "id": "andreottola-li-2024-polarization",
       "title": "Polarization and Policy Design",
       "authors": "Giovanni Andreottola and Christopher Li",
