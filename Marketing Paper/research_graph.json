@@ -121,6 +121,20 @@
   ],
   "papers": [
     {
+      "id": "abel-1985-inventories-stock-outs",
+      "title": "Inventories, Stock-Outs and Production Smoothing",
+      "authors": "Andrew B. Abel",
+      "year": 1985,
+      "journal": "RES",
+      "pdf": "RES/Abel_1985_Inventories, Stock-Outs and Production Smoothing.pdf",
+      "source_id": 43612,
+      "card": "Marketing Paper/文献卡/Abel 1985 - 缺货与生产平滑.md",
+      "reading_status": "core_read",
+      "reading_note": "核缺货时序、短售对照、边际收入楔子、产量斜率及稳态方差证明；复推协方差式与内点斜率。",
+      "read_scope": "物理 PDF 1–11，刊页 283–293，原图回查 PDF 4–7。",
+      "sections": {"introduction": [[1,2]], "model": [[2,4]], "results": [[4,9]], "proof": [[4,8],[10,11]], "discussion": [[9,9]], "references": [[11,11]]}
+    },
+    {
       "id": "aghion-dewatripont-stein-2008-academic-freedom",
       "title": "Academic freedom, private-sector focus, and the process of innovation",
       "authors": "Philippe Aghion, Mathias Dewatripont, and Jeremy C. Stein",
