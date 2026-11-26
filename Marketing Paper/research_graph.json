@@ -122,6 +122,20 @@
   ],
   "papers": [
     {
+      "id": "abel-mankiw-summers-zeckhauser-1989-dynamic-efficiency",
+      "title": "Assessing Dynamic Efficiency: Theory and Evidence",
+      "authors": "Andrew B. Abel, N. Gregory Mankiw, Lawrence H. Summers, and Richard J. Zeckhauser",
+      "year": 1989,
+      "journal": "RES",
+      "pdf": "RES/Abel_1989_Assessing Dynamic Efficiency Theory and Evidence.pdf",
+      "source_id": 43613,
+      "card": "Marketing Paper/文献卡/Abel 等 1989 - 随机经济的动态效率与现金流.md",
+      "reading_status": "core_read",
+      "reading_note": "核随机 OLG、状态统一界、两侧印刷证明、果树反例及三张表。复算递推、回报与表列，记录附录人口消费记号疑点。未重建历史数据；首页刊页1–20，本地PDF止于19。",
+      "read_scope": "物理 PDF 1–19；回查 PDF 5–8、10–14、16–18 原图。",
+      "sections": {"introduction": [[1,3]], "model": [[3,5],[12,14]], "results": [[5,12],[13,14]], "discussion": [[14,16]], "proof": [[6,7],[16,18]], "references": [[18,19]]}
+    },
+    {
       "id": "aguirregabiria-clark-wang-2016-geographic-risk",
       "title": "Diversification of geographic risk in retail bank networks: evidence from bank expansion after the Riegle-Neal Act",
       "authors": "Victor Aguirregabiria, Robert Clark, and Hui Wang",
