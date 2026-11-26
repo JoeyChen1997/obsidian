@@ -122,6 +122,21 @@
   ],
   "papers": [
     {
+      "id": "adams-et-al-2024-rent-indices",
+      "title": "Disentangling Rent Index Differences: Data, Methods, and Scope",
+      "authors": "Brian Adams, Lara Loewenstein, Hugh Montag, and Randal Verbrugge",
+      "year": 2024,
+      "journal": "AER_insight",
+      "pdf": "AER_insight/Adams_2024_Disentangling Rent Index Differences Data, Methods, and Scope.pdf",
+      "source_id": 5570,
+      "doi": "10.1257/aeri.20220685",
+      "card": "Marketing Paper/文献卡/Adams 等 2024 - 租金指数口径与通胀.md",
+      "reading_status": "core_read",
+      "reading_note": "核租户口径、同屋配对、加权和时点、同比差与领先关系、端点修订及宏观规格敏感性。外置附录、复制包与微观数据未取。",
+      "read_scope": "PDF 1–15 主文与参考文献入口，回查 PDF 4–5、9、13–14 原图。",
+      "sections": {"introduction": [[1,3]], "model": [[5,7]], "results": [[7,10],[12,15]], "discussion": [[10,12],[14,15]], "references": [[15,16]]}
+    },
+    {
       "id": "abaluck-et-al-2016-medical-testing",
       "title": "The Determinants of Productivity in Medical Testing: Intensity and Allocation of Care",
       "authors": "Jason Abaluck, Leila Agha, Chris Kabrhel, Ali Raja, and Arjun Venkatesh",
