@@ -122,6 +122,21 @@
   ],
   "papers": [
     {
+      "id": "abbink-dong-huang-2022-team-cooperation",
+      "title": "Talking Behind Your Back: Communication and Team Cooperation",
+      "authors": "Klaus Abbink, Lu Dong, and Lingbo Huang",
+      "year": 2022,
+      "journal": "MS",
+      "doi": "10.1287/mnsc.2021.4143",
+      "pdf": "MS/Abbink_2021_Talking Behind Your Back Communication and Team Cooperation.pdf",
+      "source_id": 25367,
+      "card": "Marketing Paper/文献卡/Abbink 等 2022 - 排他沟通与团队合作.md",
+      "reading_status": "core_read",
+      "reading_note": "核三人分配博弈、沟通与匹配处理、投入和分配分母。独立复算均衡续局与团队投入，记录图文差异。在线附录及数据未取。",
+      "read_scope": "PDF 1–14（刊页 5187–5200），回查 PDF 4、6–10 原图。",
+      "sections": {"introduction": [[1,3]], "model": [[3,6]], "results": [[6,13]], "discussion": [[13,13]], "references": [[14,14]]}
+    },
+    {
       "id": "andreyeva-etal-2024-hospital-corporatization",
       "title": "The Corporatization of Independent Hospitals",
       "authors": "Elena Andreyeva, Atul Gupta, Catherine Ishitani, Malgorzata Sylwestrzak, and Benjamin Ukert",
