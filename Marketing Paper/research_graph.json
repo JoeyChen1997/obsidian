@@ -121,6 +121,20 @@
   ],
   "papers": [
     {
+      "id": "abel-dixit-eberly-pindyck-1996-capital-options",
+      "title": "Options, the Value of Capital, and Investment",
+      "authors": "Andrew B. Abel, Avinash K. Dixit, Janice C. Eberly, and Robert S. Pindyck",
+      "year": 1996,
+      "journal": "QJE",
+      "pdf": "QJE/Abel_1996_Options, the Value of Capital, and Investment.pdf",
+      "source_id": 36388,
+      "card": "Marketing Paper/文献卡/Abel 等 1996 - 资本调整期权与投资.md",
+      "reading_status": "core_read",
+      "reading_note": "核两期资本政策、边际 q 与期权分解、分布比较及状态依赖交易价。复推包络斜率，核总看涨项的记号。",
+      "read_scope": "PDF 1–26 封页、正文与参考文献。原图回查 PDF 6–9、11–12、15–16、18、20、22–24。",
+      "sections": {"introduction": [[2,5]], "model": [[6,7],[22,24]], "results": [[8,22]], "proof": [[7,12],[17,17],[20,22]], "discussion": [[24,25]], "references": [[25,26]]}
+    },
+    {
       "id": "abbassi-et-al-2025-stressed-banks",
       "title": "Stressed Banks? Evidence from the Largest-Ever Supervisory Review",
       "authors": "Puriya Abbassi, Rajkamal Iyer, José-Luis Peydró, and Paul E. Soto",
