@@ -122,6 +122,21 @@
   ],
   "papers": [
     {
+      "id": "aguirregabiria-clark-wang-2016-geographic-risk",
+      "title": "Diversification of geographic risk in retail bank networks: evidence from bank expansion after the Riegle-Neal Act",
+      "authors": "Victor Aguirregabiria, Robert Clark, and Hui Wang",
+      "year": 2016,
+      "journal": "RAND",
+      "doi": "10.1111/1756-2171.12136",
+      "pdf": "RAND/Aguirregabiria_2016_Diversification of geographic risk in retail bank networks evidence from bank expansion after the RiegleNeal Act.pdf",
+      "source_id": 41977,
+      "card": "Marketing Paper/文献卡/Aguirregabiria 等 2016 - 银行网点与存款地理风险.md",
+      "reading_status": "core_read",
+      "reading_note": "核县级存款风险、局部 Cournot 均衡、网点选择矩不等式与反事实；复推内部解并复算表列和分母，保留样本数及大州门槛异文。未重跑数据，方法手稿未取。",
+      "read_scope": "PDF 1、6–8、12–42，回查 PDF 15、29、32、34、37–38 原图。",
+      "sections": {"introduction": [[1,1]], "model": [[12,16],[18,18],[26,35],[39,42]], "results": [[18,26],[35,39]], "discussion": [[39,39]], "references": [[42,44]]}
+    },
+    {
       "id": "abowd-lemieux-1993-foreign-competition",
       "title": "The Effects of Product Market Competition on Collective Bargaining Agreements: The Case of Foreign Competition in Canada",
       "authors": "John A. Abowd and Thomas Lemieux",
