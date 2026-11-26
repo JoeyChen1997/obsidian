@@ -122,6 +122,21 @@
   ],
   "papers": [
     {
+      "id": "aghion-jackson-2016-risky-decisions",
+      "title": "Inducing Leaders to Take Risky Decisions: Dismissal, Tenure, and Term Limits",
+      "authors": "Philippe Aghion and Matthew O. Jackson",
+      "year": 2016,
+      "journal": "AEJ_Micro",
+      "doi": "10.1257/mic.20150083",
+      "pdf": "AEJ_Micro/Aghion_2016_Inducing Leaders to Take Risky Decisions Dismissal, Tenure, and Term Limits.pdf",
+      "source_id": 9,
+      "card": "Marketing Paper/文献卡/Aghion 与 Jackson 2016 - 风险决策与任期限制.md",
+      "reading_status": "core_read",
+      "reading_note": "核风险行动揭示状态、承诺留任、试用筛选、无承诺 PBE/MPE 与任期上限。复算两项成本门槛；印刷证明的阈值、概率和收益记号疑点已入卡。外置附录未取。",
+      "read_scope": "物理 PDF 1–38，回查 PDF 13、24、34–35 原图。",
+      "sections": {"introduction": [[1,7]], "model": [[7,12],[19,19]], "results": [[12,26]], "discussion": [[26,28]], "proof": [[28,37]], "references": [[37,38]]}
+    },
+    {
       "id": "abel-mankiw-summers-zeckhauser-1989-dynamic-efficiency",
       "title": "Assessing Dynamic Efficiency: Theory and Evidence",
       "authors": "Andrew B. Abel, N. Gregory Mankiw, Lawrence H. Summers, and Richard J. Zeckhauser",
