@@ -121,6 +121,20 @@
   ],
   "papers": [
     {
+      "id": "aghion-dewatripont-stein-2008-academic-freedom",
+      "title": "Academic freedom, private-sector focus, and the process of innovation",
+      "authors": "Philippe Aghion, Mathias Dewatripont, and Jeremy C. Stein",
+      "year": 2008,
+      "journal": "RAND",
+      "pdf": "RAND/Aghion_2008_Academic freedom, privatesector focus, and the process of innovation.pdf",
+      "source_id": 41976,
+      "card": "Marketing Paper/文献卡/Aghion 等 2008 - 学术自由与研发控制权.md",
+      "reading_status": "core_read",
+      "reading_note": "核控制权、时序、转企阈值、雇用量、分支与混合治理。复算 PDF 12 的数值例及式 (13)、(15) 的工资项。",
+      "read_scope": "物理 PDF 1–19，刊页 617–635。原图回查 PDF 8–9、11–13、15–16、18。原件未载 DOI。",
+      "sections": {"introduction": [[1,4]], "model": [[4,6],[12,13],[14,16]], "results": [[7,16]], "proof": [[7,9],[18,19]], "discussion": [[14,14],[16,18]], "references": [[19,19]]}
+    },
+    {
       "id": "abel-dixit-eberly-pindyck-1996-capital-options",
       "title": "Options, the Value of Capital, and Investment",
       "authors": "Andrew B. Abel, Avinash K. Dixit, Janice C. Eberly, and Robert S. Pindyck",
