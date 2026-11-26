@@ -122,6 +122,20 @@
   ],
   "papers": [
     {
+      "id": "abadir-paruolo-1997-mixed-normal",
+      "title": "Two Mixed Normal Densities from Cointegration Analysis",
+      "authors": "Karim M. Abadir and Paolo Paruolo",
+      "year": 1997,
+      "journal": "ECMA",
+      "pdf": "ECMA/Abadir_1997_Two Mixed Normal Densities from Cointegration Analysis.pdf",
+      "source_id": 5797,
+      "card": "Marketing Paper/文献卡/Abadir 与 Paruolo 1997 - 协整估计量的混合正态密度.md",
+      "reading_status": "core_read",
+      "reading_note": "核两种常数规格、条件正态与边际密度、原点收敛、分位数及方差比。档案封页载 1997，正文刊头印 1996。未重跑特殊函数积分。",
+      "read_scope": "PDF 1–11，回查 PDF 3–6、8–10 原图。",
+      "sections": {"introduction": [[2,3]], "model": [[3,4]], "results": [[5,5],[7,10]], "proof": [[5,6],[8,10]], "discussion": [[7,10]], "references": [[11,11]]}
+    },
+    {
       "id": "adams-et-al-2024-rent-indices",
       "title": "Disentangling Rent Index Differences: Data, Methods, and Scope",
       "authors": "Brian Adams, Lara Loewenstein, Hugh Montag, and Randal Verbrugge",
