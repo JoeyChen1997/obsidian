@@ -122,6 +122,60 @@
   ],
   "papers": [
     {
+      "id": "agan-et-al-2024-felony-reductions",
+      "title": "The Labor Market Impacts of Reducing Felony Convictions",
+      "authors": "Amanda Agan, Andrew Garin, Dmitri Koustas, Alexandre Mas, and Crystal S. Yang",
+      "year": 2024,
+      "journal": "AER_insight",
+      "doi": "10.1257/aeri.20230255",
+      "pdf": "AER_insight/Agan_2024_The Labor Market Impacts of Reducing Felony Convictions.pdf",
+      "source_id": 5571,
+      "card": "Marketing Paper/文献卡/Agan 等 2024 - 重罪降级、申请选择与就业.md",
+      "reading_status": "core_read",
+      "reading_note": "核主动降级的事件研究、申请选择、税务就业分母及通知实验 ITT。在线附录、工作稿和复制材料未取。",
+      "read_scope": "物理 PDF 1–18（刊页 341–358），原图回查 PDF 9、12、15。",
+      "sections": {
+        "introduction": [
+          [
+            1,
+            4
+          ]
+        ],
+        "model": [
+          [
+            4,
+            9
+          ],
+          [
+            11,
+            11
+          ],
+          [
+            14,
+            15
+          ]
+        ],
+        "results": [
+          [
+            9,
+            16
+          ]
+        ],
+        "discussion": [
+          [
+            16,
+            16
+          ]
+        ],
+        "references": [
+          [
+            16,
+            18
+          ]
+        ]
+      }
+    },
+    {
       "id": "abbe-khandani-lo-2012-privacy-preserving",
       "title": "Privacy-Preserving Methods for Sharing Financial Risk Exposures",
       "authors": "Emmanuel A. Abbe, Amir E. Khandani, and Andrew W. Lo",
