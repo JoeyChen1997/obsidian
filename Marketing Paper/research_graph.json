@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
   "source_exclusions": [
+    {"source_id":15993,"pdf":"JPE/Abbott_1905_Women in the Printing Trades A Sociological Study . J. Ramsay MacDonald.pdf","kind":"book_review","page":1,"locator":"原图 PDF 1–5（刊页 299–303）为 BOOK REVIEWS 栏，页 299 底起评介 J. Ramsay MacDonald 编、1904 年出版的 Women in the Printing Trades: A Sociological Study；页 303 署名 Edith Abbott（University of Chicago）。文字层仅有档案页脚，原页未载卷期年或 DOI。"},
     {"source_id":11781,"pdf":"JMR/Aaker_1974_Multivariate Analysis in Marketing, Theory and Application.pdf","kind":"book_review","page":2,"locator":"PDF 1 封页标 Review，JSTOR 3151160；PDF 2 刊页 346 为 New Books in Review，Patrick J. Robinson 署名后列 David A. Aaker 编的 1971 年同名文集。"},
     {"source_id": 15991, "pdf": "JPE/Abbott_1905_Labor Organization among Women . Belva Mary Herron.pdf", "kind": "book_review", "page": 1, "locator": "PDF 1 刊页 605 的 BOOK REVIEWS 栏页尾起，评介 Belva Mary Herron 的 1905 年专著；PDF 3 刊页 607 署名 Edith Abbott。"},
     {"source_id": 11780, "pdf": "JMR/Aaker_1972_Inadequate Solution.pdf", "kind": "book_review", "page": 2, "locator": "刊页 115 New Books in Review 栏，右栏 Inadequate solution，David A. Aaker 署名评 Bo W:son Schyberger 的 Media Selection: Efficient Procedures of Press Media Allocation；档案封页也标为 Review。"},
@@ -119,6 +120,21 @@
     }
   ],
   "papers": [
+    {
+      "id": "andreottola-li-2024-polarization",
+      "title": "Polarization and Policy Design",
+      "authors": "Giovanni Andreottola and Christopher Li",
+      "year": 2024,
+      "journal": "JPE_MICRO",
+      "pdf": "JPE_MICRO/Andreottola_2023_Polarization and Policy Design.pdf",
+      "source_id": 23459,
+      "doi": "10.1086/726844",
+      "card": "Marketing Paper/文献卡/Andreottola 与 Li 2024 - 极化与政策设计.md",
+      "reading_status": "core_read",
+      "reading_note": "核两期投票、废止和政策设计，复算门槛并记录等号及收益印刷疑点。外置附录 C、D 未取得。",
+      "read_scope": "PDF 1–29 正文与附录 A，回查 PDF 9、12–13、24–27 原图；附录 B 仅定位扩展。",
+      "sections": {"introduction": [[1,5]], "model": [[5,8]], "results": [[8,14]], "discussion": [[14,23]], "proof": [[24,29]]}
+    },
     {
       "id": "abadir-rockinger-1997-devils-horns",
       "title": "The “Devil’s Horns” Problem of Inverting Confluent Characteristic Functions",
